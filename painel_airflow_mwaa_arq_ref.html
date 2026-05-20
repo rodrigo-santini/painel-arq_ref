@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel datax-gold-prd | Últimos 15 dias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+    /* === paleta midnight refinada === */
+    --bg:#080c14;
+    --bg-2:#0d121d;
+    --card:#141b29;
+    --card-hover:#1a2233;
+    --text:#e8edf5;
+    --text-2:#c0c9d6;
+    --muted:#7d8a9c;
+    --border:#1f2a3d;
+    --border-strong:#2a3852;
+
+    --green:#34d399;
+    --red:#f87171;
+    --blue:#60a5fa;
+    --purple:#c084fc;
+    --yellow:#fbbf24;
+    --cyan:#22d3ee;
+    --orange:#fb923c;
+    --pink:#f472b6;
+
+    --shadow-1: 0 1px 2px rgba(0,0,0,0.3);
+    --shadow-2: 0 4px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-glow: 0 0 0 1px rgba(96,165,250,0.18) inset;
+
+    --radius: 12px;
+    --radius-sm: 8px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { color-scheme:dark; }
+
+body {
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);
+    background-image:
+        radial-gradient(ellipse 800px 400px at 10% -10%, rgba(96,165,250,0.06), transparent 50%),
+        radial-gradient(ellipse 600px 400px at 90% 10%, rgba(192,132,252,0.05), transparent 50%);
+    color:var(--text);
+    padding:24px;
+    min-height:100vh;
+    line-height:1.5;
+    font-feature-settings: 'cv02','cv03','cv04','cv11';
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* scrollbar global */
+::-webkit-scrollbar { width:10px; height:10px; }
+::-webkit-scrollbar-track { background:var(--bg-2); }
+::-webkit-scrollbar-thumb { background:var(--border-strong); border-radius:5px; }
+::-webkit-scrollbar-thumb:hover { background:var(--muted); }
+
+/* === Header === */
+.header {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:24px; flex-wrap:wrap; gap:12px;
+    padding-bottom:18px; border-bottom:1px solid var(--border);
+}
+.header h1 {
+    font-size:1.5rem; font-weight:700; letter-spacing:-0.02em;
+    background:linear-gradient(135deg, var(--text) 0%, var(--blue) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+.header-meta {
+    font-size:0.78rem; color:var(--muted); font-weight:500;
+    background:var(--card); border:1px solid var(--border);
+    padding:7px 12px; border-radius:var(--radius-sm);
+    font-feature-settings:'tnum';
+}
+
+/* === KPI grids === */
+.kpi-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:14px; margin-bottom:18px;
+}
+.kpi-grid--highlight { grid-template-columns:repeat(3, 1fr); margin-bottom:14px; }
+.kpi-grid--secondary { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+@media (max-width:768px) {
+    .kpi-grid--highlight { grid-template-columns:1fr; }
+}
+
+.kpi {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px;
+    text-align:left;
+    position:relative;
+    transition:all 0.18s ease;
+    box-shadow:var(--shadow-1);
+    overflow:hidden;
+}
+.kpi::after {
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.02) 100%);
+    pointer-events:none; border-radius:var(--radius);
+}
+.kpi:hover {
+    background:var(--card-hover); border-color:var(--border-strong);
+    transform:translateY(-1px);
+    box-shadow:var(--shadow-2);
+}
+.kpi .v {
+    font-size:1.95rem; font-weight:700; margin-bottom:4px;
+    letter-spacing:-0.02em; line-height:1.05;
+    font-feature-settings:'tnum';
+}
+.kpi .l {
+    font-size:0.68rem; color:var(--muted);
+    text-transform:uppercase; letter-spacing:0.6px; font-weight:600;
+}
+.kpi.s .v { color:var(--green); }
+.kpi.f .v { color:var(--red); }
+.kpi.r .v { color:var(--blue); }
+.kpi.d .v { color:var(--purple); }
+.kpi.t .v { color:var(--cyan); }
+.kpi.a .v { color:var(--green); }
+
+/* Big numbers em destaque com glass + glow */
+.kpi.highlight {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(96,165,250,0.10), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(192,132,252,0.08), transparent 60%),
+        var(--card);
+    border:1px solid rgba(96,165,250,0.25);
+    box-shadow:
+        0 0 0 1px rgba(96,165,250,0.15) inset,
+        0 8px 28px rgba(0,0,0,0.35),
+        0 0 40px rgba(96,165,250,0.04);
+    padding:24px 22px;
+    text-align:left;
+}
+.kpi.highlight::before {
+    content:""; position:absolute; top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--purple), var(--green));
+    border-radius:var(--radius) var(--radius) 0 0;
+    opacity:0.9;
+}
+.kpi.highlight:hover {
+    transform:translateY(-2px);
+    box-shadow:
+        0 0 0 1px rgba(96,165,250,0.3) inset,
+        0 12px 36px rgba(0,0,0,0.4),
+        0 0 60px rgba(96,165,250,0.08);
+}
+.kpi.highlight .v {
+    font-size:2.8rem; font-weight:800; letter-spacing:-0.03em; line-height:1.05;
+    margin-bottom:6px;
+}
+.kpi.highlight .l {
+    font-size:0.78rem; font-weight:700; color:var(--text); letter-spacing:0.4px;
+}
+.kpi.highlight.kpi-active .v {
+    background:linear-gradient(135deg, #34d399 0%, #6ee7b7 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; color:transparent !important;
+}
+.kpi.highlight.kpi-availability .v {
+    background:linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; color:transparent !important;
+}
+.kpi.highlight.kpi-duration .v {
+    background:linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; color:transparent !important;
+}
+
+/* tooltip sobre o icone "i" */
+.kpi-info {
+    position:absolute; top:10px; right:10px; z-index:5;
+    width:18px; height:18px; border-radius:50%;
+    background:var(--bg-2); color:var(--muted);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size:10px; font-weight:700; cursor:help;
+    transition:all 0.15s; user-select:none;
+}
+.kpi-info:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+.kpi-info[data-tip]:hover::after {
+    content: attr(data-tip);
+    position:absolute; top:24px; right:-4px;
+    background:var(--bg); color:var(--text);
+    border:1px solid var(--border-strong); border-radius:var(--radius-sm);
+    padding:10px 12px; font-size:0.72rem; font-weight:400;
+    line-height:1.55; letter-spacing:normal; text-transform:none;
+    width:260px; text-align:left;
+    z-index:100; box-shadow:var(--shadow-2);
+    white-space:pre-line;
+}
+.kpi-info[data-tip]:hover::before {
+    content:""; position:absolute; top:18px; right:4px;
+    border:5px solid transparent; border-bottom-color:var(--border-strong);
+    z-index:101;
+}
+
+/* === Charts === */
+.charts {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:16px; margin-bottom:24px;
+}
+.chart {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px 20px 20px;
+    box-shadow:var(--shadow-1);
+    transition:border-color 0.15s;
+}
+.chart:hover { border-color:var(--border-strong); }
+.chart h3 {
+    font-size:0.75rem; margin-bottom:14px;
+    color:var(--text-2); font-weight:600;
+    text-transform:uppercase; letter-spacing:0.6px;
+    display:flex; align-items:center; gap:8px;
+}
+.chart h3::before {
+    content:""; width:3px; height:14px;
+    background:linear-gradient(180deg, var(--blue), var(--purple));
+    border-radius:2px;
+}
+.chart-container { position:relative; height:240px; }
+
+/* === Section title === */
+.section-title {
+    font-size:1.05rem; font-weight:700; margin:32px 0 16px;
+    padding-bottom:8px; border-bottom:1px solid var(--border);
+    letter-spacing:-0.01em;
+}
+
+/* === Tables === */
+.table-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px 20px;
+    overflow-x:auto;
+    margin-bottom:20px;
+    box-shadow:var(--shadow-1);
+}
+.table-card h3 {
+    font-size:0.75rem; margin-bottom:12px;
+    color:var(--text-2); font-weight:600;
+    text-transform:uppercase; letter-spacing:0.6px;
+}
+table { width:100%; border-collapse:separate; border-spacing:0; font-size:0.8rem; }
+th, td {
+    padding:10px 12px; text-align:left; border-bottom:1px solid var(--border);
+    vertical-align:middle;
+}
+th {
+    color:var(--muted); font-weight:600; text-transform:uppercase;
+    font-size:0.65rem; letter-spacing:0.5px; cursor:pointer;
+    background:var(--bg-2); position:sticky; top:0;
+    border-bottom:1px solid var(--border-strong);
+}
+th:first-child { border-top-left-radius:var(--radius-sm); }
+th:last-child { border-top-right-radius:var(--radius-sm); }
+th:hover { color:var(--text); }
+tbody tr { transition:background 0.1s; }
+tbody tr:hover { background:rgba(96,165,250,0.04); }
+tbody tr:last-child td { border-bottom:none; }
+
+/* === Badges === */
+.badge {
+    display:inline-block; padding:3px 9px; border-radius:999px;
+    font-size:0.66rem; font-weight:600; letter-spacing:0.2px;
+    border:1px solid transparent;
+    font-feature-settings:'tnum';
+}
+.badge.success { background:rgba(52,211,153,0.12); color:var(--green); border-color:rgba(52,211,153,0.25); }
+.badge.failed { background:rgba(248,113,113,0.12); color:var(--red); border-color:rgba(248,113,113,0.25); }
+.badge.running { background:rgba(96,165,250,0.12); color:var(--blue); border-color:rgba(96,165,250,0.25); }
+.badge.queued { background:rgba(192,132,252,0.12); color:var(--purple); border-color:rgba(192,132,252,0.25); }
+.badge.upstream_failed { background:rgba(251,146,60,0.12); color:var(--orange); border-color:rgba(251,146,60,0.25); }
+.badge.nodata { background:rgba(125,138,156,0.12); color:var(--muted); border-color:rgba(125,138,156,0.25); }
+.badge.paused { background:rgba(251,191,36,0.12); color:var(--yellow); border-color:rgba(251,191,36,0.25); }
+.badge.active { background:rgba(52,211,153,0.12); color:var(--green); border-color:rgba(52,211,153,0.25); }
+
+/* === Filters === */
+.filter {
+    display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap; align-items:center;
+}
+.filter input,.filter select {
+    background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:8px 14px; color:var(--text); font-size:0.82rem;
+    transition:border-color 0.15s, background 0.15s;
+    font-family:inherit;
+}
+.filter input:focus, .filter select:focus {
+    outline:none; border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(96,165,250,0.12);
+    background:var(--card);
+}
+.filter input { min-width:280px; }
+.filter input::placeholder { color:var(--muted); }
+
+/* === Date / Category bar === */
+.date-bar {
+    background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:14px 18px; margin-bottom:14px;
+    display:flex; flex-direction:column; gap:12px;
+    box-shadow:var(--shadow-1);
+}
+.date-bar__row { display:flex; align-items:center; gap:14px; min-width:0; }
+.date-bar__label {
+    font-size:0.7rem; color:var(--text-2); text-transform:uppercase;
+    letter-spacing:0.6px; font-weight:700; flex-shrink:0;
+    display:flex; align-items:center; gap:6px;
+}
+.date-chips {
+    display:flex; gap:6px; flex:1; min-width:0;
+    overflow-x:auto; overflow-y:hidden; padding-bottom:4px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--border-strong) transparent;
+}
+.date-chips::-webkit-scrollbar { height:6px; }
+.date-chips::-webkit-scrollbar-track { background:transparent; }
+.date-chips::-webkit-scrollbar-thumb { background:var(--border-strong); border-radius:3px; }
+.date-chip {
+    background:var(--bg-2); border:1px solid var(--border); color:var(--text-2);
+    padding:6px 11px; border-radius:var(--radius-sm); font-size:0.72rem; cursor:pointer;
+    font-family:'JetBrains Mono','SF Mono','Fira Code',Consolas,monospace;
+    transition:all 0.12s; user-select:none;
+    flex-shrink:0; text-align:center; line-height:1.2;
+    font-weight:500;
+}
+.date-chip:hover { border-color:var(--blue); color:var(--text); transform:translateY(-1px); }
+.date-chip.active {
+    background:linear-gradient(135deg, var(--blue), #4f8df0);
+    border-color:transparent; color:#fff; font-weight:600;
+    box-shadow:0 2px 8px rgba(96,165,250,0.3);
+}
+.date-chip__weekday {
+    font-size:0.6rem; color:inherit; opacity:0.65;
+    display:block; margin-bottom:1px; text-transform:uppercase;
+}
+.date-bar__actions { display:flex; gap:6px; padding-left:60px; }
+.date-bar__btn {
+    background:transparent; border:1px solid var(--border); color:var(--muted);
+    padding:6px 12px; border-radius:var(--radius-sm); font-size:0.7rem; cursor:pointer;
+    text-transform:uppercase; letter-spacing:0.5px; font-weight:600;
+    transition:all 0.12s; font-family:inherit;
+}
+.date-bar__btn:hover {
+    border-color:var(--blue); color:var(--blue);
+    background:rgba(96,165,250,0.08);
+}
+.date-bar__btn.primary { color:var(--blue); border-color:rgba(96,165,250,0.4); }
+.date-bar__btn.primary:hover { background:rgba(96,165,250,0.12); }
+@media (max-width:768px) { .date-bar__actions { padding-left:0; } }
+
+code {
+    background:rgba(96,165,250,0.1); padding:2px 7px; border-radius:4px;
+    color:var(--blue); font-size:0.74rem; word-break:break-all;
+    font-family:'JetBrains Mono','SF Mono',Consolas,monospace;
+    border:1px solid rgba(96,165,250,0.15);
+}
+.cat-chip {
+    display:inline-block; padding:3px 8px; border-radius:4px;
+    font-size:0.66rem; font-weight:600; letter-spacing:0.3px;
+}
+.cat-chip { background:rgba(96,165,250,0.12) !important; color:var(--blue) !important; }
+
+@media (max-width:768px) {
+    .charts { grid-template-columns:1fr; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    body { padding:14px; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>📊 Painel de DAGs - datax-gold-prd (15 dias)</h1>
+    <div class="header-meta" id="header-meta">carregando...</div>
+</div>
+
+<div class="date-bar">
+    <div class="date-bar__row">
+        <span class="date-bar__label">📅 Datas</span>
+        <div class="date-chips" id="date-chips"></div>
+    </div>
+    <div class="date-bar__actions">
+        <button class="date-bar__btn" id="btn-dates-all">Todas</button>
+        <button class="date-bar__btn" id="btn-dates-7">Últimos 7d</button>
+        <button class="date-bar__btn" id="btn-dates-clear">Limpar</button>
+    </div>
+</div>
+
+<div class="date-bar">
+    <div class="date-bar__row">
+        <span class="date-bar__label">🏷️ Categoria</span>
+        <div class="date-chips" id="category-chips"></div>
+    </div>
+    <div class="date-bar__actions">
+        <button class="date-bar__btn" id="btn-cat-all">Todas</button>
+        <button class="date-bar__btn" id="btn-cat-clear">Limpar</button>
+    </div>
+</div>
+
+<div class="kpi-grid kpi-grid--highlight">
+    <div class="kpi highlight kpi-active">
+        <span class="kpi-info" data-tip="DAGs operacionais: is_active=true E is_paused=false. Mesma regra usada na UI do Airflow.">i</span>
+        <div class="v" id="kpi-active">-</div><div class="l">DAGs Ativas</div>
+    </div>
+    <div class="kpi highlight kpi-availability">
+        <span class="kpi-info" data-tip="Taxa de sucesso global = (success / total_runs) x 100, considerando todos os runs da janela.">i</span>
+        <div class="v" id="kpi-availability">-</div><div class="l">Disponibilidade</div>
+    </div>
+    <div class="kpi highlight kpi-duration">
+        <span class="kpi-info" data-tip="Média da duração média por DAG (avg_duration_min). Para cada DAG, duração = end_date - start_date dos runs concluídos. Depois, média dessas médias.">i</span>
+        <div class="v" id="kpi-duration">-</div><div class="l">Duração Média</div>
+    </div>
+</div>
+
+<div class="kpi-grid kpi-grid--secondary" id="kpi-grid">
+    <div class="kpi t">
+        <span class="kpi-info" data-tip="Total de DAGs no metadata do Airflow, considerando ativas + pausadas + inativas. Fonte: GET /api/v1/dags (only_active=false).">i</span>
+        <div class="v" id="kpi-total">-</div><div class="l">DAGs Totais</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="DAGs com is_paused=true (despausadas via UI ou API). Não rodam até serem reativadas.">i</span>
+        <div class="v" id="kpi-paused" style="color:var(--yellow)">-</div><div class="l">DAGs Pausadas</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="DAGs com is_active=false. Existem no metadata mas não foram parseadas recentemente (arquivo removido, erro no parse, etc.).">i</span>
+        <div class="v" id="kpi-inactive" style="color:var(--muted)">-</div><div class="l">DAGs Inativas</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="Total de DAG runs cujo start_date está dentro da janela de 15 dias. Coletado via /api/v1/dags/{id}/dagRuns.">i</span>
+        <div class="v" id="kpi-runs" style="color:var(--purple)">-</div><div class="l">Total Runs</div>
+    </div>
+    <div class="kpi s">
+        <span class="kpi-info" data-tip="Runs com state=success na janela.">i</span>
+        <div class="v" id="kpi-success">-</div><div class="l">Sucesso</div>
+    </div>
+    <div class="kpi f">
+        <span class="kpi-info" data-tip="Runs com state=failed ou upstream_failed na janela.">i</span>
+        <div class="v" id="kpi-failed">-</div><div class="l">Falhas</div>
+    </div>
+    <div class="kpi r">
+        <span class="kpi-info" data-tip="Runs com state=running ou queued no momento da coleta.">i</span>
+        <div class="v" id="kpi-running">-</div><div class="l">Executando</div>
+    </div>
+</div>
+
+<div class="charts">
+    <div class="chart"><h3>Execuções por Dia</h3><div class="chart-container"><canvas id="c1"></canvas></div></div>
+    <div class="chart"><h3>Status Geral</h3><div class="chart-container"><canvas id="c2"></canvas></div></div>
+    <div class="chart"><h3>Top 10 DAGs — Disponibilidade (%)</h3><div class="chart-container"><canvas id="c3"></canvas></div></div>
+    <div class="chart"><h3>Top 10 DAGs — Duração Média (min)</h3><div class="chart-container"><canvas id="c4"></canvas></div></div>
+    <div class="chart"><h3>DAGs por Categoria (ativas)</h3><div class="chart-container"><canvas id="c5"></canvas></div></div>
+    <div class="chart"><h3>Runs por Categoria</h3><div class="chart-container"><canvas id="c6"></canvas></div></div>
+</div>
+
+<h2 class="section-title" id="title-falhas">⚠️ DAGs com Falhas</h2>
+<div class="table-card">
+    <table>
+        <thead><tr><th>DAG</th><th>Runs</th><th>Sucesso</th><th>Falhas</th><th>Disponib.</th><th>Último Status</th></tr></thead>
+        <tbody id="tabela-falhas"></tbody>
+    </table>
+</div>
+
+<h2 class="section-title" id="title-detalhe">📋 Detalhamento por DAG</h2>
+<div class="filter">
+    <input type="text" id="search" placeholder="🔍 Buscar por nome..." oninput="filtrar()">
+    <select id="status" onchange="filtrar()">
+        <option value="">Todos os status (última run)</option>
+        <option value="success">✅ Sucesso</option>
+        <option value="failed">❌ Falha</option>
+        <option value="running">▶️ Executando</option>
+        <option value="queued">🕐 Em fila</option>
+        <option value="upstream_failed">⛔ Upstream falhou</option>
+        <option value="nodata">⬚ Sem execução</option>
+    </select>
+    <select id="estado" onchange="filtrar()">
+        <option value="">Todos os estados</option>
+        <option value="active" selected>▶️ ATIVA (despausada)</option>
+        <option value="paused">⏸️ PAUSADA</option>
+    </select>
+    <button class="date-bar__btn" id="btn-clear-filters" type="button">Limpar</button>
+</div>
+
+<div class="table-card">
+    <table>
+        <thead><tr>
+            <th>DAG ID</th><th>Categoria</th><th>Estado</th><th>Schedule</th>
+            <th>Runs</th><th>Suc.</th><th>Fal.</th><th>Disp.</th>
+            <th>Duração</th><th>Último Início</th><th>Último Fim</th><th>Status</th>
+        </tr></thead>
+        <tbody id="tabela"></tbody>
+    </table>
+</div>
+
+<script>
+let DATA = null;
+let SELECTED_DATES = new Set();        // datas selecionadas (todas se vazio)
+let SELECTED_CATEGORIES = new Set();   // categorias selecionadas (todas se vazio)
+let CHARTS = {};                       // referencias para destruir/recriar
+let VIEW = null;                       // {dags, daily, kpis} apos aplicar filtros globais
+
+Chart.defaults.color = '#94a3b8';
+
+const fmtDate = (dt) => dt ? new Date(dt).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) : '-';
+
+function fmtDateOnly(iso) {
+    if (!iso) return '-';
+    const d = new Date(iso);
+    return d.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric' });
+}
+
+function parseDay(key) { return new Date(key + 'T12:00:00'); }
+
+function destroyCharts() {
+    Object.values(CHARTS).forEach(c => { try { c.destroy(); } catch(_){} });
+    CHARTS = {};
+}
+
+function isAllSelected() {
+    const all = Object.keys(DATA.daily);
+    return SELECTED_DATES.size === 0 || SELECTED_DATES.size === all.length;
+}
+
+function isAllCategoriesSelected() {
+    const allCats = new Set(DATA.dags.map(d => d.category));
+    return SELECTED_CATEGORIES.size === 0 || SELECTED_CATEGORIES.size === allCats.size;
+}
+
+// Reduz DATA.dags para a "view" considerando apenas runs cujos `day` estao em SELECTED_DATES
+// e DAGs cuja category esta em SELECTED_CATEGORIES
+function buildView() {
+    const allDays = Object.keys(DATA.daily);
+    const useAllDates = isAllSelected();
+    const days = useAllDates ? new Set(allDays) : new Set(SELECTED_DATES);
+    const useAllCats = isAllCategoriesSelected();
+
+    // 1. Filtra DAGs por categoria primeiro
+    const filteredByCategory = useAllCats
+        ? DATA.dags
+        : DATA.dags.filter(d => SELECTED_CATEGORIES.has(d.category));
+
+    // 2. Recalcula metricas por janela de datas
+    const dagsView = filteredByCategory.map(d => {
+        if (useAllDates) {
+            // shortcut: usa snapshot original ja calculado pelo coletor
+            return { ...d };
+        }
+        const runs = (d.runs || []).filter(r => r.day && days.has(r.day));
+        const total = runs.length;
+        const success = runs.filter(r => r.state === 'success').length;
+        const failed = runs.filter(r => r.state === 'failed' || r.state === 'upstream_failed').length;
+        const running = runs.filter(r => r.state === 'running').length;
+        const queued = runs.filter(r => r.state === 'queued').length;
+        const durs = runs.map(r => r.duration_min).filter(x => x != null);
+        const availability = total > 0 ? +(success/total*100).toFixed(1) : null;
+        const avg_duration_min = durs.length > 0 ? +(durs.reduce((a,b)=>a+b,0)/durs.length).toFixed(1) : null;
+        const max_duration_min = durs.length > 0 ? +Math.max(...durs).toFixed(1) : null;
+        const min_duration_min = durs.length > 0 ? +Math.min(...durs).toFixed(1) : null;
+        const last = runs.reduce((a,b) => {
+            if (!a) return b;
+            return new Date(b.start_date||0) > new Date(a.start_date||0) ? b : a;
+        }, null);
+        const last_run = last ? {
+            state: last.state, start_date: last.start_date,
+            end_date: last.end_date, duration_min: last.duration_min
+        } : null;
+        const daily = {};
+        runs.forEach(r => {
+            if (!r.day) return;
+            const b = daily[r.day] || (daily[r.day] = { success:0, failed:0, running:0 });
+            if (r.state === 'success') b.success++;
+            else if (r.state === 'failed' || r.state === 'upstream_failed') b.failed++;
+            else if (r.state === 'running' || r.state === 'queued') b.running++;
+        });
+        return {
+            ...d,
+            total, success, failed, running, queued,
+            availability, avg_duration_min, max_duration_min, min_duration_min,
+            last_run, daily,
+        };
+    });
+
+    // 3. daily global agora deriva dos dagsView (respeita categoria + datas)
+    const dailyView = {};
+    allDays.forEach(k => {
+        if (days.has(k)) dailyView[k] = { success: 0, failed: 0, running: 0 };
+    });
+    dagsView.forEach(d => {
+        Object.entries(d.daily || {}).forEach(([k, v]) => {
+            if (!dailyView[k]) return;
+            dailyView[k].success += v.success || 0;
+            dailyView[k].failed += v.failed || 0;
+            dailyView[k].running += v.running || 0;
+        });
+    });
+
+    // 4. KPIs recalculados a partir dos dagsView (mantem definicoes das regras)
+    const total_dags = dagsView.length;
+    const active_dags = dagsView.filter(d => d.is_active && !d.is_paused).length;
+    const paused_dags = dagsView.filter(d => d.is_paused).length;
+    const inactive_dags = dagsView.filter(d => !d.is_active).length;
+    const total_runs = dagsView.reduce((s,d) => s + (d.total||0), 0);
+    const success = dagsView.reduce((s,d) => s + (d.success||0), 0);
+    const failed = dagsView.reduce((s,d) => s + (d.failed||0), 0);
+    const running = dagsView.reduce((s,d) => s + (d.running||0) + (d.queued||0), 0);
+    const availability = total_runs > 0 ? +(success/total_runs*100).toFixed(1) : 0;
+    const durs = dagsView.map(d => d.avg_duration_min).filter(x => x != null);
+    const avg_duration_min = durs.length > 0 ? +(durs.reduce((a,b)=>a+b,0)/durs.length).toFixed(1) : 0;
+
+    const kpis = {
+        total_dags, active_dags, paused_dags, inactive_dags,
+        total_runs, success, failed, running,
+        availability, avg_duration_min,
+    };
+
+    return { dags: dagsView, daily: dailyView, kpis };
+}
+
+function setupHeader() {
+    const env = DATA.environment;
+    const start = fmtDateOnly(DATA.period_start);
+    const end = fmtDateOnly(DATA.period_end);
+    const gen = new Date(DATA.generated_at).toLocaleString('pt-BR', {
+        day:'2-digit', month:'2-digit', year:'numeric',
+        hour:'2-digit', minute:'2-digit'
+    });
+    document.querySelector('h1').textContent = `📊 Painel de DAGs - ${env} (${DATA.period_days} dias)`;
+    document.title = `Painel de DAGs - ${env} (${DATA.period_days} dias)`;
+    document.getElementById('header-meta').textContent =
+        `Período: ${start} a ${end} | Airflow ${DATA.airflow_version} | Gerado: ${gen}`;
+}
+
+function setupDateBar() {
+    const days = Object.keys(DATA.daily).sort(); // crescente
+    const container = document.getElementById('date-chips');
+    const dn = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    container.innerHTML = days.map(k => {
+        const d = parseDay(k);
+        const wd = dn[d.getDay()];
+        const lbl = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`;
+        return `<span class="date-chip" data-day="${k}">
+            <span class="date-chip__weekday">${wd}</span>${lbl}
+        </span>`;
+    }).join('');
+
+    container.querySelectorAll('.date-chip').forEach(el => {
+        el.addEventListener('click', () => {
+            const day = el.dataset.day;
+            if (SELECTED_DATES.has(day)) SELECTED_DATES.delete(day);
+            else SELECTED_DATES.add(day);
+            renderDateChips();
+            applyAll();
+        });
+    });
+
+    document.getElementById('btn-dates-all').addEventListener('click', () => {
+        SELECTED_DATES = new Set(days);
+        renderDateChips();
+        applyAll();
+    });
+    document.getElementById('btn-dates-7').addEventListener('click', () => {
+        SELECTED_DATES = new Set(days.slice(-7));
+        renderDateChips();
+        applyAll();
+    });
+    document.getElementById('btn-dates-clear').addEventListener('click', () => {
+        SELECTED_DATES.clear();
+        renderDateChips();
+        applyAll();
+    });
+
+    renderDateChips();
+}
+
+function renderDateChips() {
+    const container = document.getElementById('date-chips');
+    container.querySelectorAll('.date-chip').forEach(el => {
+        const day = el.dataset.day;
+        // Se nada selecionado, considera "todas selecionadas" visualmente para refletir comportamento
+        const active = SELECTED_DATES.size === 0 || SELECTED_DATES.has(day);
+        el.classList.toggle('active', active);
+    });
+}
+
+function setupKpis() {
+    const k = VIEW.kpis;
+    document.getElementById('kpi-total').textContent = k.total_dags;
+    document.getElementById('kpi-active').textContent = k.active_dags;
+    document.getElementById('kpi-paused').textContent = k.paused_dags != null ? k.paused_dags : '-';
+    document.getElementById('kpi-inactive').textContent = k.inactive_dags != null ? k.inactive_dags : '-';
+    document.getElementById('kpi-runs').textContent = k.total_runs;
+    document.getElementById('kpi-success').textContent = k.success;
+    document.getElementById('kpi-failed').textContent = k.failed;
+    document.getElementById('kpi-running').textContent = k.running;
+    document.getElementById('kpi-availability').textContent = k.availability + '%';
+    document.getElementById('kpi-duration').textContent = k.avg_duration_min + ' min';
+}
+
+function setupCategoryBar() {
+    const counts = {};
+    DATA.dags.forEach(d => { counts[d.category] = (counts[d.category] || 0) + 1; });
+    const cats = Object.keys(counts).sort();
+
+    const container = document.getElementById('category-chips');
+    container.innerHTML = cats.map(cat => `
+        <span class="date-chip" data-category="${cat}" title="${cat} (${counts[cat]})">${cat} <span style="opacity:0.6;font-size:0.65rem">${counts[cat]}</span></span>
+    `).join('');
+
+    container.querySelectorAll('.date-chip').forEach(el => {
+        el.addEventListener('click', () => {
+            const cat = el.dataset.category;
+            if (SELECTED_CATEGORIES.has(cat)) SELECTED_CATEGORIES.delete(cat);
+            else SELECTED_CATEGORIES.add(cat);
+            renderCategoryChips();
+            applyAll();
+        });
+    });
+
+    document.getElementById('btn-cat-all').addEventListener('click', () => {
+        SELECTED_CATEGORIES = new Set(cats);
+        renderCategoryChips();
+        applyAll();
+    });
+    document.getElementById('btn-cat-clear').addEventListener('click', () => {
+        SELECTED_CATEGORIES.clear();
+        renderCategoryChips();
+        applyAll();
+    });
+
+    renderCategoryChips();
+}
+
+function renderCategoryChips() {
+    const container = document.getElementById('category-chips');
+    container.querySelectorAll('.date-chip').forEach(el => {
+        const cat = el.dataset.category;
+        const active = SELECTED_CATEGORIES.size === 0 || SELECTED_CATEGORIES.has(cat);
+        el.classList.toggle('active', active);
+    });
+}
+
+function setupCharts() {
+    destroyCharts();
+
+    // Grafico 1: Execucoes por Dia (apenas dias selecionados)
+    const dailySorted = Object.entries(VIEW.daily).sort(([a],[b]) => a.localeCompare(b));
+    const dn = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    CHARTS.c1 = new Chart(document.getElementById('c1'), {
+        type: 'bar',
+        data: {
+            labels: dailySorted.map(([k]) => { const d=parseDay(k); return `${dn[d.getDay()]} ${d.getDate()}/${d.getMonth()+1}`; }),
+            datasets: [
+                { label:'Sucesso', data:dailySorted.map(([,v])=>v.success), backgroundColor:'#22c55e', borderRadius:4 },
+                { label:'Falha', data:dailySorted.map(([,v])=>v.failed), backgroundColor:'#ef4444', borderRadius:4 }
+            ]
+        },
+        options: {
+            responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ labels:{ color:'#94a3b8' } } },
+            scales:{
+                x:{ stacked:true, ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                y:{ stacked:true, ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } }
+            }
+        }
+    });
+
+    // Grafico 2: Status geral
+    CHARTS.c2 = new Chart(document.getElementById('c2'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Sucesso', 'Falha'],
+            datasets: [{ data:[VIEW.kpis.success, VIEW.kpis.failed], backgroundColor:['#22c55e','#ef4444'], borderWidth:0 }]
+        },
+        options: {
+            responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ position:'bottom', labels:{ color:'#94a3b8', padding:14 } } },
+            cutout:'60%'
+        }
+    });
+
+    // Top 10 disponibilidade (entre ativos com runs)
+    const activeDags = VIEW.dags.filter(d => d.total > 0 && d.availability !== null);
+    const top10Avail = [...activeDags].sort((a,b) => a.availability - b.availability).slice(0, 10);
+    CHARTS.c3 = new Chart(document.getElementById('c3'), {
+        type: 'bar',
+        data: {
+            labels: top10Avail.map(d => d.dag_id.length > 30 ? d.dag_id.slice(0,28)+'..' : d.dag_id),
+            datasets: [{ label:'%', data:top10Avail.map(d=>d.availability),
+                backgroundColor: top10Avail.map(d => d.availability>=95?'#22c55e':d.availability>=80?'#eab308':'#ef4444'),
+                borderRadius:4 }]
+        },
+        options: {
+            indexAxis:'y', responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ display:false } },
+            scales:{ x:{ max:100, ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                     y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
+        }
+    });
+
+    // Top 10 duracao
+    const top10Dur = [...activeDags].filter(d=>d.avg_duration_min).sort((a,b) => b.avg_duration_min - a.avg_duration_min).slice(0,10);
+    CHARTS.c4 = new Chart(document.getElementById('c4'), {
+        type: 'bar',
+        data: {
+            labels: top10Dur.map(d => d.dag_id.length > 30 ? d.dag_id.slice(0,28)+'..' : d.dag_id),
+            datasets: [{ label:'min', data:top10Dur.map(d=>d.avg_duration_min), backgroundColor:'#a855f7', borderRadius:4 }]
+        },
+        options: {
+            indexAxis:'y', responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ display:false } },
+            scales:{ x:{ ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                     y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
+        }
+    });
+
+    // Por categoria (DAGs ativas)
+    const catCounts = {};
+    activeDags.forEach(d => { catCounts[d.category] = (catCounts[d.category] || 0) + 1; });
+    const catColors = ['#22c55e','#3b82f6','#a855f7','#eab308','#06b6d4','#ef4444','#f97316','#84cc16','#ec4899','#14b8a6'];
+    CHARTS.c5 = new Chart(document.getElementById('c5'), {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(catCounts),
+            datasets: [{ data:Object.values(catCounts), backgroundColor:catColors, borderWidth:0 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ position:'right', labels:{ color:'#94a3b8', padding:8, font:{size:10} } } },
+            cutout:'55%'
+        }
+    });
+
+    // Runs por categoria
+    const catRuns = {};
+    activeDags.forEach(d => { catRuns[d.category] = (catRuns[d.category] || 0) + d.total; });
+    CHARTS.c6 = new Chart(document.getElementById('c6'), {
+        type: 'bar',
+        data: {
+            labels: Object.keys(catRuns),
+            datasets: [{ label:'Runs', data:Object.values(catRuns), backgroundColor:'#06b6d4', borderRadius:4 }]
+        },
+        options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ display:false } },
+            scales:{ x:{ ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                     y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
+        }
+    });
+}
+
+function renderFalhas() {
+    const fails = VIEW.dags.filter(d => d.failed > 0)
+        .sort((a,b) => b.failed - a.failed);
+    document.getElementById('title-falhas').textContent =
+        `⚠️ DAGs com Falhas (${fails.length})`;
+    const tbody = document.getElementById('tabela-falhas');
+    if (fails.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">nenhuma falha na janela</td></tr>';
+        return;
+    }
+    tbody.innerHTML = fails.map(d => {
+        const lastState = d.last_run ? d.last_run.state : null;
+        const cls = lastState === 'success' ? 'success' :
+                    lastState === 'failed' ? 'failed' :
+                    lastState === 'running' ? 'running' :
+                    lastState === 'queued' ? 'queued' :
+                    lastState === 'upstream_failed' ? 'upstream_failed' : 'nodata';
+        const lbl = lastState ? lastState.toUpperCase() : 'SEM DADOS';
+        return `<tr>
+            <td><code>${d.dag_id}</code></td>
+            <td>${d.total}</td>
+            <td>${d.success}</td>
+            <td style="color:var(--red)"><strong>${d.failed}</strong></td>
+            <td>${d.availability != null ? d.availability + '%' : '-'}</td>
+            <td><span class="badge ${cls}">${lbl}</span></td>
+        </tr>`;
+    }).join('');
+}
+
+function renderTabela(data) {
+    const tbody = document.getElementById('tabela');
+    if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="12" style="text-align:center;color:var(--muted);padding:18px">nenhum resultado</td></tr>';
+        return;
+    }
+    tbody.innerHTML = data.map(d => {
+        const lastState = d.last_run ? d.last_run.state : null;
+        const badgeCls = lastState === 'success' ? 'success' :
+                         lastState === 'failed' ? 'failed' :
+                         lastState === 'running' ? 'running' :
+                         lastState === 'queued' ? 'queued' :
+                         lastState === 'upstream_failed' ? 'upstream_failed' : 'nodata';
+        const stateLabel = lastState ? lastState.toUpperCase() : 'SEM DADOS';
+        const pauseCls = d.is_paused ? 'paused' : 'active';
+        const pauseLabel = d.is_paused ? 'PAUSADA' : 'ATIVA';
+        return `<tr>
+            <td><code>${d.dag_id}</code></td>
+            <td><span class="cat-chip" style="background:rgba(59,130,246,0.15);color:#3b82f6">${d.category}</span></td>
+            <td><span class="badge ${pauseCls}">${pauseLabel}</span></td>
+            <td><small>${d.schedule}</small></td>
+            <td>${d.total || '-'}</td>
+            <td>${d.success || '-'}</td>
+            <td>${d.failed > 0 ? '<strong style="color:#ef4444">'+d.failed+'</strong>' : (d.failed || '-')}</td>
+            <td>${d.availability != null ? d.availability + '%' : '-'}</td>
+            <td>${d.avg_duration_min != null ? d.avg_duration_min + ' min' : '-'}</td>
+            <td>${fmtDate(d.last_run ? d.last_run.start_date : null)}</td>
+            <td>${fmtDate(d.last_run ? d.last_run.end_date : null)}</td>
+            <td><span class="badge ${badgeCls}">${stateLabel}</span></td>
+        </tr>`;
+    }).join('');
+}
+
+function filtrar() {
+    const search = document.getElementById('search').value.toLowerCase();
+    const status = document.getElementById('status').value;
+    const estado = document.getElementById('estado').value;
+
+    const filtrado = VIEW.dags.filter(d => {
+        if (search && !d.dag_id.toLowerCase().includes(search)) return false;
+        if (status) {
+            const s = d.last_run ? d.last_run.state : null;
+            if (status === 'nodata' && s !== null) return false;
+            if (status !== 'nodata' && s !== status) return false;
+        }
+        if (estado === 'active' && d.is_paused) return false;
+        if (estado === 'paused' && !d.is_paused) return false;
+        return true;
+    });
+    renderTabela(filtrado);
+}
+
+function applyAll() {
+    VIEW = buildView();
+    document.getElementById('title-detalhe').textContent =
+        `📋 Detalhamento por DAG — ${VIEW.kpis.total_dags} DAGs`;
+    setupKpis();
+    setupCharts();
+    renderFalhas();
+    filtrar();
+}
+
+async function bootstrap() {
+    try {
+        const resp = await fetch('data/painel_data_arq_ref.json', { cache:'no-store' });
+        DATA = await resp.json();
+        setupHeader();
+        setupDateBar();
+        setupCategoryBar();
+        setupClearFiltersButton();
+        applyAll();
+    } catch (err) {
+        console.error(err);
+        document.getElementById('header-meta').textContent =
+            'Erro ao carregar dados. Rode: python arq_ref/tools/fetch_data_arq_ref.py';
+    }
+}
+
+function setupClearFiltersButton() {
+    const btn = document.getElementById('btn-clear-filters');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        document.getElementById('search').value = '';
+        document.getElementById('status').value = '';
+        document.getElementById('estado').value = 'active'; // default volta para ATIVA
+        filtrar();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', bootstrap);
+</script>
+</body>
+</html>

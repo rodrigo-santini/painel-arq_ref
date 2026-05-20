@@ -1,0 +1,9 @@
+# Nada de credenciais
+.env
+.env.*
+*.credentials
+*creds*
+
+# Dev
+.DS_Store
+Thumbs.db
