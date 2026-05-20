@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-20T15:21:44.345802+00:00",
+  "generated_at": "2026-05-20T17:40:45.880260+00:00",
   "environment": "datax-gold-prd",
   "airflow_version": "2.10.3",
-  "period_start": "2026-05-05T15:20:18Z",
-  "period_end": "2026-05-20T15:20:18Z",
+  "period_start": "2026-05-05T17:39:15Z",
+  "period_end": "2026-05-20T17:39:15Z",
   "period_days": 15,
   "kpis": {
     "total_dags": 123,
@@ -12,17 +12,17 @@
     "inactive_dags": 22,
     "dags_with_runs": 77,
     "total_runs": 1097,
-    "success": 1087,
-    "failed": 7,
-    "running": 3,
-    "availability": 99.1,
-    "avg_duration_min": 20.4
+    "success": 1088,
+    "failed": 8,
+    "running": 1,
+    "availability": 99.2,
+    "avg_duration_min": 20.2
   },
   "daily": {
     "2026-05-20": {
-      "success": 63,
-      "failed": 0,
-      "running": 2
+      "success": 65,
+      "failed": 1,
+      "running": 0
     },
     "2026-05-19": {
       "success": 75,
@@ -95,7 +95,7 @@
       "running": 0
     },
     "2026-05-05": {
-      "success": 6,
+      "success": 5,
       "failed": 0,
       "running": 0
     }
@@ -107,25 +107,25 @@
       "is_active": true,
       "schedule": "00 10 * * *",
       "total": 2,
-      "success": 1,
+      "success": 2,
       "failed": 0,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 50.0,
-      "avg_duration_min": 233.5,
+      "availability": 100.0,
+      "avg_duration_min": 230.7,
       "max_duration_min": 233.5,
-      "min_duration_min": 233.5,
+      "min_duration_min": 227.9,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-05-20T13:00:01.237346+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-05-20T16:47:56.024235+00:00",
+        "duration_min": 227.9
       },
       "daily": {
         "2026-05-20": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-05-19": {
           "success": 1,
@@ -135,10 +135,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-05-20T13:00:01.237346+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-05-20T16:47:56.024235+00:00",
+          "duration_min": 227.9,
           "day": "2026-05-20"
         },
         {
@@ -251,32 +251,32 @@
       "schedule": "Never, external triggers only",
       "total": 1,
       "success": 0,
-      "failed": 0,
-      "running": 1,
+      "failed": 1,
+      "running": 0,
       "queued": 0,
       "availability": 0.0,
-      "avg_duration_min": null,
-      "max_duration_min": null,
-      "min_duration_min": null,
+      "avg_duration_min": 10.1,
+      "max_duration_min": 10.1,
+      "min_duration_min": 10.1,
       "last_run": {
-        "state": "running",
+        "state": "failed",
         "start_date": "2026-05-20T15:19:36.680328+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-05-20T15:29:40.751724+00:00",
+        "duration_min": 10.1
       },
       "daily": {
         "2026-05-20": {
           "success": 0,
-          "failed": 0,
-          "running": 1
+          "failed": 1,
+          "running": 0
         }
       },
       "runs": [
         {
-          "state": "running",
+          "state": "failed",
           "start_date": "2026-05-20T15:19:36.680328+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-05-20T15:29:40.751724+00:00",
+          "duration_min": 10.1,
           "day": "2026-05-20"
         }
       ],
@@ -15773,11 +15773,16 @@
       "min_duration_min": 0.5,
       "last_run": {
         "state": "success",
-        "start_date": "2026-05-19T17:00:00.304007+00:00",
-        "end_date": "2026-05-19T17:54:36.532210+00:00",
-        "duration_min": 54.6
+        "start_date": "2026-05-20T17:00:01.023351+00:00",
+        "end_date": "2026-05-20T17:00:37.103454+00:00",
+        "duration_min": 0.6
       },
       "daily": {
+        "2026-05-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-05-19": {
           "success": 1,
           "failed": 0,
@@ -15847,14 +15852,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-05-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-05-20T17:00:01.023351+00:00",
+          "end_date": "2026-05-20T17:00:37.103454+00:00",
+          "duration_min": 0.6,
+          "day": "2026-05-20"
+        },
         {
           "state": "success",
           "start_date": "2026-05-19T17:00:00.304007+00:00",
@@ -15952,13 +15959,6 @@
           "end_date": "2026-05-06T17:00:33.867722+00:00",
           "duration_min": 0.6,
           "day": "2026-05-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-05-05T17:00:00.423206+00:00",
-          "end_date": "2026-05-05T17:00:38.511859+00:00",
-          "duration_min": 0.6,
-          "day": "2026-05-05"
         }
       ],
       "category": "DMC_CAMPANHAS"
