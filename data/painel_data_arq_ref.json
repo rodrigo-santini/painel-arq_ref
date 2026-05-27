@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-27T20:05:51.427978+00:00",
+  "generated_at": "2026-05-27T20:09:12.375008+00:00",
   "environment": "datax-gold-prd",
   "airflow_version": "2.10.3",
-  "period_start": "2026-05-12T20:04:09Z",
-  "period_end": "2026-05-27T20:04:09Z",
+  "period_start": "2026-05-12T20:07:29Z",
+  "period_end": "2026-05-27T20:07:29Z",
   "period_days": 15,
   "kpis": {
     "total_dags": 127,
