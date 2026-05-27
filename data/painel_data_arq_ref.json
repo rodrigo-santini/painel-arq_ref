@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-27T20:09:12.375008+00:00",
+  "generated_at": "2026-05-27T20:39:51.691501+00:00",
   "environment": "datax-gold-prd",
   "airflow_version": "2.10.3",
-  "period_start": "2026-05-12T20:07:29Z",
-  "period_end": "2026-05-27T20:07:29Z",
+  "period_start": "2026-05-12T20:38:08Z",
+  "period_end": "2026-05-27T20:38:08Z",
   "period_days": 15,
   "kpis": {
     "total_dags": 127,
@@ -12,17 +12,17 @@
     "inactive_dags": 22,
     "dags_with_runs": 81,
     "total_runs": 1081,
-    "success": 1069,
-    "failed": 7,
-    "running": 5,
-    "availability": 98.9,
-    "avg_duration_min": 27.0
+    "success": 1070,
+    "failed": 8,
+    "running": 3,
+    "availability": 99.0,
+    "avg_duration_min": 31.4
   },
   "daily": {
     "2026-05-27": {
-      "success": 60,
+      "success": 61,
       "failed": 0,
-      "running": 3
+      "running": 2
     },
     "2026-05-26": {
       "success": 71,
@@ -36,8 +36,8 @@
     },
     "2026-05-24": {
       "success": 65,
-      "failed": 0,
-      "running": 1
+      "failed": 1,
+      "running": 0
     },
     "2026-05-23": {
       "success": 74,
@@ -102,25 +102,25 @@
       "is_active": true,
       "schedule": "00 10 * * *",
       "total": 6,
-      "success": 5,
+      "success": 6,
       "failed": 0,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 83.3,
-      "avg_duration_min": 609.5,
+      "availability": 100.0,
+      "avg_duration_min": 579.9,
       "max_duration_min": 2262.1,
       "min_duration_min": 47.4,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-05-27T13:00:00.832003+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-05-27T20:11:34.980371+00:00",
+        "duration_min": 431.6
       },
       "daily": {
         "2026-05-27": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-05-25": {
           "success": 1,
@@ -150,10 +150,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-05-27T13:00:00.832003+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-05-27T20:11:34.980371+00:00",
+          "duration_min": 431.6,
           "day": "2026-05-27"
         },
         {
@@ -10558,24 +10558,24 @@
       "schedule": "Dataset",
       "total": 12,
       "success": 9,
-      "failed": 2,
-      "running": 1,
+      "failed": 3,
+      "running": 0,
       "queued": 0,
       "availability": 75.0,
-      "avg_duration_min": 216.4,
-      "max_duration_min": 1403.2,
+      "avg_duration_min": 599.4,
+      "max_duration_min": 4812.5,
       "min_duration_min": 2.1,
       "last_run": {
-        "state": "running",
+        "state": "failed",
         "start_date": "2026-05-24T12:14:15.102517+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-05-27T20:26:46.360989+00:00",
+        "duration_min": 4812.5
       },
       "daily": {
         "2026-05-24": {
           "success": 0,
-          "failed": 0,
-          "running": 1
+          "failed": 1,
+          "running": 0
         },
         "2026-05-23": {
           "success": 1,
@@ -10630,10 +10630,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "failed",
           "start_date": "2026-05-24T12:14:15.102517+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-05-27T20:26:46.360989+00:00",
+          "duration_min": 4812.5,
           "day": "2026-05-24"
         },
         {
