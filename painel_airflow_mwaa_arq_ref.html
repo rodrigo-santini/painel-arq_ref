@@ -372,6 +372,26 @@ code {
     font-family:'JetBrains Mono','SF Mono',Consolas,monospace;
     border:1px solid rgba(96,165,250,0.15);
 }
+
+/* === Tabs === */
+.tabs {
+    display:flex; gap:4px; margin-bottom:20px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:0;
+}
+.tab {
+    background:transparent; border:none; border-bottom:2px solid transparent;
+    color:var(--muted); padding:12px 20px; font-size:0.85rem; font-weight:600;
+    cursor:pointer; transition:all 0.15s; font-family:inherit;
+    letter-spacing:-0.01em;
+}
+.tab:hover { color:var(--text); background:rgba(96,165,250,0.04); }
+.tab.active {
+    color:var(--blue); border-bottom-color:var(--blue);
+    background:rgba(96,165,250,0.06);
+}
+.tab-content { display:none; }
+.tab-content.active { display:block; }
 .cat-chip {
     display:inline-block; padding:3px 8px; border-radius:4px;
     font-size:0.66rem; font-weight:600; letter-spacing:0.3px;
@@ -390,6 +410,13 @@ code {
     <h1>📊 Painel de DAGs - datax-gold-prd (15 dias)</h1>
     <div class="header-meta" id="header-meta">carregando...</div>
 </div>
+
+<div class="tabs">
+    <button class="tab active" data-tab="tab-overview">Visão Geral</button>
+    <button class="tab" data-tab="tab-runs-detail">Runs por DAG</button>
+</div>
+
+<div id="tab-overview" class="tab-content active">
 
 <div class="date-bar">
     <div class="date-bar__row">
@@ -557,6 +584,26 @@ code {
         <tbody id="tabela"></tbody>
     </table>
 </div>
+
+</div><!-- /tab-overview -->
+
+<div id="tab-runs-detail" class="tab-content">
+    <h2 class="section-title">🕐 Histórico de Runs por DAG (Horário de Brasília)</h2>
+    <div class="filter">
+        <select id="dag-select" onchange="renderRunsDetail()" style="min-width:400px">
+            <option value="">Selecione uma DAG...</option>
+        </select>
+    </div>
+    <div id="runs-detail-summary" style="margin-bottom:16px"></div>
+    <div class="table-card">
+        <table>
+            <thead><tr>
+                <th>#</th><th>Status</th><th>Início (BRT)</th><th>Fim (BRT)</th><th>Duração (min)</th><th>Data</th>
+            </tr></thead>
+            <tbody id="tabela-runs-detail"></tbody>
+        </table>
+    </div>
+</div><!-- /tab-runs-detail -->
 
 <script>
 let DATA = null;
@@ -1176,11 +1223,14 @@ async function bootstrap() {
     try {
         const resp = await fetch('data/painel_data_arq_ref.json', { cache:'no-store' });
         DATA = await resp.json();
+        setupTabs();
         setupHeader();
         setupDateBar();
         setupCategoryBar();
         setupClearFiltersButton();
+        setupDagSelect();
         applyAll();
+        renderRunsDetail();
     } catch (err) {
         console.error(err);
         document.getElementById('header-meta').textContent =
@@ -1197,6 +1247,96 @@ function setupClearFiltersButton() {
         document.getElementById('estado').value = 'active'; // default volta para ATIVA
         filtrar();
     });
+}
+
+function setupTabs() {
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
+}
+
+function setupDagSelect() {
+    const select = document.getElementById('dag-select');
+    if (!select || !DATA) return;
+    const dags = DATA.dags
+        .filter(d => d.total > 0)
+        .sort((a, b) => a.dag_id.localeCompare(b.dag_id));
+    select.innerHTML = '<option value="">Selecione uma DAG...</option>' +
+        dags.map(d => `<option value="${d.dag_id}">${d.dag_id} (${d.total} runs)</option>`).join('');
+}
+
+function fmtBRT(isoStr) {
+    if (!isoStr) return '-';
+    const d = new Date(isoStr);
+    // Brasília = UTC-3
+    const brt = new Date(d.getTime() - 3 * 60 * 60 * 1000);
+    const dd = String(brt.getUTCDate()).padStart(2, '0');
+    const mm = String(brt.getUTCMonth() + 1).padStart(2, '0');
+    const yyyy = brt.getUTCFullYear();
+    const hh = String(brt.getUTCHours()).padStart(2, '0');
+    const mi = String(brt.getUTCMinutes()).padStart(2, '0');
+    const ss = String(brt.getUTCSeconds()).padStart(2, '0');
+    return `${dd}/${mm}/${yyyy} ${hh}:${mi}:${ss}`;
+}
+
+function renderRunsDetail() {
+    const dagId = document.getElementById('dag-select').value;
+    const tbody = document.getElementById('tabela-runs-detail');
+    const summary = document.getElementById('runs-detail-summary');
+
+    if (!dagId) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">Selecione uma DAG acima para ver o histórico de execuções</td></tr>';
+        summary.innerHTML = '';
+        return;
+    }
+
+    const dag = DATA.dags.find(d => d.dag_id === dagId);
+    if (!dag || !dag.runs || dag.runs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhum run encontrado para esta DAG na janela</td></tr>';
+        summary.innerHTML = '';
+        return;
+    }
+
+    // Summary
+    const successCount = dag.runs.filter(r => r.state === 'success').length;
+    const failedCount = dag.runs.filter(r => r.state === 'failed' || r.state === 'upstream_failed').length;
+    summary.innerHTML = `
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:0.85rem;color:var(--text-2)"><strong>${dag.dag_id}</strong></span>
+            <span class="badge success">${successCount} sucesso</span>
+            <span class="badge failed">${failedCount} falha(s)</span>
+            <span style="font-size:0.75rem;color:var(--muted)">Total: ${dag.runs.length} runs | Disp: ${dag.availability != null ? dag.availability + '%' : '-'} | Duração média: ${dag.avg_duration_min != null ? dag.avg_duration_min + ' min' : '-'}</span>
+        </div>
+    `;
+
+    // Runs ordered by start_date descending (most recent first)
+    const sorted = [...dag.runs].sort((a, b) => {
+        const da = a.start_date || '';
+        const db = b.start_date || '';
+        return db.localeCompare(da);
+    });
+
+    tbody.innerHTML = sorted.map((r, i) => {
+        const badgeCls = r.state === 'success' ? 'success' :
+                         r.state === 'failed' ? 'failed' :
+                         r.state === 'running' ? 'running' :
+                         r.state === 'queued' ? 'queued' :
+                         r.state === 'upstream_failed' ? 'upstream_failed' : 'nodata';
+        const stLabel = r.state ? r.state.toUpperCase() : '-';
+        return `<tr>
+            <td style="color:var(--muted)">${i + 1}</td>
+            <td><span class="badge ${badgeCls}">${stLabel}</span></td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(r.start_date)}</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(r.end_date)}</td>
+            <td>${r.duration_min != null ? r.duration_min + ' min' : '-'}</td>
+            <td>${r.day || '-'}</td>
+        </tr>`;
+    }).join('');
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap);
