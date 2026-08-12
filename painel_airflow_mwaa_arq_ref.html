@@ -460,6 +460,30 @@ code {
     </div>
 </div>
 
+<h2 class="section-title">🔬 Métricas Avançadas (Camada 1)</h2>
+<div class="kpi-grid kpi-grid--secondary" id="kpi-grid-layer1">
+    <div class="kpi d">
+        <span class="kpi-info" data-tip="Percentil 50 (mediana) da duração de todos os runs na janela. Mais representativo que a média pois ignora outliers.">i</span>
+        <div class="v" id="kpi-p50">-</div><div class="l">P50 Duração</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="Percentil 95 da duração de todos os runs na janela. Indica o pior caso desconsiderando apenas 5% dos outliers extremos.">i</span>
+        <div class="v" id="kpi-p95" style="color:var(--orange)">-</div><div class="l">P95 Duração</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="Mean Time To Recovery: tempo médio entre uma falha e o próximo sucesso na mesma DAG. Mede a velocidade de recuperação do ambiente.">i</span>
+        <div class="v" id="kpi-mttr" style="color:var(--cyan)">-</div><div class="l">MTTR</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="Número de DAGs com erros de importação (falha no parse do Python). Essas DAGs não aparecem na UI do Airflow e não executam.">i</span>
+        <div class="v" id="kpi-import-errors" style="color:var(--red)">-</div><div class="l">Import Errors</div>
+    </div>
+    <div class="kpi">
+        <span class="kpi-info" data-tip="Saturação máxima de pool = (used + queued) / total_slots × 100. Pools acima de 80% podem causar filas e atrasos.">i</span>
+        <div class="v" id="kpi-pool-saturation" style="color:var(--yellow)">-</div><div class="l">Pool Saturação</div>
+    </div>
+</div>
+
 <div class="charts">
     <div class="chart"><h3>Execuções por Dia</h3><div class="chart-container"><canvas id="c1"></canvas></div></div>
     <div class="chart"><h3>Status Geral</h3><div class="chart-container"><canvas id="c2"></canvas></div></div>
@@ -467,6 +491,32 @@ code {
     <div class="chart"><h3>Top 10 DAGs — Duração Média (min)</h3><div class="chart-container"><canvas id="c4"></canvas></div></div>
     <div class="chart"><h3>DAGs por Categoria (ativas)</h3><div class="chart-container"><canvas id="c5"></canvas></div></div>
     <div class="chart"><h3>Runs por Categoria</h3><div class="chart-container"><canvas id="c6"></canvas></div></div>
+    <div class="chart"><h3>Distribuição de Duração (P50 vs P95)</h3><div class="chart-container"><canvas id="c7"></canvas></div></div>
+    <div class="chart"><h3>Freshness (horas desde último sucesso)</h3><div class="chart-container"><canvas id="c8"></canvas></div></div>
+</div>
+
+<h2 class="section-title" id="title-pools">🏊 Pools</h2>
+<div class="table-card">
+    <table>
+        <thead><tr><th>Pool</th><th>Slots</th><th>Em uso</th><th>Fila</th><th>Saturação</th></tr></thead>
+        <tbody id="tabela-pools"></tbody>
+    </table>
+</div>
+
+<h2 class="section-title" id="title-import-errors">🚨 Import Errors</h2>
+<div class="table-card">
+    <table>
+        <thead><tr><th>Arquivo</th><th>Data</th><th>Erro (resumo)</th></tr></thead>
+        <tbody id="tabela-import-errors"></tbody>
+    </table>
+</div>
+
+<h2 class="section-title" id="title-top-tasks">🔥 Top Tasks com Falhas</h2>
+<div class="table-card">
+    <table>
+        <thead><tr><th>DAG</th><th>Task</th><th>Falhas</th></tr></thead>
+        <tbody id="tabela-top-tasks"></tbody>
+    </table>
 </div>
 
 <h2 class="section-title" id="title-falhas">⚠️ DAGs com Falhas</h2>
@@ -518,6 +568,16 @@ let VIEW = null;                       // {dags, daily, kpis} apos aplicar filtr
 Chart.defaults.color = '#94a3b8';
 
 const fmtDate = (dt) => dt ? new Date(dt).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) : '-';
+
+function calcPercentile(sortedArr, pct) {
+    if (!sortedArr || sortedArr.length === 0) return 0;
+    const n = sortedArr.length;
+    const k = (pct / 100) * (n - 1);
+    const f = Math.floor(k);
+    const c = Math.min(f + 1, n - 1);
+    const d = k - f;
+    return sortedArr[f] + d * (sortedArr[c] - sortedArr[f]);
+}
 
 function fmtDateOnly(iso) {
     if (!iso) return '-';
@@ -572,6 +632,21 @@ function buildView() {
         const avg_duration_min = durs.length > 0 ? +(durs.reduce((a,b)=>a+b,0)/durs.length).toFixed(1) : null;
         const max_duration_min = durs.length > 0 ? +Math.max(...durs).toFixed(1) : null;
         const min_duration_min = durs.length > 0 ? +Math.min(...durs).toFixed(1) : null;
+
+        // Percentis
+        const sortedDurs = [...durs].sort((a,b) => a - b);
+        const p50_duration_min = sortedDurs.length > 0 ? +calcPercentile(sortedDurs, 50).toFixed(1) : null;
+        const p95_duration_min = sortedDurs.length > 0 ? +calcPercentile(sortedDurs, 95).toFixed(1) : null;
+
+        // Freshness (recalcula baseado nos runs filtrados)
+        const successRuns = runs.filter(r => r.state === 'success' && r.end_date);
+        let freshness_hours = null;
+        if (successRuns.length > 0) {
+            const latest = successRuns.reduce((a,b) => new Date(b.end_date||0) > new Date(a.end_date||0) ? b : a);
+            const hrs = (Date.now() - new Date(latest.end_date).getTime()) / 3600000;
+            freshness_hours = +hrs.toFixed(1);
+        }
+
         const last = runs.reduce((a,b) => {
             if (!a) return b;
             return new Date(b.start_date||0) > new Date(a.start_date||0) ? b : a;
@@ -592,7 +667,9 @@ function buildView() {
             ...d,
             total, success, failed, running, queued,
             availability, avg_duration_min, max_duration_min, min_duration_min,
+            p50_duration_min, p95_duration_min, freshness_hours,
             last_run, daily,
+            runs, // runs filtrados por data para recalculos globais
         };
     });
 
@@ -623,10 +700,26 @@ function buildView() {
     const durs = dagsView.map(d => d.avg_duration_min).filter(x => x != null);
     const avg_duration_min = durs.length > 0 ? +(durs.reduce((a,b)=>a+b,0)/durs.length).toFixed(1) : 0;
 
+    // Camada 1: P50/P95 globais a partir de todos os runs individuais
+    const allRunDurs = [];
+    dagsView.forEach(d => { (d.runs||[]).forEach(r => { if (r.duration_min != null) allRunDurs.push(r.duration_min); }); });
+    allRunDurs.sort((a,b) => a - b);
+    const p50_duration_min = allRunDurs.length > 0 ? +calcPercentile(allRunDurs, 50).toFixed(1) : null;
+    const p95_duration_min = allRunDurs.length > 0 ? +calcPercentile(allRunDurs, 95).toFixed(1) : null;
+
+    // Camada 1: MTTR global (media dos MTTRs individuais)
+    const mttrs = dagsView.map(d => d.mttr_min).filter(x => x != null);
+    const mttr_min = mttrs.length > 0 ? +(mttrs.reduce((a,b)=>a+b,0)/mttrs.length).toFixed(1) : null;
+
+    // Pool saturation (dados globais, nao filtrados por data/categoria)
+    const poolSat = (DATA.pools||[]).map(p => p.saturation_pct).filter(x => x != null);
+    const pool_saturation_pct = poolSat.length > 0 ? Math.max(...poolSat) : null;
+
     const kpis = {
         total_dags, active_dags, paused_dags, inactive_dags,
         total_runs, success, failed, running,
         availability, avg_duration_min,
+        p50_duration_min, p95_duration_min, mttr_min, pool_saturation_pct,
     };
 
     return { dags: dagsView, daily: dailyView, kpis };
@@ -710,6 +803,19 @@ function setupKpis() {
     document.getElementById('kpi-running').textContent = k.running;
     document.getElementById('kpi-availability').textContent = k.availability + '%';
     document.getElementById('kpi-duration').textContent = k.avg_duration_min + ' min';
+
+    // Camada 1 KPIs
+    const p50El = document.getElementById('kpi-p50');
+    const p95El = document.getElementById('kpi-p95');
+    const mttrEl = document.getElementById('kpi-mttr');
+    const ieEl = document.getElementById('kpi-import-errors');
+    const psEl = document.getElementById('kpi-pool-saturation');
+
+    if (p50El) p50El.textContent = k.p50_duration_min != null ? k.p50_duration_min + ' min' : '-';
+    if (p95El) p95El.textContent = k.p95_duration_min != null ? k.p95_duration_min + ' min' : '-';
+    if (mttrEl) mttrEl.textContent = k.mttr_min != null ? k.mttr_min + ' min' : '-';
+    if (ieEl) ieEl.textContent = (DATA.import_errors || []).length;
+    if (psEl) psEl.textContent = k.pool_saturation_pct != null ? k.pool_saturation_pct + '%' : '-';
 }
 
 function setupCategoryBar() {
@@ -860,6 +966,51 @@ function setupCharts() {
                      y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
         }
     });
+
+    // Camada 1: Distribuicao P50 vs P95 por categoria
+    const catP50 = {};
+    const catP95 = {};
+    activeDags.forEach(d => {
+        if (!catP50[d.category]) { catP50[d.category] = []; catP95[d.category] = []; }
+        if (d.p50_duration_min != null) catP50[d.category].push(d.p50_duration_min);
+        if (d.p95_duration_min != null) catP95[d.category].push(d.p95_duration_min);
+    });
+    const catLabels7 = Object.keys(catP50).filter(c => catP50[c].length > 0).sort();
+    const avgP50 = catLabels7.map(c => { const v = catP50[c]; return v.length ? +(v.reduce((a,b)=>a+b,0)/v.length).toFixed(1) : 0; });
+    const avgP95 = catLabels7.map(c => { const v = catP95[c]; return v.length ? +(v.reduce((a,b)=>a+b,0)/v.length).toFixed(1) : 0; });
+    CHARTS.c7 = new Chart(document.getElementById('c7'), {
+        type: 'bar',
+        data: {
+            labels: catLabels7,
+            datasets: [
+                { label:'P50', data:avgP50, backgroundColor:'#a855f7', borderRadius:4 },
+                { label:'P95', data:avgP95, backgroundColor:'#f97316', borderRadius:4 }
+            ]
+        },
+        options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ labels:{ color:'#94a3b8' } } },
+            scales:{ x:{ ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                     y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
+        }
+    });
+
+    // Camada 1: Top 10 DAGs por Freshness (horas desde ultimo sucesso)
+    const freshDags = VIEW.dags.filter(d => d.freshness_hours != null && d.total > 0 && !d.is_paused)
+        .sort((a,b) => b.freshness_hours - a.freshness_hours).slice(0,10);
+    CHARTS.c8 = new Chart(document.getElementById('c8'), {
+        type: 'bar',
+        data: {
+            labels: freshDags.map(d => d.dag_id.length > 30 ? d.dag_id.slice(0,28)+'..' : d.dag_id),
+            datasets: [{ label:'horas', data:freshDags.map(d=>d.freshness_hours),
+                backgroundColor: freshDags.map(d => d.freshness_hours > 48 ? '#ef4444' : d.freshness_hours > 24 ? '#eab308' : '#22c55e'),
+                borderRadius:4 }]
+        },
+        options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+            plugins:{ legend:{ display:false } },
+            scales:{ x:{ ticks:{ color:'#94a3b8' }, grid:{ color:'#334155' } },
+                     y:{ ticks:{ color:'#94a3b8', font:{size:10} }, grid:{ display:false } } }
+        }
+    });
 }
 
 function renderFalhas() {
@@ -889,6 +1040,71 @@ function renderFalhas() {
             <td><span class="badge ${cls}">${lbl}</span></td>
         </tr>`;
     }).join('');
+}
+
+function renderPools() {
+    const tbody = document.getElementById('tabela-pools');
+    const pools = DATA.pools || [];
+    if (pools.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:18px">sem dados de pools</td></tr>';
+        return;
+    }
+    document.getElementById('title-pools').textContent = `🏊 Pools (${pools.length})`;
+    tbody.innerHTML = pools.sort((a,b) => b.saturation_pct - a.saturation_pct).map(p => {
+        const satCls = p.saturation_pct >= 80 ? 'color:var(--red)' :
+                       p.saturation_pct >= 50 ? 'color:var(--yellow)' : 'color:var(--green)';
+        return `<tr>
+            <td><code>${p.name}</code></td>
+            <td>${p.slots}</td>
+            <td>${p.used}</td>
+            <td>${p.queued}</td>
+            <td style="${satCls}"><strong>${p.saturation_pct}%</strong></td>
+        </tr>`;
+    }).join('');
+}
+
+function renderImportErrors() {
+    const tbody = document.getElementById('tabela-import-errors');
+    const errors = DATA.import_errors || [];
+    document.getElementById('title-import-errors').textContent =
+        `🚨 Import Errors (${errors.length})`;
+    if (errors.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:18px">nenhum import error (todas DAGs parseadas com sucesso)</td></tr>';
+        return;
+    }
+    tbody.innerHTML = errors.map(e => {
+        const ts = e.timestamp ? new Date(e.timestamp).toLocaleString('pt-BR', {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) : '-';
+        const trace = (e.stack_trace || '').split('\n').slice(-2).join(' ').slice(0, 120);
+        return `<tr>
+            <td><code>${(e.filename || '').split('/').pop() || e.filename}</code></td>
+            <td>${ts}</td>
+            <td style="font-size:0.72rem;color:var(--muted)">${trace}${trace.length >= 120 ? '...' : ''}</td>
+        </tr>`;
+    }).join('');
+}
+
+function renderTopTasks() {
+    const tbody = document.getElementById('tabela-top-tasks');
+    // Agrega top_failing_tasks de todos os DAGs
+    const allTasks = [];
+    VIEW.dags.forEach(d => {
+        (d.top_failing_tasks || []).forEach(t => {
+            allTasks.push({ dag_id: d.dag_id, task_id: t.task_id, failures: t.failures });
+        });
+    });
+    allTasks.sort((a,b) => b.failures - a.failures);
+    const top20 = allTasks.slice(0, 20);
+    document.getElementById('title-top-tasks').textContent =
+        `🔥 Top Tasks com Falhas (${top20.length})`;
+    if (top20.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:18px">nenhuma task com falha na janela</td></tr>';
+        return;
+    }
+    tbody.innerHTML = top20.map(t => `<tr>
+        <td><code>${t.dag_id}</code></td>
+        <td><code>${t.task_id}</code></td>
+        <td style="color:var(--red)"><strong>${t.failures}</strong></td>
+    </tr>`).join('');
 }
 
 function renderTabela(data) {
@@ -949,6 +1165,9 @@ function applyAll() {
         `📋 Detalhamento por DAG — ${VIEW.kpis.total_dags} DAGs`;
     setupKpis();
     setupCharts();
+    renderPools();
+    renderImportErrors();
+    renderTopTasks();
     renderFalhas();
     filtrar();
 }
