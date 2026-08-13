@@ -609,7 +609,7 @@ code {
     <div class="table-card">
         <table>
             <thead><tr>
-                <th>#</th><th>Task ID</th><th>Status</th><th>Início (BRT)</th><th>Fim (BRT)</th><th>Duração (s)</th>
+                <th>#</th><th>Task ID</th><th>Tabela</th><th>Status</th><th>Início (BRT)</th><th>Fim (BRT)</th><th>Duração (s)</th>
             </tr></thead>
             <tbody id="tabela-tasks-detail"></tbody>
         </table>
@@ -1304,7 +1304,7 @@ function renderRunsDetail() {
 
     if (!dagId) {
         tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">Selecione uma DAG acima para ver o histórico de execuções</td></tr>';
-        tasksTbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Selecione uma DAG para ver detalhes por task</td></tr>';
+        tasksTbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:18px">Selecione uma DAG para ver detalhes por task</td></tr>';
         summary.innerHTML = '';
         runSelector.innerHTML = '';
         return;
@@ -1395,7 +1395,7 @@ function selectRunForTasks(idx) {
 function renderTasksForRun(runData) {
     const tasksTbody = document.getElementById('tabela-tasks-detail');
     if (!runData || !runData.tasks || runData.tasks.length === 0) {
-        tasksTbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhuma task encontrada neste run</td></tr>';
+        tasksTbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:18px">Nenhuma task encontrada neste run</td></tr>';
         return;
     }
 
@@ -1407,15 +1407,34 @@ function renderTasksForRun(runData) {
                          t.state === 'skipped' ? 'nodata' : 'nodata';
         const stLabel = t.state ? t.state.toUpperCase() : '-';
         const dur = t.duration != null ? Math.round(t.duration * 10) / 10 : '-';
+        const tableName = extractTableName(t.task_id);
         return `<tr>
             <td style="color:var(--muted)">${i + 1}</td>
             <td><code>${t.task_id}</code></td>
+            <td>${tableName ? '<code style="color:var(--cyan)">' + tableName + '</code>' : '<span style="color:var(--muted)">-</span>'}</td>
             <td><span class="badge ${badgeCls}">${stLabel}</span></td>
             <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.start_date)}</td>
             <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.end_date)}</td>
             <td>${dur}</td>
         </tr>`;
     }).join('');
+}
+
+function extractTableName(taskId) {
+    if (!taskId) return null;
+    // Padrões comuns nos task_ids:
+    // wf_xxx.m_xxx.tb_xxx_insert -> tb_xxx
+    // wf_xxx.m_xxx.vw_xxx_insert -> vw_xxx
+    // Tenta extrair tb_*, vw_*, dim_*, fato_*, agg_* do task_id
+    const match = taskId.match(/((?:tb_|vw_|dim_|fato_|fct_|agg_|snap_|kpi_|mart_|bridge_)[a-z0-9_]+?)(?:_(?:insert|truncate|delete|create|drop|update|upsert|merge))?$/i);
+    if (match) return match[1];
+    // Fallback: ultimo segmento após o último ponto (sem _insert/_create etc)
+    const parts = taskId.split('.');
+    const last = parts[parts.length - 1];
+    const cleaned = last.replace(/_(insert|truncate|delete|create|drop|update|upsert|merge)$/i, '');
+    // Só retorna se parecer um nome de tabela (contem tb_, vw_, etc)
+    if (/^(tb_|vw_|dim_|fato_|fct_|agg_|snap_)/.test(cleaned)) return cleaned;
+    return null;
 }
 
 document.addEventListener('DOMContentLoaded', bootstrap);
