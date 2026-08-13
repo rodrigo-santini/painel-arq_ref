@@ -603,6 +603,17 @@ code {
             <tbody id="tabela-runs-detail"></tbody>
         </table>
     </div>
+
+    <h2 class="section-title" id="title-tasks-timeline">📋 Detalhamento por Task (últimos 3 runs)</h2>
+    <div id="task-run-selector" style="margin-bottom:12px"></div>
+    <div class="table-card">
+        <table>
+            <thead><tr>
+                <th>#</th><th>Task ID</th><th>Status</th><th>Início (BRT)</th><th>Fim (BRT)</th><th>Duração (s)</th>
+            </tr></thead>
+            <tbody id="tabela-tasks-detail"></tbody>
+        </table>
+    </div>
 </div><!-- /tab-runs-detail -->
 
 <script>
@@ -1288,17 +1299,23 @@ function renderRunsDetail() {
     const dagId = document.getElementById('dag-select').value;
     const tbody = document.getElementById('tabela-runs-detail');
     const summary = document.getElementById('runs-detail-summary');
+    const tasksTbody = document.getElementById('tabela-tasks-detail');
+    const runSelector = document.getElementById('task-run-selector');
 
     if (!dagId) {
         tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">Selecione uma DAG acima para ver o histórico de execuções</td></tr>';
+        tasksTbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Selecione uma DAG para ver detalhes por task</td></tr>';
         summary.innerHTML = '';
+        runSelector.innerHTML = '';
         return;
     }
 
     const dag = DATA.dags.find(d => d.dag_id === dagId);
     if (!dag || !dag.runs || dag.runs.length === 0) {
         tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhum run encontrado para esta DAG na janela</td></tr>';
+        tasksTbody.innerHTML = '';
         summary.innerHTML = '';
+        runSelector.innerHTML = '';
         return;
     }
 
@@ -1335,6 +1352,68 @@ function renderRunsDetail() {
             <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(r.end_date)}</td>
             <td>${r.duration_min != null ? r.duration_min + ' min' : '-'}</td>
             <td>${r.day || '-'}</td>
+        </tr>`;
+    }).join('');
+
+    // Task detail section
+    const recentTasks = dag.recent_runs_tasks || [];
+    if (recentTasks.length === 0) {
+        runSelector.innerHTML = '<span style="font-size:0.78rem;color:var(--muted)">Dados de task instances não disponíveis. Execute o refresh para coletar.</span>';
+        tasksTbody.innerHTML = '';
+        return;
+    }
+
+    // Build run selector chips
+    runSelector.innerHTML = '<span style="font-size:0.72rem;color:var(--text-2);font-weight:600;margin-right:10px">RUN:</span>' +
+        recentTasks.map((rt, idx) => {
+            const label = fmtBRT(rt.start_date);
+            const stCls = rt.state === 'success' ? 'success' : rt.state === 'failed' ? 'failed' : 'running';
+            return `<button class="date-chip ${idx === 0 ? 'active' : ''}" data-run-idx="${idx}" onclick="selectRunForTasks(${idx})" style="margin-right:6px">
+                <span class="badge ${stCls}" style="margin-right:4px;font-size:0.6rem">${(rt.state||'').slice(0,3).toUpperCase()}</span>${label}
+            </button>`;
+        }).join('');
+
+    // Show first run's tasks by default
+    renderTasksForRun(recentTasks[0]);
+}
+
+function selectRunForTasks(idx) {
+    const dagId = document.getElementById('dag-select').value;
+    const dag = DATA.dags.find(d => d.dag_id === dagId);
+    if (!dag) return;
+    const recentTasks = dag.recent_runs_tasks || [];
+    if (idx >= recentTasks.length) return;
+
+    // Update active chip
+    document.querySelectorAll('#task-run-selector .date-chip').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+    });
+
+    renderTasksForRun(recentTasks[idx]);
+}
+
+function renderTasksForRun(runData) {
+    const tasksTbody = document.getElementById('tabela-tasks-detail');
+    if (!runData || !runData.tasks || runData.tasks.length === 0) {
+        tasksTbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhuma task encontrada neste run</td></tr>';
+        return;
+    }
+
+    tasksTbody.innerHTML = runData.tasks.map((t, i) => {
+        const badgeCls = t.state === 'success' ? 'success' :
+                         t.state === 'failed' ? 'failed' :
+                         t.state === 'running' ? 'running' :
+                         t.state === 'upstream_failed' ? 'upstream_failed' :
+                         t.state === 'skipped' ? 'nodata' : 'nodata';
+        const stLabel = t.state ? t.state.toUpperCase() : '-';
+        const dur = t.duration != null ? Math.round(t.duration * 10) / 10 : '-';
+        return `<tr>
+            <td style="color:var(--muted)">${i + 1}</td>
+            <td><code>${t.task_id}</code></td>
+            <td><span class="badge ${badgeCls}">${stLabel}</span></td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.start_date)}</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.end_date)}</td>
+            <td>${dur}</td>
         </tr>`;
     }).join('');
 }
