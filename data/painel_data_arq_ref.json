@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-20T13:28:03.468918+00:00",
+  "generated_at": "2026-08-20T14:56:42.980026+00:00",
   "environment": "datax-gold-prd",
   "airflow_version": "2.10.3",
-  "period_start": "2026-08-05T13:20:56Z",
-  "period_end": "2026-08-20T13:20:56Z",
+  "period_start": "2026-08-05T14:49:04Z",
+  "period_end": "2026-08-20T14:49:04Z",
   "period_days": 15,
   "kpis": {
     "total_dags": 182,
@@ -11,23 +11,23 @@
     "paused_dags": 63,
     "inactive_dags": 29,
     "dags_with_runs": 103,
-    "total_runs": 1349,
-    "success": 1242,
+    "total_runs": 1351,
+    "success": 1246,
     "failed": 105,
-    "running": 2,
-    "availability": 92.1,
-    "avg_duration_min": 23.6,
+    "running": 0,
+    "availability": 92.2,
+    "avg_duration_min": 23.5,
     "p50_duration_min": 2.9,
-    "p95_duration_min": 92.6,
+    "p95_duration_min": 92.5,
     "mttr_min": 4766.6,
     "import_errors": 0,
     "pool_saturation_pct": 0.0
   },
   "daily": {
     "2026-08-20": {
-      "success": 52,
+      "success": 62,
       "failed": 3,
-      "running": 2
+      "running": 0
     },
     "2026-08-19": {
       "success": 95,
@@ -100,7 +100,7 @@
       "running": 0
     },
     "2026-08-05": {
-      "success": 23,
+      "success": 17,
       "failed": 5,
       "running": 0
     }
@@ -112,29 +112,29 @@
       "is_active": true,
       "schedule": "00 10 * * *",
       "total": 15,
-      "success": 12,
+      "success": 13,
       "failed": 2,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 80.0,
-      "avg_duration_min": 227.6,
+      "availability": 86.7,
+      "avg_duration_min": 219.0,
       "max_duration_min": 751.0,
       "min_duration_min": 82.7,
-      "p50_duration_min": 144.9,
-      "p95_duration_min": 595.6,
-      "freshness_hours": 22.6,
+      "p50_duration_min": 121.4,
+      "p95_duration_min": 583.7,
+      "freshness_hours": 0.2,
       "mttr_min": 2699.6,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-08-20T13:00:02.286837+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-20T14:38:11.619548+00:00",
+        "duration_min": 98.2
       },
       "daily": {
         "2026-08-20": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-08-19": {
           "success": 1,
@@ -209,10 +209,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-08-20T13:00:02.286837+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-20T14:38:11.619548+00:00",
+          "duration_min": 98.2,
           "day": "2026-08-20"
         },
         {
@@ -341,85 +341,8 @@
         {
           "dag_run_id": "scheduled__2026-08-19T13:00:00+00:00",
           "start_date": "2026-08-20T13:00:02.286837+00:00",
-          "state": "running",
+          "state": "success",
           "tasks": [
-            {
-              "task_id": "wf_rematricula.m_fato.tb_fat_aluno_rematricula_insert",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_rematricula.m_view.vw_fat_aluno_rematricula_insert",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start_workflow.save_execution_log_start",
               "state": "success",
@@ -443,17 +366,94 @@
             },
             {
               "task_id": "wf_rematricula.m_works.m_nmatch.tb_wrk_remat_aluno_nao_match_bis_insert",
-              "state": "running",
+              "state": "success",
               "start_date": "2026-08-20T13:05:14.002960+00:00",
-              "end_date": null,
-              "duration": null
+              "end_date": "2026-08-20T13:59:43.709812+00:00",
+              "duration": 3269.706852
             },
             {
               "task_id": "wf_rematricula.m_works.m_match.tb_wrk_remat_aluno_match_bis_insert",
-              "state": "running",
+              "state": "success",
               "start_date": "2026-08-20T13:05:14.383262+00:00",
-              "end_date": null,
-              "duration": null
+              "end_date": "2026-08-20T14:10:11.841430+00:00",
+              "duration": 3897.458168
+            },
+            {
+              "task_id": "wf_rematricula.m_fato.tb_fat_aluno_rematricula_insert",
+              "state": "success",
+              "start_date": "2026-08-20T14:10:15.443962+00:00",
+              "end_date": "2026-08-20T14:29:49.102714+00:00",
+              "duration": 1173.658752
+            },
+            {
+              "task_id": "wf_rematricula.m_view.vw_fat_aluno_rematricula_insert",
+              "state": "success",
+              "start_date": "2026-08-20T14:29:52.898523+00:00",
+              "end_date": "2026-08-20T14:37:47.933400+00:00",
+              "duration": 475.034877
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:52.051788+00:00",
+              "end_date": "2026-08-20T14:37:52.780190+00:00",
+              "duration": 0.728402
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:59.769628+00:00",
+              "end_date": "2026-08-20T14:38:01.185428+00:00",
+              "duration": 1.4158
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:59.971437+00:00",
+              "end_date": "2026-08-20T14:38:00.673144+00:00",
+              "duration": 0.701707
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:02.901150+00:00",
+              "end_date": "2026-08-20T14:38:05.373650+00:00",
+              "duration": 2.4725
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:04.445810+00:00",
+              "end_date": "2026-08-20T14:38:06.552335+00:00",
+              "duration": 2.106525
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T14:38:04.467315+00:00",
+              "end_date": "2026-08-20T14:38:05.129143+00:00",
+              "duration": 0.661828
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:04.754859+00:00",
+              "end_date": "2026-08-20T14:38:06.578505+00:00",
+              "duration": 1.823646
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:05.062903+00:00",
+              "end_date": "2026-08-20T14:38:07.236082+00:00",
+              "duration": 2.173179
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:10.997200+00:00",
+              "end_date": "2026-08-20T14:38:11.489682+00:00",
+              "duration": 0.492482
             }
           ]
         },
@@ -1038,7 +1038,7 @@
       "min_duration_min": 0.2,
       "p50_duration_min": 25.9,
       "p95_duration_min": 223.6,
-      "freshness_hours": 209.2,
+      "freshness_hours": 210.7,
       "mttr_min": 8737.1,
       "last_run": {
         "state": "failed",
@@ -2046,7 +2046,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.5,
       "p95_duration_min": 8.8,
-      "freshness_hours": 8.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -2542,26 +2542,31 @@
       "is_paused": false,
       "is_active": true,
       "schedule": "Dataset",
-      "total": 9,
-      "success": 9,
+      "total": 10,
+      "success": 10,
       "failed": 0,
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 10.8,
+      "avg_duration_min": 10.3,
       "max_duration_min": 29.5,
       "min_duration_min": 3.2,
-      "p50_duration_min": 6.7,
-      "p95_duration_min": 25.0,
-      "freshness_hours": 22.7,
+      "p50_duration_min": 6.6,
+      "p95_duration_min": 24.4,
+      "freshness_hours": 0.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T14:31:58.218945+00:00",
-        "end_date": "2026-08-19T14:38:40.796996+00:00",
-        "duration_min": 6.7
+        "start_date": "2026-08-20T14:35:44.915060+00:00",
+        "end_date": "2026-08-20T14:42:05.921543+00:00",
+        "duration_min": 6.4
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -2609,6 +2614,13 @@
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T14:35:44.915060+00:00",
+          "end_date": "2026-08-20T14:42:05.921543+00:00",
+          "duration_min": 6.4,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T14:31:58.218945+00:00",
@@ -2676,6 +2688,125 @@
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "dataset_triggered__2026-08-20T14:35:43.490336+00:00",
+          "start_date": "2026-08-20T14:35:44.915060+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:49.750467+00:00",
+              "end_date": "2026-08-20T14:35:50.593135+00:00",
+              "duration": 0.842668
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:55.536655+00:00",
+              "end_date": "2026-08-20T14:35:55.957916+00:00",
+              "duration": 0.421261
+            },
+            {
+              "task_id": "create_insert_tb_temp_faturamento_consolidado.insert_tb_temp_faturamento_consolidado",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:59.379627+00:00",
+              "end_date": "2026-08-20T14:36:21.605217+00:00",
+              "duration": 22.22559
+            },
+            {
+              "task_id": "create_insert_tb_zeus_arrecadacao_diaria_0002.insert_tb_zeus_arrecadacao_diaria_0002",
+              "state": "success",
+              "start_date": "2026-08-20T14:36:28.290324+00:00",
+              "end_date": "2026-08-20T14:36:39.699794+00:00",
+              "duration": 11.40947
+            },
+            {
+              "task_id": "create_insert_tb_zeus_arrecadacao_9999.insert_tb_zeus_arrecadacao_9999",
+              "state": "success",
+              "start_date": "2026-08-20T14:36:43.109267+00:00",
+              "end_date": "2026-08-20T14:38:26.275789+00:00",
+              "duration": 103.166522
+            },
+            {
+              "task_id": "create_insert_tb_zeus_arrecadacao_consolidado_9999.insert_tb_zeus_arrecadacao_consolidado_9999",
+              "state": "success",
+              "start_date": "2026-08-20T14:38:32.011163+00:00",
+              "end_date": "2026-08-20T14:40:44.512850+00:00",
+              "duration": 132.501687
+            },
+            {
+              "task_id": "create_insert_tb_fechamento_diario_0001.insert_tb_fechamento_diario_0001",
+              "state": "success",
+              "start_date": "2026-08-20T14:40:49.667655+00:00",
+              "end_date": "2026-08-20T14:41:41.324809+00:00",
+              "duration": 51.657154
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:45.739933+00:00",
+              "end_date": "2026-08-20T14:41:46.463081+00:00",
+              "duration": 0.723148
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:56.446906+00:00",
+              "end_date": "2026-08-20T14:41:58.574129+00:00",
+              "duration": 2.127223
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:56.840586+00:00",
+              "end_date": "2026-08-20T14:41:58.924668+00:00",
+              "duration": 2.084082
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:57.084645+00:00",
+              "end_date": "2026-08-20T14:41:59.003225+00:00",
+              "duration": 1.91858
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T14:41:57.339205+00:00",
+              "end_date": "2026-08-20T14:41:57.971583+00:00",
+              "duration": 0.632378
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:57.386806+00:00",
+              "end_date": "2026-08-20T14:41:58.318817+00:00",
+              "duration": 0.932011
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:58.312654+00:00",
+              "end_date": "2026-08-20T14:42:00.060113+00:00",
+              "duration": 1.747459
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:41:58.323151+00:00",
+              "end_date": "2026-08-20T14:42:00.146446+00:00",
+              "duration": 1.823295
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T14:42:04.599788+00:00",
+              "end_date": "2026-08-20T14:42:05.365074+00:00",
+              "duration": 0.765286
+            }
+          ]
+        },
         {
           "dag_run_id": "dataset_triggered__2026-08-19T14:31:56.626728+00:00",
           "start_date": "2026-08-19T14:31:58.218945+00:00",
@@ -2913,125 +3044,6 @@
               "duration": 0.544999
             }
           ]
-        },
-        {
-          "dag_run_id": "dataset_triggered__2026-08-17T14:47:13.435667+00:00",
-          "start_date": "2026-08-17T14:47:15.579612+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:18.649922+00:00",
-              "end_date": "2026-08-17T14:47:19.102850+00:00",
-              "duration": 0.452928
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:26.615261+00:00",
-              "end_date": "2026-08-17T14:47:27.191310+00:00",
-              "duration": 0.576049
-            },
-            {
-              "task_id": "create_insert_tb_temp_faturamento_consolidado.insert_tb_temp_faturamento_consolidado",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:31.480305+00:00",
-              "end_date": "2026-08-17T14:48:03.266933+00:00",
-              "duration": 31.786628
-            },
-            {
-              "task_id": "create_insert_tb_zeus_arrecadacao_diaria_0002.insert_tb_zeus_arrecadacao_diaria_0002",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:06.762488+00:00",
-              "end_date": "2026-08-17T14:48:18.015449+00:00",
-              "duration": 11.252961
-            },
-            {
-              "task_id": "create_insert_tb_zeus_arrecadacao_9999.insert_tb_zeus_arrecadacao_9999",
-              "state": "success",
-              "start_date": "2026-08-17T14:53:00.232922+00:00",
-              "end_date": "2026-08-17T14:54:12.862463+00:00",
-              "duration": 72.629541
-            },
-            {
-              "task_id": "create_insert_tb_zeus_arrecadacao_consolidado_9999.insert_tb_zeus_arrecadacao_consolidado_9999",
-              "state": "success",
-              "start_date": "2026-08-17T14:54:17.395257+00:00",
-              "end_date": "2026-08-17T14:56:50.076244+00:00",
-              "duration": 152.680987
-            },
-            {
-              "task_id": "create_insert_tb_fechamento_diario_0001.insert_tb_fechamento_diario_0001",
-              "state": "success",
-              "start_date": "2026-08-17T14:56:53.562293+00:00",
-              "end_date": "2026-08-17T14:57:45.233056+00:00",
-              "duration": 51.670763
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:57:50.713192+00:00",
-              "end_date": "2026-08-17T14:57:51.322714+00:00",
-              "duration": 0.609522
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:57:58.235304+00:00",
-              "end_date": "2026-08-17T14:58:00.523934+00:00",
-              "duration": 2.28863
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:57:58.536907+00:00",
-              "end_date": "2026-08-17T14:57:59.756812+00:00",
-              "duration": 1.219905
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:58:03.054159+00:00",
-              "end_date": "2026-08-17T14:58:04.932785+00:00",
-              "duration": 1.878626
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:58:03.104739+00:00",
-              "end_date": "2026-08-17T14:58:05.354850+00:00",
-              "duration": 2.250111
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:58:03.192181+00:00",
-              "end_date": "2026-08-17T14:58:06.446595+00:00",
-              "duration": 3.254414
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T14:58:03.468216+00:00",
-              "end_date": "2026-08-17T14:58:04.175284+00:00",
-              "duration": 0.707068
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T14:58:03.482698+00:00",
-              "end_date": "2026-08-17T14:58:04.514937+00:00",
-              "duration": 1.032239
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T14:58:10.881205+00:00",
-              "end_date": "2026-08-17T14:58:11.334899+00:00",
-              "duration": 0.453694
-            }
-          ]
         }
       ]
     },
@@ -3051,7 +3063,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 6.9,
-      "freshness_hours": 16.3,
+      "freshness_hours": 17.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -3558,7 +3570,7 @@
       "min_duration_min": 27.6,
       "p50_duration_min": 34.8,
       "p95_duration_min": 340.8,
-      "freshness_hours": 19.8,
+      "freshness_hours": 21.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -4153,7 +4165,7 @@
       "min_duration_min": 3.5,
       "p50_duration_min": 5.1,
       "p95_duration_min": 41.9,
-      "freshness_hours": 16.3,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -4702,7 +4714,7 @@
       "min_duration_min": 10.8,
       "p50_duration_min": 32.8,
       "p95_duration_min": 464.3,
-      "freshness_hours": 22.1,
+      "freshness_hours": 23.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -5229,20 +5241,25 @@
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 152.1,
+      "avg_duration_min": 145.3,
       "max_duration_min": 679.3,
       "min_duration_min": 18.6,
-      "p50_duration_min": 59.2,
+      "p50_duration_min": 26.1,
       "p95_duration_min": 589.8,
-      "freshness_hours": 23.0,
+      "freshness_hours": 0.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T14:00:01.113348+00:00",
-        "end_date": "2026-08-19T14:19:37.088196+00:00",
-        "duration_min": 19.6
+        "start_date": "2026-08-20T14:00:01.823275+00:00",
+        "end_date": "2026-08-20T14:20:05.102810+00:00",
+        "duration_min": 20.1
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -5312,14 +5329,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T14:00:01.823275+00:00",
+          "end_date": "2026-08-20T14:20:05.102810+00:00",
+          "duration_min": 20.1,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T14:00:01.113348+00:00",
@@ -5417,18 +5436,158 @@
           "end_date": "2026-08-06T23:11:31.417939+00:00",
           "duration_min": 551.5,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T14:00:01.287219+00:00",
-          "end_date": "2026-08-05T16:01:22.357880+00:00",
-          "duration_min": 121.4,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-19T14:00:00+00:00",
+          "start_date": "2026-08-20T14:00:01.823275+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:06.009711+00:00",
+              "end_date": "2026-08-20T14:00:06.706468+00:00",
+              "duration": 0.696757
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:10.756597+00:00",
+              "end_date": "2026-08-20T14:00:11.292818+00:00",
+              "duration": 0.536221
+            },
+            {
+              "task_id": "plancaixa_etl_olimpo.run_query_etl_colchao_olimpo",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:14.872788+00:00",
+              "end_date": "2026-08-20T14:00:36.284196+00:00",
+              "duration": 21.411408
+            },
+            {
+              "task_id": "plancaixa_etl_olimpo.run_query_etl_acordos_olimpo",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:15.466597+00:00",
+              "end_date": "2026-08-20T14:00:27.025902+00:00",
+              "duration": 11.559305
+            },
+            {
+              "task_id": "plancaixa_etl_ead.run_query_etl_recebimento_ead",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:41.968170+00:00",
+              "end_date": "2026-08-20T14:12:19.632204+00:00",
+              "duration": 697.664034
+            },
+            {
+              "task_id": "plancaixa_etl_ead.run_query_etl_faturamento_ead",
+              "state": "success",
+              "start_date": "2026-08-20T14:00:42.033448+00:00",
+              "end_date": "2026-08-20T14:10:18.949761+00:00",
+              "duration": 576.916313
+            },
+            {
+              "task_id": "plancaixa_etl_presencial.run_query_etl_faturamento_presencial",
+              "state": "success",
+              "start_date": "2026-08-20T14:12:23.152734+00:00",
+              "end_date": "2026-08-20T14:13:15.090111+00:00",
+              "duration": 51.937377
+            },
+            {
+              "task_id": "plancaixa_etl_presencial.run_query_etl_recebimento_presencial",
+              "state": "success",
+              "start_date": "2026-08-20T14:12:24.755640+00:00",
+              "end_date": "2026-08-20T14:13:26.926630+00:00",
+              "duration": 62.17099
+            },
+            {
+              "task_id": "plancaixa_etl_cob.run_query_etl_recebimentos_cob_ampli",
+              "state": "success",
+              "start_date": "2026-08-20T14:13:32.233383+00:00",
+              "end_date": "2026-08-20T14:15:14.369513+00:00",
+              "duration": 102.13613
+            },
+            {
+              "task_id": "plancaixa_etl_cob.run_query_etl_recebimentos_cob",
+              "state": "success",
+              "start_date": "2026-08-20T14:18:18.074385+00:00",
+              "end_date": "2026-08-20T14:19:19.622088+00:00",
+              "duration": 61.547703
+            },
+            {
+              "task_id": "plancaixa_etl_recebidos.run_query_etl_pagamentos_recebidos",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:24.859913+00:00",
+              "end_date": "2026-08-20T14:19:36.470257+00:00",
+              "duration": 11.610344
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:40.342530+00:00",
+              "end_date": "2026-08-20T14:19:40.929130+00:00",
+              "duration": 0.5866
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:47.359615+00:00",
+              "end_date": "2026-08-20T14:19:49.502542+00:00",
+              "duration": 2.142927
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:47.400277+00:00",
+              "end_date": "2026-08-20T14:19:49.432596+00:00",
+              "duration": 2.032319
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:52.766284+00:00",
+              "end_date": "2026-08-20T14:19:55.965097+00:00",
+              "duration": 3.198813
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:54.021400+00:00",
+              "end_date": "2026-08-20T14:19:55.611436+00:00",
+              "duration": 1.590036
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:54.878601+00:00",
+              "end_date": "2026-08-20T14:19:57.494908+00:00",
+              "duration": 2.616307
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T14:19:54.909488+00:00",
+              "end_date": "2026-08-20T14:19:55.911551+00:00",
+              "duration": 1.002063
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:19:55.172524+00:00",
+              "end_date": "2026-08-20T14:19:59.334903+00:00",
+              "duration": 4.162379
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:03.656031+00:00",
+              "end_date": "2026-08-20T14:20:04.187400+00:00",
+              "duration": 0.531369
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-18T14:00:00+00:00",
           "start_date": "2026-08-19T14:00:01.113348+00:00",
@@ -5720,153 +5879,6 @@
               "start_date": "2026-08-18T14:19:33.130862+00:00",
               "end_date": "2026-08-18T14:19:33.542284+00:00",
               "duration": 0.411422
-            }
-          ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-16T14:00:00+00:00",
-          "start_date": "2026-08-17T14:00:02.681277+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:06.248476+00:00",
-              "end_date": "2026-08-17T14:00:06.820015+00:00",
-              "duration": 0.571539
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:10.535725+00:00",
-              "end_date": "2026-08-17T14:00:10.883400+00:00",
-              "duration": 0.347675
-            },
-            {
-              "task_id": "plancaixa_etl_olimpo.run_query_etl_acordos_olimpo",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:16.403495+00:00",
-              "end_date": "2026-08-17T14:00:27.888593+00:00",
-              "duration": 11.485098
-            },
-            {
-              "task_id": "plancaixa_etl_olimpo.run_query_etl_colchao_olimpo",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:16.431110+00:00",
-              "end_date": "2026-08-17T14:00:27.896156+00:00",
-              "duration": 11.465046
-            },
-            {
-              "task_id": "plancaixa_etl_ead.run_query_etl_faturamento_ead",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:31.552246+00:00",
-              "end_date": "2026-08-17T14:16:52.145410+00:00",
-              "duration": 980.593164
-            },
-            {
-              "task_id": "plancaixa_etl_ead.run_query_etl_recebimento_ead",
-              "state": "success",
-              "start_date": "2026-08-17T14:00:31.984576+00:00",
-              "end_date": "2026-08-17T14:16:32.078744+00:00",
-              "duration": 960.094168
-            },
-            {
-              "task_id": "plancaixa_etl_presencial.run_query_etl_recebimento_presencial",
-              "state": "success",
-              "start_date": "2026-08-17T14:16:55.825593+00:00",
-              "end_date": "2026-08-17T14:17:37.462730+00:00",
-              "duration": 41.637137
-            },
-            {
-              "task_id": "plancaixa_etl_presencial.run_query_etl_faturamento_presencial",
-              "state": "success",
-              "start_date": "2026-08-17T14:16:56.737546+00:00",
-              "end_date": "2026-08-17T14:17:38.361026+00:00",
-              "duration": 41.62348
-            },
-            {
-              "task_id": "plancaixa_etl_cob.run_query_etl_recebimentos_cob_ampli",
-              "state": "success",
-              "start_date": "2026-08-17T14:17:43.096858+00:00",
-              "end_date": "2026-08-17T14:20:55.632231+00:00",
-              "duration": 192.535373
-            },
-            {
-              "task_id": "plancaixa_etl_cob.run_query_etl_recebimentos_cob",
-              "state": "success",
-              "start_date": "2026-08-17T14:23:59.730531+00:00",
-              "end_date": "2026-08-17T14:25:11.584818+00:00",
-              "duration": 71.854287
-            },
-            {
-              "task_id": "plancaixa_etl_recebidos.run_query_etl_pagamentos_recebidos",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:15.335554+00:00",
-              "end_date": "2026-08-17T14:25:36.859860+00:00",
-              "duration": 21.524306
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:40.685314+00:00",
-              "end_date": "2026-08-17T14:25:41.275979+00:00",
-              "duration": 0.590665
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:45.601852+00:00",
-              "end_date": "2026-08-17T14:25:46.700432+00:00",
-              "duration": 1.09858
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:57.816077+00:00",
-              "end_date": "2026-08-17T14:26:00.262696+00:00",
-              "duration": 2.446619
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:58.532223+00:00",
-              "end_date": "2026-08-17T14:26:03.143872+00:00",
-              "duration": 4.611649
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T14:25:58.700047+00:00",
-              "end_date": "2026-08-17T14:25:59.462592+00:00",
-              "duration": 0.762545
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:59.082066+00:00",
-              "end_date": "2026-08-17T14:26:00.260585+00:00",
-              "duration": 1.178519
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:59.241435+00:00",
-              "end_date": "2026-08-17T14:26:01.889932+00:00",
-              "duration": 2.648497
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:25:59.244288+00:00",
-              "end_date": "2026-08-17T14:26:03.638083+00:00",
-              "duration": 4.393795
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:07.219324+00:00",
-              "end_date": "2026-08-17T14:26:07.690930+00:00",
-              "duration": 0.471606
             }
           ]
         }
@@ -6437,7 +6449,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.9,
       "p95_duration_min": 1.2,
-      "freshness_hours": 16.3,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -6923,7 +6935,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.6,
       "p95_duration_min": 36.6,
-      "freshness_hours": 21.8,
+      "freshness_hours": 23.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -7489,8 +7501,8 @@
       "is_paused": false,
       "is_active": true,
       "schedule": "Dataset",
-      "total": 9,
-      "success": 9,
+      "total": 10,
+      "success": 10,
       "failed": 0,
       "running": 0,
       "queued": 0,
@@ -7498,17 +7510,22 @@
       "avg_duration_min": 1.9,
       "max_duration_min": 3.1,
       "min_duration_min": 1.4,
-      "p50_duration_min": 1.7,
+      "p50_duration_min": 1.6,
       "p95_duration_min": 3.0,
-      "freshness_hours": 22.8,
+      "freshness_hours": 0.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T14:31:58.221993+00:00",
-        "end_date": "2026-08-19T14:33:40.635506+00:00",
-        "duration_min": 1.7
+        "start_date": "2026-08-20T14:35:44.912931+00:00",
+        "end_date": "2026-08-20T14:37:21.986776+00:00",
+        "duration_min": 1.6
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -7556,6 +7573,13 @@
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T14:35:44.912931+00:00",
+          "end_date": "2026-08-20T14:37:21.986776+00:00",
+          "duration_min": 1.6,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T14:31:58.221993+00:00",
@@ -7623,6 +7647,111 @@
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "dataset_triggered__2026-08-20T14:35:43.490331+00:00",
+          "start_date": "2026-08-20T14:35:44.912931+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:48.165543+00:00",
+              "end_date": "2026-08-20T14:35:48.647679+00:00",
+              "duration": 0.482136
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:52.762237+00:00",
+              "end_date": "2026-08-20T14:35:53.195969+00:00",
+              "duration": 0.433732
+            },
+            {
+              "task_id": "run_query_tb_arrecadacao_pep",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:56.504632+00:00",
+              "end_date": "2026-08-20T14:36:07.781410+00:00",
+              "duration": 11.276778
+            },
+            {
+              "task_id": "run_query_tb_faturamento_pep",
+              "state": "success",
+              "start_date": "2026-08-20T14:36:11.084343+00:00",
+              "end_date": "2026-08-20T14:36:22.332588+00:00",
+              "duration": 11.248245
+            },
+            {
+              "task_id": "run_query_tb_base_pep_inativo",
+              "state": "success",
+              "start_date": "2026-08-20T14:36:28.421112+00:00",
+              "end_date": "2026-08-20T14:36:59.936729+00:00",
+              "duration": 31.515617
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:03.560498+00:00",
+              "end_date": "2026-08-20T14:37:04.103772+00:00",
+              "duration": 0.543274
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:11.499977+00:00",
+              "end_date": "2026-08-20T14:37:13.397226+00:00",
+              "duration": 1.897249
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:11.923301+00:00",
+              "end_date": "2026-08-20T14:37:12.700226+00:00",
+              "duration": 0.776925
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T14:37:12.924934+00:00",
+              "end_date": "2026-08-20T14:37:13.406095+00:00",
+              "duration": 0.481161
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:13.614551+00:00",
+              "end_date": "2026-08-20T14:37:15.901250+00:00",
+              "duration": 2.286699
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:14.144111+00:00",
+              "end_date": "2026-08-20T14:37:15.857546+00:00",
+              "duration": 1.713435
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:15.252068+00:00",
+              "end_date": "2026-08-20T14:37:16.513738+00:00",
+              "duration": 1.26167
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:15.564568+00:00",
+              "end_date": "2026-08-20T14:37:17.049921+00:00",
+              "duration": 1.485353
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T14:37:21.193217+00:00",
+              "end_date": "2026-08-20T14:37:21.716823+00:00",
+              "duration": 0.523606
+            }
+          ]
+        },
         {
           "dag_run_id": "dataset_triggered__2026-08-19T14:31:56.626734+00:00",
           "start_date": "2026-08-19T14:31:58.221993+00:00",
@@ -7832,111 +7961,6 @@
               "duration": 0.440829
             }
           ]
-        },
-        {
-          "dag_run_id": "dataset_triggered__2026-08-17T14:47:13.435662+00:00",
-          "start_date": "2026-08-17T14:47:15.569298+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:19.783626+00:00",
-              "end_date": "2026-08-17T14:47:20.292117+00:00",
-              "duration": 0.508491
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:27.310142+00:00",
-              "end_date": "2026-08-17T14:47:27.946230+00:00",
-              "duration": 0.636088
-            },
-            {
-              "task_id": "run_query_tb_arrecadacao_pep",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:33.006713+00:00",
-              "end_date": "2026-08-17T14:47:44.229521+00:00",
-              "duration": 11.222808
-            },
-            {
-              "task_id": "run_query_tb_faturamento_pep",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:47.416472+00:00",
-              "end_date": "2026-08-17T14:47:58.645800+00:00",
-              "duration": 11.229328
-            },
-            {
-              "task_id": "run_query_tb_base_pep_inativo",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:02.857366+00:00",
-              "end_date": "2026-08-17T14:48:34.483191+00:00",
-              "duration": 31.625825
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:38.209776+00:00",
-              "end_date": "2026-08-17T14:48:38.800693+00:00",
-              "duration": 0.590917
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:43.558449+00:00",
-              "end_date": "2026-08-17T14:48:44.853273+00:00",
-              "duration": 1.294824
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:43.716158+00:00",
-              "end_date": "2026-08-17T14:48:45.064015+00:00",
-              "duration": 1.347857
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T14:48:52.326668+00:00",
-              "end_date": "2026-08-17T14:48:53.225488+00:00",
-              "duration": 0.89882
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:52.764032+00:00",
-              "end_date": "2026-08-17T14:48:55.505971+00:00",
-              "duration": 2.741939
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:52.765033+00:00",
-              "end_date": "2026-08-17T14:48:54.095564+00:00",
-              "duration": 1.330531
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:53.837640+00:00",
-              "end_date": "2026-08-17T14:48:56.412580+00:00",
-              "duration": 2.57494
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:48:54.148505+00:00",
-              "end_date": "2026-08-17T14:48:56.170864+00:00",
-              "duration": 2.022359
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T14:49:00.444435+00:00",
-              "end_date": "2026-08-17T14:49:00.893446+00:00",
-              "duration": 0.449011
-            }
-          ]
         }
       ]
     },
@@ -7981,7 +8005,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 3.1,
       "p95_duration_min": 143.3,
-      "freshness_hours": 22.3,
+      "freshness_hours": 23.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -8492,7 +8516,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.4,
       "p95_duration_min": 29.2,
-      "freshness_hours": 21.8,
+      "freshness_hours": 23.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -8978,7 +9002,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 29.3,
-      "freshness_hours": 21.8,
+      "freshness_hours": 23.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -9464,7 +9488,7 @@
       "min_duration_min": 26.7,
       "p50_duration_min": 59.6,
       "p95_duration_min": 421.1,
-      "freshness_hours": 139.8,
+      "freshness_hours": 141.3,
       "mttr_min": 12822.0,
       "last_run": {
         "state": "failed",
@@ -10286,7 +10310,7 @@
       "min_duration_min": 12.4,
       "p50_duration_min": 24.4,
       "p95_duration_min": 77.7,
-      "freshness_hours": 55.4,
+      "freshness_hours": 56.9,
       "mttr_min": 11340.3,
       "last_run": {
         "state": "failed",
@@ -10988,7 +11012,7 @@
       "min_duration_min": 11.1,
       "p50_duration_min": 16.2,
       "p95_duration_min": 186.6,
-      "freshness_hours": 17.1,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -11684,7 +11708,7 @@
       "min_duration_min": 7.5,
       "p50_duration_min": 22.3,
       "p95_duration_min": 342.5,
-      "freshness_hours": 20.2,
+      "freshness_hours": 21.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -12186,20 +12210,25 @@
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 22.2,
+      "avg_duration_min": 21.5,
       "max_duration_min": 121.2,
       "min_duration_min": 5.1,
-      "p50_duration_min": 9.5,
+      "p50_duration_min": 7.7,
       "p95_duration_min": 97.6,
-      "freshness_hours": 23.7,
+      "freshness_hours": 1.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T13:30:01.570119+00:00",
-        "end_date": "2026-08-19T13:37:46.200312+00:00",
-        "duration_min": 7.7
+        "start_date": "2026-08-20T13:30:02.178104+00:00",
+        "end_date": "2026-08-20T13:36:07.767809+00:00",
+        "duration_min": 6.1
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -12269,14 +12298,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T13:30:02.178104+00:00",
+          "end_date": "2026-08-20T13:36:07.767809+00:00",
+          "duration_min": 6.1,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T13:30:01.570119+00:00",
@@ -12374,18 +12405,109 @@
           "end_date": "2026-08-06T15:31:12.643319+00:00",
           "duration_min": 121.2,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T13:30:01.354061+00:00",
-          "end_date": "2026-08-05T13:45:48.781055+00:00",
-          "duration_min": 15.8,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-19T13:30:00+00:00",
+          "start_date": "2026-08-20T13:30:02.178104+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:06.217960+00:00",
+              "end_date": "2026-08-20T13:30:06.672338+00:00",
+              "duration": 0.454378
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:10.817019+00:00",
+              "end_date": "2026-08-20T13:30:11.240805+00:00",
+              "duration": 0.423786
+            },
+            {
+              "task_id": "m_tb_stg_raid_cart_cob.run_query_tb_stg_raid_cart_cob",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:16.657579+00:00",
+              "end_date": "2026-08-20T13:35:20.193905+00:00",
+              "duration": 303.536326
+            },
+            {
+              "task_id": "m_tb_stg_raid_cart_cob.qa_volumetria",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:25.964725+00:00",
+              "end_date": "2026-08-20T13:35:37.163017+00:00",
+              "duration": 11.198292
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:40.821715+00:00",
+              "end_date": "2026-08-20T13:35:41.366477+00:00",
+              "duration": 0.544762
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:46.744167+00:00",
+              "end_date": "2026-08-20T13:35:48.251622+00:00",
+              "duration": 1.507455
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:57.475491+00:00",
+              "end_date": "2026-08-20T13:36:01.013324+00:00",
+              "duration": 3.537833
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:57.599350+00:00",
+              "end_date": "2026-08-20T13:36:00.724768+00:00",
+              "duration": 3.125418
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T13:35:58.316455+00:00",
+              "end_date": "2026-08-20T13:35:59.385440+00:00",
+              "duration": 1.068985
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:35:59.359428+00:00",
+              "end_date": "2026-08-20T13:36:02.323208+00:00",
+              "duration": 2.96378
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:36:00.157100+00:00",
+              "end_date": "2026-08-20T13:36:03.043916+00:00",
+              "duration": 2.886816
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T13:36:00.596704+00:00",
+              "end_date": "2026-08-20T13:36:01.799729+00:00",
+              "duration": 1.203025
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T13:36:07.147536+00:00",
+              "end_date": "2026-08-20T13:36:07.560891+00:00",
+              "duration": 0.413355
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-18T13:30:00+00:00",
           "start_date": "2026-08-19T13:30:01.570119+00:00",
@@ -12581,104 +12703,6 @@
               "duration": 0.434345
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-16T13:30:00+00:00",
-          "start_date": "2026-08-17T13:30:01.678315+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:09.645429+00:00",
-              "end_date": "2026-08-17T13:30:10.244596+00:00",
-              "duration": 0.599167
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:16.375688+00:00",
-              "end_date": "2026-08-17T13:30:16.754488+00:00",
-              "duration": 0.3788
-            },
-            {
-              "task_id": "m_tb_stg_raid_cart_cob.run_query_tb_stg_raid_cart_cob",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:23.464518+00:00",
-              "end_date": "2026-08-17T13:35:27.565666+00:00",
-              "duration": 304.101148
-            },
-            {
-              "task_id": "m_tb_stg_raid_cart_cob.qa_volumetria",
-              "state": "success",
-              "start_date": "2026-08-17T13:35:31.254265+00:00",
-              "end_date": "2026-08-17T13:35:42.528614+00:00",
-              "duration": 11.274349
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:35:46.942411+00:00",
-              "end_date": "2026-08-17T13:35:47.723573+00:00",
-              "duration": 0.781162
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:35:53.436645+00:00",
-              "end_date": "2026-08-17T13:35:54.767698+00:00",
-              "duration": 1.331053
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:35:53.710002+00:00",
-              "end_date": "2026-08-17T13:35:55.585437+00:00",
-              "duration": 1.875435
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:36:03.035810+00:00",
-              "end_date": "2026-08-17T13:36:05.358474+00:00",
-              "duration": 2.322664
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:36:03.183723+00:00",
-              "end_date": "2026-08-17T13:36:05.848472+00:00",
-              "duration": 2.664749
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T13:36:03.480725+00:00",
-              "end_date": "2026-08-17T13:36:04.444097+00:00",
-              "duration": 0.963372
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T13:36:03.704870+00:00",
-              "end_date": "2026-08-17T13:36:04.490712+00:00",
-              "duration": 0.785842
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:36:03.732934+00:00",
-              "end_date": "2026-08-17T13:36:05.623905+00:00",
-              "duration": 1.890971
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T13:36:10.214068+00:00",
-              "end_date": "2026-08-17T13:36:10.691524+00:00",
-              "duration": 0.477456
-            }
-          ]
         }
       ]
     },
@@ -12698,15 +12722,20 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.7,
       "p95_duration_min": 5.8,
-      "freshness_hours": 23.8,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T13:30:01.573709+00:00",
-        "end_date": "2026-08-19T13:31:45.000030+00:00",
+        "start_date": "2026-08-20T13:30:02.201110+00:00",
+        "end_date": "2026-08-20T13:31:46.240380+00:00",
         "duration_min": 1.7
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -12776,14 +12805,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T13:30:02.201110+00:00",
+          "end_date": "2026-08-20T13:31:46.240380+00:00",
+          "duration_min": 1.7,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T13:30:01.573709+00:00",
@@ -12881,18 +12912,102 @@
           "end_date": "2026-08-06T13:31:31.616830+00:00",
           "duration_min": 1.5,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T13:30:01.374868+00:00",
-          "end_date": "2026-08-05T13:31:45.790980+00:00",
-          "duration_min": 1.7,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-19T13:30:00+00:00",
+          "start_date": "2026-08-20T13:30:02.201110+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:10.035533+00:00",
+              "end_date": "2026-08-20T13:30:10.681878+00:00",
+              "duration": 0.646345
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:15.973125+00:00",
+              "end_date": "2026-08-20T13:30:16.418100+00:00",
+              "duration": 0.444975
+            },
+            {
+              "task_id": "m_tb_stg_raid_cart_cob_saldo.run_query_tb_stg_raid_cart_cob_saldo",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:23.371885+00:00",
+              "end_date": "2026-08-20T13:31:14.995878+00:00",
+              "duration": 51.623993
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:21.883598+00:00",
+              "end_date": "2026-08-20T13:31:22.607584+00:00",
+              "duration": 0.723986
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:34.825669+00:00",
+              "end_date": "2026-08-20T13:31:37.741412+00:00",
+              "duration": 2.915743
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:37.053674+00:00",
+              "end_date": "2026-08-20T13:31:39.644700+00:00",
+              "duration": 2.591026
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:37.738060+00:00",
+              "end_date": "2026-08-20T13:31:40.299665+00:00",
+              "duration": 2.561605
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:37.981396+00:00",
+              "end_date": "2026-08-20T13:31:39.242175+00:00",
+              "duration": 1.260779
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T13:31:38.315739+00:00",
+              "end_date": "2026-08-20T13:31:39.094828+00:00",
+              "duration": 0.779089
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:38.419589+00:00",
+              "end_date": "2026-08-20T13:31:39.992556+00:00",
+              "duration": 1.572967
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:38.472055+00:00",
+              "end_date": "2026-08-20T13:31:40.535512+00:00",
+              "duration": 2.063457
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:45.459815+00:00",
+              "end_date": "2026-08-20T13:31:46.100580+00:00",
+              "duration": 0.640765
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-18T13:30:00+00:00",
           "start_date": "2026-08-19T13:30:01.573709+00:00",
@@ -13074,97 +13189,6 @@
               "duration": 0.465441
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-16T13:30:00+00:00",
-          "start_date": "2026-08-17T13:30:01.692368+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:09.981574+00:00",
-              "end_date": "2026-08-17T13:30:10.664277+00:00",
-              "duration": 0.682703
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:17.371533+00:00",
-              "end_date": "2026-08-17T13:30:18.034653+00:00",
-              "duration": 0.66312
-            },
-            {
-              "task_id": "m_tb_stg_raid_cart_cob_saldo.run_query_tb_stg_raid_cart_cob_saldo",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:24.798971+00:00",
-              "end_date": "2026-08-17T13:31:26.429829+00:00",
-              "duration": 61.630858
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:30.910077+00:00",
-              "end_date": "2026-08-17T13:31:31.617799+00:00",
-              "duration": 0.707722
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:37.792967+00:00",
-              "end_date": "2026-08-17T13:31:39.331416+00:00",
-              "duration": 1.538449
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:38.833716+00:00",
-              "end_date": "2026-08-17T13:31:39.362247+00:00",
-              "duration": 0.528531
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T13:31:38.961165+00:00",
-              "end_date": "2026-08-17T13:31:39.395188+00:00",
-              "duration": 0.434023
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:39.454426+00:00",
-              "end_date": "2026-08-17T13:31:41.493822+00:00",
-              "duration": 2.039396
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:40.756216+00:00",
-              "end_date": "2026-08-17T13:31:42.651824+00:00",
-              "duration": 1.895608
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:41.078436+00:00",
-              "end_date": "2026-08-17T13:31:42.803461+00:00",
-              "duration": 1.725025
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:41.640534+00:00",
-              "end_date": "2026-08-17T13:31:43.339093+00:00",
-              "duration": 1.698559
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:48.459460+00:00",
-              "end_date": "2026-08-17T13:31:48.973794+00:00",
-              "duration": 0.514334
-            }
-          ]
         }
       ]
     },
@@ -13184,15 +13208,20 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 5.8,
-      "freshness_hours": 23.8,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T13:30:01.579291+00:00",
-        "end_date": "2026-08-19T13:31:50.614890+00:00",
-        "duration_min": 1.8
+        "start_date": "2026-08-20T13:30:02.216374+00:00",
+        "end_date": "2026-08-20T13:31:41.850989+00:00",
+        "duration_min": 1.7
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -13262,14 +13291,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T13:30:02.216374+00:00",
+          "end_date": "2026-08-20T13:31:41.850989+00:00",
+          "duration_min": 1.7,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T13:30:01.579291+00:00",
@@ -13367,18 +13398,102 @@
           "end_date": "2026-08-06T13:31:54.148236+00:00",
           "duration_min": 1.9,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T13:30:01.387196+00:00",
-          "end_date": "2026-08-05T13:31:57.001027+00:00",
-          "duration_min": 1.9,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-19T13:30:00+00:00",
+          "start_date": "2026-08-20T13:30:02.216374+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:10.723307+00:00",
+              "end_date": "2026-08-20T13:30:11.573457+00:00",
+              "duration": 0.85015
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:18.526210+00:00",
+              "end_date": "2026-08-20T13:30:19.306002+00:00",
+              "duration": 0.779792
+            },
+            {
+              "task_id": "m_tb_stg_raid_cart_cob_saldo_total.run_query_tb_stg_raid_cart_cob_saldo_total",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:26.166586+00:00",
+              "end_date": "2026-08-20T13:31:08.173673+00:00",
+              "duration": 42.007087
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:12.297227+00:00",
+              "end_date": "2026-08-20T13:31:12.900677+00:00",
+              "duration": 0.60345
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:20.299011+00:00",
+              "end_date": "2026-08-20T13:31:22.243986+00:00",
+              "duration": 1.944975
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:30.138796+00:00",
+              "end_date": "2026-08-20T13:31:33.413033+00:00",
+              "duration": 3.274237
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:30.573693+00:00",
+              "end_date": "2026-08-20T13:31:32.112454+00:00",
+              "duration": 1.538761
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:31.575488+00:00",
+              "end_date": "2026-08-20T13:31:34.919183+00:00",
+              "duration": 3.343695
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:32.180145+00:00",
+              "end_date": "2026-08-20T13:31:34.566517+00:00",
+              "duration": 2.386372
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:32.404396+00:00",
+              "end_date": "2026-08-20T13:31:35.702892+00:00",
+              "duration": 3.298496
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T13:31:33.341302+00:00",
+              "end_date": "2026-08-20T13:31:34.258702+00:00",
+              "duration": 0.9174
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T13:31:40.899867+00:00",
+              "end_date": "2026-08-20T13:31:41.330675+00:00",
+              "duration": 0.430808
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-18T13:30:00+00:00",
           "start_date": "2026-08-19T13:30:01.579291+00:00",
@@ -13560,97 +13675,6 @@
               "duration": 0.634945
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-16T13:30:00+00:00",
-          "start_date": "2026-08-17T13:30:01.704287+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:09.906065+00:00",
-              "end_date": "2026-08-17T13:30:10.562127+00:00",
-              "duration": 0.656062
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:17.643796+00:00",
-              "end_date": "2026-08-17T13:30:18.409397+00:00",
-              "duration": 0.765601
-            },
-            {
-              "task_id": "m_tb_stg_raid_cart_cob_saldo_total.run_query_tb_stg_raid_cart_cob_saldo_total",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:22.496529+00:00",
-              "end_date": "2026-08-17T13:31:04.179229+00:00",
-              "duration": 41.6827
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:08.143882+00:00",
-              "end_date": "2026-08-17T13:31:08.765816+00:00",
-              "duration": 0.621934
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:13.952897+00:00",
-              "end_date": "2026-08-17T13:31:15.969503+00:00",
-              "duration": 2.016606
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:14.071866+00:00",
-              "end_date": "2026-08-17T13:31:16.286992+00:00",
-              "duration": 2.215126
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:19.436775+00:00",
-              "end_date": "2026-08-17T13:31:20.400941+00:00",
-              "duration": 0.964166
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:21.332417+00:00",
-              "end_date": "2026-08-17T13:31:24.624866+00:00",
-              "duration": 3.292449
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:21.773906+00:00",
-              "end_date": "2026-08-17T13:31:24.879137+00:00",
-              "duration": 3.105231
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T13:31:21.854221+00:00",
-              "end_date": "2026-08-17T13:31:22.925547+00:00",
-              "duration": 1.071326
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:22.237131+00:00",
-              "end_date": "2026-08-17T13:31:24.767564+00:00",
-              "duration": 2.530433
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T13:31:29.885161+00:00",
-              "end_date": "2026-08-17T13:31:30.430248+00:00",
-              "duration": 0.545087
-            }
-          ]
         }
       ]
     },
@@ -13665,20 +13689,25 @@
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 14.9,
+      "avg_duration_min": 14.7,
       "max_duration_min": 156.9,
       "min_duration_min": 2.4,
-      "p50_duration_min": 3.5,
+      "p50_duration_min": 3.3,
       "p95_duration_min": 58.8,
-      "freshness_hours": 23.8,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T13:30:01.582915+00:00",
-        "end_date": "2026-08-19T13:33:17.654999+00:00",
-        "duration_min": 3.3
+        "start_date": "2026-08-20T13:30:02.227488+00:00",
+        "end_date": "2026-08-20T13:33:09.161763+00:00",
+        "duration_min": 3.1
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -13748,14 +13777,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-05": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T13:30:02.227488+00:00",
+          "end_date": "2026-08-20T13:33:09.161763+00:00",
+          "duration_min": 3.1,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T13:30:01.582915+00:00",
@@ -13853,18 +13884,102 @@
           "end_date": "2026-08-06T16:06:57.319102+00:00",
           "duration_min": 156.9,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T13:30:01.395944+00:00",
-          "end_date": "2026-08-05T13:35:32.606733+00:00",
-          "duration_min": 5.5,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-19T13:30:00+00:00",
+          "start_date": "2026-08-20T13:30:02.227488+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:10.322036+00:00",
+              "end_date": "2026-08-20T13:30:10.970990+00:00",
+              "duration": 0.648954
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:18.389464+00:00",
+              "end_date": "2026-08-20T13:30:19.268919+00:00",
+              "duration": 0.879455
+            },
+            {
+              "task_id": "m_tb_titulos.run_query_tb_titulos",
+              "state": "success",
+              "start_date": "2026-08-20T13:30:25.827835+00:00",
+              "end_date": "2026-08-20T13:32:38.344900+00:00",
+              "duration": 132.517065
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:32:41.900837+00:00",
+              "end_date": "2026-08-20T13:32:42.540196+00:00",
+              "duration": 0.639359
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:32:48.521150+00:00",
+              "end_date": "2026-08-20T13:32:49.893645+00:00",
+              "duration": 1.372495
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T13:32:58.427419+00:00",
+              "end_date": "2026-08-20T13:32:59.565771+00:00",
+              "duration": 1.138352
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:32:58.965067+00:00",
+              "end_date": "2026-08-20T13:33:02.278927+00:00",
+              "duration": 3.31386
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T13:33:00.202958+00:00",
+              "end_date": "2026-08-20T13:33:01.802585+00:00",
+              "duration": 1.599627
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:33:00.787066+00:00",
+              "end_date": "2026-08-20T13:33:03.555814+00:00",
+              "duration": 2.768748
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:33:01.136997+00:00",
+              "end_date": "2026-08-20T13:33:03.200713+00:00",
+              "duration": 2.063716
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:33:01.896705+00:00",
+              "end_date": "2026-08-20T13:33:04.327127+00:00",
+              "duration": 2.430422
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T13:33:07.559225+00:00",
+              "end_date": "2026-08-20T13:33:08.051304+00:00",
+              "duration": 0.492079
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-18T13:30:00+00:00",
           "start_date": "2026-08-19T13:30:01.582915+00:00",
@@ -14046,97 +14161,6 @@
               "duration": 0.460218
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-16T13:30:00+00:00",
-          "start_date": "2026-08-17T13:30:01.717413+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:06.119416+00:00",
-              "end_date": "2026-08-17T13:30:06.618679+00:00",
-              "duration": 0.499263
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:10.965923+00:00",
-              "end_date": "2026-08-17T13:30:11.612939+00:00",
-              "duration": 0.647016
-            },
-            {
-              "task_id": "m_tb_titulos.run_query_tb_titulos",
-              "state": "success",
-              "start_date": "2026-08-17T13:30:16.591495+00:00",
-              "end_date": "2026-08-17T13:32:08.701239+00:00",
-              "duration": 112.109744
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:11.787388+00:00",
-              "end_date": "2026-08-17T13:32:12.371172+00:00",
-              "duration": 0.583784
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:15.860959+00:00",
-              "end_date": "2026-08-17T13:32:17.021292+00:00",
-              "duration": 1.160333
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:28.826328+00:00",
-              "end_date": "2026-08-17T13:32:31.163319+00:00",
-              "duration": 2.336991
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T13:32:29.197312+00:00",
-              "end_date": "2026-08-17T13:32:29.950242+00:00",
-              "duration": 0.75293
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:29.681137+00:00",
-              "end_date": "2026-08-17T13:32:32.226015+00:00",
-              "duration": 2.544878
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:29.732484+00:00",
-              "end_date": "2026-08-17T13:32:32.379708+00:00",
-              "duration": 2.647224
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:29.783953+00:00",
-              "end_date": "2026-08-17T13:32:31.240278+00:00",
-              "duration": 1.456325
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:29.859661+00:00",
-              "end_date": "2026-08-17T13:32:32.417188+00:00",
-              "duration": 2.557527
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T13:32:36.683090+00:00",
-              "end_date": "2026-08-17T13:32:37.210892+00:00",
-              "duration": 0.527802
-            }
-          ]
         }
       ]
     },
@@ -14145,26 +14169,31 @@
       "is_paused": false,
       "is_active": true,
       "schedule": "Dataset",
-      "total": 15,
-      "success": 10,
+      "total": 16,
+      "success": 11,
       "failed": 5,
       "running": 0,
       "queued": 0,
-      "availability": 66.7,
-      "avg_duration_min": 34.5,
+      "availability": 68.8,
+      "avg_duration_min": 33.3,
       "max_duration_min": 189.1,
       "min_duration_min": 3.0,
-      "p50_duration_min": 13.2,
-      "p95_duration_min": 159.6,
-      "freshness_hours": 22.9,
+      "p50_duration_min": 13.8,
+      "p95_duration_min": 157.4,
+      "freshness_hours": 0.3,
       "mttr_min": 1265.5,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-19T14:19:38.052537+00:00",
-        "end_date": "2026-08-19T14:31:56.809796+00:00",
-        "duration_min": 12.3
+        "start_date": "2026-08-20T14:20:06.019867+00:00",
+        "end_date": "2026-08-20T14:35:43.578786+00:00",
+        "duration_min": 15.6
       },
       "daily": {
+        "2026-08-20": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-19": {
           "success": 1,
           "failed": 0,
@@ -14237,6 +14266,13 @@
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-20T14:20:06.019867+00:00",
+          "end_date": "2026-08-20T14:35:43.578786+00:00",
+          "duration_min": 15.6,
+          "day": "2026-08-20"
+        },
         {
           "state": "success",
           "start_date": "2026-08-19T14:19:38.052537+00:00",
@@ -14367,6 +14403,265 @@
       ],
       "category": "CDL_PLANEJAMENTOCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "dataset_triggered__2026-08-20T14:20:04.206484+00:00",
+          "start_date": "2026-08-20T14:20:06.019867+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_workflow.save_execution_log_start",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:08.983953+00:00",
+              "end_date": "2026-08-20T14:20:09.425214+00:00",
+              "duration": 0.441261
+            },
+            {
+              "task_id": "start_workflow.get_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:12.584004+00:00",
+              "end_date": "2026-08-20T14:20:13.038751+00:00",
+              "duration": 0.454747
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0007_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:17.564769+00:00",
+              "end_date": "2026-08-20T14:20:39.011928+00:00",
+              "duration": 21.447159
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0001_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:17.880895+00:00",
+              "end_date": "2026-08-20T14:21:19.534747+00:00",
+              "duration": 61.653852
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0004_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:24.623286+00:00",
+              "end_date": "2026-08-20T14:21:38.727997+00:00",
+              "duration": 74.104711
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0006_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:27.567723+00:00",
+              "end_date": "2026-08-20T14:20:39.513485+00:00",
+              "duration": 11.945762
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0003_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:27.655361+00:00",
+              "end_date": "2026-08-20T14:21:10.189559+00:00",
+              "duration": 42.534198
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0002_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:27.921760+00:00",
+              "end_date": "2026-08-20T14:20:39.999824+00:00",
+              "duration": 12.078064
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0005_analitico",
+              "state": "success",
+              "start_date": "2026-08-20T14:20:29.000612+00:00",
+              "end_date": "2026-08-20T14:21:10.978320+00:00",
+              "duration": 41.977708
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_recebimentos_cob",
+              "state": "success",
+              "start_date": "2026-08-20T14:21:50.922469+00:00",
+              "end_date": "2026-08-20T14:22:04.402257+00:00",
+              "duration": 13.479788
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0011",
+              "state": "success",
+              "start_date": "2026-08-20T14:21:51.507872+00:00",
+              "end_date": "2026-08-20T14:23:25.200778+00:00",
+              "duration": 93.692906
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0006",
+              "state": "success",
+              "start_date": "2026-08-20T14:21:52.595958+00:00",
+              "end_date": "2026-08-20T14:22:05.532504+00:00",
+              "duration": 12.936546
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0001",
+              "state": "success",
+              "start_date": "2026-08-20T14:21:53.008795+00:00",
+              "end_date": "2026-08-20T14:23:06.909822+00:00",
+              "duration": 73.901027
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0009",
+              "state": "success",
+              "start_date": "2026-08-20T14:21:53.465280+00:00",
+              "end_date": "2026-08-20T14:22:06.142870+00:00",
+              "duration": 12.67759
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0008",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:02.350692+00:00",
+              "end_date": "2026-08-20T14:23:17.886562+00:00",
+              "duration": 75.53587
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0002",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:02.614907+00:00",
+              "end_date": "2026-08-20T14:22:17.099521+00:00",
+              "duration": 14.484614
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0004",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:02.654837+00:00",
+              "end_date": "2026-08-20T14:24:19.131759+00:00",
+              "duration": 136.476922
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0005",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:03.501857+00:00",
+              "end_date": "2026-08-20T14:22:38.246457+00:00",
+              "duration": 34.7446
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_escob_0001",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:03.521907+00:00",
+              "end_date": "2026-08-20T14:22:47.308611+00:00",
+              "duration": 43.786704
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0003",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:03.735452+00:00",
+              "end_date": "2026-08-20T14:22:27.911478+00:00",
+              "duration": 24.176026
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0010",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:03.989516+00:00",
+              "end_date": "2026-08-20T14:24:28.922630+00:00",
+              "duration": 144.933114
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0007",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:04.247050+00:00",
+              "end_date": "2026-08-20T14:22:27.887446+00:00",
+              "duration": 23.640396
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_consolidado_arrecad_escob",
+              "state": "success",
+              "start_date": "2026-08-20T14:22:04.350050+00:00",
+              "end_date": "2026-08-20T14:23:18.602805+00:00",
+              "duration": 74.252755
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9998.run_query_zeus_consolidacao_arrecadacao_9998_ampli",
+              "state": "success",
+              "start_date": "2026-08-20T14:24:33.924599+00:00",
+              "end_date": "2026-08-20T14:25:05.756562+00:00",
+              "duration": 31.831963
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9998.run_query_zeus_consolidacao_arrecadacao_9998",
+              "state": "success",
+              "start_date": "2026-08-20T14:24:33.952876+00:00",
+              "end_date": "2026-08-20T14:29:48.966345+00:00",
+              "duration": 315.013469
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9999.run_query_zeus_consolidacao_arrecadacao_9999",
+              "state": "success",
+              "start_date": "2026-08-20T14:29:53.995940+00:00",
+              "end_date": "2026-08-20T14:31:46.391836+00:00",
+              "duration": 112.395896
+            },
+            {
+              "task_id": "plancaixa_zeus_arrecadacao_resumo.run_query_tb_arrecadacao_resumo",
+              "state": "success",
+              "start_date": "2026-08-20T14:31:50.082592+00:00",
+              "end_date": "2026-08-20T14:35:22.975230+00:00",
+              "duration": 212.892638
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:27.038240+00:00",
+              "end_date": "2026-08-20T14:35:27.626101+00:00",
+              "duration": 0.587861
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:34.299817+00:00",
+              "end_date": "2026-08-20T14:35:35.135620+00:00",
+              "duration": 0.835803
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:34.552015+00:00",
+              "end_date": "2026-08-20T14:35:36.129191+00:00",
+              "duration": 1.577176
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T14:35:35.782555+00:00",
+              "end_date": "2026-08-20T14:35:36.349742+00:00",
+              "duration": 0.567187
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:37.065684+00:00",
+              "end_date": "2026-08-20T14:35:38.905304+00:00",
+              "duration": 1.83962
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:37.168198+00:00",
+              "end_date": "2026-08-20T14:35:39.682743+00:00",
+              "duration": 2.514545
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:37.696873+00:00",
+              "end_date": "2026-08-20T14:35:39.370442+00:00",
+              "duration": 1.673569
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:38.078073+00:00",
+              "end_date": "2026-08-20T14:35:39.867612+00:00",
+              "duration": 1.789539
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T14:35:43.009862+00:00",
+              "end_date": "2026-08-20T14:35:43.470962+00:00",
+              "duration": 0.4611
+            }
+          ]
+        },
         {
           "dag_run_id": "dataset_triggered__2026-08-19T14:19:36.290433+00:00",
           "start_date": "2026-08-19T14:19:38.052537+00:00",
@@ -14884,265 +15179,6 @@
               "duration": 0.473911
             }
           ]
-        },
-        {
-          "dag_run_id": "dataset_triggered__2026-08-17T14:26:07.711092+00:00",
-          "start_date": "2026-08-17T14:26:09.792814+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_workflow.save_execution_log_start",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:12.882950+00:00",
-              "end_date": "2026-08-17T14:26:13.349133+00:00",
-              "duration": 0.466183
-            },
-            {
-              "task_id": "start_workflow.get_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:18.698488+00:00",
-              "end_date": "2026-08-17T14:26:19.144894+00:00",
-              "duration": 0.446406
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0005_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:22.857180+00:00",
-              "end_date": "2026-08-17T14:27:25.015947+00:00",
-              "duration": 62.158767
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0002_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:34.611515+00:00",
-              "end_date": "2026-08-17T14:26:57.713511+00:00",
-              "duration": 23.101996
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0004_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:36.508312+00:00",
-              "end_date": "2026-08-17T14:28:31.156294+00:00",
-              "duration": 114.647982
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0001_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:36.890988+00:00",
-              "end_date": "2026-08-17T14:27:50.035352+00:00",
-              "duration": 73.144364
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0007_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:37.690431+00:00",
-              "end_date": "2026-08-17T14:27:10.216593+00:00",
-              "duration": 32.526162
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0003_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:38.058839+00:00",
-              "end_date": "2026-08-17T14:27:00.378388+00:00",
-              "duration": 22.319549
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_analitico.run_query_zeus_arrecadacao_0006_analitico",
-              "state": "success",
-              "start_date": "2026-08-17T14:26:38.104984+00:00",
-              "end_date": "2026-08-17T14:27:00.185218+00:00",
-              "duration": 22.080234
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_consolidado_arrecad_escob",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:42.708191+00:00",
-              "end_date": "2026-08-17T14:31:25.683402+00:00",
-              "duration": 162.975211
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0001",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:43.125762+00:00",
-              "end_date": "2026-08-17T14:29:26.037997+00:00",
-              "duration": 42.912235
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_recebimentos_cob",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:43.297550+00:00",
-              "end_date": "2026-08-17T14:29:05.474258+00:00",
-              "duration": 22.176708
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_escob_0001",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:44.210465+00:00",
-              "end_date": "2026-08-17T14:32:07.387080+00:00",
-              "duration": 203.176615
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0002",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:44.266238+00:00",
-              "end_date": "2026-08-17T14:29:06.140904+00:00",
-              "duration": 21.874666
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0011",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:47.656735+00:00",
-              "end_date": "2026-08-17T14:30:23.236894+00:00",
-              "duration": 95.580159
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0007",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.337193+00:00",
-              "end_date": "2026-08-17T14:29:59.258054+00:00",
-              "duration": 63.920861
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0009",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.568584+00:00",
-              "end_date": "2026-08-17T14:29:09.179111+00:00",
-              "duration": 13.610527
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0003",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.571505+00:00",
-              "end_date": "2026-08-17T14:30:09.633849+00:00",
-              "duration": 74.062344
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0010",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.750152+00:00",
-              "end_date": "2026-08-17T14:32:40.867371+00:00",
-              "duration": 225.117219
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0005",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.856536+00:00",
-              "end_date": "2026-08-17T14:30:30.918453+00:00",
-              "duration": 95.061917
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0008",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:55.932103+00:00",
-              "end_date": "2026-08-17T14:30:30.314574+00:00",
-              "duration": 94.382471
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0006",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:56.035105+00:00",
-              "end_date": "2026-08-17T14:29:59.483967+00:00",
-              "duration": 63.448862
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado.run_query_zeus_arrecadacao_0004",
-              "state": "success",
-              "start_date": "2026-08-17T14:28:56.431476+00:00",
-              "end_date": "2026-08-17T14:32:02.756727+00:00",
-              "duration": 186.325251
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9998.run_query_zeus_consolidacao_arrecadacao_9998_ampli",
-              "state": "success",
-              "start_date": "2026-08-17T14:32:44.703007+00:00",
-              "end_date": "2026-08-17T14:33:36.166423+00:00",
-              "duration": 51.463416
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9998.run_query_zeus_consolidacao_arrecadacao_9998",
-              "state": "success",
-              "start_date": "2026-08-17T14:32:44.766636+00:00",
-              "end_date": "2026-08-17T14:40:51.547847+00:00",
-              "duration": 486.781211
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_consolidado_9999.run_query_zeus_consolidacao_arrecadacao_9999",
-              "state": "success",
-              "start_date": "2026-08-17T14:40:56.583915+00:00",
-              "end_date": "2026-08-17T14:42:48.659151+00:00",
-              "duration": 112.075236
-            },
-            {
-              "task_id": "plancaixa_zeus_arrecadacao_resumo.run_query_tb_arrecadacao_resumo",
-              "state": "success",
-              "start_date": "2026-08-17T14:42:52.306977+00:00",
-              "end_date": "2026-08-17T14:46:45.530478+00:00",
-              "duration": 233.223501
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": "success",
-              "start_date": "2026-08-17T14:46:50.368529+00:00",
-              "end_date": "2026-08-17T14:46:50.962561+00:00",
-              "duration": 0.594032
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:46:56.161262+00:00",
-              "end_date": "2026-08-17T14:46:57.406761+00:00",
-              "duration": 1.245499
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": "skipped",
-              "start_date": "2026-08-17T14:47:02.966348+00:00",
-              "end_date": "2026-08-17T14:47:03.684704+00:00",
-              "duration": 0.718356
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:05.293794+00:00",
-              "end_date": "2026-08-17T14:47:06.278071+00:00",
-              "duration": 0.984277
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:05.790594+00:00",
-              "end_date": "2026-08-17T14:47:08.243274+00:00",
-              "duration": 2.45268
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:06.055070+00:00",
-              "end_date": "2026-08-17T14:47:08.851006+00:00",
-              "duration": 2.795936
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:06.055324+00:00",
-              "end_date": "2026-08-17T14:47:08.631499+00:00",
-              "duration": 2.576175
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:06.253692+00:00",
-              "end_date": "2026-08-17T14:47:08.739449+00:00",
-              "duration": 2.485757
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": "success",
-              "start_date": "2026-08-17T14:47:12.964130+00:00",
-              "end_date": "2026-08-17T14:47:13.415364+00:00",
-              "duration": 0.451234
-            }
-          ]
         }
       ]
     },
@@ -15162,7 +15198,7 @@
       "min_duration_min": 4.3,
       "p50_duration_min": 7.6,
       "p95_duration_min": 26.5,
-      "freshness_hours": 0.3,
+      "freshness_hours": 1.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -15732,7 +15768,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.5,
       "p95_duration_min": 7.1,
-      "freshness_hours": 9.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -16265,7 +16301,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.6,
-      "freshness_hours": 1.4,
+      "freshness_hours": 2.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -16793,7 +16829,7 @@
       "min_duration_min": 2.9,
       "p50_duration_min": 3.6,
       "p95_duration_min": 20.6,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -17300,7 +17336,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.4,
       "p95_duration_min": 27.9,
-      "freshness_hours": 7.4,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -17699,7 +17735,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 7.8,
       "p95_duration_min": 18.8,
-      "freshness_hours": 8.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -18161,7 +18197,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.3,
       "p95_duration_min": 28.5,
-      "freshness_hours": 7.0,
+      "freshness_hours": 8.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -18693,7 +18729,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 4.4,
       "p95_duration_min": 57.4,
-      "freshness_hours": 22.3,
+      "freshness_hours": 23.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -19179,7 +19215,7 @@
       "min_duration_min": 8.9,
       "p50_duration_min": 10.0,
       "p95_duration_min": 68.5,
-      "freshness_hours": 6.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -19833,7 +19869,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -20466,7 +20502,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 10.5,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -20952,7 +20988,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.4,
       "p95_duration_min": 4.1,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -21438,7 +21474,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 6.1,
-      "freshness_hours": 6.2,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -21924,7 +21960,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 10.3,
       "p95_duration_min": 29.2,
-      "freshness_hours": 6.7,
+      "freshness_hours": 8.2,
       "mttr_min": 5749.5,
       "last_run": {
         "state": "success",
@@ -22456,7 +22492,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.7,
       "p95_duration_min": 6.5,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24642,7 +24678,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 1.9,
       "p95_duration_min": 1.9,
-      "freshness_hours": 198.6,
+      "freshness_hours": 200.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24785,7 +24821,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.0,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -25385,7 +25421,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -25985,7 +26021,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 5.2,
       "p95_duration_min": 13.2,
-      "freshness_hours": 20.8,
+      "freshness_hours": 22.3,
       "mttr_min": 6339.1,
       "last_run": {
         "state": "success",
@@ -26909,7 +26945,7 @@
       "min_duration_min": 5.9,
       "p50_duration_min": 7.2,
       "p95_duration_min": 33.9,
-      "freshness_hours": 31.6,
+      "freshness_hours": 33.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -27968,7 +28004,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 3.3,
-      "freshness_hours": 31.7,
+      "freshness_hours": 33.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -28451,7 +28487,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.8,
-      "freshness_hours": 9.7,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -28925,7 +28961,7 @@
       "min_duration_min": 15.0,
       "p50_duration_min": 17.9,
       "p95_duration_min": 42.1,
-      "freshness_hours": 9.7,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -30012,7 +30048,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.9,
       "p95_duration_min": 4.4,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -30498,7 +30534,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 4.7,
       "p95_duration_min": 34.1,
-      "freshness_hours": 8.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31089,7 +31125,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 6.4,
       "p95_duration_min": 26.8,
-      "freshness_hours": 31.5,
+      "freshness_hours": 33.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31635,7 +31671,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 0.9,
       "p95_duration_min": 0.9,
-      "freshness_hours": 198.6,
+      "freshness_hours": 200.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31778,7 +31814,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.0,
-      "freshness_hours": 198.6,
+      "freshness_hours": 200.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31921,7 +31957,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 2.0,
       "p95_duration_min": 7.6,
-      "freshness_hours": 8.3,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -32407,7 +32443,7 @@
       "min_duration_min": 3.0,
       "p50_duration_min": 4.0,
       "p95_duration_min": 23.8,
-      "freshness_hours": 8.3,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -32893,7 +32929,7 @@
       "min_duration_min": 33.1,
       "p50_duration_min": 33.1,
       "p95_duration_min": 33.1,
-      "freshness_hours": 198.6,
+      "freshness_hours": 200.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -33645,7 +33681,7 @@
       "min_duration_min": 8.9,
       "p50_duration_min": 10.0,
       "p95_duration_min": 85.8,
-      "freshness_hours": 7.0,
+      "freshness_hours": 8.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34257,7 +34293,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 3.0,
       "p95_duration_min": 32.0,
-      "freshness_hours": 6.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34806,7 +34842,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.6,
-      "freshness_hours": 31.6,
+      "freshness_hours": 33.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -35310,7 +35346,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 7.1,
       "p95_duration_min": 28.3,
-      "freshness_hours": 31.6,
+      "freshness_hours": 33.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36129,7 +36165,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.4,
       "p95_duration_min": 3.4,
-      "freshness_hours": 6.7,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36636,7 +36672,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 43.6,
-      "freshness_hours": 9.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -37122,7 +37158,7 @@
       "min_duration_min": 4.6,
       "p50_duration_min": 5.4,
       "p95_duration_min": 18.5,
-      "freshness_hours": 31.8,
+      "freshness_hours": 33.3,
       "mttr_min": 1431.5,
       "last_run": {
         "state": "failed",
@@ -38044,7 +38080,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 3.9,
       "p95_duration_min": 14.8,
-      "freshness_hours": 9.9,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -38530,7 +38566,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 0.9,
       "p95_duration_min": 1.8,
-      "freshness_hours": 31.6,
+      "freshness_hours": 33.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -39017,7 +39053,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.4,
-      "freshness_hours": 8.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -39545,7 +39581,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.8,
       "p95_duration_min": 2.9,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -40228,7 +40264,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.1,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -40760,7 +40796,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -41372,7 +41408,7 @@
       "min_duration_min": 4.9,
       "p50_duration_min": 5.3,
       "p95_duration_min": 5.6,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -42390,7 +42426,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2260.2,
-      "freshness_hours": 16.0,
+      "freshness_hours": 17.5,
       "mttr_min": 4893.3,
       "last_run": {
         "state": "success",
@@ -43342,7 +43378,7 @@
       "min_duration_min": 11.3,
       "p50_duration_min": 13.6,
       "p95_duration_min": 77.7,
-      "freshness_hours": 5.9,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -43954,7 +43990,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 2.6,
       "p95_duration_min": 5.9,
-      "freshness_hours": 5.9,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -44440,7 +44476,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 2.6,
       "p95_duration_min": 2.6,
-      "freshness_hours": 304.5,
+      "freshness_hours": 306.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -44562,7 +44598,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 3.0,
       "p95_duration_min": 12.4,
-      "freshness_hours": 16.0,
+      "freshness_hours": 17.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -44996,7 +45032,7 @@
       "min_duration_min": 8.6,
       "p50_duration_min": 15.4,
       "p95_duration_min": 45.4,
-      "freshness_hours": 8.0,
+      "freshness_hours": 9.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -45440,7 +45476,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 5.4,
       "p95_duration_min": 14.1,
-      "freshness_hours": 16.0,
+      "freshness_hours": 17.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -45916,7 +45952,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.4,
-      "freshness_hours": 232.8,
+      "freshness_hours": 234.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -46094,7 +46130,7 @@
       "min_duration_min": 19.3,
       "p50_duration_min": 20.1,
       "p95_duration_min": 25.7,
-      "freshness_hours": 16.1,
+      "freshness_hours": 17.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47280,7 +47316,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 5.5,
-      "freshness_hours": 10.0,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47841,7 +47877,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 7.2,
       "p95_duration_min": 21.3,
-      "freshness_hours": 6.2,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -48369,7 +48405,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -48855,7 +48891,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.1,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -49341,7 +49377,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 2.1,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -49827,7 +49863,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.2,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -50313,7 +50349,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.9,
       "p95_duration_min": 1.1,
-      "freshness_hours": 8.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -50799,7 +50835,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.9,
       "p95_duration_min": 1.1,
-      "freshness_hours": 8.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -51285,7 +51321,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 7.3,
+      "freshness_hours": 8.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -51771,7 +51807,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 7.4,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -52257,7 +52293,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 1.1,
       "p95_duration_min": 1.3,
-      "freshness_hours": 22.4,
+      "freshness_hours": 23.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -52732,18 +52768,18 @@
       "is_paused": false,
       "is_active": true,
       "schedule": "25 10 * * *",
-      "total": 16,
-      "success": 16,
+      "total": 15,
+      "success": 15,
       "failed": 0,
       "running": 0,
       "queued": 0,
       "availability": 100.0,
       "avg_duration_min": 0.7,
       "max_duration_min": 0.9,
-      "min_duration_min": 0.6,
+      "min_duration_min": 0.7,
       "p50_duration_min": 0.7,
       "p95_duration_min": 0.9,
-      "freshness_hours": 0.0,
+      "freshness_hours": 1.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -52823,11 +52859,6 @@
           "running": 0
         },
         "2026-08-06": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
-        },
-        "2026-08-05": {
           "success": 1,
           "failed": 0,
           "running": 0
@@ -52938,13 +52969,6 @@
           "end_date": "2026-08-06T13:25:40.412313+00:00",
           "duration_min": 0.7,
           "day": "2026-08-06"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-05T13:25:01.312391+00:00",
-          "end_date": "2026-08-05T13:25:38.944095+00:00",
-          "duration_min": 0.6,
-          "day": "2026-08-05"
         }
       ],
       "top_failing_tasks": [],
@@ -53241,7 +53265,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.6,
-      "freshness_hours": 6.3,
+      "freshness_hours": 7.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -53727,7 +53751,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54213,7 +54237,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.2,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54699,7 +54723,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 8.5,
+      "freshness_hours": 10.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -55185,7 +55209,7 @@
       "min_duration_min": 0.4,
       "p50_duration_min": 0.5,
       "p95_duration_min": 0.6,
-      "freshness_hours": 10.9,
+      "freshness_hours": 12.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -55675,7 +55699,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 1.1,
       "p95_duration_min": 15.2,
-      "freshness_hours": 20.4,
+      "freshness_hours": 21.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -56386,7 +56410,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 8.1,
       "p95_duration_min": 339.5,
-      "freshness_hours": 22.4,
+      "freshness_hours": 23.8,
       "mttr_min": 1343.5,
       "last_run": {
         "state": "success",
@@ -57110,7 +57134,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 25.9,
       "p95_duration_min": 431.5,
-      "freshness_hours": 216.0,
+      "freshness_hours": 217.5,
       "mttr_min": 251.3,
       "last_run": {
         "state": "failed",
@@ -57609,29 +57633,29 @@
       "is_active": true,
       "schedule": "Dataset",
       "total": 36,
-      "success": 25,
+      "success": 26,
       "failed": 10,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 69.4,
+      "availability": 72.2,
       "avg_duration_min": 46.1,
       "max_duration_min": 612.4,
       "min_duration_min": 0.0,
-      "p50_duration_min": 21.3,
-      "p95_duration_min": 106.2,
-      "freshness_hours": 16.0,
+      "p50_duration_min": 21.8,
+      "p95_duration_min": 106.0,
+      "freshness_hours": 1.5,
       "mttr_min": 325.9,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-08-20T12:41:59.814303+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-20T13:28:29.696477+00:00",
+        "duration_min": 46.5
       },
       "daily": {
         "2026-08-20": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-08-19": {
           "success": 3,
@@ -57701,10 +57725,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-08-20T12:41:59.814303+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-20T13:28:29.696477+00:00",
+          "duration_min": 46.5,
           "day": "2026-08-20"
         },
         {
@@ -57980,71 +58004,8 @@
         {
           "dag_run_id": "manual__2026-08-20T12:41:56+00:00",
           "start_date": "2026-08-20T12:41:59.814303+00:00",
-          "state": "running",
+          "state": "success",
           "tasks": [
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start_workflow.save_execution_log_start",
               "state": "success",
@@ -58145,10 +58106,73 @@
             },
             {
               "task_id": "mart_pricing.mart_preditivo_captacao_inscricao_ofertas_mercadoedu_censo",
-              "state": "running",
+              "state": "success",
               "start_date": "2026-08-20T13:24:24.405193+00:00",
-              "end_date": null,
-              "duration": null
+              "end_date": "2026-08-20T13:27:59.243487+00:00",
+              "duration": 214.838294
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:03.667818+00:00",
+              "end_date": "2026-08-20T13:28:04.239225+00:00",
+              "duration": 0.571407
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:10.573356+00:00",
+              "end_date": "2026-08-20T13:28:11.976755+00:00",
+              "duration": 1.403399
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:10.583355+00:00",
+              "end_date": "2026-08-20T13:28:11.996360+00:00",
+              "duration": 1.413005
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:19.144865+00:00",
+              "end_date": "2026-08-20T13:28:20.543938+00:00",
+              "duration": 1.399073
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:20.127761+00:00",
+              "end_date": "2026-08-20T13:28:22.969500+00:00",
+              "duration": 2.841739
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:20.536853+00:00",
+              "end_date": "2026-08-20T13:28:23.624863+00:00",
+              "duration": 3.08801
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:21.449354+00:00",
+              "end_date": "2026-08-20T13:28:24.286804+00:00",
+              "duration": 2.83745
+            },
+            {
+              "task_id": "end_workflow.trigger_next_run",
+              "state": "skipped",
+              "start_date": "2026-08-20T13:28:22.107992+00:00",
+              "end_date": "2026-08-20T13:28:23.035522+00:00",
+              "duration": 0.92753
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "success",
+              "start_date": "2026-08-20T13:28:28.962195+00:00",
+              "end_date": "2026-08-20T13:28:29.430241+00:00",
+              "duration": 0.468046
             }
           ]
         },
@@ -58520,7 +58544,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 6.2,
       "p95_duration_min": 30.1,
-      "freshness_hours": 20.4,
+      "freshness_hours": 21.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -58940,7 +58964,7 @@
       "min_duration_min": 0.5,
       "p50_duration_min": 34.0,
       "p95_duration_min": 64.2,
-      "freshness_hours": 164.4,
+      "freshness_hours": 165.9,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -59888,7 +59912,7 @@
     {
       "name": "default_pool",
       "slots": 10000,
-      "used": 3,
+      "used": 0,
       "queued": 0,
       "saturation_pct": 0.0
     }
