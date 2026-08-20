@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-08-20T21:56:41.218335+00:00",
+  "environment": "datax-gold-prd",
+  "year": 2026,
+  "months": [
+    {
+      "month": "2026-01",
+      "label": "Jan",
+      "active_dags": 112,
+      "total_runs": 1242,
+      "success": 1179,
+      "failed": 63,
+      "availability": 94.9
+    },
+    {
+      "month": "2026-02",
+      "label": "Fev",
+      "active_dags": 112,
+      "total_runs": 1872,
+      "success": 1871,
+      "failed": 1,
+      "availability": 99.9
+    },
+    {
+      "month": "2026-03",
+      "label": "Mar",
+      "active_dags": 112,
+      "total_runs": 1652,
+      "success": 1581,
+      "failed": 71,
+      "availability": 95.7
+    },
+    {
+      "month": "2026-04",
+      "label": "Abr",
+      "active_dags": 112,
+      "total_runs": 1549,
+      "success": 1405,
+      "failed": 144,
+      "availability": 90.7
+    },
+    {
+      "month": "2026-05",
+      "label": "Mai",
+      "active_dags": 112,
+      "total_runs": 2127,
+      "success": 2103,
+      "failed": 24,
+      "availability": 98.9
+    },
+    {
+      "month": "2026-06",
+      "label": "Jun",
+      "active_dags": 112,
+      "total_runs": 1894,
+      "success": 1792,
+      "failed": 102,
+      "availability": 94.6
+    },
+    {
+      "month": "2026-07",
+      "label": "Jul",
+      "active_dags": 112,
+      "total_runs": 2568,
+      "success": 2415,
+      "failed": 153,
+      "availability": 94.0
+    },
+    {
+      "month": "2026-08",
+      "label": "Ago",
+      "active_dags": 112,
+      "total_runs": 1807,
+      "success": 1673,
+      "failed": 133,
+      "availability": 92.6
+    }
+  ]
+}
