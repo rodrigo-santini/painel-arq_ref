@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-31T21:42:47.088959+00:00",
+  "generated_at": "2026-08-31T22:27:21.218202+00:00",
   "environment": "multi",
   "airflow_version": "2.10.3, 2.7.2",
-  "period_start": "2026-08-16T21:38:21Z",
-  "period_end": "2026-08-31T21:38:21Z",
+  "period_start": "2026-08-16T22:23:03Z",
+  "period_end": "2026-08-31T22:23:03Z",
   "period_days": 15,
   "environments": [
     {
@@ -105,7 +105,7 @@
   },
   "daily": {
     "2026-08-31": {
-      "success": 390,
+      "success": 392,
       "failed": 50,
       "running": 0
     },
@@ -145,7 +145,7 @@
       "running": 0
     },
     "2026-08-23": {
-      "success": 423,
+      "success": 422,
       "failed": 111,
       "running": 0
     },
@@ -180,7 +180,7 @@
       "running": 0
     },
     "2026-08-16": {
-      "success": 7,
+      "success": 6,
       "failed": 0,
       "running": 0
     }
@@ -228,7 +228,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 6.1,
       "p95_duration_min": 12.0,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -2563,7 +2563,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 7.3,
-      "freshness_hours": 8.9,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -3298,7 +3298,7 @@
       "min_duration_min": 14.5,
       "p50_duration_min": 18.8,
       "p95_duration_min": 24.3,
-      "freshness_hours": 16.8,
+      "freshness_hours": 17.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -4630,7 +4630,7 @@
       "min_duration_min": 0.0,
       "p50_duration_min": 8.7,
       "p95_duration_min": 12.1,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -7225,7 +7225,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 8.1,
       "p95_duration_min": 13.2,
-      "freshness_hours": 17.0,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -7890,7 +7890,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 8.3,
       "p95_duration_min": 14.8,
-      "freshness_hours": 13.1,
+      "freshness_hours": 13.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -8608,7 +8608,7 @@
       "min_duration_min": 9.0,
       "p50_duration_min": 9.7,
       "p95_duration_min": 10.9,
-      "freshness_hours": 18.0,
+      "freshness_hours": 18.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -9923,7 +9923,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 4.8,
       "p95_duration_min": 8.5,
-      "freshness_hours": 15.4,
+      "freshness_hours": 16.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -12310,7 +12310,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 11.0,
       "p95_duration_min": 14.7,
-      "freshness_hours": 15.5,
+      "freshness_hours": 16.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -13012,7 +13012,7 @@
       "min_duration_min": 18.5,
       "p50_duration_min": 27.6,
       "p95_duration_min": 34.8,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -14855,7 +14855,7 @@
       "min_duration_min": 6.3,
       "p50_duration_min": 132.8,
       "p95_duration_min": 583.5,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.4,
       "mttr_min": 433.0,
       "last_run": {
         "state": "success",
@@ -17270,7 +17270,7 @@
       "min_duration_min": 8.0,
       "p50_duration_min": 14.3,
       "p95_duration_min": 19.6,
-      "freshness_hours": 12.4,
+      "freshness_hours": 13.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -18208,7 +18208,7 @@
       "min_duration_min": 105.2,
       "p50_duration_min": 215.7,
       "p95_duration_min": 831.9,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.4,
       "mttr_min": 2336.9,
       "last_run": {
         "state": "success",
@@ -18620,7 +18620,7 @@
       "min_duration_min": 31.9,
       "p50_duration_min": 35.7,
       "p95_duration_min": 52.9,
-      "freshness_hours": 11.8,
+      "freshness_hours": 12.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -20954,7 +20954,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.6,
-      "freshness_hours": 7.2,
+      "freshness_hours": 7.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -21378,7 +21378,7 @@
       "min_duration_min": 11.6,
       "p50_duration_min": 15.9,
       "p95_duration_min": 19.8,
-      "freshness_hours": 12.4,
+      "freshness_hours": 13.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -22495,7 +22495,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 6.1,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -23076,7 +23076,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.1,
       "p95_duration_min": 5.2,
-      "freshness_hours": 4.1,
+      "freshness_hours": 4.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24249,7 +24249,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 6.2,
       "p95_duration_min": 10.4,
-      "freshness_hours": 6.4,
+      "freshness_hours": 7.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24673,7 +24673,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.0,
-      "freshness_hours": 21.7,
+      "freshness_hours": 22.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -25078,18 +25078,23 @@
       "availability": 100.0,
       "avg_duration_min": 4.0,
       "max_duration_min": 5.4,
-      "min_duration_min": 3.3,
-      "p50_duration_min": 3.6,
+      "min_duration_min": 3.4,
+      "p50_duration_min": 3.7,
       "p95_duration_min": 5.3,
-      "freshness_hours": 23.9,
+      "freshness_hours": 0.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-30T21:45:01.988142+00:00",
-        "end_date": "2026-08-30T21:48:58.132170+00:00",
-        "duration_min": 3.9
+        "start_date": "2026-08-31T21:45:01.267855+00:00",
+        "end_date": "2026-08-31T21:48:40.646442+00:00",
+        "duration_min": 3.7
       },
       "daily": {
+        "2026-08-31": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-30": {
           "success": 1,
           "failed": 0,
@@ -25159,14 +25164,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-16": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-31T21:45:01.267855+00:00",
+          "end_date": "2026-08-31T21:48:40.646442+00:00",
+          "duration_min": 3.7,
+          "day": "2026-08-31"
+        },
         {
           "state": "success",
           "start_date": "2026-08-30T21:45:01.988142+00:00",
@@ -25264,18 +25271,88 @@
           "end_date": "2026-08-17T21:48:30.758873+00:00",
           "duration_min": 3.4,
           "day": "2026-08-17"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-16T21:45:02.142057+00:00",
-          "end_date": "2026-08-16T21:48:21.097072+00:00",
-          "duration_min": 3.3,
-          "day": "2026-08-16"
         }
       ],
       "top_failing_tasks": [],
       "category": "MONITORAMENTO",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-30T21:45:00+00:00",
+          "start_date": "2026-08-31T21:45:01.267855+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_task",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:03.564677+00:00",
+              "end_date": "2026-08-31T21:45:06.056987+00:00",
+              "duration": 2.49231
+            },
+            {
+              "task_id": "landing.landing_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:06.778961+00:00",
+              "end_date": "2026-08-31T21:45:06.778964+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "raw.raw_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:08.201537+00:00",
+              "end_date": "2026-08-31T21:45:08.201541+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "integration.integration_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:08.617283+00:00",
+              "end_date": "2026-08-31T21:45:08.617287+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "integration.gluejob_monitoramento_catalogo_dados.create_or_update_job_monitoramento_catalogo_dados",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:11.674332+00:00",
+              "end_date": "2026-08-31T21:45:12.222447+00:00",
+              "duration": 0.548115
+            },
+            {
+              "task_id": "integration.gluejob_monitoramento_catalogo_dados.run_job_monitoramento_catalogo_dados",
+              "state": "success",
+              "start_date": "2026-08-31T21:45:14.921793+00:00",
+              "end_date": "2026-08-31T21:47:24.112602+00:00",
+              "duration": 129.190809
+            },
+            {
+              "task_id": "integration.create_or_update_crawler_raw",
+              "state": "success",
+              "start_date": "2026-08-31T21:47:26.676590+00:00",
+              "end_date": "2026-08-31T21:47:27.296183+00:00",
+              "duration": 0.619593
+            },
+            {
+              "task_id": "integration.run_crawler_raw",
+              "state": "success",
+              "start_date": "2026-08-31T21:47:29.679394+00:00",
+              "end_date": "2026-08-31T21:48:26.711451+00:00",
+              "duration": 57.032057
+            },
+            {
+              "task_id": "business.business_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:48:26.919569+00:00",
+              "end_date": "2026-08-31T21:48:26.919573+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "success_task",
+              "state": "success",
+              "start_date": "2026-08-31T21:48:29.448920+00:00",
+              "end_date": "2026-08-31T21:48:40.097173+00:00",
+              "duration": 10.648253
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-29T21:45:00+00:00",
           "start_date": "2026-08-30T21:45:01.988142+00:00",
@@ -25429,83 +25506,6 @@
               "duration": 2.214874
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-27T21:45:00+00:00",
-          "start_date": "2026-08-28T21:45:03.020951+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_task",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:05.674124+00:00",
-              "end_date": "2026-08-28T21:45:08.102561+00:00",
-              "duration": 2.428437
-            },
-            {
-              "task_id": "landing.landing_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:09.043018+00:00",
-              "end_date": "2026-08-28T21:45:09.043021+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "raw.raw_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:09.217299+00:00",
-              "end_date": "2026-08-28T21:45:09.217302+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "integration.integration_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:10.754485+00:00",
-              "end_date": "2026-08-28T21:45:10.754489+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "integration.gluejob_monitoramento_catalogo_dados.create_or_update_job_monitoramento_catalogo_dados",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:12.739226+00:00",
-              "end_date": "2026-08-28T21:45:13.320874+00:00",
-              "duration": 0.581648
-            },
-            {
-              "task_id": "integration.gluejob_monitoramento_catalogo_dados.run_job_monitoramento_catalogo_dados",
-              "state": "success",
-              "start_date": "2026-08-28T21:45:16.517168+00:00",
-              "end_date": "2026-08-28T21:47:31.561289+00:00",
-              "duration": 135.044121
-            },
-            {
-              "task_id": "integration.create_or_update_crawler_raw",
-              "state": "success",
-              "start_date": "2026-08-28T21:47:34.669486+00:00",
-              "end_date": "2026-08-28T21:47:35.249223+00:00",
-              "duration": 0.579737
-            },
-            {
-              "task_id": "integration.run_crawler_raw",
-              "state": "success",
-              "start_date": "2026-08-28T21:47:38.510791+00:00",
-              "end_date": "2026-08-28T21:48:30.586915+00:00",
-              "duration": 52.076124
-            },
-            {
-              "task_id": "business.business_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:48:30.714003+00:00",
-              "end_date": "2026-08-28T21:48:30.714006+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "success_task",
-              "state": "success",
-              "start_date": "2026-08-28T21:48:34.448809+00:00",
-              "end_date": "2026-08-28T21:48:36.671895+00:00",
-              "duration": 2.223086
-            }
-          ]
         }
       ],
       "environment": "cdl-airflow-mwaa"
@@ -25526,7 +25526,7 @@
       "min_duration_min": 25.0,
       "p50_duration_min": 29.5,
       "p95_duration_min": 34.6,
-      "freshness_hours": 11.2,
+      "freshness_hours": 12.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -26454,7 +26454,7 @@
       "min_duration_min": 4.4,
       "p50_duration_min": 6.3,
       "p95_duration_min": 9.2,
-      "freshness_hours": 15.7,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -29075,7 +29075,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 7.2,
       "p95_duration_min": 11.8,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -29745,7 +29745,7 @@
       "min_duration_min": 8.8,
       "p50_duration_min": 9.3,
       "p95_duration_min": 15.6,
-      "freshness_hours": 15.3,
+      "freshness_hours": 16.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31702,7 +31702,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 5.8,
       "p95_duration_min": 12.2,
-      "freshness_hours": 15.3,
+      "freshness_hours": 16.0,
       "mttr_min": 758.3,
       "last_run": {
         "state": "success",
@@ -32745,7 +32745,7 @@
       "min_duration_min": 12.3,
       "p50_duration_min": 15.0,
       "p95_duration_min": 17.6,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -33531,7 +33531,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 4.2,
       "p95_duration_min": 7.0,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34109,7 +34109,7 @@
       "min_duration_min": 9.7,
       "p50_duration_min": 14.4,
       "p95_duration_min": 16.8,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34638,7 +34638,7 @@
       "min_duration_min": 11.2,
       "p50_duration_min": 13.9,
       "p95_duration_min": 17.0,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -35083,7 +35083,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 10.7,
       "p95_duration_min": 14.7,
-      "freshness_hours": 12.6,
+      "freshness_hours": 13.3,
       "mttr_min": 266.8,
       "last_run": {
         "state": "success",
@@ -35969,7 +35969,7 @@
       "min_duration_min": 11.1,
       "p50_duration_min": 14.8,
       "p95_duration_min": 17.9,
-      "freshness_hours": 17.0,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36477,7 +36477,7 @@
       "min_duration_min": 14.9,
       "p50_duration_min": 17.8,
       "p95_duration_min": 39.8,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36985,7 +36985,7 @@
       "min_duration_min": 13.5,
       "p50_duration_min": 16.8,
       "p95_duration_min": 38.8,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -37493,7 +37493,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 25.0,
       "p95_duration_min": 32.0,
-      "freshness_hours": 16.8,
+      "freshness_hours": 17.5,
       "mttr_min": 868.9,
       "last_run": {
         "state": "success",
@@ -37870,7 +37870,7 @@
       "min_duration_min": 16.0,
       "p50_duration_min": 18.9,
       "p95_duration_min": 35.1,
-      "freshness_hours": 16.8,
+      "freshness_hours": 17.5,
       "mttr_min": 847.9,
       "last_run": {
         "state": "success",
@@ -40240,7 +40240,7 @@
       "min_duration_min": 8.6,
       "p50_duration_min": 10.5,
       "p95_duration_min": 12.9,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -42582,7 +42582,7 @@
       "min_duration_min": 8.3,
       "p50_duration_min": 10.3,
       "p95_duration_min": 13.3,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -44840,7 +44840,7 @@
       "min_duration_min": 8.5,
       "p50_duration_min": 10.4,
       "p95_duration_min": 13.4,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47098,7 +47098,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 6.4,
       "p95_duration_min": 8.6,
-      "freshness_hours": 16.8,
+      "freshness_hours": 17.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47669,7 +47669,7 @@
       "min_duration_min": 14.1,
       "p50_duration_min": 18.1,
       "p95_duration_min": 24.3,
-      "freshness_hours": 12.4,
+      "freshness_hours": 13.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -48870,7 +48870,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 515.4,
       "p95_duration_min": 518.1,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -49420,7 +49420,7 @@
       "min_duration_min": 10.2,
       "p50_duration_min": 13.4,
       "p95_duration_min": 17.0,
-      "freshness_hours": 17.0,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -50873,7 +50873,7 @@
       "min_duration_min": 13.5,
       "p50_duration_min": 20.2,
       "p95_duration_min": 22.0,
-      "freshness_hours": 12.4,
+      "freshness_hours": 13.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -52284,7 +52284,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 11.3,
       "p95_duration_min": 11.9,
-      "freshness_hours": 12.5,
+      "freshness_hours": 13.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -53821,7 +53821,7 @@
       "min_duration_min": 12.6,
       "p50_duration_min": 15.1,
       "p95_duration_min": 17.1,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54350,7 +54350,7 @@
       "min_duration_min": 10.1,
       "p50_duration_min": 14.4,
       "p95_duration_min": 19.3,
-      "freshness_hours": 16.9,
+      "freshness_hours": 17.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54873,7 +54873,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.0,
-      "freshness_hours": 16.5,
+      "freshness_hours": 17.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -55465,7 +55465,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 12.3,
       "p95_duration_min": 15.1,
-      "freshness_hours": 13.4,
+      "freshness_hours": 14.2,
       "mttr_min": 2321.5,
       "last_run": {
         "state": "success",
@@ -56015,7 +56015,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 8.2,
       "p95_duration_min": 9.4,
-      "freshness_hours": 12.6,
+      "freshness_hours": 13.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -56628,7 +56628,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.9,
-      "freshness_hours": 2.2,
+      "freshness_hours": 2.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -57178,7 +57178,7 @@
       "min_duration_min": 20.0,
       "p50_duration_min": 23.6,
       "p95_duration_min": 35.1,
-      "freshness_hours": 12.3,
+      "freshness_hours": 13.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -57791,7 +57791,7 @@
       "min_duration_min": 6.0,
       "p50_duration_min": 11.9,
       "p95_duration_min": 18.4,
-      "freshness_hours": 2.6,
+      "freshness_hours": 3.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -58526,7 +58526,7 @@
       "min_duration_min": 6.2,
       "p50_duration_min": 8.9,
       "p95_duration_min": 11.6,
-      "freshness_hours": 12.6,
+      "freshness_hours": 13.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -58971,7 +58971,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.5,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -59437,7 +59437,7 @@
       "min_duration_min": 72.7,
       "p50_duration_min": 84.3,
       "p95_duration_min": 148.9,
-      "freshness_hours": 14.5,
+      "freshness_hours": 15.2,
       "mttr_min": 1354.4,
       "last_run": {
         "state": "success",
@@ -60386,7 +60386,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.9,
       "p95_duration_min": 3.8,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -61083,7 +61083,7 @@
       "min_duration_min": 10.3,
       "p50_duration_min": 16.0,
       "p95_duration_min": 20.1,
-      "freshness_hours": 16.5,
+      "freshness_hours": 17.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -62095,7 +62095,7 @@
       "min_duration_min": 7.0,
       "p50_duration_min": 10.1,
       "p95_duration_min": 14.7,
-      "freshness_hours": 2.4,
+      "freshness_hours": 3.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -63317,7 +63317,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 16.7,
       "p95_duration_min": 18.3,
-      "freshness_hours": 1.4,
+      "freshness_hours": 2.1,
       "mttr_min": 485.3,
       "last_run": {
         "state": "success",
@@ -65248,7 +65248,7 @@
       "min_duration_min": 6.1,
       "p50_duration_min": 10.0,
       "p95_duration_min": 12.0,
-      "freshness_hours": 14.0,
+      "freshness_hours": 14.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -65777,7 +65777,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 112.6,
       "p95_duration_min": 153.7,
-      "freshness_hours": 11.8,
+      "freshness_hours": 12.6,
       "mttr_min": 2016.4,
       "last_run": {
         "state": "success",
@@ -66210,7 +66210,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 9.0,
       "p95_duration_min": 13.7,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -66865,7 +66865,7 @@
       "min_duration_min": 7.3,
       "p50_duration_min": 9.2,
       "p95_duration_min": 13.6,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -67688,7 +67688,7 @@
       "min_duration_min": 17.0,
       "p50_duration_min": 20.3,
       "p95_duration_min": 23.9,
-      "freshness_hours": 13.3,
+      "freshness_hours": 14.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -68427,7 +68427,7 @@
       "min_duration_min": 7.4,
       "p50_duration_min": 9.2,
       "p95_duration_min": 12.9,
-      "freshness_hours": 13.4,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -69460,7 +69460,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 9.0,
       "p95_duration_min": 13.4,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -70073,7 +70073,7 @@
       "min_duration_min": 83.0,
       "p50_duration_min": 111.5,
       "p95_duration_min": 152.4,
-      "freshness_hours": 11.8,
+      "freshness_hours": 12.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -71610,7 +71610,7 @@
       "min_duration_min": 4.4,
       "p50_duration_min": 9.9,
       "p95_duration_min": 12.9,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": 1288.0,
       "last_run": {
         "state": "success",
@@ -77175,7 +77175,7 @@
       "min_duration_min": 6.7,
       "p50_duration_min": 10.0,
       "p95_duration_min": 13.3,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -79609,22 +79609,22 @@
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 6.1,
+      "avg_duration_min": 6.0,
       "max_duration_min": 12.6,
       "min_duration_min": 2.4,
       "p50_duration_min": 6.0,
       "p95_duration_min": 9.7,
-      "freshness_hours": 0.7,
+      "freshness_hours": 0.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-31T21:00:02.872180+00:00",
-        "end_date": "2026-08-31T21:03:09.878068+00:00",
-        "duration_min": 3.1
+        "start_date": "2026-08-31T22:00:01.706794+00:00",
+        "end_date": "2026-08-31T22:03:17.796568+00:00",
+        "duration_min": 3.3
       },
       "daily": {
         "2026-08-31": {
-          "success": 22,
+          "success": 23,
           "failed": 0,
           "running": 0
         },
@@ -79664,12 +79664,19 @@
           "running": 0
         },
         "2026-08-23": {
-          "success": 10,
+          "success": 9,
           "failed": 0,
           "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-31T22:00:01.706794+00:00",
+          "end_date": "2026-08-31T22:03:17.796568+00:00",
+          "duration_min": 3.3,
+          "day": "2026-08-31"
+        },
         {
           "state": "success",
           "start_date": "2026-08-31T21:00:02.872180+00:00",
@@ -81062,18 +81069,347 @@
           "end_date": "2026-08-23T15:06:32.400822+00:00",
           "duration_min": 6.5,
           "day": "2026-08-23"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-23T14:00:03.784306+00:00",
-          "end_date": "2026-08-23T14:07:30.195700+00:00",
-          "duration_min": 7.4,
-          "day": "2026-08-23"
         }
       ],
       "top_failing_tasks": [],
       "category": "VOOMP",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "scheduled__2026-08-31T21:00:00+00:00",
+          "start_date": "2026-08-31T22:00:01.706794+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start_task",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:04.061105+00:00",
+              "end_date": "2026-08-31T22:00:09.516679+00:00",
+              "duration": 5.455574
+            },
+            {
+              "task_id": "business.business_seller_sales_funnel_kpis.athena_create_table_business_seller_sales_funnel_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:26.482531+00:00",
+              "end_date": "2026-08-31T22:01:01.077399+00:00",
+              "duration": 34.594868
+            },
+            {
+              "task_id": "business.business_reembolso_kpis.athena_create_table_business_reembolso_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:28.601032+00:00",
+              "end_date": "2026-08-31T22:01:02.610625+00:00",
+              "duration": 34.009593
+            },
+            {
+              "task_id": "business.business_inadimplencia_assinatura_kpis.athena_create_table_business_inadimplencia_assinatura_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:28.693279+00:00",
+              "end_date": "2026-08-31T22:01:02.012905+00:00",
+              "duration": 33.319626
+            },
+            {
+              "task_id": "business.business_produto_kpis.athena_create_table_business_produto_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:28.784850+00:00",
+              "end_date": "2026-08-31T22:01:02.871665+00:00",
+              "duration": 34.086815
+            },
+            {
+              "task_id": "business.business_aluno_kpis.athena_create_table_business_aluno_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:28.999361+00:00",
+              "end_date": "2026-08-31T22:01:02.968517+00:00",
+              "duration": 33.969156
+            },
+            {
+              "task_id": "business.business_faturamento_mensal_kpis.athena_create_table_business_faturamento_mensal_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:29.384144+00:00",
+              "end_date": "2026-08-31T22:01:02.973881+00:00",
+              "duration": 33.589737
+            },
+            {
+              "task_id": "business.business_seller_kpis.athena_create_table_business_seller_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:29.385612+00:00",
+              "end_date": "2026-08-31T22:01:01.590394+00:00",
+              "duration": 32.204782
+            },
+            {
+              "task_id": "business.business_seller_financeiro.athena_create_table_business_seller_financeiro",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:30.392919+00:00",
+              "end_date": "2026-08-31T22:01:02.971152+00:00",
+              "duration": 32.578233
+            },
+            {
+              "task_id": "business.business_seller_antecipacoes_kpis.athena_create_table_business_seller_antecipacoes_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:30.584611+00:00",
+              "end_date": "2026-08-31T22:01:02.275654+00:00",
+              "duration": 31.691043
+            },
+            {
+              "task_id": "business.business_aluno_dmc_kpis.athena_create_table_business_aluno_dmc_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:00:31.505967+00:00",
+              "end_date": "2026-08-31T22:01:03.111046+00:00",
+              "duration": 31.605079
+            },
+            {
+              "task_id": "business.business_fct_sales_enriched.athena_create_table_business_fct_sales_enriched",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:16.622955+00:00",
+              "end_date": "2026-08-31T22:01:48.764061+00:00",
+              "duration": 32.141106
+            },
+            {
+              "task_id": "business.business_seller_financeiro.delete_s3bucket_files_business_seller_financeiro",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:19.921198+00:00",
+              "end_date": "2026-08-31T22:01:22.296266+00:00",
+              "duration": 2.375068
+            },
+            {
+              "task_id": "business.business_inadimplencia_assinatura_kpis.delete_s3bucket_files_business_inadimplencia_assinatura_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:20.888075+00:00",
+              "end_date": "2026-08-31T22:01:23.361467+00:00",
+              "duration": 2.473392
+            },
+            {
+              "task_id": "business.business_seller_kpis.delete_s3bucket_files_business_seller_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:21.685237+00:00",
+              "end_date": "2026-08-31T22:01:23.890246+00:00",
+              "duration": 2.205009
+            },
+            {
+              "task_id": "business.business_faturamento_mensal_kpis.delete_s3bucket_files_business_faturamento_mensal_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:21.795645+00:00",
+              "end_date": "2026-08-31T22:01:23.763756+00:00",
+              "duration": 1.968111
+            },
+            {
+              "task_id": "business.business_reembolso_kpis.delete_s3bucket_files_business_reembolso_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:24.216317+00:00",
+              "end_date": "2026-08-31T22:01:26.000840+00:00",
+              "duration": 1.784523
+            },
+            {
+              "task_id": "business.business_seller_antecipacoes_kpis.delete_s3bucket_files_business_seller_antecipacoes_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:24.611993+00:00",
+              "end_date": "2026-08-31T22:01:26.785074+00:00",
+              "duration": 2.173081
+            },
+            {
+              "task_id": "business.business_aluno_dmc_kpis.delete_s3bucket_files_business_aluno_dmc_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:25.077649+00:00",
+              "end_date": "2026-08-31T22:01:26.595494+00:00",
+              "duration": 1.517845
+            },
+            {
+              "task_id": "business.business_seller_sales_funnel_kpis.delete_s3bucket_files_business_seller_sales_funnel_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:27.001874+00:00",
+              "end_date": "2026-08-31T22:01:29.091018+00:00",
+              "duration": 2.089144
+            },
+            {
+              "task_id": "business.business_aluno_kpis.delete_s3bucket_files_business_aluno_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:27.167418+00:00",
+              "end_date": "2026-08-31T22:01:28.786123+00:00",
+              "duration": 1.618705
+            },
+            {
+              "task_id": "business.business_seller_kpis.athena_insert_overwrite_business_seller_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:40.090303+00:00",
+              "end_date": "2026-08-31T22:02:13.181538+00:00",
+              "duration": 33.091235
+            },
+            {
+              "task_id": "business.business_produto_kpis.delete_s3bucket_files_business_produto_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:41.779654+00:00",
+              "end_date": "2026-08-31T22:01:43.398147+00:00",
+              "duration": 1.618493
+            },
+            {
+              "task_id": "business.business_aluno_dmc_kpis.athena_insert_overwrite_business_aluno_dmc_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:43.291528+00:00",
+              "end_date": "2026-08-31T22:02:16.760455+00:00",
+              "duration": 33.468927
+            },
+            {
+              "task_id": "business.business_reembolso_kpis.athena_insert_overwrite_business_reembolso_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:43.569721+00:00",
+              "end_date": "2026-08-31T22:02:16.500360+00:00",
+              "duration": 32.930639
+            },
+            {
+              "task_id": "business.business_seller_antecipacoes_kpis.athena_insert_overwrite_business_seller_antecipacoes_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:44.212769+00:00",
+              "end_date": "2026-08-31T22:02:15.966528+00:00",
+              "duration": 31.753759
+            },
+            {
+              "task_id": "business.business_inadimplencia_assinatura_kpis.athena_insert_overwrite_business_inadimplencia_assinatura_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:44.589072+00:00",
+              "end_date": "2026-08-31T22:02:16.429456+00:00",
+              "duration": 31.840384
+            },
+            {
+              "task_id": "business.business_aluno_kpis.athena_insert_overwrite_business_aluno_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:44.797934+00:00",
+              "end_date": "2026-08-31T22:02:47.461330+00:00",
+              "duration": 62.663396
+            },
+            {
+              "task_id": "business.business_seller_financeiro.athena_insert_overwrite_business_seller_financeiro",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:44.887747+00:00",
+              "end_date": "2026-08-31T22:02:17.313272+00:00",
+              "duration": 32.425525
+            },
+            {
+              "task_id": "business.business_faturamento_mensal_kpis.athena_insert_overwrite_business_faturamento_mensal_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:47.273222+00:00",
+              "end_date": "2026-08-31T22:02:18.161340+00:00",
+              "duration": 30.888118
+            },
+            {
+              "task_id": "business.business_seller_sales_funnel_kpis.athena_insert_overwrite_business_seller_sales_funnel_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:51.802765+00:00",
+              "end_date": "2026-08-31T22:02:23.403746+00:00",
+              "duration": 31.600981
+            },
+            {
+              "task_id": "business.business_fct_sales_enriched.delete_s3bucket_files_business_fct_sales_enriched",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:53.789535+00:00",
+              "end_date": "2026-08-31T22:01:54.364619+00:00",
+              "duration": 0.575084
+            },
+            {
+              "task_id": "business.business_produto_kpis.athena_insert_overwrite_business_produto_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:01:56.791429+00:00",
+              "end_date": "2026-08-31T22:02:27.868308+00:00",
+              "duration": 31.076879
+            },
+            {
+              "task_id": "business.business_fct_sales_enriched.athena_insert_overwrite_business_fct_sales_enriched",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:15.725467+00:00",
+              "end_date": "2026-08-31T22:02:46.584347+00:00",
+              "duration": 30.85888
+            },
+            {
+              "task_id": "business.business_seller_kpis.rename_business_seller_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:29.301887+00:00",
+              "end_date": "2026-08-31T22:02:31.475754+00:00",
+              "duration": 2.173867
+            },
+            {
+              "task_id": "business.business_seller_financeiro.rename_business_seller_financeiro",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:31.362300+00:00",
+              "end_date": "2026-08-31T22:02:33.503855+00:00",
+              "duration": 2.141555
+            },
+            {
+              "task_id": "business.business_seller_antecipacoes_kpis.rename_business_seller_antecipacoes_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:31.876209+00:00",
+              "end_date": "2026-08-31T22:02:33.867038+00:00",
+              "duration": 1.990829
+            },
+            {
+              "task_id": "business.business_aluno_dmc_kpis.rename_business_aluno_dmc_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:31.977384+00:00",
+              "end_date": "2026-08-31T22:02:36.396704+00:00",
+              "duration": 4.41932
+            },
+            {
+              "task_id": "business.business_reembolso_kpis.rename_business_reembolso_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:33.584263+00:00",
+              "end_date": "2026-08-31T22:02:35.084299+00:00",
+              "duration": 1.500036
+            },
+            {
+              "task_id": "business.business_faturamento_mensal_kpis.rename_business_faturamento_mensal_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:36.796759+00:00",
+              "end_date": "2026-08-31T22:02:38.194427+00:00",
+              "duration": 1.397668
+            },
+            {
+              "task_id": "business.business_seller_sales_funnel_kpis.rename_business_seller_sales_funnel_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:38.684791+00:00",
+              "end_date": "2026-08-31T22:02:41.964578+00:00",
+              "duration": 3.279787
+            },
+            {
+              "task_id": "business.business_produto_kpis.rename_business_produto_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:41.454890+00:00",
+              "end_date": "2026-08-31T22:02:42.147369+00:00",
+              "duration": 0.692479
+            },
+            {
+              "task_id": "business.business_inadimplencia_assinatura_kpis.rename_business_inadimplencia_assinatura_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:41.893391+00:00",
+              "end_date": "2026-08-31T22:02:43.098698+00:00",
+              "duration": 1.205307
+            },
+            {
+              "task_id": "business.business_fct_sales_enriched.rename_business_fct_sales_enriched",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:51.219586+00:00",
+              "end_date": "2026-08-31T22:02:54.492674+00:00",
+              "duration": 3.273088
+            },
+            {
+              "task_id": "business.business_aluno_kpis.rename_business_aluno_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:52.106406+00:00",
+              "end_date": "2026-08-31T22:02:55.794349+00:00",
+              "duration": 3.687943
+            },
+            {
+              "task_id": "monitoria_operacional.monitor_business_seller_sales_funnel_kpis",
+              "state": "success",
+              "start_date": "2026-08-31T22:02:58.277722+00:00",
+              "end_date": "2026-08-31T22:03:11.807308+00:00",
+              "duration": 13.529586
+            },
+            {
+              "task_id": "success_task",
+              "state": "success",
+              "start_date": "2026-08-31T22:03:14.431450+00:00",
+              "end_date": "2026-08-31T22:03:16.739489+00:00",
+              "duration": 2.308039
+            }
+          ]
+        },
         {
           "dag_run_id": "scheduled__2026-08-31T20:00:00+00:00",
           "start_date": "2026-08-31T21:00:02.872180+00:00",
@@ -81745,342 +82081,6 @@
               "duration": 3.582985
             }
           ]
-        },
-        {
-          "dag_run_id": "scheduled__2026-08-31T18:00:00+00:00",
-          "start_date": "2026-08-31T19:00:01.962514+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start_task",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:05.756986+00:00",
-              "end_date": "2026-08-31T19:00:11.813130+00:00",
-              "duration": 6.056144
-            },
-            {
-              "task_id": "business.business_aluno_dmc_kpis.athena_create_table_business_aluno_dmc_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:26.306935+00:00",
-              "end_date": "2026-08-31T19:00:59.788636+00:00",
-              "duration": 33.481701
-            },
-            {
-              "task_id": "business.business_inadimplencia_assinatura_kpis.athena_create_table_business_inadimplencia_assinatura_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:28.881068+00:00",
-              "end_date": "2026-08-31T19:01:01.006206+00:00",
-              "duration": 32.125138
-            },
-            {
-              "task_id": "business.business_reembolso_kpis.athena_create_table_business_reembolso_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:29.011389+00:00",
-              "end_date": "2026-08-31T19:01:02.879301+00:00",
-              "duration": 33.867912
-            },
-            {
-              "task_id": "business.business_faturamento_mensal_kpis.athena_create_table_business_faturamento_mensal_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:29.398566+00:00",
-              "end_date": "2026-08-31T19:01:02.997653+00:00",
-              "duration": 33.599087
-            },
-            {
-              "task_id": "business.business_seller_sales_funnel_kpis.athena_create_table_business_seller_sales_funnel_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:31.077849+00:00",
-              "end_date": "2026-08-31T19:01:03.501124+00:00",
-              "duration": 32.423275
-            },
-            {
-              "task_id": "business.business_seller_financeiro.athena_create_table_business_seller_financeiro",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:31.780126+00:00",
-              "end_date": "2026-08-31T19:01:04.161255+00:00",
-              "duration": 32.381129
-            },
-            {
-              "task_id": "business.business_produto_kpis.athena_create_table_business_produto_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:32.461638+00:00",
-              "end_date": "2026-08-31T19:01:04.488766+00:00",
-              "duration": 32.027128
-            },
-            {
-              "task_id": "business.business_seller_kpis.athena_create_table_business_seller_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:32.811111+00:00",
-              "end_date": "2026-08-31T19:01:04.766695+00:00",
-              "duration": 31.955584
-            },
-            {
-              "task_id": "business.business_seller_antecipacoes_kpis.athena_create_table_business_seller_antecipacoes_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:33.174767+00:00",
-              "end_date": "2026-08-31T19:01:04.899280+00:00",
-              "duration": 31.724513
-            },
-            {
-              "task_id": "business.business_aluno_kpis.athena_create_table_business_aluno_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:00:33.791148+00:00",
-              "end_date": "2026-08-31T19:01:05.064090+00:00",
-              "duration": 31.272942
-            },
-            {
-              "task_id": "business.business_fct_sales_enriched.athena_create_table_business_fct_sales_enriched",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:03.224661+00:00",
-              "end_date": "2026-08-31T19:01:36.164356+00:00",
-              "duration": 32.939695
-            },
-            {
-              "task_id": "business.business_aluno_kpis.delete_s3bucket_files_business_aluno_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:15.784052+00:00",
-              "end_date": "2026-08-31T19:01:17.493867+00:00",
-              "duration": 1.709815
-            },
-            {
-              "task_id": "business.business_faturamento_mensal_kpis.delete_s3bucket_files_business_faturamento_mensal_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:18.371626+00:00",
-              "end_date": "2026-08-31T19:01:19.913770+00:00",
-              "duration": 1.542144
-            },
-            {
-              "task_id": "business.business_reembolso_kpis.delete_s3bucket_files_business_reembolso_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:21.190114+00:00",
-              "end_date": "2026-08-31T19:01:23.071375+00:00",
-              "duration": 1.881261
-            },
-            {
-              "task_id": "business.business_seller_sales_funnel_kpis.delete_s3bucket_files_business_seller_sales_funnel_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:22.608464+00:00",
-              "end_date": "2026-08-31T19:01:25.171397+00:00",
-              "duration": 2.562933
-            },
-            {
-              "task_id": "business.business_aluno_dmc_kpis.delete_s3bucket_files_business_aluno_dmc_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:22.761993+00:00",
-              "end_date": "2026-08-31T19:01:25.388343+00:00",
-              "duration": 2.62635
-            },
-            {
-              "task_id": "business.business_seller_financeiro.delete_s3bucket_files_business_seller_financeiro",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:25.113391+00:00",
-              "end_date": "2026-08-31T19:01:26.496934+00:00",
-              "duration": 1.383543
-            },
-            {
-              "task_id": "business.business_produto_kpis.delete_s3bucket_files_business_produto_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:26.761998+00:00",
-              "end_date": "2026-08-31T19:01:28.388699+00:00",
-              "duration": 1.626701
-            },
-            {
-              "task_id": "business.business_seller_antecipacoes_kpis.delete_s3bucket_files_business_seller_antecipacoes_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:26.795238+00:00",
-              "end_date": "2026-08-31T19:01:28.589837+00:00",
-              "duration": 1.794599
-            },
-            {
-              "task_id": "business.business_faturamento_mensal_kpis.athena_insert_overwrite_business_faturamento_mensal_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:34.013142+00:00",
-              "end_date": "2026-08-31T19:02:08.130814+00:00",
-              "duration": 34.117672
-            },
-            {
-              "task_id": "business.business_inadimplencia_assinatura_kpis.delete_s3bucket_files_business_inadimplencia_assinatura_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:35.811925+00:00",
-              "end_date": "2026-08-31T19:01:37.667985+00:00",
-              "duration": 1.85606
-            },
-            {
-              "task_id": "business.business_seller_kpis.delete_s3bucket_files_business_seller_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:37.691379+00:00",
-              "end_date": "2026-08-31T19:01:39.271565+00:00",
-              "duration": 1.580186
-            },
-            {
-              "task_id": "business.business_reembolso_kpis.athena_insert_overwrite_business_reembolso_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:39.800386+00:00",
-              "end_date": "2026-08-31T19:02:13.075219+00:00",
-              "duration": 33.274833
-            },
-            {
-              "task_id": "business.business_aluno_dmc_kpis.athena_insert_overwrite_business_aluno_dmc_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:42.963436+00:00",
-              "end_date": "2026-08-31T19:02:15.990469+00:00",
-              "duration": 33.027033
-            },
-            {
-              "task_id": "business.business_produto_kpis.athena_insert_overwrite_business_produto_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:43.973066+00:00",
-              "end_date": "2026-08-31T19:02:16.314719+00:00",
-              "duration": 32.341653
-            },
-            {
-              "task_id": "business.business_seller_antecipacoes_kpis.athena_insert_overwrite_business_seller_antecipacoes_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:45.584013+00:00",
-              "end_date": "2026-08-31T19:02:17.997157+00:00",
-              "duration": 32.413144
-            },
-            {
-              "task_id": "business.business_aluno_kpis.athena_insert_overwrite_business_aluno_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:46.799333+00:00",
-              "end_date": "2026-08-31T19:02:49.861251+00:00",
-              "duration": 63.061918
-            },
-            {
-              "task_id": "business.business_inadimplencia_assinatura_kpis.athena_insert_overwrite_business_inadimplencia_assinatura_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:48.998963+00:00",
-              "end_date": "2026-08-31T19:02:20.971584+00:00",
-              "duration": 31.972621
-            },
-            {
-              "task_id": "business.business_seller_sales_funnel_kpis.athena_insert_overwrite_business_seller_sales_funnel_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:49.987600+00:00",
-              "end_date": "2026-08-31T19:02:21.477609+00:00",
-              "duration": 31.490009
-            },
-            {
-              "task_id": "business.business_fct_sales_enriched.delete_s3bucket_files_business_fct_sales_enriched",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:50.891751+00:00",
-              "end_date": "2026-08-31T19:01:51.640274+00:00",
-              "duration": 0.748523
-            },
-            {
-              "task_id": "business.business_fct_sales_enriched.athena_insert_overwrite_business_fct_sales_enriched",
-              "state": "success",
-              "start_date": "2026-08-31T19:01:54.898726+00:00",
-              "end_date": "2026-08-31T19:02:25.816931+00:00",
-              "duration": 30.918205
-            },
-            {
-              "task_id": "business.business_faturamento_mensal_kpis.rename_business_faturamento_mensal_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:10.870408+00:00",
-              "end_date": "2026-08-31T19:02:11.537608+00:00",
-              "duration": 0.6672
-            },
-            {
-              "task_id": "business.business_seller_financeiro.athena_insert_overwrite_business_seller_financeiro",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:14.416502+00:00",
-              "end_date": "2026-08-31T19:02:45.544023+00:00",
-              "duration": 31.127521
-            },
-            {
-              "task_id": "business.business_seller_kpis.athena_insert_overwrite_business_seller_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:16.224681+00:00",
-              "end_date": "2026-08-31T19:02:47.672745+00:00",
-              "duration": 31.448064
-            },
-            {
-              "task_id": "business.business_reembolso_kpis.rename_business_reembolso_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:22.268842+00:00",
-              "end_date": "2026-08-31T19:02:23.906466+00:00",
-              "duration": 1.637624
-            },
-            {
-              "task_id": "business.business_aluno_dmc_kpis.rename_business_aluno_dmc_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:25.371591+00:00",
-              "end_date": "2026-08-31T19:02:29.192692+00:00",
-              "duration": 3.821101
-            },
-            {
-              "task_id": "business.business_seller_antecipacoes_kpis.rename_business_seller_antecipacoes_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:28.990997+00:00",
-              "end_date": "2026-08-31T19:02:30.611003+00:00",
-              "duration": 1.620006
-            },
-            {
-              "task_id": "business.business_seller_sales_funnel_kpis.rename_business_seller_sales_funnel_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:32.262473+00:00",
-              "end_date": "2026-08-31T19:02:35.707766+00:00",
-              "duration": 3.445293
-            },
-            {
-              "task_id": "business.business_produto_kpis.rename_business_produto_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:34.692304+00:00",
-              "end_date": "2026-08-31T19:02:35.688969+00:00",
-              "duration": 0.996665
-            },
-            {
-              "task_id": "business.business_inadimplencia_assinatura_kpis.rename_business_inadimplencia_assinatura_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:35.117064+00:00",
-              "end_date": "2026-08-31T19:02:36.401279+00:00",
-              "duration": 1.284215
-            },
-            {
-              "task_id": "business.business_fct_sales_enriched.rename_business_fct_sales_enriched",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:35.942880+00:00",
-              "end_date": "2026-08-31T19:02:39.430577+00:00",
-              "duration": 3.487697
-            },
-            {
-              "task_id": "business.business_seller_financeiro.rename_business_seller_financeiro",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:48.269187+00:00",
-              "end_date": "2026-08-31T19:02:49.761251+00:00",
-              "duration": 1.492064
-            },
-            {
-              "task_id": "business.business_seller_kpis.rename_business_seller_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:54.560156+00:00",
-              "end_date": "2026-08-31T19:02:55.721707+00:00",
-              "duration": 1.161551
-            },
-            {
-              "task_id": "business.business_aluno_kpis.rename_business_aluno_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:02:54.901593+00:00",
-              "end_date": "2026-08-31T19:02:59.039130+00:00",
-              "duration": 4.137537
-            },
-            {
-              "task_id": "monitoria_operacional.monitor_business_seller_sales_funnel_kpis",
-              "state": "success",
-              "start_date": "2026-08-31T19:03:01.901078+00:00",
-              "end_date": "2026-08-31T19:03:15.746399+00:00",
-              "duration": 13.845321
-            },
-            {
-              "task_id": "success_task",
-              "state": "success",
-              "start_date": "2026-08-31T19:03:20.008056+00:00",
-              "end_date": "2026-08-31T19:03:23.352086+00:00",
-              "duration": 3.34403
-            }
-          ]
         }
       ],
       "environment": "cdl-airflow-mwaa"
@@ -82127,7 +82127,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.5,
-      "freshness_hours": 18.3,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -82614,7 +82614,7 @@
       "min_duration_min": 8.7,
       "p50_duration_min": 10.3,
       "p95_duration_min": 15.1,
-      "freshness_hours": 18.6,
+      "freshness_hours": 19.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -83521,7 +83521,7 @@
       "min_duration_min": 38.8,
       "p50_duration_min": 50.8,
       "p95_duration_min": 74.1,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -84827,7 +84827,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 6.8,
       "p95_duration_min": 7.8,
-      "freshness_hours": 18.6,
+      "freshness_hours": 19.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -86817,7 +86817,7 @@
       "min_duration_min": 30.9,
       "p50_duration_min": 35.1,
       "p95_duration_min": 39.9,
-      "freshness_hours": 90.1,
+      "freshness_hours": 90.8,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -89100,7 +89100,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.8,
       "p95_duration_min": 5.8,
-      "freshness_hours": 15.7,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -89713,7 +89713,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -89969,7 +89969,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.3,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90225,7 +90225,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90481,7 +90481,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.3,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90737,7 +90737,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90993,7 +90993,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 22.0,
+      "freshness_hours": 22.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -92733,7 +92733,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 3.3,
       "p95_duration_min": 11.6,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -93178,7 +93178,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.5,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": 5.7,
       "last_run": {
         "state": "success",
@@ -93625,7 +93625,7 @@
       "min_duration_min": 3.0,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.0,
-      "freshness_hours": 6.7,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -94679,7 +94679,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 5.0,
       "p95_duration_min": 7.0,
-      "freshness_hours": 13.6,
+      "freshness_hours": 14.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -95124,7 +95124,7 @@
       "min_duration_min": 8.3,
       "p50_duration_min": 12.3,
       "p95_duration_min": 15.3,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -95611,7 +95611,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.5,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -96119,7 +96119,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.6,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -96627,7 +96627,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.9,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -97135,7 +97135,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.4,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -97643,7 +97643,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 5.2,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -98151,7 +98151,7 @@
       "min_duration_min": 20.1,
       "p50_duration_min": 24.0,
       "p95_duration_min": 29.4,
-      "freshness_hours": 6.3,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -98932,7 +98932,7 @@
       "min_duration_min": 17.0,
       "p50_duration_min": 20.2,
       "p95_duration_min": 26.4,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.9,
       "mttr_min": 934.4,
       "last_run": {
         "state": "success",
@@ -100219,7 +100219,7 @@
       "min_duration_min": 94.7,
       "p50_duration_min": 101.0,
       "p95_duration_min": 120.3,
-      "freshness_hours": 3.8,
+      "freshness_hours": 4.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -102029,7 +102029,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 4.7,
       "p95_duration_min": 8.8,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -102500,7 +102500,7 @@
       "min_duration_min": 17.4,
       "p50_duration_min": 28.8,
       "p95_duration_min": 36.8,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": 1422.6,
       "last_run": {
         "state": "success",
@@ -103050,7 +103050,7 @@
       "min_duration_min": 30.5,
       "p50_duration_min": 33.6,
       "p95_duration_min": 36.5,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -103453,7 +103453,7 @@
       "min_duration_min": 74.9,
       "p50_duration_min": 80.9,
       "p95_duration_min": 86.2,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -104234,7 +104234,7 @@
       "min_duration_min": 2.8,
       "p50_duration_min": 4.1,
       "p95_duration_min": 5.9,
-      "freshness_hours": 7.1,
+      "freshness_hours": 7.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -105057,7 +105057,7 @@
       "min_duration_min": 14.5,
       "p50_duration_min": 16.7,
       "p95_duration_min": 19.1,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -105985,7 +105985,7 @@
       "min_duration_min": 246.1,
       "p50_duration_min": 252.9,
       "p95_duration_min": 296.2,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.9,
       "mttr_min": 683.5,
       "last_run": {
         "state": "success",
@@ -106796,7 +106796,7 @@
       "min_duration_min": 8.8,
       "p50_duration_min": 10.4,
       "p95_duration_min": 13.5,
-      "freshness_hours": 0.4,
+      "freshness_hours": 1.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -107535,7 +107535,7 @@
       "min_duration_min": 31.3,
       "p50_duration_min": 37.3,
       "p95_duration_min": 45.8,
-      "freshness_hours": 0.1,
+      "freshness_hours": 0.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -107896,7 +107896,7 @@
       "min_duration_min": 11.5,
       "p50_duration_min": 13.2,
       "p95_duration_min": 13.9,
-      "freshness_hours": 1.3,
+      "freshness_hours": 2.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -109743,7 +109743,7 @@
       "min_duration_min": 6.9,
       "p50_duration_min": 7.5,
       "p95_duration_min": 9.6,
-      "freshness_hours": 17.6,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -110109,7 +110109,7 @@
       "min_duration_min": 11.1,
       "p50_duration_min": 11.6,
       "p95_duration_min": 14.0,
-      "freshness_hours": 8.0,
+      "freshness_hours": 8.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -110659,7 +110659,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 6.6,
       "p95_duration_min": 8.1,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -111104,7 +111104,7 @@
       "min_duration_min": 34.1,
       "p50_duration_min": 36.4,
       "p95_duration_min": 38.8,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -111591,7 +111591,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.0,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -112113,7 +112113,7 @@
       "min_duration_min": 4.9,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.2,
-      "freshness_hours": 7.1,
+      "freshness_hours": 7.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -113072,7 +113072,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 14.8,
       "p95_duration_min": 19.7,
-      "freshness_hours": 8.3,
+      "freshness_hours": 9.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -114125,7 +114125,7 @@
       "min_duration_min": 14.6,
       "p50_duration_min": 18.6,
       "p95_duration_min": 28.0,
-      "freshness_hours": 0.1,
+      "freshness_hours": 0.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -114596,7 +114596,7 @@
       "min_duration_min": 0.2,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 15.7,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -115315,7 +115315,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 4.9,
       "p95_duration_min": 5.9,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -116148,7 +116148,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 9.1,
       "p95_duration_min": 14.3,
-      "freshness_hours": 4.7,
+      "freshness_hours": 5.4,
       "mttr_min": 6.0,
       "last_run": {
         "state": "success",
@@ -116503,7 +116503,7 @@
       "min_duration_min": 5.7,
       "p50_duration_min": 6.1,
       "p95_duration_min": 7.7,
-      "freshness_hours": 4.8,
+      "freshness_hours": 5.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117153,7 +117153,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.8,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117598,7 +117598,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 4.3,
-      "freshness_hours": 4.8,
+      "freshness_hours": 5.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117975,7 +117975,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 4.2,
       "p95_duration_min": 6.7,
-      "freshness_hours": 4.9,
+      "freshness_hours": 5.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -118352,7 +118352,7 @@
       "min_duration_min": 93.7,
       "p50_duration_min": 96.5,
       "p95_duration_min": 107.8,
-      "freshness_hours": 6.2,
+      "freshness_hours": 7.0,
       "mttr_min": 5.1,
       "last_run": {
         "state": "success",
@@ -119159,7 +119159,7 @@
       "min_duration_min": 35.7,
       "p50_duration_min": 39.9,
       "p95_duration_min": 42.0,
-      "freshness_hours": 5.0,
+      "freshness_hours": 5.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -119672,7 +119672,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.1,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -120075,7 +120075,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.3,
       "p95_duration_min": 4.2,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.8,
       "mttr_min": 244.5,
       "last_run": {
         "state": "success",
@@ -120571,7 +120571,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 2.3,
       "p95_duration_min": 3.0,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.8,
       "mttr_min": 6.0,
       "last_run": {
         "state": "success",
@@ -121270,7 +121270,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 4.2,
-      "freshness_hours": 4.8,
+      "freshness_hours": 5.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -121647,7 +121647,7 @@
       "min_duration_min": 8.4,
       "p50_duration_min": 9.2,
       "p95_duration_min": 10.7,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122008,7 +122008,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.7,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122369,7 +122369,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.0,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122730,7 +122730,7 @@
       "min_duration_min": 3.5,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.4,
-      "freshness_hours": 8.2,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -123091,7 +123091,7 @@
       "min_duration_min": 11.6,
       "p50_duration_min": 12.4,
       "p95_duration_min": 14.0,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -123557,7 +123557,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.1,
-      "freshness_hours": 0.6,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -124086,7 +124086,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 6.4,
       "p95_duration_min": 8.7,
-      "freshness_hours": 4.8,
+      "freshness_hours": 5.5,
       "mttr_min": 6.6,
       "last_run": {
         "state": "success",
@@ -124508,7 +124508,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.3,
-      "freshness_hours": 4.7,
+      "freshness_hours": 5.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -131876,7 +131876,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.7,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132237,7 +132237,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.2,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132598,7 +132598,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 2.3,
       "p95_duration_min": 3.0,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132959,7 +132959,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.4,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -133320,7 +133320,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.8,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -133681,7 +133681,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 4.0,
       "p95_duration_min": 4.6,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -134042,7 +134042,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.5,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -136297,7 +136297,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.1,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -136658,7 +136658,7 @@
       "min_duration_min": 53.4,
       "p50_duration_min": 55.6,
       "p95_duration_min": 57.8,
-      "freshness_hours": 6.3,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -138777,7 +138777,7 @@
       "min_duration_min": 40.4,
       "p50_duration_min": 42.0,
       "p95_duration_min": 45.1,
-      "freshness_hours": 7.5,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -141138,7 +141138,7 @@
       "min_duration_min": 16.6,
       "p50_duration_min": 17.3,
       "p95_duration_min": 18.1,
-      "freshness_hours": 35.4,
+      "freshness_hours": 36.1,
       "mttr_min": 3582.7,
       "last_run": {
         "state": "failed",
@@ -141987,7 +141987,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 3.9,
       "p95_duration_min": 4.7,
-      "freshness_hours": 8.3,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -142631,7 +142631,7 @@
       "min_duration_min": 3.5,
       "p50_duration_min": 4.0,
       "p95_duration_min": 4.7,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -143013,7 +143013,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.1,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -143500,7 +143500,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.4,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -144779,7 +144779,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.1,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -145602,7 +145602,7 @@
       "min_duration_min": 6.3,
       "p50_duration_min": 6.7,
       "p95_duration_min": 7.7,
-      "freshness_hours": 3.6,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -146989,7 +146989,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -147350,7 +147350,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.9,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -147795,7 +147795,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 4.4,
       "p95_duration_min": 5.2,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -148576,7 +148576,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.6,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -149357,7 +149357,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.7,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -149802,7 +149802,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.1,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -150247,7 +150247,7 @@
       "min_duration_min": 7.8,
       "p50_duration_min": 8.3,
       "p95_duration_min": 9.9,
-      "freshness_hours": 3.6,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -151028,7 +151028,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.6,
       "p95_duration_min": 4.2,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -152567,7 +152567,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.0,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -152928,7 +152928,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.7,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -153289,7 +153289,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.5,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -153650,7 +153650,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.8,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154053,7 +154053,7 @@
       "min_duration_min": 28.5,
       "p50_duration_min": 29.7,
       "p95_duration_min": 33.2,
-      "freshness_hours": 6.3,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154603,7 +154603,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.3,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154973,7 +154973,7 @@
       "min_duration_min": 4.5,
       "p50_duration_min": 5.1,
       "p95_duration_min": 6.0,
-      "freshness_hours": 6.2,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -155313,7 +155313,7 @@
       "min_duration_min": 4.6,
       "p50_duration_min": 5.1,
       "p95_duration_min": 6.0,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -155737,7 +155737,7 @@
       "min_duration_min": 6.9,
       "p50_duration_min": 7.6,
       "p95_duration_min": 8.5,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -156119,7 +156119,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.1,
       "p95_duration_min": 4.4,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": 5.6,
       "last_run": {
         "state": "success",
@@ -156519,7 +156519,7 @@
       "min_duration_min": 5.3,
       "p50_duration_min": 6.2,
       "p95_duration_min": 7.0,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -156964,7 +156964,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.6,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -157334,7 +157334,7 @@
       "min_duration_min": 4.5,
       "p50_duration_min": 5.4,
       "p95_duration_min": 6.1,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -157716,7 +157716,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.7,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -158086,7 +158086,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 3.5,
       "p95_duration_min": 3.9,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -158987,7 +158987,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 2.8,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -159374,7 +159374,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 4.3,
       "p95_duration_min": 9.8,
-      "freshness_hours": 5.8,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -160484,7 +160484,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.6,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -161211,7 +161211,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.3,
       "p95_duration_min": 5.1,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -161845,7 +161845,7 @@
       "min_duration_min": 3.8,
       "p50_duration_min": 4.5,
       "p95_duration_min": 5.2,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -162682,7 +162682,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.4,
       "p95_duration_min": 5.4,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -163505,7 +163505,7 @@
       "min_duration_min": 15.2,
       "p50_duration_min": 33.3,
       "p95_duration_min": 103.2,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.8,
       "mttr_min": 766.6,
       "last_run": {
         "state": "success",
@@ -164118,7 +164118,7 @@
       "min_duration_min": 12.1,
       "p50_duration_min": 13.6,
       "p95_duration_min": 16.7,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -164514,7 +164514,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.5,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -164870,7 +164870,7 @@
       "min_duration_min": 6.8,
       "p50_duration_min": 20.7,
       "p95_duration_min": 22.0,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": 847.2,
       "last_run": {
         "state": "success",
@@ -165548,7 +165548,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.4,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -165965,7 +165965,7 @@
       "min_duration_min": 5.4,
       "p50_duration_min": 6.5,
       "p95_duration_min": 7.3,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -166396,7 +166396,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.6,
       "p95_duration_min": 5.1,
-      "freshness_hours": 10.2,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -166841,7 +166841,7 @@
       "min_duration_min": 4.7,
       "p50_duration_min": 6.0,
       "p95_duration_min": 7.6,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -167328,7 +167328,7 @@
       "min_duration_min": 5.5,
       "p50_duration_min": 6.0,
       "p95_duration_min": 6.9,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -167752,7 +167752,7 @@
       "min_duration_min": 4.3,
       "p50_duration_min": 5.0,
       "p95_duration_min": 5.8,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -168218,7 +168218,7 @@
       "min_duration_min": 4.3,
       "p50_duration_min": 5.2,
       "p95_duration_min": 6.1,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -168684,7 +168684,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.1,
       "p95_duration_min": 7.0,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -169211,7 +169211,7 @@
       "min_duration_min": 3.1,
       "p50_duration_min": 3.5,
       "p95_duration_min": 4.6,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -169845,7 +169845,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.5,
       "p95_duration_min": 5.2,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -170801,7 +170801,7 @@
       "min_duration_min": 15.9,
       "p50_duration_min": 17.5,
       "p95_duration_min": 19.7,
-      "freshness_hours": 9.4,
+      "freshness_hours": 10.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -171792,7 +171792,7 @@
       "min_duration_min": 45.7,
       "p50_duration_min": 47.8,
       "p95_duration_min": 50.1,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -172412,7 +172412,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -172780,7 +172780,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -173148,7 +173148,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 2.6,
       "p95_duration_min": 3.0,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -173857,7 +173857,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -174246,7 +174246,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.6,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -174719,7 +174719,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.6,
-      "freshness_hours": 10.2,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175108,7 +175108,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175476,7 +175476,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.0,
-      "freshness_hours": 10.2,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175823,7 +175823,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176191,7 +176191,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176580,7 +176580,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176974,7 +176974,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.2,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -177646,7 +177646,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 3.0,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -178014,7 +178014,7 @@
       "min_duration_min": 3.1,
       "p50_duration_min": 3.6,
       "p95_duration_min": 4.4,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -178529,7 +178529,7 @@
       "min_duration_min": 15.2,
       "p50_duration_min": 16.6,
       "p95_duration_min": 18.4,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -179086,7 +179086,7 @@
       "min_duration_min": 3.4,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.1,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -179980,7 +179980,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.0,
       "p95_duration_min": 4.9,
-      "freshness_hours": 10.8,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -180367,7 +180367,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.9,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -180754,7 +180754,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181141,7 +181141,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181528,7 +181528,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181915,7 +181915,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -182276,7 +182276,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -182663,7 +182663,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.7,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183185,7 +183185,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183504,7 +183504,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.9,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183891,7 +183891,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.5,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -184294,7 +184294,7 @@
       "min_duration_min": 21.8,
       "p50_duration_min": 24.4,
       "p95_duration_min": 32.7,
-      "freshness_hours": 9.2,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -185152,7 +185152,7 @@
       "min_duration_min": 13.9,
       "p50_duration_min": 16.8,
       "p95_duration_min": 18.4,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186006,7 +186006,7 @@
       "min_duration_min": 6.2,
       "p50_duration_min": 7.2,
       "p95_duration_min": 9.2,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186360,7 +186360,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.7,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186714,7 +186714,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.7,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187152,7 +187152,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187506,7 +187506,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 3.1,
       "p95_duration_min": 5.6,
-      "freshness_hours": 10.8,
+      "freshness_hours": 11.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187972,7 +187972,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 8.3,
       "p95_duration_min": 10.2,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -188354,7 +188354,7 @@
       "min_duration_min": 27.3,
       "p50_duration_min": 30.3,
       "p95_duration_min": 38.2,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -188724,7 +188724,7 @@
       "min_duration_min": 71.9,
       "p50_duration_min": 260.7,
       "p95_duration_min": 744.4,
-      "freshness_hours": 8.9,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -189190,7 +189190,7 @@
       "min_duration_min": 132.1,
       "p50_duration_min": 147.4,
       "p95_duration_min": 302.8,
-      "freshness_hours": 11.0,
+      "freshness_hours": 11.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -189566,7 +189566,7 @@
       "min_duration_min": 27.4,
       "p50_duration_min": 31.4,
       "p95_duration_min": 271.3,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190031,7 +190031,7 @@
       "min_duration_min": 30.2,
       "p50_duration_min": 35.3,
       "p95_duration_min": 38.5,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190387,7 +190387,7 @@
       "min_duration_min": 17.1,
       "p50_duration_min": 19.2,
       "p95_duration_min": 27.5,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190764,7 +190764,7 @@
       "min_duration_min": 8.1,
       "p50_duration_min": 10.1,
       "p95_duration_min": 11.1,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -191092,7 +191092,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 9.1,
       "p95_duration_min": 27.2,
-      "freshness_hours": 6.2,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -191509,7 +191509,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 63.3,
       "p95_duration_min": 424.7,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.4,
       "mttr_min": 436.9,
       "last_run": {
         "state": "success",
@@ -191932,7 +191932,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.5,
       "p95_duration_min": 4.7,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -192566,7 +192566,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.0,
       "p95_duration_min": 5.0,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -193354,7 +193354,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 6.0,
       "p95_duration_min": 6.5,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -194261,7 +194261,7 @@
       "min_duration_min": 33.0,
       "p50_duration_min": 35.4,
       "p95_duration_min": 38.5,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195028,7 +195028,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.7,
       "p95_duration_min": 1.9,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195438,7 +195438,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.0,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195848,7 +195848,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196195,7 +196195,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.6,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196542,7 +196542,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196889,7 +196889,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.9,
-      "freshness_hours": 10.5,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -197257,7 +197257,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 3.0,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -197688,7 +197688,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.6,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -198292,7 +198292,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -198681,7 +198681,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199070,7 +199070,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199459,7 +199459,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199869,7 +199869,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.9,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -200237,7 +200237,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -200584,7 +200584,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -201015,7 +201015,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.7,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -201430,7 +201430,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202060,7 +202060,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.3,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202449,7 +202449,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.4,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.3,
+      "freshness_hours": 11.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202817,7 +202817,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.6,
+      "freshness_hours": 11.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -203164,7 +203164,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.8,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -203658,7 +203658,7 @@
       "min_duration_min": 5.5,
       "p50_duration_min": 6.2,
       "p95_duration_min": 7.1,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -204278,7 +204278,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.0,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -204980,7 +204980,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 6.3,
       "p95_duration_min": 7.2,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -205797,7 +205797,7 @@
       "min_duration_min": 6.4,
       "p50_duration_min": 7.1,
       "p95_duration_min": 8.2,
-      "freshness_hours": 8.8,
+      "freshness_hours": 9.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -206788,7 +206788,7 @@
       "min_duration_min": 10.4,
       "p50_duration_min": 11.5,
       "p95_duration_min": 14.7,
-      "freshness_hours": 8.7,
+      "freshness_hours": 9.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -207805,7 +207805,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 5.4,
       "p95_duration_min": 9.2,
-      "freshness_hours": 8.5,
+      "freshness_hours": 9.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -208259,7 +208259,7 @@
       "min_duration_min": 6.6,
       "p50_duration_min": 7.8,
       "p95_duration_min": 19.1,
-      "freshness_hours": 6.2,
+      "freshness_hours": 7.0,
       "mttr_min": 0.0,
       "last_run": {
         "state": "success",
@@ -209376,7 +209376,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 6.1,
       "p95_duration_min": 20.0,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": 980.8,
       "last_run": {
         "state": "success",
@@ -210292,7 +210292,7 @@
       "min_duration_min": 7.7,
       "p50_duration_min": 9.4,
       "p95_duration_min": 10.4,
-      "freshness_hours": 8.4,
+      "freshness_hours": 9.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -211933,7 +211933,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 3.3,
       "p95_duration_min": 3.7,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": 5.3,
       "last_run": {
         "state": "success",
@@ -212326,7 +212326,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.7,
       "p95_duration_min": 5.3,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -212708,7 +212708,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.9,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213078,7 +213078,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.3,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213460,7 +213460,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.9,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213830,7 +213830,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.7,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -216506,7 +216506,7 @@
       "min_duration_min": 82.4,
       "p50_duration_min": 98.2,
       "p95_duration_min": 181.0,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -217441,7 +217441,7 @@
       "min_duration_min": 10.6,
       "p50_duration_min": 25.8,
       "p95_duration_min": 52.2,
-      "freshness_hours": 1.9,
+      "freshness_hours": 2.6,
       "mttr_min": 5289.8,
       "last_run": {
         "state": "success",
@@ -218446,7 +218446,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.5,
       "p95_duration_min": 11.4,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -218954,7 +218954,7 @@
       "min_duration_min": 5.3,
       "p50_duration_min": 8.1,
       "p95_duration_min": 12.4,
-      "freshness_hours": 6.8,
+      "freshness_hours": 7.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -219467,7 +219467,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 0.6,
+      "freshness_hours": 1.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -219975,7 +219975,7 @@
       "min_duration_min": 30.2,
       "p50_duration_min": 32.6,
       "p95_duration_min": 35.8,
-      "freshness_hours": 4.1,
+      "freshness_hours": 4.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -220572,7 +220572,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.8,
       "p95_duration_min": 8.6,
-      "freshness_hours": 0.6,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -221122,7 +221122,7 @@
       "min_duration_min": 11.2,
       "p50_duration_min": 15.3,
       "p95_duration_min": 33.4,
-      "freshness_hours": 4.4,
+      "freshness_hours": 5.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -221663,7 +221663,7 @@
       "min_duration_min": 17.8,
       "p50_duration_min": 20.1,
       "p95_duration_min": 38.4,
-      "freshness_hours": 7.2,
+      "freshness_hours": 8.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -222882,7 +222882,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.3,
-      "freshness_hours": 0.6,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -223369,7 +223369,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.6,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -223940,7 +223940,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.6,
       "p95_duration_min": 5.0,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -224451,7 +224451,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.6,
       "p95_duration_min": 6.3,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -224964,7 +224964,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.6,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -225451,7 +225451,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.7,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -226761,7 +226761,7 @@
       "min_duration_min": 12.4,
       "p50_duration_min": 15.5,
       "p95_duration_min": 76.8,
-      "freshness_hours": 159.7,
+      "freshness_hours": 160.5,
       "mttr_min": 5026.2,
       "last_run": {
         "state": "failed",
@@ -227500,7 +227500,7 @@
       "min_duration_min": 13.1,
       "p50_duration_min": 14.7,
       "p95_duration_min": 24.5,
-      "freshness_hours": 1.4,
+      "freshness_hours": 2.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -228197,7 +228197,7 @@
       "min_duration_min": 8.1,
       "p50_duration_min": 10.8,
       "p95_duration_min": 31.2,
-      "freshness_hours": 4.4,
+      "freshness_hours": 5.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -228705,7 +228705,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.8,
       "p95_duration_min": 7.8,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -229213,7 +229213,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.8,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -229700,7 +229700,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -230187,7 +230187,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.8,
       "p95_duration_min": 5.1,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -230674,7 +230674,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 13.0,
       "p95_duration_min": 23.7,
-      "freshness_hours": 7.0,
+      "freshness_hours": 7.7,
       "mttr_min": 3207.4,
       "last_run": {
         "state": "success",
@@ -231707,7 +231707,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 5.0,
       "p95_duration_min": 8.1,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -232278,7 +232278,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.6,
       "p95_duration_min": 8.1,
-      "freshness_hours": 17.3,
+      "freshness_hours": 18.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -232937,7 +232937,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.0,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -233466,7 +233466,7 @@
       "min_duration_min": 2.9,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.5,
-      "freshness_hours": 18.2,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -233974,7 +233974,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.3,
       "p95_duration_min": 3.1,
-      "freshness_hours": 15.7,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -234482,7 +234482,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 6.0,
       "p95_duration_min": 14.2,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -235053,7 +235053,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.2,
       "p95_duration_min": 7.9,
-      "freshness_hours": 16.0,
+      "freshness_hours": 16.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -235587,7 +235587,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.5,
       "p95_duration_min": 7.7,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -236074,7 +236074,7 @@
       "min_duration_min": 8.9,
       "p50_duration_min": 9.6,
       "p95_duration_min": 42.5,
-      "freshness_hours": 15.5,
+      "freshness_hours": 16.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -236729,7 +236729,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.8,
-      "freshness_hours": 18.3,
+      "freshness_hours": 19.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -237363,7 +237363,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 2.0,
       "p95_duration_min": 6.1,
-      "freshness_hours": 16.5,
+      "freshness_hours": 17.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -237850,7 +237850,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.9,
-      "freshness_hours": 16.5,
+      "freshness_hours": 17.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -238337,7 +238337,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.7,
       "p95_duration_min": 10.2,
-      "freshness_hours": 158.4,
+      "freshness_hours": 159.2,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -238845,7 +238845,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 10.2,
       "p95_duration_min": 31.2,
-      "freshness_hours": 159.4,
+      "freshness_hours": 160.1,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -239379,7 +239379,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.3,
       "p95_duration_min": 5.3,
-      "freshness_hours": 18.3,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -241628,7 +241628,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 18.2,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -242241,7 +242241,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 18.3,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -242854,7 +242854,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 6.2,
       "p95_duration_min": 12.4,
-      "freshness_hours": 159.7,
+      "freshness_hours": 160.5,
       "mttr_min": 3511.9,
       "last_run": {
         "state": "success",
@@ -243719,7 +243719,7 @@
       "min_duration_min": 6.0,
       "p50_duration_min": 7.8,
       "p95_duration_min": 13.5,
-      "freshness_hours": 159.8,
+      "freshness_hours": 160.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -244737,7 +244737,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.9,
-      "freshness_hours": 160.0,
+      "freshness_hours": 160.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -245161,7 +245161,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 17.9,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -245648,7 +245648,7 @@
       "min_duration_min": 16.7,
       "p50_duration_min": 19.1,
       "p95_duration_min": 27.1,
-      "freshness_hours": 17.9,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -246749,7 +246749,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.9,
       "p95_duration_min": 3.6,
-      "freshness_hours": 16.5,
+      "freshness_hours": 17.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -247236,7 +247236,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 4.7,
       "p95_duration_min": 14.4,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -247828,7 +247828,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 7.2,
       "p95_duration_min": 11.4,
-      "freshness_hours": 136.2,
+      "freshness_hours": 136.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -248379,7 +248379,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.4,
       "p95_duration_min": 10.6,
-      "freshness_hours": 160.6,
+      "freshness_hours": 161.3,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -248887,7 +248887,7 @@
       "min_duration_min": 3.0,
       "p50_duration_min": 3.2,
       "p95_duration_min": 14.1,
-      "freshness_hours": 160.5,
+      "freshness_hours": 161.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -249328,7 +249328,7 @@
       "min_duration_min": 7.8,
       "p50_duration_min": 9.5,
       "p95_duration_min": 46.0,
-      "freshness_hours": 15.8,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -249941,7 +249941,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 2.4,
       "p95_duration_min": 12.3,
-      "freshness_hours": 15.1,
+      "freshness_hours": 15.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -250491,7 +250491,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.6,
-      "freshness_hours": 158.3,
+      "freshness_hours": 159.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -250943,7 +250943,7 @@
       "min_duration_min": 5.7,
       "p50_duration_min": 6.5,
       "p95_duration_min": 11.2,
-      "freshness_hours": 158.3,
+      "freshness_hours": 159.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -251710,7 +251710,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.8,
-      "freshness_hours": 15.5,
+      "freshness_hours": 16.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -252218,7 +252218,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 17.2,
+      "freshness_hours": 18.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -252705,7 +252705,7 @@
       "min_duration_min": 4.7,
       "p50_duration_min": 10.3,
       "p95_duration_min": 30.5,
-      "freshness_hours": 160.0,
+      "freshness_hours": 160.8,
       "mttr_min": 1430.2,
       "last_run": {
         "state": "failed",
@@ -253632,7 +253632,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 3.4,
       "p95_duration_min": 6.0,
-      "freshness_hours": 18.1,
+      "freshness_hours": 18.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -254119,7 +254119,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.4,
-      "freshness_hours": 158.3,
+      "freshness_hours": 159.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -254555,7 +254555,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.4,
-      "freshness_hours": 17.1,
+      "freshness_hours": 17.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -255084,7 +255084,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 2.8,
       "p95_duration_min": 2.9,
-      "freshness_hours": 18.6,
+      "freshness_hours": 19.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -255770,7 +255770,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.1,
       "p95_duration_min": 1.2,
-      "freshness_hours": 18.5,
+      "freshness_hours": 19.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -256304,7 +256304,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.4,
-      "freshness_hours": 18.5,
+      "freshness_hours": 19.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -256917,7 +256917,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.3,
       "p95_duration_min": 5.4,
-      "freshness_hours": 18.6,
+      "freshness_hours": 19.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -257943,7 +257943,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 1.9,
-      "freshness_hours": 2.3,
+      "freshness_hours": 3.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -258814,7 +258814,7 @@
       "min_duration_min": 10.4,
       "p50_duration_min": 13.7,
       "p95_duration_min": 15.6,
-      "freshness_hours": 2.1,
+      "freshness_hours": 2.8,
       "mttr_min": 8984.8,
       "last_run": {
         "state": "success",
@@ -259412,7 +259412,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.8,
-      "freshness_hours": 2.0,
+      "freshness_hours": 2.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -259877,7 +259877,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.9,
       "p95_duration_min": 4.1,
-      "freshness_hours": 2.0,
+      "freshness_hours": 2.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -260281,7 +260281,7 @@
       "min_duration_min": 9.0,
       "p50_duration_min": 14.1,
       "p95_duration_min": 17.3,
-      "freshness_hours": 2.2,
+      "freshness_hours": 2.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -260690,7 +260690,7 @@
       "min_duration_min": 2.9,
       "p50_duration_min": 3.9,
       "p95_duration_min": 4.8,
-      "freshness_hours": 2.0,
+      "freshness_hours": 2.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -261162,7 +261162,7 @@
       "min_duration_min": 26.3,
       "p50_duration_min": 26.3,
       "p95_duration_min": 26.3,
-      "freshness_hours": 288.3,
+      "freshness_hours": 289.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -261486,7 +261486,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.7,
       "p95_duration_min": 2.5,
-      "freshness_hours": 18.3,
+      "freshness_hours": 19.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -262051,7 +262051,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 7.4,
       "p95_duration_min": 10.4,
-      "freshness_hours": 14.8,
+      "freshness_hours": 15.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -262580,7 +262580,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -263067,7 +263067,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -263554,7 +263554,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -264041,7 +264041,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -264528,7 +264528,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.2,
-      "freshness_hours": 16.3,
+      "freshness_hours": 17.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265015,7 +265015,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.2,
-      "freshness_hours": 16.3,
+      "freshness_hours": 17.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265502,7 +265502,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 15.5,
+      "freshness_hours": 16.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265989,7 +265989,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 15.6,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -266476,7 +266476,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.3,
       "p95_duration_min": 4.4,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -266963,7 +266963,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 8.2,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -267450,7 +267450,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.8,
-      "freshness_hours": 14.5,
+      "freshness_hours": 15.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -267937,7 +267937,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -268424,7 +268424,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -268911,7 +268911,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 16.7,
+      "freshness_hours": 17.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -269398,7 +269398,7 @@
       "min_duration_min": 0.5,
       "p50_duration_min": 0.6,
       "p95_duration_min": 0.6,
-      "freshness_hours": 19.1,
+      "freshness_hours": 19.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -269890,7 +269890,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.2,
       "p95_duration_min": 1.8,
-      "freshness_hours": 4.6,
+      "freshness_hours": 5.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -270559,7 +270559,7 @@
       "min_duration_min": 9.1,
       "p50_duration_min": 9.1,
       "p95_duration_min": 9.1,
-      "freshness_hours": 149.7,
+      "freshness_hours": 150.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -270731,7 +270731,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 37.0,
       "p95_duration_min": 40.8,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -271432,7 +271432,7 @@
       "min_duration_min": 6.8,
       "p50_duration_min": 30.9,
       "p95_duration_min": 34.8,
-      "freshness_hours": 148.4,
+      "freshness_hours": 149.2,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -272209,7 +272209,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 10.7,
       "p95_duration_min": 22.5,
-      "freshness_hours": 100.6,
+      "freshness_hours": 101.3,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -272670,7 +272670,7 @@
       "min_duration_min": 100.8,
       "p50_duration_min": 100.8,
       "p95_duration_min": 100.8,
-      "freshness_hours": 149.0,
+      "freshness_hours": 149.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -272989,7 +272989,7 @@
       "min_duration_min": 31.6,
       "p50_duration_min": 31.6,
       "p95_duration_min": 31.6,
-      "freshness_hours": 149.1,
+      "freshness_hours": 149.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -273199,7 +273199,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 7.2,
       "p95_duration_min": 18.1,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -273922,7 +273922,7 @@
       "min_duration_min": 0.2,
       "p50_duration_min": 29.8,
       "p95_duration_min": 110.6,
-      "freshness_hours": 145.9,
+      "freshness_hours": 146.7,
       "mttr_min": 863.5,
       "last_run": {
         "state": "success",
@@ -274942,7 +274942,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 4.7,
       "p95_duration_min": 29.8,
-      "freshness_hours": 172.6,
+      "freshness_hours": 173.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -275479,19 +275479,19 @@
   "import_errors": [
     {
       "filename": 375,
-      "timestamp": "2026-08-31T21:39:37.992496+00:00",
+      "timestamp": "2026-08-31T22:23:44.260050+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/openmetadata_airflow_extraction.py\", line 20, in <module>\n    from metadata.ingestion.api.workflow import Workflow\nModuleNotFoundError: No module named 'metadata'\n",
       "environment": "cdl-cogna-lakehouseMwaa"
     },
     {
       "filename": 376,
-      "timestamp": "2026-08-31T21:39:38.072380+00:00",
+      "timestamp": "2026-08-31T22:23:44.237650+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/glue_details.py\", line 17, in <module>\n    from metadata.config.common import load_config_file\nModuleNotFoundError: No module named 'metadata'\n",
       "environment": "cdl-cogna-lakehouseMwaa"
     },
     {
       "filename": 9706,
-      "timestamp": "2026-08-31T21:41:41.810304+00:00",
+      "timestamp": "2026-08-31T22:26:09.234690+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/cdl_datalab/dag_teste_lambda_dependson.py\", line 44, in <module>\n    \"mwaa_environment\": \"datax-gold-{}\".replace(\n                        ^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: replace expected at least 2 arguments, got 1\n",
       "environment": "cdl-airflow-mwaa"
     }
