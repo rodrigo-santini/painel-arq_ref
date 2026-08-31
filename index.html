@@ -1,13 +1,3231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=painel_airflow_mwaa_arq_ref.html">
-<title>Painel datax-gold-prd</title>
-<script>window.location.replace('painel_airflow_mwaa_arq_ref.html');</script>
-</head>
-<body style="background:#080c14;color:#e8edf5;font-family:sans-serif;text-align:center;padding:40px;">
-<p>Carregando painel...</p>
-<p><a href="painel_airflow_mwaa_arq_ref.html" style="color:#60a5fa;">Clique aqui se nao for redirecionado</a></p>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Painel datax-gold-prd | Últimos 15 dias</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+        <style>
+            :root {
+                /* === paleta midnight refinada === */
+                --bg: #080c14;
+                --bg-2: #0d121d;
+                --card: #141b29;
+                --card-hover: #1a2233;
+                --text: #e8edf5;
+                --text-2: #c0c9d6;
+                --muted: #7d8a9c;
+                --border: #1f2a3d;
+                --border-strong: #2a3852;
+
+                --green: #34d399;
+                --red: #f87171;
+                --blue: #60a5fa;
+                --purple: #c084fc;
+                --yellow: #fbbf24;
+                --cyan: #22d3ee;
+                --orange: #fb923c;
+                --pink: #f472b6;
+
+                --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+                --shadow-2:
+                    0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+                --shadow-glow: 0 0 0 1px rgba(96, 165, 250, 0.18) inset;
+
+                --radius: 12px;
+                --radius-sm: 8px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                color-scheme: dark;
+            }
+
+            body {
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    sans-serif;
+                background: var(--bg);
+                background-image:
+                    radial-gradient(
+                        ellipse 800px 400px at 10% -10%,
+                        rgba(96, 165, 250, 0.06),
+                        transparent 50%
+                    ),
+                    radial-gradient(
+                        ellipse 600px 400px at 90% 10%,
+                        rgba(192, 132, 252, 0.05),
+                        transparent 50%
+                    );
+                color: var(--text);
+                padding: 24px;
+                min-height: 100vh;
+                line-height: 1.5;
+                font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            /* scrollbar global */
+            ::-webkit-scrollbar {
+                width: 10px;
+                height: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: var(--bg-2);
+            }
+            ::-webkit-scrollbar-thumb {
+                background: var(--border-strong);
+                border-radius: 5px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--muted);
+            }
+
+            /* === Header === */
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 24px;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding-bottom: 18px;
+                border-bottom: 1px solid var(--border);
+            }
+            .header h1 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                background: linear-gradient(
+                    135deg,
+                    var(--text) 0%,
+                    var(--blue) 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .header-meta {
+                font-size: 0.78rem;
+                color: var(--muted);
+                font-weight: 500;
+                background: var(--card);
+                border: 1px solid var(--border);
+                padding: 7px 12px;
+                border-radius: var(--radius-sm);
+                font-feature-settings: "tnum";
+            }
+
+            /* === KPI grids === */
+            .kpi-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 14px;
+                margin-bottom: 18px;
+            }
+            .kpi-grid--highlight {
+                grid-template-columns: repeat(3, 1fr);
+                margin-bottom: 14px;
+            }
+            .kpi-grid--secondary {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            @media (max-width: 768px) {
+                .kpi-grid--highlight {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .kpi {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 18px;
+                text-align: left;
+                position: relative;
+                transition: all 0.18s ease;
+                box-shadow: var(--shadow-1);
+                overflow: hidden;
+            }
+            .kpi::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    135deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.02) 100%
+                );
+                pointer-events: none;
+                border-radius: var(--radius);
+            }
+            .kpi:hover {
+                background: var(--card-hover);
+                border-color: var(--border-strong);
+                transform: translateY(-1px);
+                box-shadow: var(--shadow-2);
+            }
+            .kpi .v {
+                font-size: 1.95rem;
+                font-weight: 700;
+                margin-bottom: 4px;
+                letter-spacing: -0.02em;
+                line-height: 1.05;
+                font-feature-settings: "tnum";
+            }
+            .kpi .l {
+                font-size: 0.68rem;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                font-weight: 600;
+            }
+            .kpi.s .v {
+                color: var(--green);
+            }
+            .kpi.f .v {
+                color: var(--red);
+            }
+            .kpi.r .v {
+                color: var(--blue);
+            }
+            .kpi.d .v {
+                color: var(--purple);
+            }
+            .kpi.t .v {
+                color: var(--cyan);
+            }
+            .kpi.a .v {
+                color: var(--green);
+            }
+
+            /* Big numbers em destaque com glass + glow */
+            .kpi.highlight {
+                background:
+                    radial-gradient(
+                        circle at 0% 0%,
+                        rgba(96, 165, 250, 0.1),
+                        transparent 60%
+                    ),
+                    radial-gradient(
+                        circle at 100% 100%,
+                        rgba(192, 132, 252, 0.08),
+                        transparent 60%
+                    ),
+                    var(--card);
+                border: 1px solid rgba(96, 165, 250, 0.25);
+                box-shadow:
+                    0 0 0 1px rgba(96, 165, 250, 0.15) inset,
+                    0 8px 28px rgba(0, 0, 0, 0.35),
+                    0 0 40px rgba(96, 165, 250, 0.04);
+                padding: 24px 22px;
+                text-align: left;
+            }
+            .kpi.highlight::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--green)
+                );
+                border-radius: var(--radius) var(--radius) 0 0;
+                opacity: 0.9;
+            }
+            .kpi.highlight:hover {
+                transform: translateY(-2px);
+                box-shadow:
+                    0 0 0 1px rgba(96, 165, 250, 0.3) inset,
+                    0 12px 36px rgba(0, 0, 0, 0.4),
+                    0 0 60px rgba(96, 165, 250, 0.08);
+            }
+            .kpi.highlight .v {
+                font-size: 2.8rem;
+                font-weight: 800;
+                letter-spacing: -0.03em;
+                line-height: 1.05;
+                margin-bottom: 6px;
+            }
+            .kpi.highlight .l {
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: var(--text);
+                letter-spacing: 0.4px;
+            }
+            .kpi.highlight.kpi-active .v {
+                background: linear-gradient(135deg, #34d399 0%, #6ee7b7 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent !important;
+            }
+            .kpi.highlight.kpi-availability .v {
+                background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent !important;
+            }
+            .kpi.highlight.kpi-duration .v {
+                background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent !important;
+            }
+
+            /* tooltip sobre o icone "i" */
+            .kpi-info {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 5;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: var(--bg-2);
+                color: var(--muted);
+                border: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: 700;
+                cursor: help;
+                transition: all 0.15s;
+                user-select: none;
+            }
+            .kpi-info:hover {
+                background: var(--blue);
+                color: #fff;
+                border-color: var(--blue);
+            }
+            .kpi-info[data-tip]:hover::after {
+                content: attr(data-tip);
+                position: absolute;
+                top: 24px;
+                right: -4px;
+                background: var(--bg);
+                color: var(--text);
+                border: 1px solid var(--border-strong);
+                border-radius: var(--radius-sm);
+                padding: 10px 12px;
+                font-size: 0.72rem;
+                font-weight: 400;
+                line-height: 1.55;
+                letter-spacing: normal;
+                text-transform: none;
+                width: 260px;
+                text-align: left;
+                z-index: 100;
+                box-shadow: var(--shadow-2);
+                white-space: pre-line;
+            }
+            .kpi-info[data-tip]:hover::before {
+                content: "";
+                position: absolute;
+                top: 18px;
+                right: 4px;
+                border: 5px solid transparent;
+                border-bottom-color: var(--border-strong);
+                z-index: 101;
+            }
+
+            /* === Charts === */
+            .charts {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+            .chart {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 18px 20px 20px;
+                box-shadow: var(--shadow-1);
+                transition: border-color 0.15s;
+            }
+            .chart:hover {
+                border-color: var(--border-strong);
+            }
+            .chart h3 {
+                font-size: 0.75rem;
+                margin-bottom: 14px;
+                color: var(--text-2);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .chart h3::before {
+                content: "";
+                width: 3px;
+                height: 14px;
+                background: linear-gradient(180deg, var(--blue), var(--purple));
+                border-radius: 2px;
+            }
+            .chart-container {
+                position: relative;
+                height: 240px;
+            }
+
+            /* === Section title === */
+            .section-title {
+                font-size: 1.05rem;
+                font-weight: 700;
+                margin: 32px 0 16px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid var(--border);
+                letter-spacing: -0.01em;
+            }
+
+            /* === Tables === */
+            .table-card {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 18px 20px;
+                overflow-x: auto;
+                margin-bottom: 20px;
+                box-shadow: var(--shadow-1);
+            }
+            .table-card h3 {
+                font-size: 0.75rem;
+                margin-bottom: 12px;
+                color: var(--text-2);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+            }
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 10px 12px;
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+                vertical-align: middle;
+            }
+            th {
+                color: var(--muted);
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 0.65rem;
+                letter-spacing: 0.5px;
+                cursor: pointer;
+                background: var(--bg-2);
+                position: sticky;
+                top: 0;
+                border-bottom: 1px solid var(--border-strong);
+            }
+            th:first-child {
+                border-top-left-radius: var(--radius-sm);
+            }
+            th:last-child {
+                border-top-right-radius: var(--radius-sm);
+            }
+            th:hover {
+                color: var(--text);
+            }
+            tbody tr {
+                transition: background 0.1s;
+            }
+            tbody tr:hover {
+                background: rgba(96, 165, 250, 0.04);
+            }
+            tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            /* === Badges === */
+            .badge {
+                display: inline-block;
+                padding: 3px 9px;
+                border-radius: 999px;
+                font-size: 0.66rem;
+                font-weight: 600;
+                letter-spacing: 0.2px;
+                border: 1px solid transparent;
+                font-feature-settings: "tnum";
+            }
+            .badge.success {
+                background: rgba(52, 211, 153, 0.12);
+                color: var(--green);
+                border-color: rgba(52, 211, 153, 0.25);
+            }
+            .badge.failed {
+                background: rgba(248, 113, 113, 0.12);
+                color: var(--red);
+                border-color: rgba(248, 113, 113, 0.25);
+            }
+            .badge.running {
+                background: rgba(96, 165, 250, 0.12);
+                color: var(--blue);
+                border-color: rgba(96, 165, 250, 0.25);
+            }
+            .badge.queued {
+                background: rgba(192, 132, 252, 0.12);
+                color: var(--purple);
+                border-color: rgba(192, 132, 252, 0.25);
+            }
+            .badge.upstream_failed {
+                background: rgba(251, 146, 60, 0.12);
+                color: var(--orange);
+                border-color: rgba(251, 146, 60, 0.25);
+            }
+            .badge.nodata {
+                background: rgba(125, 138, 156, 0.12);
+                color: var(--muted);
+                border-color: rgba(125, 138, 156, 0.25);
+            }
+            .badge.paused {
+                background: rgba(251, 191, 36, 0.12);
+                color: var(--yellow);
+                border-color: rgba(251, 191, 36, 0.25);
+            }
+            .badge.active {
+                background: rgba(52, 211, 153, 0.12);
+                color: var(--green);
+                border-color: rgba(52, 211, 153, 0.25);
+            }
+
+            /* === Filters === */
+            .filter {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 16px;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .filter input,
+            .filter select {
+                background: var(--bg-2);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                padding: 8px 14px;
+                color: var(--text);
+                font-size: 0.82rem;
+                transition:
+                    border-color 0.15s,
+                    background 0.15s;
+                font-family: inherit;
+            }
+            .filter input:focus,
+            .filter select:focus {
+                outline: none;
+                border-color: var(--blue);
+                box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.12);
+                background: var(--card);
+            }
+            .filter input {
+                min-width: 280px;
+            }
+            .filter input::placeholder {
+                color: var(--muted);
+            }
+
+            /* === Date / Category bar === */
+            /* Filtro global de ambientes: destaque visual (afeta todas as abas) */
+            .env-bar {
+                border-color: rgba(96, 165, 250, 0.35) !important;
+                background: linear-gradient(
+                    180deg,
+                    rgba(96, 165, 250, 0.06),
+                    var(--card)
+                ) !important;
+            }
+            .date-chip.env-chip.active {
+                border-color: var(--blue);
+                background: rgba(96, 165, 250, 0.16);
+                color: var(--text);
+            }
+            .date-bar {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 14px 18px;
+                margin-bottom: 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                box-shadow: var(--shadow-1);
+            }
+            .date-bar__row {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                min-width: 0;
+            }
+            .date-bar__label {
+                font-size: 0.7rem;
+                color: var(--text-2);
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                font-weight: 700;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .date-chips {
+                display: flex;
+                gap: 6px;
+                flex: 1;
+                min-width: 0;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding-bottom: 4px;
+                scrollbar-width: thin;
+                scrollbar-color: var(--border-strong) transparent;
+            }
+            .date-chips::-webkit-scrollbar {
+                height: 6px;
+            }
+            .date-chips::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .date-chips::-webkit-scrollbar-thumb {
+                background: var(--border-strong);
+                border-radius: 3px;
+            }
+            .date-chip {
+                background: var(--bg-2);
+                border: 1px solid var(--border);
+                color: var(--text-2);
+                padding: 6px 11px;
+                border-radius: var(--radius-sm);
+                font-size: 0.72rem;
+                cursor: pointer;
+                font-family:
+                    "JetBrains Mono", "SF Mono", "Fira Code", Consolas,
+                    monospace;
+                transition: all 0.12s;
+                user-select: none;
+                flex-shrink: 0;
+                text-align: center;
+                line-height: 1.2;
+                font-weight: 500;
+            }
+            .date-chip:hover {
+                border-color: var(--blue);
+                color: var(--text);
+                transform: translateY(-1px);
+            }
+            .date-chip.active {
+                background: linear-gradient(135deg, var(--blue), #4f8df0);
+                border-color: transparent;
+                color: #fff;
+                font-weight: 600;
+                box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+            }
+            .date-chip__weekday {
+                font-size: 0.6rem;
+                color: inherit;
+                opacity: 0.65;
+                display: block;
+                margin-bottom: 1px;
+                text-transform: uppercase;
+            }
+            .date-bar__actions {
+                display: flex;
+                gap: 6px;
+                padding-left: 60px;
+            }
+            .date-bar__btn {
+                background: transparent;
+                border: 1px solid var(--border);
+                color: var(--muted);
+                padding: 6px 12px;
+                border-radius: var(--radius-sm);
+                font-size: 0.7rem;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+                transition: all 0.12s;
+                font-family: inherit;
+            }
+            .date-bar__btn:hover {
+                border-color: var(--blue);
+                color: var(--blue);
+                background: rgba(96, 165, 250, 0.08);
+            }
+            .date-bar__btn.primary {
+                color: var(--blue);
+                border-color: rgba(96, 165, 250, 0.4);
+            }
+            .date-bar__btn.primary:hover {
+                background: rgba(96, 165, 250, 0.12);
+            }
+            @media (max-width: 768px) {
+                .date-bar__actions {
+                    padding-left: 0;
+                }
+            }
+
+            code {
+                background: rgba(96, 165, 250, 0.1);
+                padding: 2px 7px;
+                border-radius: 4px;
+                color: var(--blue);
+                font-size: 0.74rem;
+                word-break: break-all;
+                font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+                border: 1px solid rgba(96, 165, 250, 0.15);
+            }
+
+            /* === Tabs === */
+            .tabs {
+                display: flex;
+                gap: 4px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0;
+            }
+            .tab {
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid transparent;
+                color: var(--muted);
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.15s;
+                font-family: inherit;
+                letter-spacing: -0.01em;
+            }
+            .tab:hover {
+                color: var(--text);
+                background: rgba(96, 165, 250, 0.04);
+            }
+            .tab.active {
+                color: var(--blue);
+                border-bottom-color: var(--blue);
+                background: rgba(96, 165, 250, 0.06);
+            }
+            .tab-content {
+                display: none;
+            }
+            .tab-content.active {
+                display: block;
+            }
+            .cat-chip {
+                display: inline-block;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 0.66rem;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+            }
+            .cat-chip {
+                background: rgba(96, 165, 250, 0.12) !important;
+                color: var(--blue) !important;
+            }
+
+            @media (max-width: 768px) {
+                .charts {
+                    grid-template-columns: 1fr;
+                }
+                .kpi-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                body {
+                    padding: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>📊 Painel de DAGs - datax-gold-prd (15 dias)</h1>
+            <div class="header-meta" id="header-meta">carregando...</div>
+        </div>
+
+        <div class="date-bar env-bar" id="env-bar" style="display: none">
+            <div class="date-bar__row">
+                <span class="date-bar__label">🌐 Ambientes</span>
+                <div class="date-chips" id="env-chips"></div>
+            </div>
+            <div class="date-bar__actions">
+                <button class="date-bar__btn primary" id="btn-env-all">
+                    Todos
+                </button>
+                <button class="date-bar__btn" id="btn-env-clear">Limpar</button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="tab-overview">
+                Visão Geral
+            </button>
+            <button class="tab" data-tab="tab-runs-detail">Runs por DAG</button>
+            <button class="tab" data-tab="tab-kpis">KPIs</button>
+        </div>
+
+        <div id="tab-overview" class="tab-content active">
+            <div class="date-bar">
+                <div class="date-bar__row">
+                    <span class="date-bar__label">📅 Datas</span>
+                    <div class="date-chips" id="date-chips"></div>
+                </div>
+                <div class="date-bar__actions">
+                    <button class="date-bar__btn" id="btn-dates-all">
+                        Todas
+                    </button>
+                    <button class="date-bar__btn" id="btn-dates-7">
+                        Últimos 7d
+                    </button>
+                    <button class="date-bar__btn" id="btn-dates-clear">
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+            <div class="date-bar">
+                <div class="date-bar__row">
+                    <span class="date-bar__label">🏷️ Categoria</span>
+                    <div class="date-chips" id="category-chips"></div>
+                </div>
+                <div class="date-bar__actions">
+                    <button class="date-bar__btn" id="btn-cat-all">
+                        Todas
+                    </button>
+                    <button class="date-bar__btn" id="btn-cat-clear">
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+            <div class="kpi-grid kpi-grid--highlight">
+                <div class="kpi highlight kpi-active">
+                    <span
+                        class="kpi-info"
+                        data-tip="DAGs operacionais: is_active=true E is_paused=false. Mesma regra usada na UI do Airflow."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-active">-</div>
+                    <div class="l">DAGs Ativas</div>
+                </div>
+                <div class="kpi highlight kpi-availability">
+                    <span
+                        class="kpi-info"
+                        data-tip="Taxa de sucesso global = (success / total_runs) x 100, considerando todos os runs da janela."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-availability">-</div>
+                    <div class="l">Disponibilidade</div>
+                </div>
+                <div class="kpi highlight kpi-duration">
+                    <span
+                        class="kpi-info"
+                        data-tip="Média da duração média por DAG (avg_duration_min). Para cada DAG, duração = end_date - start_date dos runs concluídos. Depois, média dessas médias."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-duration">-</div>
+                    <div class="l">Duração Média</div>
+                </div>
+            </div>
+
+            <div class="kpi-grid kpi-grid--secondary" id="kpi-grid">
+                <div class="kpi t">
+                    <span
+                        class="kpi-info"
+                        data-tip="Total de DAGs no metadata do Airflow, considerando ativas + pausadas + inativas. Fonte: GET /api/v1/dags (only_active=false)."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-total">-</div>
+                    <div class="l">DAGs Totais</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="DAGs com is_paused=true (despausadas via UI ou API). Não rodam até serem reativadas."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-paused" style="color: var(--yellow)">
+                        -
+                    </div>
+                    <div class="l">DAGs Pausadas</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="DAGs com is_active=false. Existem no metadata mas não foram parseadas recentemente (arquivo removido, erro no parse, etc.)."
+                        >i</span
+                    >
+                    <div
+                        class="v"
+                        id="kpi-inactive"
+                        style="color: var(--muted)"
+                    >
+                        -
+                    </div>
+                    <div class="l">DAGs Inativas</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="Total de DAG runs cujo start_date está dentro da janela de 15 dias. Coletado via /api/v1/dags/{id}/dagRuns."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-runs" style="color: var(--purple)">
+                        -
+                    </div>
+                    <div class="l">Total Runs</div>
+                </div>
+                <div class="kpi s">
+                    <span
+                        class="kpi-info"
+                        data-tip="Runs com state=success na janela."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-success">-</div>
+                    <div class="l">Sucesso</div>
+                </div>
+                <div class="kpi f">
+                    <span
+                        class="kpi-info"
+                        data-tip="Runs com state=failed ou upstream_failed na janela."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-failed">-</div>
+                    <div class="l">Falhas</div>
+                </div>
+                <div class="kpi r">
+                    <span
+                        class="kpi-info"
+                        data-tip="Runs com state=running ou queued no momento da coleta."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-running">-</div>
+                    <div class="l">Executando</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">🔬 Métricas Avançadas (Camada 1)</h2>
+            <div class="kpi-grid kpi-grid--secondary" id="kpi-grid-layer1">
+                <div class="kpi d">
+                    <span
+                        class="kpi-info"
+                        data-tip="Percentil 50 (mediana) da duração de todos os runs na janela. Mais representativo que a média pois ignora outliers."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-p50">-</div>
+                    <div class="l">P50 Duração</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="Percentil 95 da duração de todos os runs na janela. Indica o pior caso desconsiderando apenas 5% dos outliers extremos."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-p95" style="color: var(--orange)">
+                        -
+                    </div>
+                    <div class="l">P95 Duração</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="Mean Time To Recovery: tempo médio entre uma falha e o próximo sucesso na mesma DAG. Mede a velocidade de recuperação do ambiente."
+                        >i</span
+                    >
+                    <div class="v" id="kpi-mttr" style="color: var(--cyan)">
+                        -
+                    </div>
+                    <div class="l">MTTR</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="Número de DAGs com erros de importação (falha no parse do Python). Essas DAGs não aparecem na UI do Airflow e não executam."
+                        >i</span
+                    >
+                    <div
+                        class="v"
+                        id="kpi-import-errors"
+                        style="color: var(--red)"
+                    >
+                        -
+                    </div>
+                    <div class="l">Import Errors</div>
+                </div>
+                <div class="kpi">
+                    <span
+                        class="kpi-info"
+                        data-tip="Saturação máxima de pool = (used + queued) / total_slots × 100. Pools acima de 80% podem causar filas e atrasos."
+                        >i</span
+                    >
+                    <div
+                        class="v"
+                        id="kpi-pool-saturation"
+                        style="color: var(--yellow)"
+                    >
+                        -
+                    </div>
+                    <div class="l">Pool Saturação</div>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart">
+                    <h3>Execuções por Dia</h3>
+                    <div class="chart-container"><canvas id="c1"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Status Geral</h3>
+                    <div class="chart-container"><canvas id="c2"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Top 10 DAGs — Disponibilidade (%)</h3>
+                    <div class="chart-container"><canvas id="c3"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Top 10 DAGs — Duração Média (min)</h3>
+                    <div class="chart-container"><canvas id="c4"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>DAGs por Categoria (ativas)</h3>
+                    <div class="chart-container"><canvas id="c5"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Runs por Categoria</h3>
+                    <div class="chart-container"><canvas id="c6"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Distribuição de Duração (P50 vs P95)</h3>
+                    <div class="chart-container"><canvas id="c7"></canvas></div>
+                </div>
+                <div class="chart">
+                    <h3>Freshness (horas desde último sucesso)</h3>
+                    <div class="chart-container"><canvas id="c8"></canvas></div>
+                </div>
+            </div>
+
+            <h2 class="section-title" id="title-pools">🏊 Pools</h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pool</th>
+                            <th>Slots</th>
+                            <th>Em uso</th>
+                            <th>Fila</th>
+                            <th>Saturação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pools"></tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" id="title-import-errors">
+                🚨 Import Errors
+            </h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Arquivo</th>
+                            <th>Data</th>
+                            <th>Erro (resumo)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-import-errors"></tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" id="title-top-tasks">
+                🔥 Top Tasks com Falhas
+            </h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DAG</th>
+                            <th>Task</th>
+                            <th>Falhas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-top-tasks"></tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" id="title-falhas">⚠️ DAGs com Falhas</h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DAG</th>
+                            <th>Runs</th>
+                            <th>Sucesso</th>
+                            <th>Falhas</th>
+                            <th>Disponib.</th>
+                            <th>Último Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-falhas"></tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" id="title-detalhe">
+                📋 Detalhamento por DAG
+            </h2>
+            <div class="filter">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Buscar por nome..."
+                    oninput="filtrar()"
+                />
+                <select id="status" onchange="filtrar()">
+                    <option value="">Todos os status (última run)</option>
+                    <option value="success">✅ Sucesso</option>
+                    <option value="failed">❌ Falha</option>
+                    <option value="running">▶️ Executando</option>
+                    <option value="queued">🕐 Em fila</option>
+                    <option value="upstream_failed">⛔ Upstream falhou</option>
+                    <option value="nodata">⬚ Sem execução</option>
+                </select>
+                <select id="estado" onchange="filtrar()">
+                    <option value="">Todos os estados</option>
+                    <option value="active" selected>
+                        ▶️ ATIVA (despausada)
+                    </option>
+                    <option value="paused">⏸️ PAUSADA</option>
+                </select>
+                <button
+                    class="date-bar__btn"
+                    id="btn-clear-filters"
+                    type="button"
+                >
+                    Limpar
+                </button>
+            </div>
+
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DAG ID</th>
+                            <th>Categoria</th>
+                            <th>Estado</th>
+                            <th>Schedule</th>
+                            <th>Runs</th>
+                            <th>Suc.</th>
+                            <th>Fal.</th>
+                            <th>Disp.</th>
+                            <th>Duração</th>
+                            <th>Último Início</th>
+                            <th>Último Fim</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /tab-overview -->
+
+        <div id="tab-runs-detail" class="tab-content">
+            <h2 class="section-title">
+                🕐 Histórico de Runs por DAG (Horário de Brasília)
+            </h2>
+            <div class="filter">
+                <select
+                    id="dag-select"
+                    onchange="renderRunsDetail()"
+                    style="min-width: 400px"
+                >
+                    <option value="">Selecione uma DAG...</option>
+                </select>
+            </div>
+            <div id="runs-detail-summary" style="margin-bottom: 16px"></div>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Status</th>
+                            <th>Início (BRT)</th>
+                            <th>Fim (BRT)</th>
+                            <th>Duração (min)</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-runs-detail"></tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title" id="title-tasks-timeline">
+                📋 Detalhamento por Task (últimos 3 runs)
+            </h2>
+            <div id="task-run-selector" style="margin-bottom: 12px"></div>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Task ID</th>
+                            <th>Tabela</th>
+                            <th>Status</th>
+                            <th>Início (BRT)</th>
+                            <th>Fim (BRT)</th>
+                            <th>Duração (s)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-tasks-detail"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /tab-runs-detail -->
+
+        <div id="tab-kpis" class="tab-content">
+            <h2 class="section-title">📈 KPIs Mensais — 2026</h2>
+            <p
+                style="
+                    font-size: 0.8rem;
+                    color: var(--muted);
+                    margin-bottom: 18px;
+                "
+            >
+                Indicadores consolidados mês a mês. Dados coletados via
+                <code>fetch_kpis_mensal_arq_ref.py</code>. Último refresh:
+                <span id="kpis-mensal-generated">-</span>
+            </p>
+
+            <div class="kpi-grid kpi-grid--highlight" id="kpis-mensal-summary">
+                <div class="kpi highlight kpi-availability">
+                    <span
+                        class="kpi-info"
+                        data-tip="Disponibilidade média do ano = média simples da disponibilidade de cada mês."
+                        >i</span
+                    >
+                    <div class="v" id="kpis-mensal-avg-avail">-</div>
+                    <div class="l">Disponibilidade Média 2026</div>
+                </div>
+                <div class="kpi highlight kpi-active">
+                    <span
+                        class="kpi-info"
+                        data-tip="DAGs ativas no mês mais recente (is_active=true, is_paused=false)."
+                        >i</span
+                    >
+                    <div class="v" id="kpis-mensal-current-active">-</div>
+                    <div class="l">DAGs Ativas (mês atual)</div>
+                </div>
+                <div
+                    class="kpi highlight"
+                    style="
+                        background:
+                            radial-gradient(
+                                circle at 0% 0%,
+                                rgba(248, 113, 113, 0.1),
+                                transparent 60%
+                            ),
+                            radial-gradient(
+                                circle at 100% 100%,
+                                rgba(251, 191, 36, 0.08),
+                                transparent 60%
+                            ),
+                            var(--card);
+                        border: 1px solid rgba(251, 191, 36, 0.25);
+                    "
+                >
+                    <span
+                        class="kpi-info"
+                        data-tip="Total de runs acumulado no ano de 2026."
+                        >i</span
+                    >
+                    <div
+                        class="v"
+                        id="kpis-mensal-total-runs"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #fbbf24 0%,
+                                #f97316 100%
+                            );
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                        "
+                    >
+                        -
+                    </div>
+                    <div class="l">Total Runs 2026</div>
+                </div>
+            </div>
+
+            <div class="charts" style="grid-template-columns: 1fr">
+                <div class="chart">
+                    <h3>Disponibilidade (%) por Mês</h3>
+                    <div class="chart-container">
+                        <canvas id="ckpi-avail"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <h3>DAGs Ativas por Mês</h3>
+                    <div class="chart-container">
+                        <canvas id="ckpi-active"></canvas>
+                    </div>
+                </div>
+                <div class="chart">
+                    <h3>Total de Runs por Mês</h3>
+                    <div class="chart-container">
+                        <canvas id="ckpi-runs"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts" style="grid-template-columns: 1fr">
+                <div class="chart">
+                    <h3>Falhas por Mês</h3>
+                    <div class="chart-container">
+                        <canvas id="ckpi-failed"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">📊 Tabela Detalhada por Mês</h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>DAGs Ativas</th>
+                            <th>Total Runs</th>
+                            <th>Sucesso</th>
+                            <th>Falhas</th>
+                            <th>Disponibilidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-kpis-mensal"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /tab-kpis -->
+
+        <script>
+            let DATA = null;
+            let SELECTED_DATES = new Set(); // datas selecionadas (todas se vazio)
+            let SELECTED_CATEGORIES = new Set(); // categorias selecionadas (todas se vazio)
+            let SELECTED_ENVS = new Set(); // ambientes selecionados (todos se vazio)
+            let CHARTS = {}; // referencias para destruir/recriar
+            let VIEW = null; // {dags, daily, kpis} apos aplicar filtros globais
+
+            // Lista de keys de ambientes disponiveis no DATA (deriva de environments[]
+            // ou, fallback, do campo environment das dags)
+            function allEnvKeys() {
+                if (DATA && Array.isArray(DATA.environments) && DATA.environments.length) {
+                    return DATA.environments.map((e) => e.key);
+                }
+                const set = new Set();
+                (DATA?.dags || []).forEach((d) => {
+                    if (d.environment) set.add(d.environment);
+                });
+                return [...set].sort();
+            }
+
+            function envLabel(key) {
+                const meta = (DATA?.environments || []).find((e) => e.key === key);
+                return meta?.label || key;
+            }
+
+            function isAllEnvsSelected() {
+                const all = allEnvKeys();
+                return (
+                    SELECTED_ENVS.size === 0 || SELECTED_ENVS.size === all.length
+                );
+            }
+
+            // DAGs filtradas apenas pelo ambiente (primeiro estagio de buildView)
+            function dagsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.dags;
+                return DATA.dags.filter((d) => SELECTED_ENVS.has(d.environment));
+            }
+
+            // Pools/import_errors respeitando o filtro de ambiente.
+            // Itens sem `environment` (JSON single-env legado) sao sempre incluidos.
+            function poolsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.pools || [];
+                return (DATA.pools || []).filter(
+                    (p) => !p.environment || SELECTED_ENVS.has(p.environment),
+                );
+            }
+
+            function importErrorsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.import_errors || [];
+                return (DATA.import_errors || []).filter(
+                    (e) => !e.environment || SELECTED_ENVS.has(e.environment),
+                );
+            }
+
+            Chart.defaults.color = "#94a3b8";
+
+            const fmtDate = (dt) =>
+                dt
+                    ? new Date(dt).toLocaleString("pt-BR", {
+                          day: "2-digit",
+                          month: "2-digit",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                      })
+                    : "-";
+
+            function calcPercentile(sortedArr, pct) {
+                if (!sortedArr || sortedArr.length === 0) return 0;
+                const n = sortedArr.length;
+                const k = (pct / 100) * (n - 1);
+                const f = Math.floor(k);
+                const c = Math.min(f + 1, n - 1);
+                const d = k - f;
+                return sortedArr[f] + d * (sortedArr[c] - sortedArr[f]);
+            }
+
+            function fmtDateOnly(iso) {
+                if (!iso) return "-";
+                const d = new Date(iso);
+                return d.toLocaleDateString("pt-BR", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                });
+            }
+
+            function parseDay(key) {
+                return new Date(key + "T12:00:00");
+            }
+
+            function destroyCharts() {
+                Object.values(CHARTS).forEach((c) => {
+                    try {
+                        c.destroy();
+                    } catch (_) {}
+                });
+                CHARTS = {};
+            }
+
+            function isAllSelected() {
+                const all = Object.keys(DATA.daily);
+                return (
+                    SELECTED_DATES.size === 0 ||
+                    SELECTED_DATES.size === all.length
+                );
+            }
+
+            function isAllCategoriesSelected() {
+                const allCats = new Set(DATA.dags.map((d) => d.category));
+                return (
+                    SELECTED_CATEGORIES.size === 0 ||
+                    SELECTED_CATEGORIES.size === allCats.size
+                );
+            }
+
+            // Reduz DATA.dags para a "view" considerando apenas runs cujos `day` estao em SELECTED_DATES
+            // e DAGs cuja category esta em SELECTED_CATEGORIES
+            function buildView() {
+                const allDays = Object.keys(DATA.daily);
+                const useAllDates = isAllSelected();
+                const days = useAllDates
+                    ? new Set(allDays)
+                    : new Set(SELECTED_DATES);
+                const useAllCats = isAllCategoriesSelected();
+
+                // 0. Filtra DAGs por AMBIENTE (filtro global, primeiro estagio)
+                const envScoped = dagsForSelectedEnvs();
+
+                // 1. Filtra DAGs por categoria
+                const filteredByCategory = useAllCats
+                    ? envScoped
+                    : envScoped.filter((d) =>
+                          SELECTED_CATEGORIES.has(d.category),
+                      );
+
+                // 2. Recalcula metricas por janela de datas
+                const dagsView = filteredByCategory.map((d) => {
+                    if (useAllDates) {
+                        // shortcut: usa snapshot original ja calculado pelo coletor
+                        return { ...d };
+                    }
+                    const runs = (d.runs || []).filter(
+                        (r) => r.day && days.has(r.day),
+                    );
+                    const total = runs.length;
+                    const success = runs.filter(
+                        (r) => r.state === "success",
+                    ).length;
+                    const failed = runs.filter(
+                        (r) =>
+                            r.state === "failed" ||
+                            r.state === "upstream_failed",
+                    ).length;
+                    const running = runs.filter(
+                        (r) => r.state === "running",
+                    ).length;
+                    const queued = runs.filter(
+                        (r) => r.state === "queued",
+                    ).length;
+                    const durs = runs
+                        .map((r) => r.duration_min)
+                        .filter((x) => x != null);
+                    const availability =
+                        total > 0
+                            ? +((success / total) * 100).toFixed(1)
+                            : null;
+                    const avg_duration_min =
+                        durs.length > 0
+                            ? +(
+                                  durs.reduce((a, b) => a + b, 0) / durs.length
+                              ).toFixed(1)
+                            : null;
+                    const max_duration_min =
+                        durs.length > 0 ? +Math.max(...durs).toFixed(1) : null;
+                    const min_duration_min =
+                        durs.length > 0 ? +Math.min(...durs).toFixed(1) : null;
+
+                    // Percentis
+                    const sortedDurs = [...durs].sort((a, b) => a - b);
+                    const p50_duration_min =
+                        sortedDurs.length > 0
+                            ? +calcPercentile(sortedDurs, 50).toFixed(1)
+                            : null;
+                    const p95_duration_min =
+                        sortedDurs.length > 0
+                            ? +calcPercentile(sortedDurs, 95).toFixed(1)
+                            : null;
+
+                    // Freshness (recalcula baseado nos runs filtrados)
+                    const successRuns = runs.filter(
+                        (r) => r.state === "success" && r.end_date,
+                    );
+                    let freshness_hours = null;
+                    if (successRuns.length > 0) {
+                        const latest = successRuns.reduce((a, b) =>
+                            new Date(b.end_date || 0) >
+                            new Date(a.end_date || 0)
+                                ? b
+                                : a,
+                        );
+                        const hrs =
+                            (Date.now() - new Date(latest.end_date).getTime()) /
+                            3600000;
+                        freshness_hours = +hrs.toFixed(1);
+                    }
+
+                    const last = runs.reduce((a, b) => {
+                        if (!a) return b;
+                        return new Date(b.start_date || 0) >
+                            new Date(a.start_date || 0)
+                            ? b
+                            : a;
+                    }, null);
+                    const last_run = last
+                        ? {
+                              state: last.state,
+                              start_date: last.start_date,
+                              end_date: last.end_date,
+                              duration_min: last.duration_min,
+                          }
+                        : null;
+                    const daily = {};
+                    runs.forEach((r) => {
+                        if (!r.day) return;
+                        const b =
+                            daily[r.day] ||
+                            (daily[r.day] = {
+                                success: 0,
+                                failed: 0,
+                                running: 0,
+                            });
+                        if (r.state === "success") b.success++;
+                        else if (
+                            r.state === "failed" ||
+                            r.state === "upstream_failed"
+                        )
+                            b.failed++;
+                        else if (r.state === "running" || r.state === "queued")
+                            b.running++;
+                    });
+                    return {
+                        ...d,
+                        total,
+                        success,
+                        failed,
+                        running,
+                        queued,
+                        availability,
+                        avg_duration_min,
+                        max_duration_min,
+                        min_duration_min,
+                        p50_duration_min,
+                        p95_duration_min,
+                        freshness_hours,
+                        last_run,
+                        daily,
+                        runs, // runs filtrados por data para recalculos globais
+                    };
+                });
+
+                // 3. daily global agora deriva dos dagsView (respeita categoria + datas)
+                const dailyView = {};
+                allDays.forEach((k) => {
+                    if (days.has(k))
+                        dailyView[k] = { success: 0, failed: 0, running: 0 };
+                });
+                dagsView.forEach((d) => {
+                    Object.entries(d.daily || {}).forEach(([k, v]) => {
+                        if (!dailyView[k]) return;
+                        dailyView[k].success += v.success || 0;
+                        dailyView[k].failed += v.failed || 0;
+                        dailyView[k].running += v.running || 0;
+                    });
+                });
+
+                // 4. KPIs recalculados a partir dos dagsView (mantem definicoes das regras)
+                const total_dags = dagsView.length;
+                const active_dags = dagsView.filter(
+                    (d) => d.is_active && !d.is_paused,
+                ).length;
+                const paused_dags = dagsView.filter((d) => d.is_paused).length;
+                const inactive_dags = dagsView.filter(
+                    (d) => !d.is_active,
+                ).length;
+                const total_runs = dagsView.reduce(
+                    (s, d) => s + (d.total || 0),
+                    0,
+                );
+                const success = dagsView.reduce(
+                    (s, d) => s + (d.success || 0),
+                    0,
+                );
+                const failed = dagsView.reduce(
+                    (s, d) => s + (d.failed || 0),
+                    0,
+                );
+                const running = dagsView.reduce(
+                    (s, d) => s + (d.running || 0) + (d.queued || 0),
+                    0,
+                );
+                const availability =
+                    total_runs > 0
+                        ? +((success / total_runs) * 100).toFixed(1)
+                        : 0;
+                const durs = dagsView
+                    .map((d) => d.avg_duration_min)
+                    .filter((x) => x != null);
+                const avg_duration_min =
+                    durs.length > 0
+                        ? +(
+                              durs.reduce((a, b) => a + b, 0) / durs.length
+                          ).toFixed(1)
+                        : 0;
+
+                // Camada 1: P50/P95 globais a partir de todos os runs individuais
+                const allRunDurs = [];
+                dagsView.forEach((d) => {
+                    (d.runs || []).forEach((r) => {
+                        if (r.duration_min != null)
+                            allRunDurs.push(r.duration_min);
+                    });
+                });
+                allRunDurs.sort((a, b) => a - b);
+                const p50_duration_min =
+                    allRunDurs.length > 0
+                        ? +calcPercentile(allRunDurs, 50).toFixed(1)
+                        : null;
+                const p95_duration_min =
+                    allRunDurs.length > 0
+                        ? +calcPercentile(allRunDurs, 95).toFixed(1)
+                        : null;
+
+                // Camada 1: MTTR global (media dos MTTRs individuais)
+                const mttrs = dagsView
+                    .map((d) => d.mttr_min)
+                    .filter((x) => x != null);
+                const mttr_min =
+                    mttrs.length > 0
+                        ? +(
+                              mttrs.reduce((a, b) => a + b, 0) / mttrs.length
+                          ).toFixed(1)
+                        : null;
+
+                // Pool saturation (respeita filtro de ambiente; nao filtra por data/categoria)
+                const poolSat = (DATA.pools || [])
+                    .filter(
+                        (p) =>
+                            isAllEnvsSelected() ||
+                            SELECTED_ENVS.has(p.environment),
+                    )
+                    .map((p) => p.saturation_pct)
+                    .filter((x) => x != null);
+                const pool_saturation_pct =
+                    poolSat.length > 0 ? Math.max(...poolSat) : null;
+
+                const kpis = {
+                    total_dags,
+                    active_dags,
+                    paused_dags,
+                    inactive_dags,
+                    total_runs,
+                    success,
+                    failed,
+                    running,
+                    availability,
+                    avg_duration_min,
+                    p50_duration_min,
+                    p95_duration_min,
+                    mttr_min,
+                    pool_saturation_pct,
+                };
+
+                return { dags: dagsView, daily: dailyView, kpis };
+            }
+
+            function setupHeader() {
+                const start = fmtDateOnly(DATA.period_start);
+                const end = fmtDateOnly(DATA.period_end);
+                const gen = new Date(DATA.generated_at).toLocaleString(
+                    "pt-BR",
+                    {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                    },
+                );
+
+                // Titulo reflete a selecao de ambientes
+                const allKeys = allEnvKeys();
+                const selCount = isAllEnvsSelected()
+                    ? allKeys.length
+                    : SELECTED_ENVS.size;
+                let envTitle;
+                if (isAllEnvsSelected()) {
+                    envTitle =
+                        allKeys.length > 1
+                            ? `${allKeys.length} ambientes`
+                            : envLabel(allKeys[0] || DATA.environment);
+                } else if (SELECTED_ENVS.size === 1) {
+                    envTitle = envLabel([...SELECTED_ENVS][0]);
+                } else {
+                    envTitle = `${selCount} de ${allKeys.length} ambientes`;
+                }
+
+                document.querySelector("h1").textContent =
+                    `📊 Painel de DAGs - ${envTitle} (${DATA.period_days} dias)`;
+                document.title = `Painel de DAGs - ${envTitle} (${DATA.period_days} dias)`;
+
+                // Airflow version: usa a lista de environments quando multi
+                let airflowInfo = DATA.airflow_version;
+                if (Array.isArray(DATA.environments) && DATA.environments.length) {
+                    const vers = [
+                        ...new Set(
+                            DATA.environments
+                                .map((e) => e.airflow_version)
+                                .filter(Boolean),
+                        ),
+                    ];
+                    if (vers.length) airflowInfo = vers.join(", ");
+                }
+                document.getElementById("header-meta").textContent =
+                    `Período: ${start} a ${end} | Airflow ${airflowInfo} | Gerado: ${gen}`;
+            }
+
+            function setupDateBar() {
+                const days = Object.keys(DATA.daily).sort(); // crescente
+                const container = document.getElementById("date-chips");
+                const dn = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+                container.innerHTML = days
+                    .map((k) => {
+                        const d = parseDay(k);
+                        const wd = dn[d.getDay()];
+                        const lbl = `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}`;
+                        return `<span class="date-chip" data-day="${k}">
+            <span class="date-chip__weekday">${wd}</span>${lbl}
+        </span>`;
+                    })
+                    .join("");
+
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    el.addEventListener("click", () => {
+                        const day = el.dataset.day;
+                        if (SELECTED_DATES.has(day)) SELECTED_DATES.delete(day);
+                        else SELECTED_DATES.add(day);
+                        renderDateChips();
+                        applyAll();
+                    });
+                });
+
+                document
+                    .getElementById("btn-dates-all")
+                    .addEventListener("click", () => {
+                        SELECTED_DATES = new Set(days);
+                        renderDateChips();
+                        applyAll();
+                    });
+                document
+                    .getElementById("btn-dates-7")
+                    .addEventListener("click", () => {
+                        SELECTED_DATES = new Set(days.slice(-7));
+                        renderDateChips();
+                        applyAll();
+                    });
+                document
+                    .getElementById("btn-dates-clear")
+                    .addEventListener("click", () => {
+                        SELECTED_DATES.clear();
+                        renderDateChips();
+                        applyAll();
+                    });
+
+                renderDateChips();
+            }
+
+            function renderDateChips() {
+                const container = document.getElementById("date-chips");
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    const day = el.dataset.day;
+                    // Se nada selecionado, considera "todas selecionadas" visualmente para refletir comportamento
+                    const active =
+                        SELECTED_DATES.size === 0 || SELECTED_DATES.has(day);
+                    el.classList.toggle("active", active);
+                });
+            }
+
+            function setupKpis() {
+                const k = VIEW.kpis;
+                document.getElementById("kpi-total").textContent = k.total_dags;
+                document.getElementById("kpi-active").textContent =
+                    k.active_dags;
+                document.getElementById("kpi-paused").textContent =
+                    k.paused_dags != null ? k.paused_dags : "-";
+                document.getElementById("kpi-inactive").textContent =
+                    k.inactive_dags != null ? k.inactive_dags : "-";
+                document.getElementById("kpi-runs").textContent = k.total_runs;
+                document.getElementById("kpi-success").textContent = k.success;
+                document.getElementById("kpi-failed").textContent = k.failed;
+                document.getElementById("kpi-running").textContent = k.running;
+                document.getElementById("kpi-availability").textContent =
+                    k.availability + "%";
+                document.getElementById("kpi-duration").textContent =
+                    k.avg_duration_min + " min";
+
+                // Camada 1 KPIs
+                const p50El = document.getElementById("kpi-p50");
+                const p95El = document.getElementById("kpi-p95");
+                const mttrEl = document.getElementById("kpi-mttr");
+                const ieEl = document.getElementById("kpi-import-errors");
+                const psEl = document.getElementById("kpi-pool-saturation");
+
+                if (p50El)
+                    p50El.textContent =
+                        k.p50_duration_min != null
+                            ? k.p50_duration_min + " min"
+                            : "-";
+                if (p95El)
+                    p95El.textContent =
+                        k.p95_duration_min != null
+                            ? k.p95_duration_min + " min"
+                            : "-";
+                if (mttrEl)
+                    mttrEl.textContent =
+                        k.mttr_min != null ? k.mttr_min + " min" : "-";
+                if (ieEl)
+                    ieEl.textContent = importErrorsForSelectedEnvs().length;
+                if (psEl)
+                    psEl.textContent =
+                        k.pool_saturation_pct != null
+                            ? k.pool_saturation_pct + "%"
+                            : "-";
+            }
+
+            function setupEnvBar() {
+                const keys = allEnvKeys();
+                const bar = document.getElementById("env-bar");
+                // Só mostra a barra de ambientes quando há mais de um
+                if (!bar) return;
+                if (keys.length <= 1) {
+                    bar.style.display = "none";
+                    return;
+                }
+                bar.style.display = "";
+
+                // Contagem de DAGs por ambiente (para o rotulo do chip)
+                const counts = {};
+                DATA.dags.forEach((d) => {
+                    if (d.environment)
+                        counts[d.environment] =
+                            (counts[d.environment] || 0) + 1;
+                });
+
+                const container = document.getElementById("env-chips");
+                container.innerHTML = keys
+                    .map((k) => {
+                        const lbl = envLabel(k);
+                        const c = counts[k] || 0;
+                        return `<span class="date-chip env-chip" data-env="${k}" title="${k} (${c} DAGs)">${lbl} <span style="opacity:0.6;font-size:0.65rem">${c}</span></span>`;
+                    })
+                    .join("");
+
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    el.addEventListener("click", () => {
+                        const key = el.dataset.env;
+                        if (SELECTED_ENVS.has(key)) SELECTED_ENVS.delete(key);
+                        else SELECTED_ENVS.add(key);
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+                });
+
+                document
+                    .getElementById("btn-env-all")
+                    .addEventListener("click", () => {
+                        SELECTED_ENVS = new Set(keys);
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+                document
+                    .getElementById("btn-env-clear")
+                    .addEventListener("click", () => {
+                        SELECTED_ENVS.clear();
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+
+                renderEnvChips();
+            }
+
+            function renderEnvChips() {
+                const container = document.getElementById("env-chips");
+                if (!container) return;
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    const key = el.dataset.env;
+                    const active =
+                        SELECTED_ENVS.size === 0 || SELECTED_ENVS.has(key);
+                    el.classList.toggle("active", active);
+                });
+            }
+
+            // Quando o ambiente muda, as categorias e o seletor de DAG dependem
+            // do subconjunto de DAGs. Reconstroi essas barras e re-renderiza tudo.
+            function onEnvChange() {
+                setupCategoryBar();
+                setupDagSelect();
+                setupHeader();
+                applyAll();
+                renderRunsDetail();
+                if (KPI_MENSAL_DATA) renderKpisMensal();
+            }
+
+            function setupCategoryBar() {
+                const counts = {};
+                dagsForSelectedEnvs().forEach((d) => {
+                    counts[d.category] = (counts[d.category] || 0) + 1;
+                });
+                const cats = Object.keys(counts).sort();
+
+                const container = document.getElementById("category-chips");
+                container.innerHTML = cats
+                    .map(
+                        (cat) => `
+        <span class="date-chip" data-category="${cat}" title="${cat} (${counts[cat]})">${cat} <span style="opacity:0.6;font-size:0.65rem">${counts[cat]}</span></span>
+    `,
+                    )
+                    .join("");
+
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    el.addEventListener("click", () => {
+                        const cat = el.dataset.category;
+                        if (SELECTED_CATEGORIES.has(cat))
+                            SELECTED_CATEGORIES.delete(cat);
+                        else SELECTED_CATEGORIES.add(cat);
+                        renderCategoryChips();
+                        applyAll();
+                    });
+                });
+
+                document
+                    .getElementById("btn-cat-all")
+                    .addEventListener("click", () => {
+                        SELECTED_CATEGORIES = new Set(cats);
+                        renderCategoryChips();
+                        applyAll();
+                    });
+                document
+                    .getElementById("btn-cat-clear")
+                    .addEventListener("click", () => {
+                        SELECTED_CATEGORIES.clear();
+                        renderCategoryChips();
+                        applyAll();
+                    });
+
+                renderCategoryChips();
+            }
+
+            function renderCategoryChips() {
+                const container = document.getElementById("category-chips");
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    const cat = el.dataset.category;
+                    const active =
+                        SELECTED_CATEGORIES.size === 0 ||
+                        SELECTED_CATEGORIES.has(cat);
+                    el.classList.toggle("active", active);
+                });
+            }
+
+            function setupCharts() {
+                destroyCharts();
+
+                // Grafico 1: Execucoes por Dia (apenas dias selecionados)
+                const dailySorted = Object.entries(VIEW.daily).sort(
+                    ([a], [b]) => a.localeCompare(b),
+                );
+                const dn = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+                CHARTS.c1 = new Chart(document.getElementById("c1"), {
+                    type: "bar",
+                    data: {
+                        labels: dailySorted.map(([k]) => {
+                            const d = parseDay(k);
+                            return `${dn[d.getDay()]} ${d.getDate()}/${d.getMonth() + 1}`;
+                        }),
+                        datasets: [
+                            {
+                                label: "Sucesso",
+                                data: dailySorted.map(([, v]) => v.success),
+                                backgroundColor: "#22c55e",
+                                borderRadius: 4,
+                            },
+                            {
+                                label: "Falha",
+                                data: dailySorted.map(([, v]) => v.failed),
+                                backgroundColor: "#ef4444",
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: "#94a3b8" } } },
+                        scales: {
+                            x: {
+                                stacked: true,
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                stacked: true,
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                        },
+                    },
+                });
+
+                // Grafico 2: Status geral
+                CHARTS.c2 = new Chart(document.getElementById("c2"), {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Sucesso", "Falha"],
+                        datasets: [
+                            {
+                                data: [VIEW.kpis.success, VIEW.kpis.failed],
+                                backgroundColor: ["#22c55e", "#ef4444"],
+                                borderWidth: 0,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "bottom",
+                                labels: { color: "#94a3b8", padding: 14 },
+                            },
+                        },
+                        cutout: "60%",
+                    },
+                });
+
+                // Top 10 disponibilidade (entre ativos com runs)
+                const activeDags = VIEW.dags.filter(
+                    (d) => d.total > 0 && d.availability !== null,
+                );
+                const top10Avail = [...activeDags]
+                    .sort((a, b) => a.availability - b.availability)
+                    .slice(0, 10);
+                CHARTS.c3 = new Chart(document.getElementById("c3"), {
+                    type: "bar",
+                    data: {
+                        labels: top10Avail.map((d) =>
+                            d.dag_id.length > 30
+                                ? d.dag_id.slice(0, 28) + ".."
+                                : d.dag_id,
+                        ),
+                        datasets: [
+                            {
+                                label: "%",
+                                data: top10Avail.map((d) => d.availability),
+                                backgroundColor: top10Avail.map((d) =>
+                                    d.availability >= 95
+                                        ? "#22c55e"
+                                        : d.availability >= 80
+                                          ? "#eab308"
+                                          : "#ef4444",
+                                ),
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                max: 100,
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                ticks: { color: "#94a3b8", font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                    },
+                });
+
+                // Top 10 duracao
+                const top10Dur = [...activeDags]
+                    .filter((d) => d.avg_duration_min)
+                    .sort((a, b) => b.avg_duration_min - a.avg_duration_min)
+                    .slice(0, 10);
+                CHARTS.c4 = new Chart(document.getElementById("c4"), {
+                    type: "bar",
+                    data: {
+                        labels: top10Dur.map((d) =>
+                            d.dag_id.length > 30
+                                ? d.dag_id.slice(0, 28) + ".."
+                                : d.dag_id,
+                        ),
+                        datasets: [
+                            {
+                                label: "min",
+                                data: top10Dur.map((d) => d.avg_duration_min),
+                                backgroundColor: "#a855f7",
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                ticks: { color: "#94a3b8", font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                    },
+                });
+
+                // Por categoria (DAGs ativas)
+                const catCounts = {};
+                activeDags.forEach((d) => {
+                    catCounts[d.category] = (catCounts[d.category] || 0) + 1;
+                });
+                const catColors = [
+                    "#22c55e",
+                    "#3b82f6",
+                    "#a855f7",
+                    "#eab308",
+                    "#06b6d4",
+                    "#ef4444",
+                    "#f97316",
+                    "#84cc16",
+                    "#ec4899",
+                    "#14b8a6",
+                ];
+                CHARTS.c5 = new Chart(document.getElementById("c5"), {
+                    type: "doughnut",
+                    data: {
+                        labels: Object.keys(catCounts),
+                        datasets: [
+                            {
+                                data: Object.values(catCounts),
+                                backgroundColor: catColors,
+                                borderWidth: 0,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "right",
+                                labels: {
+                                    color: "#94a3b8",
+                                    padding: 8,
+                                    font: { size: 10 },
+                                },
+                            },
+                        },
+                        cutout: "55%",
+                    },
+                });
+
+                // Runs por categoria
+                const catRuns = {};
+                activeDags.forEach((d) => {
+                    catRuns[d.category] = (catRuns[d.category] || 0) + d.total;
+                });
+                CHARTS.c6 = new Chart(document.getElementById("c6"), {
+                    type: "bar",
+                    data: {
+                        labels: Object.keys(catRuns),
+                        datasets: [
+                            {
+                                label: "Runs",
+                                data: Object.values(catRuns),
+                                backgroundColor: "#06b6d4",
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                ticks: { color: "#94a3b8", font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                    },
+                });
+
+                // Camada 1: Distribuicao P50 vs P95 por categoria
+                const catP50 = {};
+                const catP95 = {};
+                activeDags.forEach((d) => {
+                    if (!catP50[d.category]) {
+                        catP50[d.category] = [];
+                        catP95[d.category] = [];
+                    }
+                    if (d.p50_duration_min != null)
+                        catP50[d.category].push(d.p50_duration_min);
+                    if (d.p95_duration_min != null)
+                        catP95[d.category].push(d.p95_duration_min);
+                });
+                const catLabels7 = Object.keys(catP50)
+                    .filter((c) => catP50[c].length > 0)
+                    .sort();
+                const avgP50 = catLabels7.map((c) => {
+                    const v = catP50[c];
+                    return v.length
+                        ? +(v.reduce((a, b) => a + b, 0) / v.length).toFixed(1)
+                        : 0;
+                });
+                const avgP95 = catLabels7.map((c) => {
+                    const v = catP95[c];
+                    return v.length
+                        ? +(v.reduce((a, b) => a + b, 0) / v.length).toFixed(1)
+                        : 0;
+                });
+                CHARTS.c7 = new Chart(document.getElementById("c7"), {
+                    type: "bar",
+                    data: {
+                        labels: catLabels7,
+                        datasets: [
+                            {
+                                label: "P50",
+                                data: avgP50,
+                                backgroundColor: "#a855f7",
+                                borderRadius: 4,
+                            },
+                            {
+                                label: "P95",
+                                data: avgP95,
+                                backgroundColor: "#f97316",
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: "#94a3b8" } } },
+                        scales: {
+                            x: {
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                ticks: { color: "#94a3b8", font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                    },
+                });
+
+                // Camada 1: Top 10 DAGs por Freshness (horas desde ultimo sucesso)
+                const freshDags = VIEW.dags
+                    .filter(
+                        (d) =>
+                            d.freshness_hours != null &&
+                            d.total > 0 &&
+                            !d.is_paused,
+                    )
+                    .sort((a, b) => b.freshness_hours - a.freshness_hours)
+                    .slice(0, 10);
+                CHARTS.c8 = new Chart(document.getElementById("c8"), {
+                    type: "bar",
+                    data: {
+                        labels: freshDags.map((d) =>
+                            d.dag_id.length > 30
+                                ? d.dag_id.slice(0, 28) + ".."
+                                : d.dag_id,
+                        ),
+                        datasets: [
+                            {
+                                label: "horas",
+                                data: freshDags.map((d) => d.freshness_hours),
+                                backgroundColor: freshDags.map((d) =>
+                                    d.freshness_hours > 48
+                                        ? "#ef4444"
+                                        : d.freshness_hours > 24
+                                          ? "#eab308"
+                                          : "#22c55e",
+                                ),
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                ticks: { color: "#94a3b8" },
+                                grid: { color: "#334155" },
+                            },
+                            y: {
+                                ticks: { color: "#94a3b8", font: { size: 10 } },
+                                grid: { display: false },
+                            },
+                        },
+                    },
+                });
+            }
+
+            function renderFalhas() {
+                const fails = VIEW.dags
+                    .filter((d) => d.failed > 0)
+                    .sort((a, b) => b.failed - a.failed);
+                document.getElementById("title-falhas").textContent =
+                    `⚠️ DAGs com Falhas (${fails.length})`;
+                const tbody = document.getElementById("tabela-falhas");
+                if (fails.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">nenhuma falha na janela</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = fails
+                    .map((d) => {
+                        const lastState = d.last_run ? d.last_run.state : null;
+                        const cls =
+                            lastState === "success"
+                                ? "success"
+                                : lastState === "failed"
+                                  ? "failed"
+                                  : lastState === "running"
+                                    ? "running"
+                                    : lastState === "queued"
+                                      ? "queued"
+                                      : lastState === "upstream_failed"
+                                        ? "upstream_failed"
+                                        : "nodata";
+                        const lbl = lastState
+                            ? lastState.toUpperCase()
+                            : "SEM DADOS";
+                        return `<tr>
+            <td><code>${d.dag_id}</code></td>
+            <td>${d.total}</td>
+            <td>${d.success}</td>
+            <td style="color:var(--red)"><strong>${d.failed}</strong></td>
+            <td>${d.availability != null ? d.availability + "%" : "-"}</td>
+            <td><span class="badge ${cls}">${lbl}</span></td>
+        </tr>`;
+                    })
+                    .join("");
+            }
+
+            function renderPools() {
+                const tbody = document.getElementById("tabela-pools");
+                const pools = poolsForSelectedEnvs();
+                if (pools.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:18px">sem dados de pools</td></tr>';
+                    return;
+                }
+                document.getElementById("title-pools").textContent =
+                    `🏊 Pools (${pools.length})`;
+                tbody.innerHTML = pools
+                    .sort((a, b) => b.saturation_pct - a.saturation_pct)
+                    .map((p) => {
+                        const satCls =
+                            p.saturation_pct >= 80
+                                ? "color:var(--red)"
+                                : p.saturation_pct >= 50
+                                  ? "color:var(--yellow)"
+                                  : "color:var(--green)";
+                        const envTag =
+                            p.environment && allEnvKeys().length > 1
+                                ? `<span style="opacity:0.55;font-size:0.68rem"> · ${envLabel(p.environment)}</span>`
+                                : "";
+                        return `<tr>
+            <td><code>${p.name}</code>${envTag}</td>
+            <td>${p.slots}</td>
+            <td>${p.used}</td>
+            <td>${p.queued}</td>
+            <td style="${satCls}"><strong>${p.saturation_pct}%</strong></td>
+        </tr>`;
+                    })
+                    .join("");
+            }
+
+            function renderImportErrors() {
+                const tbody = document.getElementById("tabela-import-errors");
+                const errors = importErrorsForSelectedEnvs();
+                document.getElementById("title-import-errors").textContent =
+                    `🚨 Import Errors (${errors.length})`;
+                if (errors.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:18px">nenhum import error (todas DAGs parseadas com sucesso)</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = errors
+                    .map((e) => {
+                        const ts = e.timestamp
+                            ? new Date(e.timestamp).toLocaleString("pt-BR", {
+                                  day: "2-digit",
+                                  month: "2-digit",
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                              })
+                            : "-";
+                        const trace = (e.stack_trace || "")
+                            .split("\n")
+                            .slice(-2)
+                            .join(" ")
+                            .slice(0, 120);
+                        return `<tr>
+            <td><code>${(e.filename || "").split("/").pop() || e.filename}</code></td>
+            <td>${ts}</td>
+            <td style="font-size:0.72rem;color:var(--muted)">${trace}${trace.length >= 120 ? "..." : ""}</td>
+        </tr>`;
+                    })
+                    .join("");
+            }
+
+            function renderTopTasks() {
+                const tbody = document.getElementById("tabela-top-tasks");
+                // Agrega top_failing_tasks de todos os DAGs
+                const allTasks = [];
+                VIEW.dags.forEach((d) => {
+                    (d.top_failing_tasks || []).forEach((t) => {
+                        allTasks.push({
+                            dag_id: d.dag_id,
+                            task_id: t.task_id,
+                            failures: t.failures,
+                        });
+                    });
+                });
+                allTasks.sort((a, b) => b.failures - a.failures);
+                const top20 = allTasks.slice(0, 20);
+                document.getElementById("title-top-tasks").textContent =
+                    `🔥 Top Tasks com Falhas (${top20.length})`;
+                if (top20.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:18px">nenhuma task com falha na janela</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = top20
+                    .map(
+                        (t) => `<tr>
+        <td><code>${t.dag_id}</code></td>
+        <td><code>${t.task_id}</code></td>
+        <td style="color:var(--red)"><strong>${t.failures}</strong></td>
+    </tr>`,
+                    )
+                    .join("");
+            }
+
+            function renderTabela(data) {
+                const tbody = document.getElementById("tabela");
+                if (data.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="12" style="text-align:center;color:var(--muted);padding:18px">nenhum resultado</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = data
+                    .map((d) => {
+                        const lastState = d.last_run ? d.last_run.state : null;
+                        const badgeCls =
+                            lastState === "success"
+                                ? "success"
+                                : lastState === "failed"
+                                  ? "failed"
+                                  : lastState === "running"
+                                    ? "running"
+                                    : lastState === "queued"
+                                      ? "queued"
+                                      : lastState === "upstream_failed"
+                                        ? "upstream_failed"
+                                        : "nodata";
+                        const stateLabel = lastState
+                            ? lastState.toUpperCase()
+                            : "SEM DADOS";
+                        const pauseCls = d.is_paused ? "paused" : "active";
+                        const pauseLabel = d.is_paused ? "PAUSADA" : "ATIVA";
+                        return `<tr>
+            <td><code>${d.dag_id}</code></td>
+            <td><span class="cat-chip" style="background:rgba(59,130,246,0.15);color:#3b82f6">${d.category}</span></td>
+            <td><span class="badge ${pauseCls}">${pauseLabel}</span></td>
+            <td><small>${d.schedule}</small></td>
+            <td>${d.total || "-"}</td>
+            <td>${d.success || "-"}</td>
+            <td>${d.failed > 0 ? '<strong style="color:#ef4444">' + d.failed + "</strong>" : d.failed || "-"}</td>
+            <td>${d.availability != null ? d.availability + "%" : "-"}</td>
+            <td>${d.avg_duration_min != null ? d.avg_duration_min + " min" : "-"}</td>
+            <td>${fmtDate(d.last_run ? d.last_run.start_date : null)}</td>
+            <td>${fmtDate(d.last_run ? d.last_run.end_date : null)}</td>
+            <td><span class="badge ${badgeCls}">${stateLabel}</span></td>
+        </tr>`;
+                    })
+                    .join("");
+            }
+
+            function filtrar() {
+                const search = document
+                    .getElementById("search")
+                    .value.toLowerCase();
+                const status = document.getElementById("status").value;
+                const estado = document.getElementById("estado").value;
+
+                const filtrado = VIEW.dags.filter((d) => {
+                    if (search && !d.dag_id.toLowerCase().includes(search))
+                        return false;
+                    if (status) {
+                        const s = d.last_run ? d.last_run.state : null;
+                        if (status === "nodata" && s !== null) return false;
+                        if (status !== "nodata" && s !== status) return false;
+                    }
+                    if (estado === "active" && d.is_paused) return false;
+                    if (estado === "paused" && !d.is_paused) return false;
+                    return true;
+                });
+                renderTabela(filtrado);
+            }
+
+            function applyAll() {
+                VIEW = buildView();
+                document.getElementById("title-detalhe").textContent =
+                    `📋 Detalhamento por DAG — ${VIEW.kpis.total_dags} DAGs`;
+                setupKpis();
+                setupCharts();
+                renderPools();
+                renderImportErrors();
+                renderTopTasks();
+                renderFalhas();
+                filtrar();
+            }
+
+            // Executa uma etapa isolando erros: uma falha numa parte do painel
+            // nao derruba as demais (ex.: a aba KPIs continua funcionando mesmo
+            // se um grafico da Visao Geral falhar).
+            function safeRun(label, fn) {
+                try {
+                    fn();
+                } catch (err) {
+                    console.error(`[painel] falha em ${label}:`, err);
+                }
+            }
+
+            async function bootstrap() {
+                // Etapa critica: carregar os dados principais. So isto pode
+                // mostrar o erro no topo.
+                try {
+                    const resp = await fetch("data/painel_data_arq_ref.json", {
+                        cache: "no-store",
+                    });
+                    if (!resp.ok) {
+                        throw new Error(
+                            `HTTP ${resp.status} ao buscar painel_data_arq_ref.json`,
+                        );
+                    }
+                    DATA = await resp.json();
+                } catch (err) {
+                    console.error(err);
+                    document.getElementById("header-meta").textContent =
+                        "Erro ao carregar dados. Rode: python arq_ref/tools/refresh_and_publish_arq_ref.py";
+                    return;
+                }
+
+                // Etapas de render isoladas — nunca derrubam o painel inteiro.
+                safeRun("setupTabs", setupTabs);
+                safeRun("setupEnvBar", setupEnvBar);
+                safeRun("setupHeader", setupHeader);
+                safeRun("setupDateBar", setupDateBar);
+                safeRun("setupCategoryBar", setupCategoryBar);
+                safeRun("setupClearFiltersButton", setupClearFiltersButton);
+                safeRun("setupDagSelect", setupDagSelect);
+                safeRun("applyAll", applyAll);
+                safeRun("renderRunsDetail", renderRunsDetail);
+                // Aba KPIs (arquivo separado) — sempre roda, independente do resto.
+                loadKpisMensal();
+            }
+
+            function setupClearFiltersButton() {
+                const btn = document.getElementById("btn-clear-filters");
+                if (!btn) return;
+                btn.addEventListener("click", () => {
+                    document.getElementById("search").value = "";
+                    document.getElementById("status").value = "";
+                    document.getElementById("estado").value = "active"; // default volta para ATIVA
+                    filtrar();
+                });
+            }
+
+            function setupTabs() {
+                document.querySelectorAll(".tab").forEach((tab) => {
+                    tab.addEventListener("click", () => {
+                        document
+                            .querySelectorAll(".tab")
+                            .forEach((t) => t.classList.remove("active"));
+                        document
+                            .querySelectorAll(".tab-content")
+                            .forEach((c) => c.classList.remove("active"));
+                        tab.classList.add("active");
+                        document
+                            .getElementById(tab.dataset.tab)
+                            .classList.add("active");
+                    });
+                });
+            }
+
+            // Chave composta para identificar uma DAG unívoca entre ambientes
+            function dagKey(d) {
+                return `${d.environment || ""}||${d.dag_id}`;
+            }
+
+            function findDagByKey(key) {
+                if (!key) return null;
+                // Suporta valor legado (apenas dag_id, sem env)
+                const hasSep = key.includes("||");
+                return (DATA.dags || []).find((d) =>
+                    hasSep ? dagKey(d) === key : d.dag_id === key,
+                );
+            }
+
+            function setupDagSelect() {
+                const select = document.getElementById("dag-select");
+                if (!select || !DATA) return;
+                const multi = allEnvKeys().length > 1;
+                const prev = select.value;
+                const dags = dagsForSelectedEnvs()
+                    .filter((d) => d.total > 0)
+                    .sort(
+                        (a, b) =>
+                            (a.environment || "").localeCompare(
+                                b.environment || "",
+                            ) || a.dag_id.localeCompare(b.dag_id),
+                    );
+                select.innerHTML =
+                    '<option value="">Selecione uma DAG...</option>' +
+                    dags
+                        .map((d) => {
+                            const envPrefix =
+                                multi && d.environment
+                                    ? `[${envLabel(d.environment)}] `
+                                    : "";
+                            return `<option value="${dagKey(d)}">${envPrefix}${d.dag_id} (${d.total} runs)</option>`;
+                        })
+                        .join("");
+                // Preserva selecao se ainda existir no novo escopo
+                if (prev && findDagByKey(prev)) select.value = prev;
+            }
+
+            function fmtBRT(isoStr) {
+                if (!isoStr) return "-";
+                const d = new Date(isoStr);
+                // Brasília = UTC-3
+                const brt = new Date(d.getTime() - 3 * 60 * 60 * 1000);
+                const dd = String(brt.getUTCDate()).padStart(2, "0");
+                const mm = String(brt.getUTCMonth() + 1).padStart(2, "0");
+                const yyyy = brt.getUTCFullYear();
+                const hh = String(brt.getUTCHours()).padStart(2, "0");
+                const mi = String(brt.getUTCMinutes()).padStart(2, "0");
+                const ss = String(brt.getUTCSeconds()).padStart(2, "0");
+                return `${dd}/${mm}/${yyyy} ${hh}:${mi}:${ss}`;
+            }
+
+            function renderRunsDetail() {
+                const dagId = document.getElementById("dag-select").value;
+                const tbody = document.getElementById("tabela-runs-detail");
+                const summary = document.getElementById("runs-detail-summary");
+                const tasksTbody = document.getElementById(
+                    "tabela-tasks-detail",
+                );
+                const runSelector =
+                    document.getElementById("task-run-selector");
+
+                if (!dagId) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:24px">Selecione uma DAG acima para ver o histórico de execuções</td></tr>';
+                    tasksTbody.innerHTML =
+                        '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:18px">Selecione uma DAG para ver detalhes por task</td></tr>';
+                    summary.innerHTML = "";
+                    runSelector.innerHTML = "";
+                    return;
+                }
+
+                const dag = findDagByKey(dagId);
+                if (!dag || !dag.runs || dag.runs.length === 0) {
+                    tbody.innerHTML =
+                        '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhum run encontrado para esta DAG na janela</td></tr>';
+                    tasksTbody.innerHTML = "";
+                    summary.innerHTML = "";
+                    runSelector.innerHTML = "";
+                    return;
+                }
+
+                // Summary
+                const successCount = dag.runs.filter(
+                    (r) => r.state === "success",
+                ).length;
+                const failedCount = dag.runs.filter(
+                    (r) =>
+                        r.state === "failed" || r.state === "upstream_failed",
+                ).length;
+                const envBadge =
+                    dag.environment && allEnvKeys().length > 1
+                        ? `<span class="badge" style="background:rgba(96,165,250,0.18);color:var(--blue)">🌐 ${envLabel(dag.environment)}</span>`
+                        : "";
+                summary.innerHTML = `
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:0.85rem;color:var(--text-2)"><strong>${dag.dag_id}</strong></span>
+            ${envBadge}
+            <span class="badge success">${successCount} sucesso</span>
+            <span class="badge failed">${failedCount} falha(s)</span>
+            <span style="font-size:0.75rem;color:var(--muted)">Total: ${dag.runs.length} runs | Disp: ${dag.availability != null ? dag.availability + "%" : "-"} | Duração média: ${dag.avg_duration_min != null ? dag.avg_duration_min + " min" : "-"}</span>
+        </div>
+    `;
+
+                // Runs ordered by start_date descending (most recent first)
+                const sorted = [...dag.runs].sort((a, b) => {
+                    const da = a.start_date || "";
+                    const db = b.start_date || "";
+                    return db.localeCompare(da);
+                });
+
+                tbody.innerHTML = sorted
+                    .map((r, i) => {
+                        const badgeCls =
+                            r.state === "success"
+                                ? "success"
+                                : r.state === "failed"
+                                  ? "failed"
+                                  : r.state === "running"
+                                    ? "running"
+                                    : r.state === "queued"
+                                      ? "queued"
+                                      : r.state === "upstream_failed"
+                                        ? "upstream_failed"
+                                        : "nodata";
+                        const stLabel = r.state ? r.state.toUpperCase() : "-";
+                        return `<tr>
+            <td style="color:var(--muted)">${i + 1}</td>
+            <td><span class="badge ${badgeCls}">${stLabel}</span></td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(r.start_date)}</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(r.end_date)}</td>
+            <td>${r.duration_min != null ? r.duration_min + " min" : "-"}</td>
+            <td>${r.day || "-"}</td>
+        </tr>`;
+                    })
+                    .join("");
+
+                // Task detail section
+                const recentTasks = dag.recent_runs_tasks || [];
+                if (recentTasks.length === 0) {
+                    runSelector.innerHTML =
+                        '<span style="font-size:0.78rem;color:var(--muted)">Dados de task instances não disponíveis. Execute o refresh para coletar.</span>';
+                    tasksTbody.innerHTML = "";
+                    return;
+                }
+
+                // Build run selector chips
+                runSelector.innerHTML =
+                    '<span style="font-size:0.72rem;color:var(--text-2);font-weight:600;margin-right:10px">RUN:</span>' +
+                    recentTasks
+                        .map((rt, idx) => {
+                            const label = fmtBRT(rt.start_date);
+                            const stCls =
+                                rt.state === "success"
+                                    ? "success"
+                                    : rt.state === "failed"
+                                      ? "failed"
+                                      : "running";
+                            return `<button class="date-chip ${idx === 0 ? "active" : ""}" data-run-idx="${idx}" onclick="selectRunForTasks(${idx})" style="margin-right:6px">
+                <span class="badge ${stCls}" style="margin-right:4px;font-size:0.6rem">${(rt.state || "").slice(0, 3).toUpperCase()}</span>${label}
+            </button>`;
+                        })
+                        .join("");
+
+                // Show first run's tasks by default
+                renderTasksForRun(recentTasks[0]);
+            }
+
+            function selectRunForTasks(idx) {
+                const dagId = document.getElementById("dag-select").value;
+                const dag = findDagByKey(dagId);
+                if (!dag) return;
+                const recentTasks = dag.recent_runs_tasks || [];
+                if (idx >= recentTasks.length) return;
+
+                // Update active chip
+                document
+                    .querySelectorAll("#task-run-selector .date-chip")
+                    .forEach((el, i) => {
+                        el.classList.toggle("active", i === idx);
+                    });
+
+                renderTasksForRun(recentTasks[idx]);
+            }
+
+            function renderTasksForRun(runData) {
+                const tasksTbody = document.getElementById(
+                    "tabela-tasks-detail",
+                );
+                if (!runData || !runData.tasks || runData.tasks.length === 0) {
+                    tasksTbody.innerHTML =
+                        '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:18px">Nenhuma task encontrada neste run</td></tr>';
+                    return;
+                }
+
+                tasksTbody.innerHTML = runData.tasks
+                    .map((t, i) => {
+                        const badgeCls =
+                            t.state === "success"
+                                ? "success"
+                                : t.state === "failed"
+                                  ? "failed"
+                                  : t.state === "running"
+                                    ? "running"
+                                    : t.state === "upstream_failed"
+                                      ? "upstream_failed"
+                                      : t.state === "skipped"
+                                        ? "nodata"
+                                        : "nodata";
+                        const stLabel = t.state ? t.state.toUpperCase() : "-";
+                        const dur =
+                            t.duration != null
+                                ? Math.round(t.duration * 10) / 10
+                                : "-";
+                        const tableName = extractTableName(t.task_id);
+                        return `<tr>
+            <td style="color:var(--muted)">${i + 1}</td>
+            <td><code>${t.task_id}</code></td>
+            <td>${tableName ? '<code style="color:var(--cyan)">' + tableName + "</code>" : '<span style="color:var(--muted)">-</span>'}</td>
+            <td><span class="badge ${badgeCls}">${stLabel}</span></td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.start_date)}</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">${fmtBRT(t.end_date)}</td>
+            <td>${dur}</td>
+        </tr>`;
+                    })
+                    .join("");
+            }
+
+            function extractTableName(taskId) {
+                if (!taskId) return null;
+                // Padrões comuns nos task_ids:
+                // wf_xxx.m_xxx.tb_xxx_insert -> tb_xxx
+                // wf_xxx.m_xxx.vw_xxx_insert -> vw_xxx
+                // Tenta extrair tb_*, vw_*, dim_*, fato_*, agg_* do task_id
+                const match = taskId.match(
+                    /((?:tb_|vw_|dim_|fato_|fct_|agg_|snap_|kpi_|mart_|bridge_)[a-z0-9_]+?)(?:_(?:insert|truncate|delete|create|drop|update|upsert|merge))?$/i,
+                );
+                if (match) return match[1];
+                // Fallback: ultimo segmento após o último ponto (sem _insert/_create etc)
+                const parts = taskId.split(".");
+                const last = parts[parts.length - 1];
+                const cleaned = last.replace(
+                    /_(insert|truncate|delete|create|drop|update|upsert|merge)$/i,
+                    "",
+                );
+                // Só retorna se parecer um nome de tabela (contem tb_, vw_, etc)
+                if (/^(tb_|vw_|dim_|fato_|fct_|agg_|snap_)/.test(cleaned))
+                    return cleaned;
+                return null;
+            }
+
+            document.addEventListener("DOMContentLoaded", bootstrap);
+
+            // === KPIs Mensais (aba KPIs) ===
+            let KPI_MENSAL_DATA = null;
+            let KPI_MENSAL_CHARTS = {};
+
+            async function loadKpisMensal() {
+                try {
+                    const resp = await fetch("data/kpis_mensal_arq_ref.json", {
+                        cache: "no-store",
+                    });
+                    KPI_MENSAL_DATA = await resp.json();
+                    renderKpisMensal();
+                } catch (err) {
+                    console.warn("Dados mensais não disponíveis:", err);
+                    const el = document.getElementById("kpis-mensal-generated");
+                    if (el)
+                        el.textContent =
+                            "dados não disponíveis — rode fetch_kpis_mensal_arq_ref.py";
+                }
+            }
+
+            // Agrega as series mensais por ambiente respeitando SELECTED_ENVS.
+            // Soma total_runs/success/failed/active_dags e recalcula availability.
+            function monthsForSelectedEnvs() {
+                if (!KPI_MENSAL_DATA) return [];
+                const perEnv = KPI_MENSAL_DATA.environments;
+                // Legado (sem series por ambiente) ou "todos" -> usa agregado pronto
+                if (
+                    !Array.isArray(perEnv) ||
+                    perEnv.length === 0 ||
+                    isAllEnvsSelected()
+                ) {
+                    return KPI_MENSAL_DATA.months || [];
+                }
+                const wanted = perEnv.filter((e) => SELECTED_ENVS.has(e.key));
+                if (wanted.length === 0) return KPI_MENSAL_DATA.months || [];
+
+                const byMonth = {};
+                const order = [];
+                wanted.forEach((env) => {
+                    (env.months || []).forEach((m) => {
+                        if (!byMonth[m.month]) {
+                            byMonth[m.month] = {
+                                month: m.month,
+                                label: m.label,
+                                active_dags: 0,
+                                total_runs: 0,
+                                success: 0,
+                                failed: 0,
+                            };
+                            order.push(m.month);
+                        }
+                        const b = byMonth[m.month];
+                        b.active_dags += m.active_dags || 0;
+                        b.total_runs += m.total_runs || 0;
+                        b.success += m.success || 0;
+                        b.failed += m.failed || 0;
+                    });
+                });
+                return order.map((k) => {
+                    const b = byMonth[k];
+                    b.availability =
+                        b.total_runs > 0
+                            ? +((b.success / b.total_runs) * 100).toFixed(1)
+                            : 0;
+                    return b;
+                });
+            }
+
+            function renderKpisMensal() {
+                if (!KPI_MENSAL_DATA || !KPI_MENSAL_DATA.months) return;
+                const months = monthsForSelectedEnvs();
+
+                // Header info
+                const genEl = document.getElementById("kpis-mensal-generated");
+                if (genEl && KPI_MENSAL_DATA.generated_at) {
+                    genEl.textContent = new Date(
+                        KPI_MENSAL_DATA.generated_at,
+                    ).toLocaleString("pt-BR", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                    });
+                }
+
+                // Summary KPIs
+                const avails = months
+                    .map((m) => m.availability)
+                    .filter((v) => v != null);
+                const avgAvail =
+                    avails.length > 0
+                        ? (
+                              avails.reduce((a, b) => a + b, 0) / avails.length
+                          ).toFixed(1)
+                        : "-";
+                const currentActive =
+                    months.length > 0
+                        ? months[months.length - 1].active_dags
+                        : "-";
+                const totalRuns = months.reduce(
+                    (s, m) => s + (m.total_runs || 0),
+                    0,
+                );
+
+                document.getElementById("kpis-mensal-avg-avail").textContent =
+                    avgAvail + "%";
+                document.getElementById(
+                    "kpis-mensal-current-active",
+                ).textContent = currentActive;
+                document.getElementById("kpis-mensal-total-runs").textContent =
+                    totalRuns.toLocaleString("pt-BR");
+
+                const labels = months.map((m) => m.label);
+
+                // Destroy previous charts
+                Object.values(KPI_MENSAL_CHARTS).forEach((c) => {
+                    try {
+                        c.destroy();
+                    } catch (_) {}
+                });
+                KPI_MENSAL_CHARTS = {};
+
+                // Chart: Disponibilidade por Mês
+                KPI_MENSAL_CHARTS.avail = new Chart(
+                    document.getElementById("ckpi-avail"),
+                    {
+                        type: "line",
+                        data: {
+                            labels,
+                            datasets: [
+                                {
+                                    label: "Disponibilidade (%)",
+                                    data: months.map((m) => m.availability),
+                                    borderColor: "#34d399",
+                                    backgroundColor: "rgba(52,211,153,0.12)",
+                                    fill: true,
+                                    tension: 0.3,
+                                    pointRadius: 5,
+                                    pointHoverRadius: 8,
+                                    pointBackgroundColor: "#34d399",
+                                    borderWidth: 2.5,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: (ctx) => ctx.parsed.y + "%",
+                                    },
+                                },
+                            },
+                            scales: {
+                                x: {
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                                y: {
+                                    min: 85,
+                                    max: 100,
+                                    ticks: {
+                                        color: "#94a3b8",
+                                        callback: (v) => v + "%",
+                                    },
+                                    grid: { color: "#334155" },
+                                },
+                            },
+                        },
+                    },
+                );
+
+                // Chart: DAGs Ativas por Mês
+                KPI_MENSAL_CHARTS.active = new Chart(
+                    document.getElementById("ckpi-active"),
+                    {
+                        type: "bar",
+                        data: {
+                            labels,
+                            datasets: [
+                                {
+                                    label: "DAGs Ativas",
+                                    data: months.map((m) => m.active_dags),
+                                    backgroundColor: "rgba(52,211,153,0.7)",
+                                    borderColor: "#34d399",
+                                    borderWidth: 1,
+                                    borderRadius: 6,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: {
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                                y: {
+                                    beginAtZero: false,
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                            },
+                        },
+                    },
+                );
+
+                // Chart: Total Runs por Mês
+                KPI_MENSAL_CHARTS.runs = new Chart(
+                    document.getElementById("ckpi-runs"),
+                    {
+                        type: "bar",
+                        data: {
+                            labels,
+                            datasets: [
+                                {
+                                    label: "Total Runs",
+                                    data: months.map((m) => m.total_runs),
+                                    backgroundColor: "rgba(96,165,250,0.7)",
+                                    borderColor: "#60a5fa",
+                                    borderWidth: 1,
+                                    borderRadius: 6,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: {
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                            },
+                        },
+                    },
+                );
+
+                // Chart: Falhas por Mês
+                KPI_MENSAL_CHARTS.failed = new Chart(
+                    document.getElementById("ckpi-failed"),
+                    {
+                        type: "bar",
+                        data: {
+                            labels,
+                            datasets: [
+                                {
+                                    label: "Falhas",
+                                    data: months.map((m) => m.failed),
+                                    backgroundColor: "rgba(248,113,113,0.7)",
+                                    borderColor: "#f87171",
+                                    borderWidth: 1,
+                                    borderRadius: 6,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: {
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: { color: "#94a3b8" },
+                                    grid: { color: "#334155" },
+                                },
+                            },
+                        },
+                    },
+                );
+
+                // Tabela detalhada
+                const tbody = document.getElementById("tabela-kpis-mensal");
+                tbody.innerHTML = months
+                    .map((m) => {
+                        const availCls =
+                            m.availability >= 95
+                                ? "color:var(--green)"
+                                : m.availability >= 90
+                                  ? "color:var(--yellow)"
+                                  : "color:var(--red)";
+                        return `<tr>
+                    <td><strong>${m.label} ${KPI_MENSAL_DATA.year}</strong></td>
+                    <td>${m.active_dags}</td>
+                    <td>${m.total_runs.toLocaleString("pt-BR")}</td>
+                    <td style="color:var(--green)">${m.success.toLocaleString("pt-BR")}</td>
+                    <td style="color:var(--red)">${m.failed}</td>
+                    <td style="${availCls}"><strong>${m.availability}%</strong></td>
+                </tr>`;
+                    })
+                    .join("");
+            }
+        </script>
+    </body>
 </html>
