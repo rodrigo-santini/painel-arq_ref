@@ -553,6 +553,20 @@
             }
 
             /* === Date / Category bar === */
+            /* Filtro global de ambientes: destaque visual (afeta todas as abas) */
+            .env-bar {
+                border-color: rgba(96, 165, 250, 0.35) !important;
+                background: linear-gradient(
+                    180deg,
+                    rgba(96, 165, 250, 0.06),
+                    var(--card)
+                ) !important;
+            }
+            .date-chip.env-chip.active {
+                border-color: var(--blue);
+                background: rgba(96, 165, 250, 0.16);
+                color: var(--text);
+            }
             .date-bar {
                 background: var(--card);
                 border: 1px solid var(--border);
@@ -754,6 +768,19 @@
         <div class="header">
             <h1>📊 Painel de DAGs - datax-gold-prd (15 dias)</h1>
             <div class="header-meta" id="header-meta">carregando...</div>
+        </div>
+
+        <div class="date-bar env-bar" id="env-bar" style="display: none">
+            <div class="date-bar__row">
+                <span class="date-bar__label">🌐 Ambientes</span>
+                <div class="date-chips" id="env-chips"></div>
+            </div>
+            <div class="date-bar__actions">
+                <button class="date-bar__btn primary" id="btn-env-all">
+                    Todos
+                </button>
+                <button class="date-bar__btn" id="btn-env-clear">Limpar</button>
+            </div>
         </div>
 
         <div class="tabs">
@@ -1183,7 +1210,13 @@
 
         <div id="tab-kpis" class="tab-content">
             <h2 class="section-title">📈 KPIs Mensais — 2026</h2>
-            <p style="font-size:0.8rem;color:var(--muted);margin-bottom:18px">
+            <p
+                style="
+                    font-size: 0.8rem;
+                    color: var(--muted);
+                    margin-bottom: 18px;
+                "
+            >
                 Indicadores consolidados mês a mês. Dados coletados via
                 <code>fetch_kpis_mensal_arq_ref.py</code>. Último refresh:
                 <span id="kpis-mensal-generated">-</span>
@@ -1191,42 +1224,94 @@
 
             <div class="kpi-grid kpi-grid--highlight" id="kpis-mensal-summary">
                 <div class="kpi highlight kpi-availability">
-                    <span class="kpi-info" data-tip="Disponibilidade média do ano = média simples da disponibilidade de cada mês.">i</span>
+                    <span
+                        class="kpi-info"
+                        data-tip="Disponibilidade média do ano = média simples da disponibilidade de cada mês."
+                        >i</span
+                    >
                     <div class="v" id="kpis-mensal-avg-avail">-</div>
                     <div class="l">Disponibilidade Média 2026</div>
                 </div>
                 <div class="kpi highlight kpi-active">
-                    <span class="kpi-info" data-tip="DAGs ativas no mês mais recente (is_active=true, is_paused=false).">i</span>
+                    <span
+                        class="kpi-info"
+                        data-tip="DAGs ativas no mês mais recente (is_active=true, is_paused=false)."
+                        >i</span
+                    >
                     <div class="v" id="kpis-mensal-current-active">-</div>
                     <div class="l">DAGs Ativas (mês atual)</div>
                 </div>
-                <div class="kpi highlight" style="background:radial-gradient(circle at 0% 0%, rgba(248,113,113,0.10), transparent 60%), radial-gradient(circle at 100% 100%, rgba(251,191,36,0.08), transparent 60%), var(--card);border:1px solid rgba(251,191,36,0.25);">
-                    <span class="kpi-info" data-tip="Total de runs acumulado no ano de 2026.">i</span>
-                    <div class="v" id="kpis-mensal-total-runs" style="background:linear-gradient(135deg, #fbbf24 0%, #f97316 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">-</div>
+                <div
+                    class="kpi highlight"
+                    style="
+                        background:
+                            radial-gradient(
+                                circle at 0% 0%,
+                                rgba(248, 113, 113, 0.1),
+                                transparent 60%
+                            ),
+                            radial-gradient(
+                                circle at 100% 100%,
+                                rgba(251, 191, 36, 0.08),
+                                transparent 60%
+                            ),
+                            var(--card);
+                        border: 1px solid rgba(251, 191, 36, 0.25);
+                    "
+                >
+                    <span
+                        class="kpi-info"
+                        data-tip="Total de runs acumulado no ano de 2026."
+                        >i</span
+                    >
+                    <div
+                        class="v"
+                        id="kpis-mensal-total-runs"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #fbbf24 0%,
+                                #f97316 100%
+                            );
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                        "
+                    >
+                        -
+                    </div>
                     <div class="l">Total Runs 2026</div>
                 </div>
             </div>
 
-            <div class="charts" style="grid-template-columns:1fr;">
+            <div class="charts" style="grid-template-columns: 1fr">
                 <div class="chart">
                     <h3>Disponibilidade (%) por Mês</h3>
-                    <div class="chart-container"><canvas id="ckpi-avail"></canvas></div>
+                    <div class="chart-container">
+                        <canvas id="ckpi-avail"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="charts">
                 <div class="chart">
                     <h3>DAGs Ativas por Mês</h3>
-                    <div class="chart-container"><canvas id="ckpi-active"></canvas></div>
+                    <div class="chart-container">
+                        <canvas id="ckpi-active"></canvas>
+                    </div>
                 </div>
                 <div class="chart">
                     <h3>Total de Runs por Mês</h3>
-                    <div class="chart-container"><canvas id="ckpi-runs"></canvas></div>
+                    <div class="chart-container">
+                        <canvas id="ckpi-runs"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="charts" style="grid-template-columns:1fr;">
+            <div class="charts" style="grid-template-columns: 1fr">
                 <div class="chart">
                     <h3>Falhas por Mês</h3>
-                    <div class="chart-container"><canvas id="ckpi-failed"></canvas></div>
+                    <div class="chart-container">
+                        <canvas id="ckpi-failed"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -1253,8 +1338,56 @@
             let DATA = null;
             let SELECTED_DATES = new Set(); // datas selecionadas (todas se vazio)
             let SELECTED_CATEGORIES = new Set(); // categorias selecionadas (todas se vazio)
+            let SELECTED_ENVS = new Set(); // ambientes selecionados (todos se vazio)
             let CHARTS = {}; // referencias para destruir/recriar
             let VIEW = null; // {dags, daily, kpis} apos aplicar filtros globais
+
+            // Lista de keys de ambientes disponiveis no DATA (deriva de environments[]
+            // ou, fallback, do campo environment das dags)
+            function allEnvKeys() {
+                if (DATA && Array.isArray(DATA.environments) && DATA.environments.length) {
+                    return DATA.environments.map((e) => e.key);
+                }
+                const set = new Set();
+                (DATA?.dags || []).forEach((d) => {
+                    if (d.environment) set.add(d.environment);
+                });
+                return [...set].sort();
+            }
+
+            function envLabel(key) {
+                const meta = (DATA?.environments || []).find((e) => e.key === key);
+                return meta?.label || key;
+            }
+
+            function isAllEnvsSelected() {
+                const all = allEnvKeys();
+                return (
+                    SELECTED_ENVS.size === 0 || SELECTED_ENVS.size === all.length
+                );
+            }
+
+            // DAGs filtradas apenas pelo ambiente (primeiro estagio de buildView)
+            function dagsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.dags;
+                return DATA.dags.filter((d) => SELECTED_ENVS.has(d.environment));
+            }
+
+            // Pools/import_errors respeitando o filtro de ambiente.
+            // Itens sem `environment` (JSON single-env legado) sao sempre incluidos.
+            function poolsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.pools || [];
+                return (DATA.pools || []).filter(
+                    (p) => !p.environment || SELECTED_ENVS.has(p.environment),
+                );
+            }
+
+            function importErrorsForSelectedEnvs() {
+                if (isAllEnvsSelected()) return DATA.import_errors || [];
+                return (DATA.import_errors || []).filter(
+                    (e) => !e.environment || SELECTED_ENVS.has(e.environment),
+                );
+            }
 
             Chart.defaults.color = "#94a3b8";
 
@@ -1327,10 +1460,13 @@
                     : new Set(SELECTED_DATES);
                 const useAllCats = isAllCategoriesSelected();
 
-                // 1. Filtra DAGs por categoria primeiro
+                // 0. Filtra DAGs por AMBIENTE (filtro global, primeiro estagio)
+                const envScoped = dagsForSelectedEnvs();
+
+                // 1. Filtra DAGs por categoria
                 const filteredByCategory = useAllCats
-                    ? DATA.dags
-                    : DATA.dags.filter((d) =>
+                    ? envScoped
+                    : envScoped.filter((d) =>
                           SELECTED_CATEGORIES.has(d.category),
                       );
 
@@ -1542,8 +1678,13 @@
                           ).toFixed(1)
                         : null;
 
-                // Pool saturation (dados globais, nao filtrados por data/categoria)
+                // Pool saturation (respeita filtro de ambiente; nao filtra por data/categoria)
                 const poolSat = (DATA.pools || [])
+                    .filter(
+                        (p) =>
+                            isAllEnvsSelected() ||
+                            SELECTED_ENVS.has(p.environment),
+                    )
                     .map((p) => p.saturation_pct)
                     .filter((x) => x != null);
                 const pool_saturation_pct =
@@ -1570,7 +1711,6 @@
             }
 
             function setupHeader() {
-                const env = DATA.environment;
                 const start = fmtDateOnly(DATA.period_start);
                 const end = fmtDateOnly(DATA.period_end);
                 const gen = new Date(DATA.generated_at).toLocaleString(
@@ -1583,11 +1723,42 @@
                         minute: "2-digit",
                     },
                 );
+
+                // Titulo reflete a selecao de ambientes
+                const allKeys = allEnvKeys();
+                const selCount = isAllEnvsSelected()
+                    ? allKeys.length
+                    : SELECTED_ENVS.size;
+                let envTitle;
+                if (isAllEnvsSelected()) {
+                    envTitle =
+                        allKeys.length > 1
+                            ? `${allKeys.length} ambientes`
+                            : envLabel(allKeys[0] || DATA.environment);
+                } else if (SELECTED_ENVS.size === 1) {
+                    envTitle = envLabel([...SELECTED_ENVS][0]);
+                } else {
+                    envTitle = `${selCount} de ${allKeys.length} ambientes`;
+                }
+
                 document.querySelector("h1").textContent =
-                    `📊 Painel de DAGs - ${env} (${DATA.period_days} dias)`;
-                document.title = `Painel de DAGs - ${env} (${DATA.period_days} dias)`;
+                    `📊 Painel de DAGs - ${envTitle} (${DATA.period_days} dias)`;
+                document.title = `Painel de DAGs - ${envTitle} (${DATA.period_days} dias)`;
+
+                // Airflow version: usa a lista de environments quando multi
+                let airflowInfo = DATA.airflow_version;
+                if (Array.isArray(DATA.environments) && DATA.environments.length) {
+                    const vers = [
+                        ...new Set(
+                            DATA.environments
+                                .map((e) => e.airflow_version)
+                                .filter(Boolean),
+                        ),
+                    ];
+                    if (vers.length) airflowInfo = vers.join(", ");
+                }
                 document.getElementById("header-meta").textContent =
-                    `Período: ${start} a ${end} | Airflow ${DATA.airflow_version} | Gerado: ${gen}`;
+                    `Período: ${start} a ${end} | Airflow ${airflowInfo} | Gerado: ${gen}`;
             }
 
             function setupDateBar() {
@@ -1689,7 +1860,8 @@
                 if (mttrEl)
                     mttrEl.textContent =
                         k.mttr_min != null ? k.mttr_min + " min" : "-";
-                if (ieEl) ieEl.textContent = (DATA.import_errors || []).length;
+                if (ieEl)
+                    ieEl.textContent = importErrorsForSelectedEnvs().length;
                 if (psEl)
                     psEl.textContent =
                         k.pool_saturation_pct != null
@@ -1697,9 +1869,87 @@
                             : "-";
             }
 
-            function setupCategoryBar() {
+            function setupEnvBar() {
+                const keys = allEnvKeys();
+                const bar = document.getElementById("env-bar");
+                // Só mostra a barra de ambientes quando há mais de um
+                if (!bar) return;
+                if (keys.length <= 1) {
+                    bar.style.display = "none";
+                    return;
+                }
+                bar.style.display = "";
+
+                // Contagem de DAGs por ambiente (para o rotulo do chip)
                 const counts = {};
                 DATA.dags.forEach((d) => {
+                    if (d.environment)
+                        counts[d.environment] =
+                            (counts[d.environment] || 0) + 1;
+                });
+
+                const container = document.getElementById("env-chips");
+                container.innerHTML = keys
+                    .map((k) => {
+                        const lbl = envLabel(k);
+                        const c = counts[k] || 0;
+                        return `<span class="date-chip env-chip" data-env="${k}" title="${k} (${c} DAGs)">${lbl} <span style="opacity:0.6;font-size:0.65rem">${c}</span></span>`;
+                    })
+                    .join("");
+
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    el.addEventListener("click", () => {
+                        const key = el.dataset.env;
+                        if (SELECTED_ENVS.has(key)) SELECTED_ENVS.delete(key);
+                        else SELECTED_ENVS.add(key);
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+                });
+
+                document
+                    .getElementById("btn-env-all")
+                    .addEventListener("click", () => {
+                        SELECTED_ENVS = new Set(keys);
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+                document
+                    .getElementById("btn-env-clear")
+                    .addEventListener("click", () => {
+                        SELECTED_ENVS.clear();
+                        renderEnvChips();
+                        onEnvChange();
+                    });
+
+                renderEnvChips();
+            }
+
+            function renderEnvChips() {
+                const container = document.getElementById("env-chips");
+                if (!container) return;
+                container.querySelectorAll(".date-chip").forEach((el) => {
+                    const key = el.dataset.env;
+                    const active =
+                        SELECTED_ENVS.size === 0 || SELECTED_ENVS.has(key);
+                    el.classList.toggle("active", active);
+                });
+            }
+
+            // Quando o ambiente muda, as categorias e o seletor de DAG dependem
+            // do subconjunto de DAGs. Reconstroi essas barras e re-renderiza tudo.
+            function onEnvChange() {
+                setupCategoryBar();
+                setupDagSelect();
+                setupHeader();
+                applyAll();
+                renderRunsDetail();
+                if (KPI_MENSAL_DATA) renderKpisMensal();
+            }
+
+            function setupCategoryBar() {
+                const counts = {};
+                dagsForSelectedEnvs().forEach((d) => {
                     counts[d.category] = (counts[d.category] || 0) + 1;
                 });
                 const cats = Object.keys(counts).sort();
@@ -2160,7 +2410,7 @@
 
             function renderPools() {
                 const tbody = document.getElementById("tabela-pools");
-                const pools = DATA.pools || [];
+                const pools = poolsForSelectedEnvs();
                 if (pools.length === 0) {
                     tbody.innerHTML =
                         '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:18px">sem dados de pools</td></tr>';
@@ -2177,8 +2427,12 @@
                                 : p.saturation_pct >= 50
                                   ? "color:var(--yellow)"
                                   : "color:var(--green)";
+                        const envTag =
+                            p.environment && allEnvKeys().length > 1
+                                ? `<span style="opacity:0.55;font-size:0.68rem"> · ${envLabel(p.environment)}</span>`
+                                : "";
                         return `<tr>
-            <td><code>${p.name}</code></td>
+            <td><code>${p.name}</code>${envTag}</td>
             <td>${p.slots}</td>
             <td>${p.used}</td>
             <td>${p.queued}</td>
@@ -2190,7 +2444,7 @@
 
             function renderImportErrors() {
                 const tbody = document.getElementById("tabela-import-errors");
-                const errors = DATA.import_errors || [];
+                const errors = importErrorsForSelectedEnvs();
                 document.getElementById("title-import-errors").textContent =
                     `🚨 Import Errors (${errors.length})`;
                 if (errors.length === 0) {
@@ -2342,6 +2596,7 @@
                     });
                     DATA = await resp.json();
                     setupTabs();
+                    setupEnvBar();
                     setupHeader();
                     setupDateBar();
                     setupCategoryBar();
@@ -2385,20 +2640,46 @@
                 });
             }
 
+            // Chave composta para identificar uma DAG unívoca entre ambientes
+            function dagKey(d) {
+                return `${d.environment || ""}||${d.dag_id}`;
+            }
+
+            function findDagByKey(key) {
+                if (!key) return null;
+                // Suporta valor legado (apenas dag_id, sem env)
+                const hasSep = key.includes("||");
+                return (DATA.dags || []).find((d) =>
+                    hasSep ? dagKey(d) === key : d.dag_id === key,
+                );
+            }
+
             function setupDagSelect() {
                 const select = document.getElementById("dag-select");
                 if (!select || !DATA) return;
-                const dags = DATA.dags
+                const multi = allEnvKeys().length > 1;
+                const prev = select.value;
+                const dags = dagsForSelectedEnvs()
                     .filter((d) => d.total > 0)
-                    .sort((a, b) => a.dag_id.localeCompare(b.dag_id));
+                    .sort(
+                        (a, b) =>
+                            (a.environment || "").localeCompare(
+                                b.environment || "",
+                            ) || a.dag_id.localeCompare(b.dag_id),
+                    );
                 select.innerHTML =
                     '<option value="">Selecione uma DAG...</option>' +
                     dags
-                        .map(
-                            (d) =>
-                                `<option value="${d.dag_id}">${d.dag_id} (${d.total} runs)</option>`,
-                        )
+                        .map((d) => {
+                            const envPrefix =
+                                multi && d.environment
+                                    ? `[${envLabel(d.environment)}] `
+                                    : "";
+                            return `<option value="${dagKey(d)}">${envPrefix}${d.dag_id} (${d.total} runs)</option>`;
+                        })
                         .join("");
+                // Preserva selecao se ainda existir no novo escopo
+                if (prev && findDagByKey(prev)) select.value = prev;
             }
 
             function fmtBRT(isoStr) {
@@ -2435,7 +2716,7 @@
                     return;
                 }
 
-                const dag = DATA.dags.find((d) => d.dag_id === dagId);
+                const dag = findDagByKey(dagId);
                 if (!dag || !dag.runs || dag.runs.length === 0) {
                     tbody.innerHTML =
                         '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:18px">Nenhum run encontrado para esta DAG na janela</td></tr>';
@@ -2453,9 +2734,14 @@
                     (r) =>
                         r.state === "failed" || r.state === "upstream_failed",
                 ).length;
+                const envBadge =
+                    dag.environment && allEnvKeys().length > 1
+                        ? `<span class="badge" style="background:rgba(96,165,250,0.18);color:var(--blue)">🌐 ${envLabel(dag.environment)}</span>`
+                        : "";
                 summary.innerHTML = `
         <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <span style="font-size:0.85rem;color:var(--text-2)"><strong>${dag.dag_id}</strong></span>
+            ${envBadge}
             <span class="badge success">${successCount} sucesso</span>
             <span class="badge failed">${failedCount} falha(s)</span>
             <span style="font-size:0.75rem;color:var(--muted)">Total: ${dag.runs.length} runs | Disp: ${dag.availability != null ? dag.availability + "%" : "-"} | Duração média: ${dag.avg_duration_min != null ? dag.avg_duration_min + " min" : "-"}</span>
@@ -2528,7 +2814,7 @@
 
             function selectRunForTasks(idx) {
                 const dagId = document.getElementById("dag-select").value;
-                const dag = DATA.dags.find((d) => d.dag_id === dagId);
+                const dag = findDagByKey(dagId);
                 if (!dag) return;
                 const recentTasks = dag.recent_runs_tasks || [];
                 if (idx >= recentTasks.length) return;
@@ -2631,15 +2917,63 @@
                 }
             }
 
+            // Agrega as series mensais por ambiente respeitando SELECTED_ENVS.
+            // Soma total_runs/success/failed/active_dags e recalcula availability.
+            function monthsForSelectedEnvs() {
+                if (!KPI_MENSAL_DATA) return [];
+                const perEnv = KPI_MENSAL_DATA.environments;
+                // Legado (sem series por ambiente) ou "todos" -> usa agregado pronto
+                if (
+                    !Array.isArray(perEnv) ||
+                    perEnv.length === 0 ||
+                    isAllEnvsSelected()
+                ) {
+                    return KPI_MENSAL_DATA.months || [];
+                }
+                const wanted = perEnv.filter((e) => SELECTED_ENVS.has(e.key));
+                if (wanted.length === 0) return KPI_MENSAL_DATA.months || [];
+
+                const byMonth = {};
+                const order = [];
+                wanted.forEach((env) => {
+                    (env.months || []).forEach((m) => {
+                        if (!byMonth[m.month]) {
+                            byMonth[m.month] = {
+                                month: m.month,
+                                label: m.label,
+                                active_dags: 0,
+                                total_runs: 0,
+                                success: 0,
+                                failed: 0,
+                            };
+                            order.push(m.month);
+                        }
+                        const b = byMonth[m.month];
+                        b.active_dags += m.active_dags || 0;
+                        b.total_runs += m.total_runs || 0;
+                        b.success += m.success || 0;
+                        b.failed += m.failed || 0;
+                    });
+                });
+                return order.map((k) => {
+                    const b = byMonth[k];
+                    b.availability =
+                        b.total_runs > 0
+                            ? +((b.success / b.total_runs) * 100).toFixed(1)
+                            : 0;
+                    return b;
+                });
+            }
+
             function renderKpisMensal() {
                 if (!KPI_MENSAL_DATA || !KPI_MENSAL_DATA.months) return;
-                const months = KPI_MENSAL_DATA.months;
+                const months = monthsForSelectedEnvs();
 
                 // Header info
                 const genEl = document.getElementById("kpis-mensal-generated");
                 if (genEl && KPI_MENSAL_DATA.generated_at) {
                     genEl.textContent = new Date(
-                        KPI_MENSAL_DATA.generated_at
+                        KPI_MENSAL_DATA.generated_at,
                     ).toLocaleString("pt-BR", {
                         day: "2-digit",
                         month: "2-digit",
@@ -2655,19 +2989,24 @@
                     .filter((v) => v != null);
                 const avgAvail =
                     avails.length > 0
-                        ? (avails.reduce((a, b) => a + b, 0) / avails.length).toFixed(1)
+                        ? (
+                              avails.reduce((a, b) => a + b, 0) / avails.length
+                          ).toFixed(1)
                         : "-";
                 const currentActive =
-                    months.length > 0 ? months[months.length - 1].active_dags : "-";
+                    months.length > 0
+                        ? months[months.length - 1].active_dags
+                        : "-";
                 const totalRuns = months.reduce(
                     (s, m) => s + (m.total_runs || 0),
-                    0
+                    0,
                 );
 
                 document.getElementById("kpis-mensal-avg-avail").textContent =
                     avgAvail + "%";
-                document.getElementById("kpis-mensal-current-active").textContent =
-                    currentActive;
+                document.getElementById(
+                    "kpis-mensal-current-active",
+                ).textContent = currentActive;
                 document.getElementById("kpis-mensal-total-runs").textContent =
                     totalRuns.toLocaleString("pt-BR");
 
@@ -2730,7 +3069,7 @@
                                 },
                             },
                         },
-                    }
+                    },
                 );
 
                 // Chart: DAGs Ativas por Mês
@@ -2767,7 +3106,7 @@
                                 },
                             },
                         },
-                    }
+                    },
                 );
 
                 // Chart: Total Runs por Mês
@@ -2804,7 +3143,7 @@
                                 },
                             },
                         },
-                    }
+                    },
                 );
 
                 // Chart: Falhas por Mês
@@ -2841,7 +3180,7 @@
                                 },
                             },
                         },
-                    }
+                    },
                 );
 
                 // Tabela detalhada
@@ -2852,8 +3191,8 @@
                             m.availability >= 95
                                 ? "color:var(--green)"
                                 : m.availability >= 90
-                                ? "color:var(--yellow)"
-                                : "color:var(--red)";
+                                  ? "color:var(--yellow)"
+                                  : "color:var(--red)";
                         return `<tr>
                     <td><strong>${m.label} ${KPI_MENSAL_DATA.year}</strong></td>
                     <td>${m.active_dags}</td>
