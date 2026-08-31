@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-31T21:11:32.995794+00:00",
+  "generated_at": "2026-08-31T21:42:47.088959+00:00",
   "environment": "multi",
   "airflow_version": "2.10.3, 2.7.2",
-  "period_start": "2026-08-16T21:06:56Z",
-  "period_end": "2026-08-31T21:06:56Z",
+  "period_start": "2026-08-16T21:38:21Z",
+  "period_end": "2026-08-31T21:38:21Z",
   "period_days": 15,
   "environments": [
     {
@@ -21,8 +21,8 @@
         "dags_with_runs": 102,
         "total_runs": 1338,
         "success": 1205,
-        "failed": 132,
-        "running": 1,
+        "failed": 133,
+        "running": 0,
         "availability": 90.1,
         "avg_duration_min": 9.6,
         "p50_duration_min": 2.4,
@@ -46,13 +46,13 @@
         "inactive_dags": 0,
         "dags_with_runs": 210,
         "total_runs": 3716,
-        "success": 3213,
-        "failed": 500,
-        "running": 3,
+        "success": 3215,
+        "failed": 501,
+        "running": 0,
         "availability": 86.5,
         "avg_duration_min": 13.5,
         "p50_duration_min": 3.6,
-        "p95_duration_min": 40.6,
+        "p95_duration_min": 40.5,
         "mttr_min": 584.7,
         "import_errors": 2,
         "pool_saturation_pct": 0.0
@@ -92,9 +92,9 @@
     "inactive_dags": 79,
     "dags_with_runs": 398,
     "total_runs": 6845,
-    "success": 5981,
-    "failed": 860,
-    "running": 4,
+    "success": 5983,
+    "failed": 862,
+    "running": 0,
     "availability": 87.4,
     "avg_duration_min": 15.3,
     "p50_duration_min": 4.5,
@@ -105,9 +105,9 @@
   },
   "daily": {
     "2026-08-31": {
-      "success": 387,
-      "failed": 48,
-      "running": 4
+      "success": 390,
+      "failed": 50,
+      "running": 0
     },
     "2026-08-30": {
       "success": 387,
@@ -180,7 +180,7 @@
       "running": 0
     },
     "2026-08-16": {
-      "success": 8,
+      "success": 7,
       "failed": 0,
       "running": 0
     }
@@ -228,7 +228,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 6.1,
       "p95_duration_min": 12.0,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -2563,7 +2563,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 7.3,
-      "freshness_hours": 8.4,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -3298,7 +3298,7 @@
       "min_duration_min": 14.5,
       "p50_duration_min": 18.8,
       "p95_duration_min": 24.3,
-      "freshness_hours": 16.3,
+      "freshness_hours": 16.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -4630,7 +4630,7 @@
       "min_duration_min": 0.0,
       "p50_duration_min": 8.7,
       "p95_duration_min": 12.1,
-      "freshness_hours": 16.3,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -7225,7 +7225,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 8.1,
       "p95_duration_min": 13.2,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -7890,7 +7890,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 8.3,
       "p95_duration_min": 14.8,
-      "freshness_hours": 12.6,
+      "freshness_hours": 13.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -8608,7 +8608,7 @@
       "min_duration_min": 9.0,
       "p50_duration_min": 9.7,
       "p95_duration_min": 10.9,
-      "freshness_hours": 17.4,
+      "freshness_hours": 18.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -9923,7 +9923,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 4.8,
       "p95_duration_min": 8.5,
-      "freshness_hours": 14.9,
+      "freshness_hours": 15.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -12310,7 +12310,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 11.0,
       "p95_duration_min": 14.7,
-      "freshness_hours": 15.0,
+      "freshness_hours": 15.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -13012,7 +13012,7 @@
       "min_duration_min": 18.5,
       "p50_duration_min": 27.6,
       "p95_duration_min": 34.8,
-      "freshness_hours": 7.2,
+      "freshness_hours": 7.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -14855,7 +14855,7 @@
       "min_duration_min": 6.3,
       "p50_duration_min": 132.8,
       "p95_duration_min": 583.5,
-      "freshness_hours": 7.2,
+      "freshness_hours": 7.7,
       "mttr_min": 433.0,
       "last_run": {
         "state": "success",
@@ -17270,7 +17270,7 @@
       "min_duration_min": 8.0,
       "p50_duration_min": 14.3,
       "p95_duration_min": 19.6,
-      "freshness_hours": 11.9,
+      "freshness_hours": 12.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -18208,7 +18208,7 @@
       "min_duration_min": 105.2,
       "p50_duration_min": 215.7,
       "p95_duration_min": 831.9,
-      "freshness_hours": 7.1,
+      "freshness_hours": 7.7,
       "mttr_min": 2336.9,
       "last_run": {
         "state": "success",
@@ -18620,7 +18620,7 @@
       "min_duration_min": 31.9,
       "p50_duration_min": 35.7,
       "p95_duration_min": 52.9,
-      "freshness_hours": 11.2,
+      "freshness_hours": 11.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -20954,7 +20954,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.6,
-      "freshness_hours": 6.7,
+      "freshness_hours": 7.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -21378,7 +21378,7 @@
       "min_duration_min": 11.6,
       "p50_duration_min": 15.9,
       "p95_duration_min": 19.8,
-      "freshness_hours": 11.9,
+      "freshness_hours": 12.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -22495,7 +22495,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 6.1,
-      "freshness_hours": 12.9,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -23076,7 +23076,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.1,
       "p95_duration_min": 5.2,
-      "freshness_hours": 3.6,
+      "freshness_hours": 4.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24249,7 +24249,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 6.2,
       "p95_duration_min": 10.4,
-      "freshness_hours": 5.9,
+      "freshness_hours": 6.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -24673,7 +24673,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.0,
-      "freshness_hours": 21.1,
+      "freshness_hours": 21.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -25081,7 +25081,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.6,
       "p95_duration_min": 5.3,
-      "freshness_hours": 23.4,
+      "freshness_hours": 23.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -25526,7 +25526,7 @@
       "min_duration_min": 25.0,
       "p50_duration_min": 29.5,
       "p95_duration_min": 34.6,
-      "freshness_hours": 10.7,
+      "freshness_hours": 11.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -26454,7 +26454,7 @@
       "min_duration_min": 4.4,
       "p50_duration_min": 6.3,
       "p95_duration_min": 9.2,
-      "freshness_hours": 15.2,
+      "freshness_hours": 15.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -29075,7 +29075,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 7.2,
       "p95_duration_min": 11.8,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -29745,7 +29745,7 @@
       "min_duration_min": 8.8,
       "p50_duration_min": 9.3,
       "p95_duration_min": 15.6,
-      "freshness_hours": 14.8,
+      "freshness_hours": 15.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -31702,7 +31702,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 5.8,
       "p95_duration_min": 12.2,
-      "freshness_hours": 14.8,
+      "freshness_hours": 15.3,
       "mttr_min": 758.3,
       "last_run": {
         "state": "success",
@@ -32745,7 +32745,7 @@
       "min_duration_min": 12.3,
       "p50_duration_min": 15.0,
       "p95_duration_min": 17.6,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -33531,7 +33531,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 4.2,
       "p95_duration_min": 7.0,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34109,7 +34109,7 @@
       "min_duration_min": 9.7,
       "p50_duration_min": 14.4,
       "p95_duration_min": 16.8,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -34638,7 +34638,7 @@
       "min_duration_min": 11.2,
       "p50_duration_min": 13.9,
       "p95_duration_min": 17.0,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -35083,7 +35083,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 10.7,
       "p95_duration_min": 14.7,
-      "freshness_hours": 12.0,
+      "freshness_hours": 12.6,
       "mttr_min": 266.8,
       "last_run": {
         "state": "success",
@@ -35969,7 +35969,7 @@
       "min_duration_min": 11.1,
       "p50_duration_min": 14.8,
       "p95_duration_min": 17.9,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36477,7 +36477,7 @@
       "min_duration_min": 14.9,
       "p50_duration_min": 17.8,
       "p95_duration_min": 39.8,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -36985,7 +36985,7 @@
       "min_duration_min": 13.5,
       "p50_duration_min": 16.8,
       "p95_duration_min": 38.8,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -37493,7 +37493,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 25.0,
       "p95_duration_min": 32.0,
-      "freshness_hours": 16.2,
+      "freshness_hours": 16.8,
       "mttr_min": 868.9,
       "last_run": {
         "state": "success",
@@ -37870,7 +37870,7 @@
       "min_duration_min": 16.0,
       "p50_duration_min": 18.9,
       "p95_duration_min": 35.1,
-      "freshness_hours": 16.3,
+      "freshness_hours": 16.8,
       "mttr_min": 847.9,
       "last_run": {
         "state": "success",
@@ -40240,7 +40240,7 @@
       "min_duration_min": 8.6,
       "p50_duration_min": 10.5,
       "p95_duration_min": 12.9,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -42582,7 +42582,7 @@
       "min_duration_min": 8.3,
       "p50_duration_min": 10.3,
       "p95_duration_min": 13.3,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -44840,7 +44840,7 @@
       "min_duration_min": 8.5,
       "p50_duration_min": 10.4,
       "p95_duration_min": 13.4,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47098,7 +47098,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 6.4,
       "p95_duration_min": 8.6,
-      "freshness_hours": 16.3,
+      "freshness_hours": 16.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -47669,7 +47669,7 @@
       "min_duration_min": 14.1,
       "p50_duration_min": 18.1,
       "p95_duration_min": 24.3,
-      "freshness_hours": 11.9,
+      "freshness_hours": 12.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -48870,7 +48870,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 515.4,
       "p95_duration_min": 518.1,
-      "freshness_hours": 8.0,
+      "freshness_hours": 8.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -49420,7 +49420,7 @@
       "min_duration_min": 10.2,
       "p50_duration_min": 13.4,
       "p95_duration_min": 17.0,
-      "freshness_hours": 16.4,
+      "freshness_hours": 17.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -50873,7 +50873,7 @@
       "min_duration_min": 13.5,
       "p50_duration_min": 20.2,
       "p95_duration_min": 22.0,
-      "freshness_hours": 11.9,
+      "freshness_hours": 12.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -52284,7 +52284,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 11.3,
       "p95_duration_min": 11.9,
-      "freshness_hours": 12.0,
+      "freshness_hours": 12.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -53821,7 +53821,7 @@
       "min_duration_min": 12.6,
       "p50_duration_min": 15.1,
       "p95_duration_min": 17.1,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54350,7 +54350,7 @@
       "min_duration_min": 10.1,
       "p50_duration_min": 14.4,
       "p95_duration_min": 19.3,
-      "freshness_hours": 16.4,
+      "freshness_hours": 16.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -54873,7 +54873,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.0,
-      "freshness_hours": 16.0,
+      "freshness_hours": 16.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -55465,7 +55465,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 12.3,
       "p95_duration_min": 15.1,
-      "freshness_hours": 12.9,
+      "freshness_hours": 13.4,
       "mttr_min": 2321.5,
       "last_run": {
         "state": "success",
@@ -56015,7 +56015,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 8.2,
       "p95_duration_min": 9.4,
-      "freshness_hours": 12.1,
+      "freshness_hours": 12.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -56628,7 +56628,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.9,
-      "freshness_hours": 1.7,
+      "freshness_hours": 2.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -57178,7 +57178,7 @@
       "min_duration_min": 20.0,
       "p50_duration_min": 23.6,
       "p95_duration_min": 35.1,
-      "freshness_hours": 11.8,
+      "freshness_hours": 12.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -57791,7 +57791,7 @@
       "min_duration_min": 6.0,
       "p50_duration_min": 11.9,
       "p95_duration_min": 18.4,
-      "freshness_hours": 2.1,
+      "freshness_hours": 2.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -58526,7 +58526,7 @@
       "min_duration_min": 6.2,
       "p50_duration_min": 8.9,
       "p95_duration_min": 11.6,
-      "freshness_hours": 12.1,
+      "freshness_hours": 12.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -58971,7 +58971,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.5,
-      "freshness_hours": 5.1,
+      "freshness_hours": 5.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -59437,7 +59437,7 @@
       "min_duration_min": 72.7,
       "p50_duration_min": 84.3,
       "p95_duration_min": 148.9,
-      "freshness_hours": 14.0,
+      "freshness_hours": 14.5,
       "mttr_min": 1354.4,
       "last_run": {
         "state": "success",
@@ -60386,7 +60386,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.9,
       "p95_duration_min": 3.8,
-      "freshness_hours": 5.1,
+      "freshness_hours": 5.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -61083,7 +61083,7 @@
       "min_duration_min": 10.3,
       "p50_duration_min": 16.0,
       "p95_duration_min": 20.1,
-      "freshness_hours": 15.9,
+      "freshness_hours": 16.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -62095,7 +62095,7 @@
       "min_duration_min": 7.0,
       "p50_duration_min": 10.1,
       "p95_duration_min": 14.7,
-      "freshness_hours": 1.9,
+      "freshness_hours": 2.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -63317,7 +63317,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 16.7,
       "p95_duration_min": 18.3,
-      "freshness_hours": 0.9,
+      "freshness_hours": 1.4,
       "mttr_min": 485.3,
       "last_run": {
         "state": "success",
@@ -65248,7 +65248,7 @@
       "min_duration_min": 6.1,
       "p50_duration_min": 10.0,
       "p95_duration_min": 12.0,
-      "freshness_hours": 13.5,
+      "freshness_hours": 14.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -65777,7 +65777,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 112.6,
       "p95_duration_min": 153.7,
-      "freshness_hours": 11.3,
+      "freshness_hours": 11.8,
       "mttr_min": 2016.4,
       "last_run": {
         "state": "success",
@@ -66210,7 +66210,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 9.0,
       "p95_duration_min": 13.7,
-      "freshness_hours": 12.9,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -66865,7 +66865,7 @@
       "min_duration_min": 7.3,
       "p50_duration_min": 9.2,
       "p95_duration_min": 13.6,
-      "freshness_hours": 12.9,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -67688,7 +67688,7 @@
       "min_duration_min": 17.0,
       "p50_duration_min": 20.3,
       "p95_duration_min": 23.9,
-      "freshness_hours": 12.8,
+      "freshness_hours": 13.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -68427,7 +68427,7 @@
       "min_duration_min": 7.4,
       "p50_duration_min": 9.2,
       "p95_duration_min": 12.9,
-      "freshness_hours": 12.9,
+      "freshness_hours": 13.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -69460,7 +69460,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 9.0,
       "p95_duration_min": 13.4,
-      "freshness_hours": 13.0,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -70073,7 +70073,7 @@
       "min_duration_min": 83.0,
       "p50_duration_min": 111.5,
       "p95_duration_min": 152.4,
-      "freshness_hours": 11.3,
+      "freshness_hours": 11.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -71610,7 +71610,7 @@
       "min_duration_min": 4.4,
       "p50_duration_min": 9.9,
       "p95_duration_min": 12.9,
-      "freshness_hours": 13.0,
+      "freshness_hours": 13.5,
       "mttr_min": 1288.0,
       "last_run": {
         "state": "success",
@@ -77175,7 +77175,7 @@
       "min_duration_min": 6.7,
       "p50_duration_min": 10.0,
       "p95_duration_min": 13.3,
-      "freshness_hours": 13.0,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -79614,7 +79614,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 6.0,
       "p95_duration_min": 9.7,
-      "freshness_hours": 0.1,
+      "freshness_hours": 0.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -82127,7 +82127,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.5,
-      "freshness_hours": 17.8,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -82614,7 +82614,7 @@
       "min_duration_min": 8.7,
       "p50_duration_min": 10.3,
       "p95_duration_min": 15.1,
-      "freshness_hours": 18.0,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -83521,7 +83521,7 @@
       "min_duration_min": 38.8,
       "p50_duration_min": 50.8,
       "p95_duration_min": 74.1,
-      "freshness_hours": 8.5,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -84827,7 +84827,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 6.8,
       "p95_duration_min": 7.8,
-      "freshness_hours": 18.1,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -86817,7 +86817,7 @@
       "min_duration_min": 30.9,
       "p50_duration_min": 35.1,
       "p95_duration_min": 39.9,
-      "freshness_hours": 89.5,
+      "freshness_hours": 90.1,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -89100,7 +89100,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.8,
       "p95_duration_min": 5.8,
-      "freshness_hours": 15.2,
+      "freshness_hours": 15.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -89713,7 +89713,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -89969,7 +89969,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.3,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90225,7 +90225,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90481,7 +90481,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.3,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90737,7 +90737,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -90993,7 +90993,7 @@
       "min_duration_min": 0.1,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 21.5,
+      "freshness_hours": 22.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -92733,7 +92733,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 3.3,
       "p95_duration_min": 11.6,
-      "freshness_hours": 13.0,
+      "freshness_hours": 13.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -93178,7 +93178,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.5,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": 5.7,
       "last_run": {
         "state": "success",
@@ -93625,7 +93625,7 @@
       "min_duration_min": 3.0,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.0,
-      "freshness_hours": 6.2,
+      "freshness_hours": 6.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -94679,7 +94679,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 5.0,
       "p95_duration_min": 7.0,
-      "freshness_hours": 13.0,
+      "freshness_hours": 13.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -95124,7 +95124,7 @@
       "min_duration_min": 8.3,
       "p50_duration_min": 12.3,
       "p95_duration_min": 15.3,
-      "freshness_hours": 5.4,
+      "freshness_hours": 5.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -95611,7 +95611,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.5,
-      "freshness_hours": 5.4,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -96119,7 +96119,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.6,
-      "freshness_hours": 5.4,
+      "freshness_hours": 5.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -96627,7 +96627,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.9,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -97135,7 +97135,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 3.4,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -97643,7 +97643,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 5.2,
-      "freshness_hours": 5.4,
+      "freshness_hours": 5.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -98151,7 +98151,7 @@
       "min_duration_min": 20.1,
       "p50_duration_min": 24.0,
       "p95_duration_min": 29.4,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -98932,7 +98932,7 @@
       "min_duration_min": 17.0,
       "p50_duration_min": 20.2,
       "p95_duration_min": 26.4,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.2,
       "mttr_min": 934.4,
       "last_run": {
         "state": "success",
@@ -100219,7 +100219,7 @@
       "min_duration_min": 94.7,
       "p50_duration_min": 101.0,
       "p95_duration_min": 120.3,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -102029,7 +102029,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 4.7,
       "p95_duration_min": 8.8,
-      "freshness_hours": 5.4,
+      "freshness_hours": 5.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -102500,7 +102500,7 @@
       "min_duration_min": 17.4,
       "p50_duration_min": 28.8,
       "p95_duration_min": 36.8,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": 1422.6,
       "last_run": {
         "state": "success",
@@ -103050,7 +103050,7 @@
       "min_duration_min": 30.5,
       "p50_duration_min": 33.6,
       "p95_duration_min": 36.5,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -103453,7 +103453,7 @@
       "min_duration_min": 74.9,
       "p50_duration_min": 80.9,
       "p95_duration_min": 86.2,
-      "freshness_hours": 5.4,
+      "freshness_hours": 5.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -104234,7 +104234,7 @@
       "min_duration_min": 2.8,
       "p50_duration_min": 4.1,
       "p95_duration_min": 5.9,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -105057,7 +105057,7 @@
       "min_duration_min": 14.5,
       "p50_duration_min": 16.7,
       "p95_duration_min": 19.1,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -105985,7 +105985,7 @@
       "min_duration_min": 246.1,
       "p50_duration_min": 252.9,
       "p95_duration_min": 296.2,
-      "freshness_hours": 3.7,
+      "freshness_hours": 4.2,
       "mttr_min": 683.5,
       "last_run": {
         "state": "success",
@@ -106786,29 +106786,29 @@
       "is_active": true,
       "schedule": "Never, external triggers only",
       "total": 15,
-      "success": 14,
+      "success": 15,
       "failed": 0,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 93.3,
-      "avg_duration_min": 11.0,
+      "availability": 100.0,
+      "avg_duration_min": 10.8,
       "max_duration_min": 13.6,
-      "min_duration_min": 9.0,
-      "p50_duration_min": 10.6,
+      "min_duration_min": 8.8,
+      "p50_duration_min": 10.4,
       "p95_duration_min": 13.5,
-      "freshness_hours": 23.9,
+      "freshness_hours": 0.4,
       "mttr_min": null,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-08-31T21:06:13.871080+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-31T21:14:59.903500+00:00",
+        "duration_min": 8.8
       },
       "daily": {
         "2026-08-31": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-08-30": {
           "success": 1,
@@ -106883,10 +106883,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-08-31T21:06:13.871080+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-31T21:14:59.903500+00:00",
+          "duration_min": 8.8,
           "day": "2026-08-31"
         },
         {
@@ -106994,127 +106994,8 @@
         {
           "dag_run_id": "manual__2026-08-31T21:06:13.504495+00:00",
           "start_date": "2026-08-31T21:06:13.871080+00:00",
-          "state": "running",
+          "state": "success",
           "tasks": [
-            {
-              "task_id": "end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.create_crawler_tb_caixa_cob_consolidado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.crawler_tb_caixa_cob_consolidado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.delete_s3bucket_files_tb_caixa_total_marcado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.athena_tb_caixa_total_marcado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.create_crawler_tb_caixa_total_marcado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.crawler_tb_caixa_total_marcado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.delete_s3bucket_files_tb_analytic_report_caixa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.athena_tb_analytic_report_caixa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.create_crawler_tb_analytic_report_caixa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.crawler_tb_analytic_report_caixa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.check_unmapped_canal_tb_analytic_report_caixa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.delete_s3bucket_files_tb_resumo_daily",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.athena_tb_resumo_daily",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.create_crawler_tb_resumo_daily",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.crawler_tb_resumo_daily",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "business.check_unmapped_canal_tb_resumo_daily",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start",
               "state": "success",
@@ -107159,10 +107040,129 @@
             },
             {
               "task_id": "business.athena_tb_caixa_cob_consolidado",
-              "state": "running",
+              "state": "success",
               "start_date": "2026-08-31T21:06:21.612090+00:00",
-              "end_date": null,
-              "duration": null
+              "end_date": "2026-08-31T21:09:22.945770+00:00",
+              "duration": 181.33368
+            },
+            {
+              "task_id": "business.create_crawler_tb_caixa_cob_consolidado",
+              "state": "success",
+              "start_date": "2026-08-31T21:09:25.824404+00:00",
+              "end_date": "2026-08-31T21:09:26.447734+00:00",
+              "duration": 0.62333
+            },
+            {
+              "task_id": "business.crawler_tb_caixa_cob_consolidado",
+              "state": "success",
+              "start_date": "2026-08-31T21:09:30.184067+00:00",
+              "end_date": "2026-08-31T21:10:12.174876+00:00",
+              "duration": 41.990809
+            },
+            {
+              "task_id": "business.delete_s3bucket_files_tb_caixa_total_marcado",
+              "state": "success",
+              "start_date": "2026-08-31T21:10:15.232792+00:00",
+              "end_date": "2026-08-31T21:10:15.785761+00:00",
+              "duration": 0.552969
+            },
+            {
+              "task_id": "business.athena_tb_caixa_total_marcado",
+              "state": "success",
+              "start_date": "2026-08-31T21:10:19.059276+00:00",
+              "end_date": "2026-08-31T21:10:50.223868+00:00",
+              "duration": 31.164592
+            },
+            {
+              "task_id": "business.create_crawler_tb_caixa_total_marcado",
+              "state": "success",
+              "start_date": "2026-08-31T21:10:53.502508+00:00",
+              "end_date": "2026-08-31T21:10:54.257017+00:00",
+              "duration": 0.754509
+            },
+            {
+              "task_id": "business.crawler_tb_caixa_total_marcado",
+              "state": "success",
+              "start_date": "2026-08-31T21:10:57.407579+00:00",
+              "end_date": "2026-08-31T21:11:44.270975+00:00",
+              "duration": 46.863396
+            },
+            {
+              "task_id": "business.delete_s3bucket_files_tb_analytic_report_caixa",
+              "state": "success",
+              "start_date": "2026-08-31T21:11:46.711274+00:00",
+              "end_date": "2026-08-31T21:11:47.163529+00:00",
+              "duration": 0.452255
+            },
+            {
+              "task_id": "business.delete_s3bucket_files_tb_resumo_daily",
+              "state": "success",
+              "start_date": "2026-08-31T21:11:47.654122+00:00",
+              "end_date": "2026-08-31T21:11:48.137760+00:00",
+              "duration": 0.483638
+            },
+            {
+              "task_id": "business.athena_tb_resumo_daily",
+              "state": "success",
+              "start_date": "2026-08-31T21:11:50.242857+00:00",
+              "end_date": "2026-08-31T21:12:20.955009+00:00",
+              "duration": 30.712152
+            },
+            {
+              "task_id": "business.athena_tb_analytic_report_caixa",
+              "state": "success",
+              "start_date": "2026-08-31T21:11:51.223540+00:00",
+              "end_date": "2026-08-31T21:12:22.175982+00:00",
+              "duration": 30.952442
+            },
+            {
+              "task_id": "business.create_crawler_tb_resumo_daily",
+              "state": "success",
+              "start_date": "2026-08-31T21:12:24.188354+00:00",
+              "end_date": "2026-08-31T21:12:25.054595+00:00",
+              "duration": 0.866241
+            },
+            {
+              "task_id": "business.create_crawler_tb_analytic_report_caixa",
+              "state": "success",
+              "start_date": "2026-08-31T21:12:24.800382+00:00",
+              "end_date": "2026-08-31T21:12:25.500245+00:00",
+              "duration": 0.699863
+            },
+            {
+              "task_id": "business.crawler_tb_resumo_daily",
+              "state": "success",
+              "start_date": "2026-08-31T21:12:28.817538+00:00",
+              "end_date": "2026-08-31T21:13:15.636604+00:00",
+              "duration": 46.819066
+            },
+            {
+              "task_id": "business.crawler_tb_analytic_report_caixa",
+              "state": "success",
+              "start_date": "2026-08-31T21:12:29.668963+00:00",
+              "end_date": "2026-08-31T21:14:52.921583+00:00",
+              "duration": 143.25262
+            },
+            {
+              "task_id": "business.check_unmapped_canal_tb_resumo_daily",
+              "state": "success",
+              "start_date": "2026-08-31T21:13:19.010690+00:00",
+              "end_date": "2026-08-31T21:13:21.572200+00:00",
+              "duration": 2.56151
+            },
+            {
+              "task_id": "business.check_unmapped_canal_tb_analytic_report_caixa",
+              "state": "success",
+              "start_date": "2026-08-31T21:14:56.431517+00:00",
+              "end_date": "2026-08-31T21:14:58.964008+00:00",
+              "duration": 2.532491
+            },
+            {
+              "task_id": "end",
+              "state": "success",
+              "start_date": "2026-08-31T21:14:59.068060+00:00",
+              "end_date": "2026-08-31T21:14:59.068067+00:00",
+              "duration": 0.0
             }
           ]
         },
@@ -107525,29 +107525,29 @@
       "is_active": true,
       "schedule": "0 18 * * *",
       "total": 15,
-      "success": 14,
+      "success": 15,
       "failed": 0,
-      "running": 1,
+      "running": 0,
       "queued": 0,
-      "availability": 93.3,
-      "avg_duration_min": 38.1,
+      "availability": 100.0,
+      "avg_duration_min": 38.0,
       "max_duration_min": 49.4,
       "min_duration_min": 31.3,
-      "p50_duration_min": 37.8,
-      "p95_duration_min": 46.1,
-      "freshness_hours": 23.4,
+      "p50_duration_min": 37.3,
+      "p95_duration_min": 45.8,
+      "freshness_hours": 0.1,
       "mttr_min": null,
       "last_run": {
-        "state": "running",
+        "state": "success",
         "start_date": "2026-08-31T21:00:00.480643+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-31T21:36:18.204392+00:00",
+        "duration_min": 36.3
       },
       "daily": {
         "2026-08-31": {
-          "success": 0,
+          "success": 1,
           "failed": 0,
-          "running": 1
+          "running": 0
         },
         "2026-08-30": {
           "success": 1,
@@ -107622,10 +107622,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "success",
           "start_date": "2026-08-31T21:00:00.480643+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-31T21:36:18.204392+00:00",
+          "duration_min": 36.3,
           "day": "2026-08-31"
         },
         {
@@ -107733,22 +107733,8 @@
         {
           "dag_run_id": "scheduled__2026-08-30T21:00:00+00:00",
           "start_date": "2026-08-31T21:00:00.480643+00:00",
-          "state": "running",
+          "state": "success",
           "tasks": [
-            {
-              "task_id": "end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "PLANCAIXA_JUROS_DESCONTOS",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start",
               "state": "success",
@@ -107772,10 +107758,24 @@
             },
             {
               "task_id": "PLANCAIXA_DAILY_ANALYTIC",
-              "state": "running",
+              "state": "success",
               "start_date": "2026-08-31T21:06:13.187023+00:00",
-              "end_date": null,
-              "duration": null
+              "end_date": "2026-08-31T21:15:13.913610+00:00",
+              "duration": 540.726587
+            },
+            {
+              "task_id": "PLANCAIXA_JUROS_DESCONTOS",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:16.885611+00:00",
+              "end_date": "2026-08-31T21:36:17.836459+00:00",
+              "duration": 1260.950848
+            },
+            {
+              "task_id": "end",
+              "state": "success",
+              "start_date": "2026-08-31T21:36:17.965192+00:00",
+              "end_date": "2026-08-31T21:36:17.965195+00:00",
+              "duration": 0.0
             }
           ]
         },
@@ -107896,7 +107896,7 @@
       "min_duration_min": 11.5,
       "p50_duration_min": 13.2,
       "p95_duration_min": 13.9,
-      "freshness_hours": 0.7,
+      "freshness_hours": 1.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -109743,7 +109743,7 @@
       "min_duration_min": 6.9,
       "p50_duration_min": 7.5,
       "p95_duration_min": 9.6,
-      "freshness_hours": 17.0,
+      "freshness_hours": 17.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -110109,7 +110109,7 @@
       "min_duration_min": 11.1,
       "p50_duration_min": 11.6,
       "p95_duration_min": 14.0,
-      "freshness_hours": 7.5,
+      "freshness_hours": 8.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -110659,7 +110659,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 6.6,
       "p95_duration_min": 8.1,
-      "freshness_hours": 7.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -111104,7 +111104,7 @@
       "min_duration_min": 34.1,
       "p50_duration_min": 36.4,
       "p95_duration_min": 38.8,
-      "freshness_hours": 5.1,
+      "freshness_hours": 5.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -111591,7 +111591,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.0,
-      "freshness_hours": 5.0,
+      "freshness_hours": 5.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -112113,7 +112113,7 @@
       "min_duration_min": 4.9,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.2,
-      "freshness_hours": 6.6,
+      "freshness_hours": 7.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -113072,7 +113072,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 14.8,
       "p95_duration_min": 19.7,
-      "freshness_hours": 7.8,
+      "freshness_hours": 8.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -114120,20 +114120,25 @@
       "running": 0,
       "queued": 0,
       "availability": 100.0,
-      "avg_duration_min": 19.6,
+      "avg_duration_min": 19.9,
       "max_duration_min": 28.9,
       "min_duration_min": 14.6,
-      "p50_duration_min": 17.1,
+      "p50_duration_min": 18.6,
       "p95_duration_min": 28.0,
-      "freshness_hours": 23.4,
+      "freshness_hours": 0.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
-        "start_date": "2026-08-30T21:16:17.766044+00:00",
-        "end_date": "2026-08-30T21:43:53.413733+00:00",
-        "duration_min": 27.6
+        "start_date": "2026-08-31T21:15:17.466167+00:00",
+        "end_date": "2026-08-31T21:35:36.093911+00:00",
+        "duration_min": 20.3
       },
       "daily": {
+        "2026-08-31": {
+          "success": 1,
+          "failed": 0,
+          "running": 0
+        },
         "2026-08-30": {
           "success": 1,
           "failed": 0,
@@ -114203,14 +114208,16 @@
           "success": 1,
           "failed": 0,
           "running": 0
-        },
-        "2026-08-16": {
-          "success": 1,
-          "failed": 0,
-          "running": 0
         }
       },
       "runs": [
+        {
+          "state": "success",
+          "start_date": "2026-08-31T21:15:17.466167+00:00",
+          "end_date": "2026-08-31T21:35:36.093911+00:00",
+          "duration_min": 20.3,
+          "day": "2026-08-31"
+        },
         {
           "state": "success",
           "start_date": "2026-08-30T21:16:17.766044+00:00",
@@ -114308,18 +114315,88 @@
           "end_date": "2026-08-17T21:37:03.448513+00:00",
           "duration_min": 19.7,
           "day": "2026-08-17"
-        },
-        {
-          "state": "success",
-          "start_date": "2026-08-16T21:19:19.101019+00:00",
-          "end_date": "2026-08-16T21:33:54.761097+00:00",
-          "duration_min": 14.6,
-          "day": "2026-08-16"
         }
       ],
       "top_failing_tasks": [],
       "category": "PLANCAIXA",
       "recent_runs_tasks": [
+        {
+          "dag_run_id": "manual__2026-08-31T21:15:17.207038+00:00",
+          "start_date": "2026-08-31T21:15:17.466167+00:00",
+          "state": "success",
+          "tasks": [
+            {
+              "task_id": "start",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:17.525916+00:00",
+              "end_date": "2026-08-31T21:15:17.525924+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "landing.landing_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:17.604606+00:00",
+              "end_date": "2026-08-31T21:15:17.604614+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "raw.raw_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:17.772032+00:00",
+              "end_date": "2026-08-31T21:15:17.772036+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "integration.integration_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:18.148299+00:00",
+              "end_date": "2026-08-31T21:15:18.148307+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "business.business_start",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:18.220333+00:00",
+              "end_date": "2026-08-31T21:15:18.220338+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "business.delete_s3bucket_files_tb_anl_cob_juros_descontos",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:21.607073+00:00",
+              "end_date": "2026-08-31T21:15:22.123761+00:00",
+              "duration": 0.516688
+            },
+            {
+              "task_id": "business.athena_tb_anl_cob_juros_descontos",
+              "state": "success",
+              "start_date": "2026-08-31T21:15:25.232560+00:00",
+              "end_date": "2026-08-31T21:31:58.056571+00:00",
+              "duration": 992.824011
+            },
+            {
+              "task_id": "business.create_crawler_tb_anl_cob_juros_descontos",
+              "state": "success",
+              "start_date": "2026-08-31T21:32:02.063702+00:00",
+              "end_date": "2026-08-31T21:32:03.064401+00:00",
+              "duration": 1.000699
+            },
+            {
+              "task_id": "business.crawler_tb_anl_cob_juros_descontos",
+              "state": "success",
+              "start_date": "2026-08-31T21:32:06.009790+00:00",
+              "end_date": "2026-08-31T21:35:35.816405+00:00",
+              "duration": 209.806615
+            },
+            {
+              "task_id": "end",
+              "state": "success",
+              "start_date": "2026-08-31T21:35:35.900137+00:00",
+              "end_date": "2026-08-31T21:35:35.900145+00:00",
+              "duration": 0.0
+            }
+          ]
+        },
         {
           "dag_run_id": "manual__2026-08-30T21:16:17.555711+00:00",
           "start_date": "2026-08-30T21:16:17.766044+00:00",
@@ -114473,83 +114550,6 @@
               "duration": 0.0
             }
           ]
-        },
-        {
-          "dag_run_id": "manual__2026-08-28T21:20:22.088553+00:00",
-          "start_date": "2026-08-28T21:20:22.916227+00:00",
-          "state": "success",
-          "tasks": [
-            {
-              "task_id": "start",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:22.969910+00:00",
-              "end_date": "2026-08-28T21:20:22.969917+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "landing.landing_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:23.129160+00:00",
-              "end_date": "2026-08-28T21:20:23.129167+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "raw.raw_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:23.660996+00:00",
-              "end_date": "2026-08-28T21:20:23.661000+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "integration.integration_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:24.242757+00:00",
-              "end_date": "2026-08-28T21:20:24.242764+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "business.business_start",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:24.361878+00:00",
-              "end_date": "2026-08-28T21:20:24.361886+00:00",
-              "duration": 0.0
-            },
-            {
-              "task_id": "business.delete_s3bucket_files_tb_anl_cob_juros_descontos",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:26.967711+00:00",
-              "end_date": "2026-08-28T21:20:27.414829+00:00",
-              "duration": 0.447118
-            },
-            {
-              "task_id": "business.athena_tb_anl_cob_juros_descontos",
-              "state": "success",
-              "start_date": "2026-08-28T21:20:30.753213+00:00",
-              "end_date": "2026-08-28T21:46:36.837972+00:00",
-              "duration": 1566.084759
-            },
-            {
-              "task_id": "business.create_crawler_tb_anl_cob_juros_descontos",
-              "state": "success",
-              "start_date": "2026-08-28T21:46:40.043686+00:00",
-              "end_date": "2026-08-28T21:46:40.826612+00:00",
-              "duration": 0.782926
-            },
-            {
-              "task_id": "business.crawler_tb_anl_cob_juros_descontos",
-              "state": "success",
-              "start_date": "2026-08-28T21:46:44.164235+00:00",
-              "end_date": "2026-08-28T21:49:18.246510+00:00",
-              "duration": 154.082275
-            },
-            {
-              "task_id": "end",
-              "state": "success",
-              "start_date": "2026-08-28T21:49:18.446838+00:00",
-              "end_date": "2026-08-28T21:49:18.446846+00:00",
-              "duration": 0.0
-            }
-          ]
         }
       ],
       "environment": "cdl-cogna-lakehouseMwaa"
@@ -114596,7 +114596,7 @@
       "min_duration_min": 0.2,
       "p50_duration_min": 0.2,
       "p95_duration_min": 0.2,
-      "freshness_hours": 15.1,
+      "freshness_hours": 15.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -114969,28 +114969,28 @@
       "schedule": "0 18 * * 1",
       "total": 3,
       "success": 0,
-      "failed": 2,
-      "running": 1,
+      "failed": 3,
+      "running": 0,
       "queued": 0,
       "availability": 0.0,
       "avg_duration_min": 11.1,
-      "max_duration_min": 11.2,
+      "max_duration_min": 11.3,
       "min_duration_min": 10.9,
-      "p50_duration_min": 11.1,
-      "p95_duration_min": 11.2,
+      "p50_duration_min": 11.2,
+      "p95_duration_min": 11.3,
       "freshness_hours": null,
       "mttr_min": null,
       "last_run": {
-        "state": "running",
+        "state": "failed",
         "start_date": "2026-08-31T21:00:00.476988+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-31T21:11:16.491431+00:00",
+        "duration_min": 11.3
       },
       "daily": {
         "2026-08-31": {
           "success": 0,
-          "failed": 0,
-          "running": 1
+          "failed": 1,
+          "running": 0
         },
         "2026-08-24": {
           "success": 0,
@@ -115005,10 +115005,10 @@
       },
       "runs": [
         {
-          "state": "running",
+          "state": "failed",
           "start_date": "2026-08-31T21:00:00.476988+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-31T21:11:16.491431+00:00",
+          "duration_min": 11.3,
           "day": "2026-08-31"
         },
         {
@@ -115029,23 +115029,23 @@
       "top_failing_tasks": [
         {
           "task_id": "end",
-          "failures": 2
+          "failures": 3
         },
         {
           "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Datamask.BASE_PEP_INATIVO.base_pep_inativo",
-          "failures": 2
-        },
-        {
-          "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.PrepareBatch.BASE_PEP_INATIVO.base_pep_inativo",
-          "failures": 2
+          "failures": 3
         },
         {
           "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Upsert.BASE_PEP_INATIVO.base_pep_inativo",
-          "failures": 2
+          "failures": 3
         },
         {
           "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Business.Transform.BASE_PEP_INATIVO.tb_base_pep_inativo",
-          "failures": 2
+          "failures": 3
+        },
+        {
+          "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.PrepareBatch.BASE_PEP_INATIVO.base_pep_inativo",
+          "failures": 3
         }
       ],
       "category": "PLANCAIXA",
@@ -115053,36 +115053,8 @@
         {
           "dag_run_id": "scheduled__2026-08-24T21:00:00+00:00",
           "start_date": "2026-08-31T21:00:00.476988+00:00",
-          "state": "running",
+          "state": "failed",
           "tasks": [
-            {
-              "task_id": "end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Datamask.BASE_PEP_INATIVO.base_pep_inativo",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Upsert.BASE_PEP_INATIVO.base_pep_inativo",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Business.Transform.BASE_PEP_INATIVO.tb_base_pep_inativo",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start",
               "state": "success",
@@ -115099,10 +115071,38 @@
             },
             {
               "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.PrepareBatch.BASE_PEP_INATIVO.base_pep_inativo",
-              "state": "running",
+              "state": "failed",
               "start_date": "2026-08-31T21:08:23.109882+00:00",
-              "end_date": null,
-              "duration": 184.237902
+              "end_date": "2026-08-31T21:11:14.881042+00:00",
+              "duration": 171.77116
+            },
+            {
+              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Datamask.BASE_PEP_INATIVO.base_pep_inativo",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:11:15.078446+00:00",
+              "end_date": "2026-08-31T21:11:15.078446+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Integration.Upsert.BASE_PEP_INATIVO.base_pep_inativo",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:11:15.182896+00:00",
+              "end_date": "2026-08-31T21:11:15.182896+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "PLANCAIXA_LANDING_INTEGRATION_BASE_PEP_INATIVO.Business.Transform.BASE_PEP_INATIVO.tb_base_pep_inativo",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:11:15.721737+00:00",
+              "end_date": "2026-08-31T21:11:15.721737+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:11:16.193764+00:00",
+              "end_date": "2026-08-31T21:11:16.193764+00:00",
+              "duration": 0.0
             }
           ]
         },
@@ -115315,7 +115315,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 4.9,
       "p95_duration_min": 5.9,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -116148,7 +116148,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 9.1,
       "p95_duration_min": 14.3,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.7,
       "mttr_min": 6.0,
       "last_run": {
         "state": "success",
@@ -116503,7 +116503,7 @@
       "min_duration_min": 5.7,
       "p50_duration_min": 6.1,
       "p95_duration_min": 7.7,
-      "freshness_hours": 4.3,
+      "freshness_hours": 4.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117153,7 +117153,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.8,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117598,7 +117598,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 4.3,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -117975,7 +117975,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 4.2,
       "p95_duration_min": 6.7,
-      "freshness_hours": 4.4,
+      "freshness_hours": 4.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -118352,7 +118352,7 @@
       "min_duration_min": 93.7,
       "p50_duration_min": 96.5,
       "p95_duration_min": 107.8,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.2,
       "mttr_min": 5.1,
       "last_run": {
         "state": "success",
@@ -119159,7 +119159,7 @@
       "min_duration_min": 35.7,
       "p50_duration_min": 39.9,
       "p95_duration_min": 42.0,
-      "freshness_hours": 4.4,
+      "freshness_hours": 5.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -119672,7 +119672,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.1,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -120075,7 +120075,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.3,
       "p95_duration_min": 4.2,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": 244.5,
       "last_run": {
         "state": "success",
@@ -120571,7 +120571,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 2.3,
       "p95_duration_min": 3.0,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": 6.0,
       "last_run": {
         "state": "success",
@@ -121270,7 +121270,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 4.2,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -121647,7 +121647,7 @@
       "min_duration_min": 8.4,
       "p50_duration_min": 9.2,
       "p95_duration_min": 10.7,
-      "freshness_hours": 7.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122008,7 +122008,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.7,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122369,7 +122369,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.0,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -122730,7 +122730,7 @@
       "min_duration_min": 3.5,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.4,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -123091,7 +123091,7 @@
       "min_duration_min": 11.6,
       "p50_duration_min": 12.4,
       "p95_duration_min": 14.0,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -123557,7 +123557,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.1,
-      "freshness_hours": 0.1,
+      "freshness_hours": 0.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -124086,7 +124086,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 6.4,
       "p95_duration_min": 8.7,
-      "freshness_hours": 4.3,
+      "freshness_hours": 4.8,
       "mttr_min": 6.6,
       "last_run": {
         "state": "success",
@@ -124508,7 +124508,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 3.8,
       "p95_duration_min": 4.3,
-      "freshness_hours": 4.2,
+      "freshness_hours": 4.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -131876,7 +131876,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.7,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132237,7 +132237,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.2,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132598,7 +132598,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 2.3,
       "p95_duration_min": 3.0,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -132959,7 +132959,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.4,
-      "freshness_hours": 6.4,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -133320,7 +133320,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.8,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -133681,7 +133681,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 4.0,
       "p95_duration_min": 4.6,
-      "freshness_hours": 6.4,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -134042,7 +134042,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.5,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -136297,7 +136297,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.1,
-      "freshness_hours": 6.4,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -136658,7 +136658,7 @@
       "min_duration_min": 53.4,
       "p50_duration_min": 55.6,
       "p95_duration_min": 57.8,
-      "freshness_hours": 5.8,
+      "freshness_hours": 6.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -138777,7 +138777,7 @@
       "min_duration_min": 40.4,
       "p50_duration_min": 42.0,
       "p95_duration_min": 45.1,
-      "freshness_hours": 6.9,
+      "freshness_hours": 7.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -141138,7 +141138,7 @@
       "min_duration_min": 16.6,
       "p50_duration_min": 17.3,
       "p95_duration_min": 18.1,
-      "freshness_hours": 34.9,
+      "freshness_hours": 35.4,
       "mttr_min": 3582.7,
       "last_run": {
         "state": "failed",
@@ -141987,7 +141987,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 3.9,
       "p95_duration_min": 4.7,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -142631,7 +142631,7 @@
       "min_duration_min": 3.5,
       "p50_duration_min": 4.0,
       "p95_duration_min": 4.7,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -143013,7 +143013,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.1,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -143500,7 +143500,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.4,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -144779,7 +144779,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.1,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -145602,7 +145602,7 @@
       "min_duration_min": 6.3,
       "p50_duration_min": 6.7,
       "p95_duration_min": 7.7,
-      "freshness_hours": 3.1,
+      "freshness_hours": 3.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -146989,7 +146989,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -147350,7 +147350,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.9,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -147795,7 +147795,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 4.4,
       "p95_duration_min": 5.2,
-      "freshness_hours": 3.1,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -148576,7 +148576,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.6,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -149357,7 +149357,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.7,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -149802,7 +149802,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.1,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -150247,7 +150247,7 @@
       "min_duration_min": 7.8,
       "p50_duration_min": 8.3,
       "p95_duration_min": 9.9,
-      "freshness_hours": 3.1,
+      "freshness_hours": 3.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -151028,7 +151028,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.6,
       "p95_duration_min": 4.2,
-      "freshness_hours": 3.2,
+      "freshness_hours": 3.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -152567,7 +152567,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.5,
       "p95_duration_min": 3.0,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -152928,7 +152928,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.7,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -153289,7 +153289,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.5,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -153650,7 +153650,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.8,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154053,7 +154053,7 @@
       "min_duration_min": 28.5,
       "p50_duration_min": 29.7,
       "p95_duration_min": 33.2,
-      "freshness_hours": 5.8,
+      "freshness_hours": 6.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154603,7 +154603,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.3,
-      "freshness_hours": 6.4,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -154973,7 +154973,7 @@
       "min_duration_min": 4.5,
       "p50_duration_min": 5.1,
       "p95_duration_min": 6.0,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -155313,7 +155313,7 @@
       "min_duration_min": 4.6,
       "p50_duration_min": 5.1,
       "p95_duration_min": 6.0,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -155737,7 +155737,7 @@
       "min_duration_min": 6.9,
       "p50_duration_min": 7.6,
       "p95_duration_min": 8.5,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -156119,7 +156119,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 3.1,
       "p95_duration_min": 4.4,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.9,
       "mttr_min": 5.6,
       "last_run": {
         "state": "success",
@@ -156519,7 +156519,7 @@
       "min_duration_min": 5.3,
       "p50_duration_min": 6.2,
       "p95_duration_min": 7.0,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -156964,7 +156964,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.6,
-      "freshness_hours": 6.4,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -157334,7 +157334,7 @@
       "min_duration_min": 4.5,
       "p50_duration_min": 5.4,
       "p95_duration_min": 6.1,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -157716,7 +157716,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.7,
-      "freshness_hours": 6.4,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -158086,7 +158086,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 3.5,
       "p95_duration_min": 3.9,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -158987,7 +158987,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 2.8,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -159374,7 +159374,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 4.3,
       "p95_duration_min": 9.8,
-      "freshness_hours": 5.3,
+      "freshness_hours": 5.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -160484,7 +160484,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.6,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -161211,7 +161211,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.3,
       "p95_duration_min": 5.1,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -161845,7 +161845,7 @@
       "min_duration_min": 3.8,
       "p50_duration_min": 4.5,
       "p95_duration_min": 5.2,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -162682,7 +162682,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.4,
       "p95_duration_min": 5.4,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -163505,7 +163505,7 @@
       "min_duration_min": 15.2,
       "p50_duration_min": 33.3,
       "p95_duration_min": 103.2,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.0,
       "mttr_min": 766.6,
       "last_run": {
         "state": "success",
@@ -164118,7 +164118,7 @@
       "min_duration_min": 12.1,
       "p50_duration_min": 13.6,
       "p95_duration_min": 16.7,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -164514,7 +164514,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.5,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -164870,7 +164870,7 @@
       "min_duration_min": 6.8,
       "p50_duration_min": 20.7,
       "p95_duration_min": 22.0,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.5,
       "mttr_min": 847.2,
       "last_run": {
         "state": "success",
@@ -165548,7 +165548,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.4,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -165965,7 +165965,7 @@
       "min_duration_min": 5.4,
       "p50_duration_min": 6.5,
       "p95_duration_min": 7.3,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -166396,7 +166396,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.6,
       "p95_duration_min": 5.1,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -166841,7 +166841,7 @@
       "min_duration_min": 4.7,
       "p50_duration_min": 6.0,
       "p95_duration_min": 7.6,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -167328,7 +167328,7 @@
       "min_duration_min": 5.5,
       "p50_duration_min": 6.0,
       "p95_duration_min": 6.9,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -167752,7 +167752,7 @@
       "min_duration_min": 4.3,
       "p50_duration_min": 5.0,
       "p95_duration_min": 5.8,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -168218,7 +168218,7 @@
       "min_duration_min": 4.3,
       "p50_duration_min": 5.2,
       "p95_duration_min": 6.1,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -168684,7 +168684,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.1,
       "p95_duration_min": 7.0,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -169211,7 +169211,7 @@
       "min_duration_min": 3.1,
       "p50_duration_min": 3.5,
       "p95_duration_min": 4.6,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -169845,7 +169845,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.5,
       "p95_duration_min": 5.2,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -170801,7 +170801,7 @@
       "min_duration_min": 15.9,
       "p50_duration_min": 17.5,
       "p95_duration_min": 19.7,
-      "freshness_hours": 8.8,
+      "freshness_hours": 9.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -171792,7 +171792,7 @@
       "min_duration_min": 45.7,
       "p50_duration_min": 47.8,
       "p95_duration_min": 50.1,
-      "freshness_hours": 9.3,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -172412,7 +172412,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -172780,7 +172780,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -173148,7 +173148,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 2.6,
       "p95_duration_min": 3.0,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -173857,7 +173857,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.5,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -174246,7 +174246,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.6,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -174719,7 +174719,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.6,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175108,7 +175108,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175476,7 +175476,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.0,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -175823,7 +175823,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.4,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176191,7 +176191,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.4,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176580,7 +176580,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.1,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -176974,7 +176974,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.7,
       "p95_duration_min": 4.2,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -177646,7 +177646,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.4,
       "p95_duration_min": 3.0,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -178014,7 +178014,7 @@
       "min_duration_min": 3.1,
       "p50_duration_min": 3.6,
       "p95_duration_min": 4.4,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -178529,7 +178529,7 @@
       "min_duration_min": 15.2,
       "p50_duration_min": 16.6,
       "p95_duration_min": 18.4,
-      "freshness_hours": 9.3,
+      "freshness_hours": 9.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -179086,7 +179086,7 @@
       "min_duration_min": 3.4,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.1,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -179980,7 +179980,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.0,
       "p95_duration_min": 4.9,
-      "freshness_hours": 10.3,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -180367,7 +180367,7 @@
       "min_duration_min": 1.7,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.9,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -180754,7 +180754,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181141,7 +181141,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181528,7 +181528,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -181915,7 +181915,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -182276,7 +182276,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -182663,7 +182663,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 5.7,
       "p95_duration_min": 6.7,
-      "freshness_hours": 9.2,
+      "freshness_hours": 9.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183185,7 +183185,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.1,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183504,7 +183504,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.2,
-      "freshness_hours": 10.4,
+      "freshness_hours": 10.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -183891,7 +183891,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.5,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -184294,7 +184294,7 @@
       "min_duration_min": 21.8,
       "p50_duration_min": 24.4,
       "p95_duration_min": 32.7,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -185152,7 +185152,7 @@
       "min_duration_min": 13.9,
       "p50_duration_min": 16.8,
       "p95_duration_min": 18.4,
-      "freshness_hours": 8.5,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186006,7 +186006,7 @@
       "min_duration_min": 6.2,
       "p50_duration_min": 7.2,
       "p95_duration_min": 9.2,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186360,7 +186360,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -186714,7 +186714,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.2,
+      "freshness_hours": 10.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187152,7 +187152,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.4,
-      "freshness_hours": 10.1,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187506,7 +187506,7 @@
       "min_duration_min": 2.1,
       "p50_duration_min": 3.1,
       "p95_duration_min": 5.6,
-      "freshness_hours": 10.3,
+      "freshness_hours": 10.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -187972,7 +187972,7 @@
       "min_duration_min": 7.2,
       "p50_duration_min": 8.3,
       "p95_duration_min": 10.2,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -188354,7 +188354,7 @@
       "min_duration_min": 27.3,
       "p50_duration_min": 30.3,
       "p95_duration_min": 38.2,
-      "freshness_hours": 8.6,
+      "freshness_hours": 9.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -188724,7 +188724,7 @@
       "min_duration_min": 71.9,
       "p50_duration_min": 260.7,
       "p95_duration_min": 744.4,
-      "freshness_hours": 8.4,
+      "freshness_hours": 8.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -189190,7 +189190,7 @@
       "min_duration_min": 132.1,
       "p50_duration_min": 147.4,
       "p95_duration_min": 302.8,
-      "freshness_hours": 10.4,
+      "freshness_hours": 11.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -189566,7 +189566,7 @@
       "min_duration_min": 27.4,
       "p50_duration_min": 31.4,
       "p95_duration_min": 271.3,
-      "freshness_hours": 7.9,
+      "freshness_hours": 8.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190031,7 +190031,7 @@
       "min_duration_min": 30.2,
       "p50_duration_min": 35.3,
       "p95_duration_min": 38.5,
-      "freshness_hours": 8.5,
+      "freshness_hours": 9.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190387,7 +190387,7 @@
       "min_duration_min": 17.1,
       "p50_duration_min": 19.2,
       "p95_duration_min": 27.5,
-      "freshness_hours": 8.0,
+      "freshness_hours": 8.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -190764,7 +190764,7 @@
       "min_duration_min": 8.1,
       "p50_duration_min": 10.1,
       "p95_duration_min": 11.1,
-      "freshness_hours": 7.9,
+      "freshness_hours": 8.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -191092,7 +191092,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 9.1,
       "p95_duration_min": 27.2,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -191509,7 +191509,7 @@
       "min_duration_min": 7.1,
       "p50_duration_min": 63.3,
       "p95_duration_min": 424.7,
-      "freshness_hours": 9.2,
+      "freshness_hours": 9.7,
       "mttr_min": 436.9,
       "last_run": {
         "state": "success",
@@ -191932,7 +191932,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 3.5,
       "p95_duration_min": 4.7,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -192566,7 +192566,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.0,
       "p95_duration_min": 5.0,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -193354,7 +193354,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 6.0,
       "p95_duration_min": 6.5,
-      "freshness_hours": 9.0,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -194261,7 +194261,7 @@
       "min_duration_min": 33.0,
       "p50_duration_min": 35.4,
       "p95_duration_min": 38.5,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195028,7 +195028,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.7,
       "p95_duration_min": 1.9,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195438,7 +195438,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.0,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -195848,7 +195848,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.3,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196195,7 +196195,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.5,
       "p95_duration_min": 2.6,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196542,7 +196542,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.8,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -196889,7 +196889,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.9,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -197257,7 +197257,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.8,
       "p95_duration_min": 3.0,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -197688,7 +197688,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.6,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -198292,7 +198292,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.3,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -198681,7 +198681,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.1,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199070,7 +199070,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.1,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199459,7 +199459,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -199869,7 +199869,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.9,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -200237,7 +200237,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.2,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -200584,7 +200584,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.1,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -201015,7 +201015,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.7,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -201430,7 +201430,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.9,
       "p95_duration_min": 2.5,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202060,7 +202060,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.7,
       "p95_duration_min": 3.3,
-      "freshness_hours": 9.9,
+      "freshness_hours": 10.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202449,7 +202449,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.4,
       "p95_duration_min": 2.1,
-      "freshness_hours": 9.8,
+      "freshness_hours": 10.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -202817,7 +202817,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.6,
       "p95_duration_min": 2.5,
-      "freshness_hours": 10.0,
+      "freshness_hours": 10.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -203164,7 +203164,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 3.0,
       "p95_duration_min": 3.8,
-      "freshness_hours": 9.7,
+      "freshness_hours": 10.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -203658,7 +203658,7 @@
       "min_duration_min": 5.5,
       "p50_duration_min": 6.2,
       "p95_duration_min": 7.1,
-      "freshness_hours": 9.5,
+      "freshness_hours": 10.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -204278,7 +204278,7 @@
       "min_duration_min": 3.6,
       "p50_duration_min": 4.2,
       "p95_duration_min": 5.0,
-      "freshness_hours": 9.6,
+      "freshness_hours": 10.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -204980,7 +204980,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 6.3,
       "p95_duration_min": 7.2,
-      "freshness_hours": 8.1,
+      "freshness_hours": 8.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -205797,7 +205797,7 @@
       "min_duration_min": 6.4,
       "p50_duration_min": 7.1,
       "p95_duration_min": 8.2,
-      "freshness_hours": 8.2,
+      "freshness_hours": 8.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -206788,7 +206788,7 @@
       "min_duration_min": 10.4,
       "p50_duration_min": 11.5,
       "p95_duration_min": 14.7,
-      "freshness_hours": 8.2,
+      "freshness_hours": 8.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -207805,7 +207805,7 @@
       "min_duration_min": 3.7,
       "p50_duration_min": 5.4,
       "p95_duration_min": 9.2,
-      "freshness_hours": 7.9,
+      "freshness_hours": 8.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -208259,7 +208259,7 @@
       "min_duration_min": 6.6,
       "p50_duration_min": 7.8,
       "p95_duration_min": 19.1,
-      "freshness_hours": 5.7,
+      "freshness_hours": 6.2,
       "mttr_min": 0.0,
       "last_run": {
         "state": "success",
@@ -209376,7 +209376,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 6.1,
       "p95_duration_min": 20.0,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": 980.8,
       "last_run": {
         "state": "success",
@@ -210292,7 +210292,7 @@
       "min_duration_min": 7.7,
       "p50_duration_min": 9.4,
       "p95_duration_min": 10.4,
-      "freshness_hours": 7.9,
+      "freshness_hours": 8.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -211933,7 +211933,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 3.3,
       "p95_duration_min": 3.7,
-      "freshness_hours": 6.4,
+      "freshness_hours": 6.9,
       "mttr_min": 5.3,
       "last_run": {
         "state": "success",
@@ -212326,7 +212326,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.7,
       "p95_duration_min": 5.3,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -212708,7 +212708,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.9,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213078,7 +213078,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.3,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213460,7 +213460,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.9,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -213830,7 +213830,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.8,
       "p95_duration_min": 3.7,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -214983,36 +214983,36 @@
       "schedule": "0 5 * * *",
       "total": 2,
       "success": 0,
-      "failed": 1,
-      "running": 1,
+      "failed": 2,
+      "running": 0,
       "queued": 0,
       "availability": 0.0,
-      "avg_duration_min": 12.3,
+      "avg_duration_min": 11.9,
       "max_duration_min": 12.3,
-      "min_duration_min": 12.3,
-      "p50_duration_min": 12.3,
+      "min_duration_min": 11.6,
+      "p50_duration_min": 11.9,
       "p95_duration_min": 12.3,
       "freshness_hours": null,
       "mttr_min": null,
       "last_run": {
-        "state": "running",
+        "state": "failed",
         "start_date": "2026-08-31T20:57:46.200986+00:00",
-        "end_date": null,
-        "duration_min": null
+        "end_date": "2026-08-31T21:09:24.473195+00:00",
+        "duration_min": 11.6
       },
       "daily": {
         "2026-08-31": {
           "success": 0,
-          "failed": 1,
-          "running": 1
+          "failed": 2,
+          "running": 0
         }
       },
       "runs": [
         {
-          "state": "running",
+          "state": "failed",
           "start_date": "2026-08-31T20:57:46.200986+00:00",
-          "end_date": null,
-          "duration_min": null,
+          "end_date": "2026-08-31T21:09:24.473195+00:00",
+          "duration_min": 11.6,
           "day": "2026-08-31"
         },
         {
@@ -215025,24 +215025,24 @@
       ],
       "top_failing_tasks": [
         {
+          "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+          "failures": 2
+        },
+        {
+          "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+          "failures": 2
+        },
+        {
+          "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+          "failures": 2
+        },
+        {
+          "task_id": "wf_alunado.preps_athenas.prep_pma.tb_atns_prep_matriculas_dt_pma",
+          "failures": 2
+        },
+        {
           "task_id": "wf_alunado.fatos_por_origem.athenas_fat_evasao.tb_atns_fato_aluno_evasao",
-          "failures": 1
-        },
-        {
-          "task_id": "wf_alunado.fatos_por_origem.athenas_fat_matricula.tb_atns_fato_aluno_matricula",
-          "failures": 1
-        },
-        {
-          "task_id": "wf_alunado.fatos_consolidadas.fat_matricula.tb_fat_aluno_matricula",
-          "failures": 1
-        },
-        {
-          "task_id": "wf_alunado.fatos_consolidadas.fat_pma.tb_fat_aluno_pma",
-          "failures": 1
-        },
-        {
-          "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_evasao_ciclo",
-          "failures": 1
+          "failures": 2
         }
       ],
       "category": "ALUNADO",
@@ -215050,666 +215050,8 @@
         {
           "dag_run_id": "manual__2026-08-31T20:57:42+00:00",
           "start_date": "2026-08-31T20:57:46.200986+00:00",
-          "state": "running",
+          "state": "failed",
           "tasks": [
-            {
-              "task_id": "wf_alunado.athenas_matricula_grad.pos_grad.tb_atns_prep_situacao_academica",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_adimplencia_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_adimplencia",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_engajamento_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_engajamento",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_financeiro_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_financeiro",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_nivel_divida_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_nivel_divida",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_colaborar_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_colaborar",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_situacao_academica",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_situacao_financeira",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.mshied_program_business",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_produto_athenas_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_produto_athenas",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_tipo_ingresso_athenas_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_tipo_ingresso_athenas",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_prep_sit_contrato_hist",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_prep_sit_contrato",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_wrk_sit_contrato_ciclo",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_bolsas_pep",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_ciclos",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_gatilho",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_cursando",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_formado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_evasao_projeto",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_gatilho_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_hoje",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_situacao_academica",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.preps_athenas.prep_hist_situacao_academica.tb_atns_prep_hist_situacao_academica_insert",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.preps_athenas.prep_matricula.tb_atns_prep_situacao_academica",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.preps_athenas.prep_pma.tb_atns_prep_matriculas_dt_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_campus",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_especial",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_ultimo_ciclo_pesquisado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_listagem_ciclos",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_ciclos",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_bolsas_pep",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_bolsas_prouni",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_listagem_turma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_turma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_situacao_academica",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_gatilho",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_cursando",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_formado",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_evasao_ciclo",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_gatilho_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_evasao.tb_atns_wrk_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula_semanal",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula_semestral",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_pma.tb_atns_wrk_aluno_pma_semanal",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_pma.tb_atns_wrk_aluno_pma_semestral",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.athenas_wrk_pma.tb_atns_wrk_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.olimpo_wrk_evasao.tb_olmp_wrk_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.olimpo_wrk_pma.tb_olmp_wrk_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.olimpo_wrk_matricula.tb_olmp_wrk_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.colaborar_wrk_evasao.tb_clbr_wrk_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.colaborar_wrk_pma.tb_clbr_wrk_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.works.colaborar_wrk_matricula.tb_clbr_wrk_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_matricula.tb_atns_fato_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_evasao.tb_atns_fato_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_pma.tb_atns_fato_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_matricula.tb_olmp_fato_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_evasao.tb_olmp_fato_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_pma.tb_olmp_fato_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_evasao.tb_clbr_fato_aluno_evasao",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_matricula.tb_clbr_fato_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_pma.tb_clbr_fato_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_consolidadas.fat_matricula.tb_fat_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.fatos_consolidadas.fat_pma.tb_fat_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.views.vw_matricula.vw_fat_aluno_matricula",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "wf_alunado.views.vw_pma.vw_fat_aluno_pma",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.save_workflow_state",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_next_run",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.save_execution_log_end",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_4_datax-gold-prd_to_cdl-airflow-mwaa",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
-            {
-              "task_id": "end_workflow.trigger_dataset",
-              "state": null,
-              "start_date": null,
-              "end_date": null,
-              "duration": null
-            },
             {
               "task_id": "start_workflow.save_execution_log_start",
               "state": "success",
@@ -215732,6 +215074,20 @@
               "duration": 51.761244
             },
             {
+              "task_id": "wf_alunado.athenas_matricula_grad.preps_grad.tb_atns_prep_produto",
+              "state": "success",
+              "start_date": "2026-08-31T20:58:11.092990+00:00",
+              "end_date": "2026-08-31T20:58:33.973541+00:00",
+              "duration": 22.880551
+            },
+            {
+              "task_id": "wf_alunado.athenas_matricula_grad.preps_grad.tb_atns_prep_unidade",
+              "state": "success",
+              "start_date": "2026-08-31T20:58:11.838655+00:00",
+              "end_date": "2026-08-31T20:58:44.413170+00:00",
+              "duration": 32.574515
+            },
+            {
               "task_id": "wf_alunado.athenas_matricula_grad.preps_grad.tb_atns_prep_curso",
               "state": "success",
               "start_date": "2026-08-31T20:58:13.508899+00:00",
@@ -215746,11 +215102,655 @@
               "duration": 32.03185
             },
             {
+              "task_id": "wf_alunado.athenas_matricula_grad.preps_grad.tb_atns_prep_tipo_ingresso",
+              "state": "success",
+              "start_date": "2026-08-31T20:58:13.950147+00:00",
+              "end_date": "2026-08-31T20:58:35.809951+00:00",
+              "duration": 21.859804
+            },
+            {
               "task_id": "wf_alunado.athenas_matricula_grad.wrk_matricula_grad.tb_atns_wrk_matricula_grad_insert",
-              "state": "up_for_retry",
-              "start_date": "2026-08-31T21:05:50.438415+00:00",
-              "end_date": "2026-08-31T21:06:01.569337+00:00",
-              "duration": 11.130922
+              "state": "failed",
+              "start_date": "2026-08-31T21:09:05.659378+00:00",
+              "end_date": "2026-08-31T21:09:16.888754+00:00",
+              "duration": 11.229376
+            },
+            {
+              "task_id": "wf_alunado.athenas_matricula_grad.pos_grad.tb_atns_prep_situacao_academica",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:17.407619+00:00",
+              "end_date": "2026-08-31T21:09:17.407619+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_adimplencia_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.549027+00:00",
+              "end_date": "2026-08-31T21:09:18.549027+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_engajamento_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.549942+00:00",
+              "end_date": "2026-08-31T21:09:18.549942+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_financeiro_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.550670+00:00",
+              "end_date": "2026-08-31T21:09:18.550670+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_nivel_divida_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.551426+00:00",
+              "end_date": "2026-08-31T21:09:18.551426+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.552149+00:00",
+              "end_date": "2026-08-31T21:09:18.552149+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_colaborar_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.552898+00:00",
+              "end_date": "2026-08-31T21:09:18.552898+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_situacao_academica",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.553593+00:00",
+              "end_date": "2026-08-31T21:09:18.553593+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_situacao_financeira",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.553971+00:00",
+              "end_date": "2026-08-31T21:09:18.553971+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.mshied_program_business",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.557057+00:00",
+              "end_date": "2026-08-31T21:09:18.557057+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_produto_athenas_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.557712+00:00",
+              "end_date": "2026-08-31T21:09:18.557712+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_tipo_ingresso_athenas_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.558443+00:00",
+              "end_date": "2026-08-31T21:09:18.558443+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_prep_sit_contrato_hist",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.559151+00:00",
+              "end_date": "2026-08-31T21:09:18.559151+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_bolsas_pep",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.560194+00:00",
+              "end_date": "2026-08-31T21:09:18.560194+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_ciclos",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.560606+00:00",
+              "end_date": "2026-08-31T21:09:18.560606+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_adimplencia",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.701489+00:00",
+              "end_date": "2026-08-31T21:09:18.701489+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_engajamento",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.708957+00:00",
+              "end_date": "2026-08-31T21:09:18.708957+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_cluster_financeiro",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.709273+00:00",
+              "end_date": "2026-08-31T21:09:18.709273+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_nivel_divida",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.709493+00:00",
+              "end_date": "2026-08-31T21:09:18.709493+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.709703+00:00",
+              "end_date": "2026-08-31T21:09:18.709703+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.dimensoes.tb_dim_oferta_colaborar",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.709911+00:00",
+              "end_date": "2026-08-31T21:09:18.709911+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_produto_athenas",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.710084+00:00",
+              "end_date": "2026-08-31T21:09:18.710084+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.athenas_dim.tb_dim_tipo_ingresso_athenas",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.710269+00:00",
+              "end_date": "2026-08-31T21:09:18.710269+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_prep_sit_contrato",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.710440+00:00",
+              "end_date": "2026-08-31T21:09:18.710440+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_gatilho",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.710771+00:00",
+              "end_date": "2026-08-31T21:09:18.710771+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.710953+00:00",
+              "end_date": "2026-08-31T21:09:18.710953+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_cursando",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.711129+00:00",
+              "end_date": "2026-08-31T21:09:18.711129+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_formado",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.711303+00:00",
+              "end_date": "2026-08-31T21:09:18.711303+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.711480+00:00",
+              "end_date": "2026-08-31T21:09:18.711480+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_gatilho_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.711985+00:00",
+              "end_date": "2026-08-31T21:09:18.711985+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_hoje",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.712184+00:00",
+              "end_date": "2026-08-31T21:09:18.712184+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.712373+00:00",
+              "end_date": "2026-08-31T21:09:18.712373+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_dt_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.712554+00:00",
+              "end_date": "2026-08-31T21:09:18.712554+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_situacao_academica",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.712726+00:00",
+              "end_date": "2026-08-31T21:09:18.712726+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.preps_athenas.prep_hist_situacao_academica.tb_atns_prep_hist_situacao_academica_insert",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:18.712964+00:00",
+              "end_date": "2026-08-31T21:09:18.712964+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.work_fies.tb_fies_wrk_sit_contrato_ciclo",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.000645+00:00",
+              "end_date": "2026-08-31T21:09:19.000645+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.dimensoes_e_fies.colaborar_prep.tb_clbr_prep_matriculas_evasao_projeto",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.005329+00:00",
+              "end_date": "2026-08-31T21:09:19.005329+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.preps_athenas.prep_matricula.tb_atns_prep_situacao_academica",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.005963+00:00",
+              "end_date": "2026-08-31T21:09:19.005963+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.preps_athenas.prep_pma.tb_atns_prep_matriculas_dt_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.399199+00:00",
+              "end_date": "2026-08-31T21:09:19.399199+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_campus",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.643126+00:00",
+              "end_date": "2026-08-31T21:09:19.643126+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_especial",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.653873+00:00",
+              "end_date": "2026-08-31T21:09:19.653873+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_ultimo_ciclo_pesquisado",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.654518+00:00",
+              "end_date": "2026-08-31T21:09:19.654518+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_situacao_academica",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:19.657353+00:00",
+              "end_date": "2026-08-31T21:09:19.657353+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_listagem_ciclos",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.693288+00:00",
+              "end_date": "2026-08-31T21:09:20.693288+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_listagem_turma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.694199+00:00",
+              "end_date": "2026-08-31T21:09:20.694199+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.694850+00:00",
+              "end_date": "2026-08-31T21:09:20.694850+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.696501+00:00",
+              "end_date": "2026-08-31T21:09:20.696501+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_ciclos",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.977508+00:00",
+              "end_date": "2026-08-31T21:09:20.977508+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_turma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.981241+00:00",
+              "end_date": "2026-08-31T21:09:20.981241+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.983645+00:00",
+              "end_date": "2026-08-31T21:09:20.983645+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_evasao.tb_atns_wrk_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.985536+00:00",
+              "end_date": "2026-08-31T21:09:20.985536+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula_semanal",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.986022+00:00",
+              "end_date": "2026-08-31T21:09:20.986022+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula_semestral",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.986507+00:00",
+              "end_date": "2026-08-31T21:09:20.986507+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_pma.tb_atns_wrk_aluno_pma_semanal",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.987654+00:00",
+              "end_date": "2026-08-31T21:09:20.987654+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_pma.tb_atns_wrk_aluno_pma_semestral",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.988154+00:00",
+              "end_date": "2026-08-31T21:09:20.988154+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.olimpo_wrk_evasao.tb_olmp_wrk_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.989071+00:00",
+              "end_date": "2026-08-31T21:09:20.989071+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.olimpo_wrk_pma.tb_olmp_wrk_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.989585+00:00",
+              "end_date": "2026-08-31T21:09:20.989585+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.olimpo_wrk_matricula.tb_olmp_wrk_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.990084+00:00",
+              "end_date": "2026-08-31T21:09:20.990084+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.colaborar_wrk_evasao.tb_clbr_wrk_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.990583+00:00",
+              "end_date": "2026-08-31T21:09:20.990583+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.colaborar_wrk_pma.tb_clbr_wrk_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.991080+00:00",
+              "end_date": "2026-08-31T21:09:20.991080+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.colaborar_wrk_matricula.tb_clbr_wrk_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:20.991557+00:00",
+              "end_date": "2026-08-31T21:09:20.991557+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_bolsas_pep",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.676111+00:00",
+              "end_date": "2026-08-31T21:09:21.676111+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_bolsas_prouni",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.676582+00:00",
+              "end_date": "2026-08-31T21:09:21.676582+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_gatilho",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.676905+00:00",
+              "end_date": "2026-08-31T21:09:21.676905+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_cursando",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.677212+00:00",
+              "end_date": "2026-08-31T21:09:21.677212+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_formado",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.683194+00:00",
+              "end_date": "2026-08-31T21:09:21.683194+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_dt_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.683691+00:00",
+              "end_date": "2026-08-31T21:09:21.683691+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.684036+00:00",
+              "end_date": "2026-08-31T21:09:21.684036+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_gatilho_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.684627+00:00",
+              "end_date": "2026-08-31T21:09:21.684627+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.works.athenas_wrk_matricula.tb_atns_wrk_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.684971+00:00",
+              "end_date": "2026-08-31T21:09:21.684971+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_matricula.tb_atns_fato_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.685502+00:00",
+              "end_date": "2026-08-31T21:09:21.685502+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_evasao.tb_atns_fato_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.685706+00:00",
+              "end_date": "2026-08-31T21:09:21.685706+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.athenas_fat_pma.tb_atns_fato_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.685899+00:00",
+              "end_date": "2026-08-31T21:09:21.685899+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_matricula.tb_olmp_fato_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.686116+00:00",
+              "end_date": "2026-08-31T21:09:21.686116+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_evasao.tb_olmp_fato_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.686466+00:00",
+              "end_date": "2026-08-31T21:09:21.686466+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.olimpo_fat_pma.tb_olmp_fato_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.686672+00:00",
+              "end_date": "2026-08-31T21:09:21.686672+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_evasao.tb_clbr_fato_aluno_evasao",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.686866+00:00",
+              "end_date": "2026-08-31T21:09:21.686866+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_matricula.tb_clbr_fato_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.687058+00:00",
+              "end_date": "2026-08-31T21:09:21.687058+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_por_origem.colaborar_fat_pma.tb_clbr_fato_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:21.687249+00:00",
+              "end_date": "2026-08-31T21:09:21.687249+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.olimpo_prep.tb_olmp_prep_matriculas_evasao_ciclo",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:22.477385+00:00",
+              "end_date": "2026-08-31T21:09:22.477385+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_consolidadas.fat_matricula.tb_fat_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:22.477843+00:00",
+              "end_date": "2026-08-31T21:09:22.477843+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.fatos_consolidadas.fat_pma.tb_fat_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:22.478121+00:00",
+              "end_date": "2026-08-31T21:09:22.478121+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.views.vw_matricula.vw_fat_aluno_matricula",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:22.599051+00:00",
+              "end_date": "2026-08-31T21:09:22.599051+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "wf_alunado.views.vw_pma.vw_fat_aluno_pma",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:22.599823+00:00",
+              "end_date": "2026-08-31T21:09:22.599823+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.save_workflow_state",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.260642+00:00",
+              "end_date": "2026-08-31T21:09:23.260642+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.save_execution_log_end",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.908630+00:00",
+              "end_date": "2026-08-31T21:09:23.908630+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_0_datax-gold-prd_to_datax-al2-prd",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.909224+00:00",
+              "end_date": "2026-08-31T21:09:23.909224+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_1_datax-gold-prd_to_datax-gec-prd",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.909804+00:00",
+              "end_date": "2026-08-31T21:09:23.909804+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_2_datax-gold-prd_to_datax-rvo-prd",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.910379+00:00",
+              "end_date": "2026-08-31T21:09:23.910379+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.trigger_depends_on.trigger_depends_on_3_datax-gold-prd_to_cdl-airflow-mwaa",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:23.910942+00:00",
+              "end_date": "2026-08-31T21:09:23.910942+00:00",
+              "duration": 0.0
+            },
+            {
+              "task_id": "end_workflow.trigger_dataset",
+              "state": "upstream_failed",
+              "start_date": "2026-08-31T21:09:24.304614+00:00",
+              "end_date": "2026-08-31T21:09:24.304614+00:00",
+              "duration": 0.0
             }
           ]
         },
@@ -216506,7 +216506,7 @@
       "min_duration_min": 82.4,
       "p50_duration_min": 98.2,
       "p95_duration_min": 181.0,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -217441,7 +217441,7 @@
       "min_duration_min": 10.6,
       "p50_duration_min": 25.8,
       "p95_duration_min": 52.2,
-      "freshness_hours": 1.4,
+      "freshness_hours": 1.9,
       "mttr_min": 5289.8,
       "last_run": {
         "state": "success",
@@ -218446,7 +218446,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.5,
       "p95_duration_min": 11.4,
-      "freshness_hours": 15.9,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -218954,7 +218954,7 @@
       "min_duration_min": 5.3,
       "p50_duration_min": 8.1,
       "p95_duration_min": 12.4,
-      "freshness_hours": 6.3,
+      "freshness_hours": 6.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -219467,7 +219467,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 0.1,
+      "freshness_hours": 0.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -219975,7 +219975,7 @@
       "min_duration_min": 30.2,
       "p50_duration_min": 32.6,
       "p95_duration_min": 35.8,
-      "freshness_hours": 3.5,
+      "freshness_hours": 4.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -220572,7 +220572,7 @@
       "min_duration_min": 3.3,
       "p50_duration_min": 3.8,
       "p95_duration_min": 8.6,
-      "freshness_hours": 0.0,
+      "freshness_hours": 0.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -221122,7 +221122,7 @@
       "min_duration_min": 11.2,
       "p50_duration_min": 15.3,
       "p95_duration_min": 33.4,
-      "freshness_hours": 3.9,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -221663,7 +221663,7 @@
       "min_duration_min": 17.8,
       "p50_duration_min": 20.1,
       "p95_duration_min": 38.4,
-      "freshness_hours": 6.7,
+      "freshness_hours": 7.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -222882,7 +222882,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.3,
-      "freshness_hours": 0.0,
+      "freshness_hours": 0.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -223369,7 +223369,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.6,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -223940,7 +223940,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.6,
       "p95_duration_min": 5.0,
-      "freshness_hours": 6.4,
+      "freshness_hours": 7.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -224451,7 +224451,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.6,
       "p95_duration_min": 6.3,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -224964,7 +224964,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.4,
       "p95_duration_min": 1.6,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -225451,7 +225451,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.7,
-      "freshness_hours": 5.6,
+      "freshness_hours": 6.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -226761,7 +226761,7 @@
       "min_duration_min": 12.4,
       "p50_duration_min": 15.5,
       "p95_duration_min": 76.8,
-      "freshness_hours": 159.2,
+      "freshness_hours": 159.7,
       "mttr_min": 5026.2,
       "last_run": {
         "state": "failed",
@@ -227500,7 +227500,7 @@
       "min_duration_min": 13.1,
       "p50_duration_min": 14.7,
       "p95_duration_min": 24.5,
-      "freshness_hours": 0.9,
+      "freshness_hours": 1.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -228197,7 +228197,7 @@
       "min_duration_min": 8.1,
       "p50_duration_min": 10.8,
       "p95_duration_min": 31.2,
-      "freshness_hours": 3.9,
+      "freshness_hours": 4.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -228705,7 +228705,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.8,
       "p95_duration_min": 7.8,
-      "freshness_hours": 7.5,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -229213,7 +229213,7 @@
       "min_duration_min": 1.5,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.8,
-      "freshness_hours": 7.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -229700,7 +229700,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 7.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -230187,7 +230187,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 2.8,
       "p95_duration_min": 5.1,
-      "freshness_hours": 7.6,
+      "freshness_hours": 8.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -230674,7 +230674,7 @@
       "min_duration_min": 2.7,
       "p50_duration_min": 13.0,
       "p95_duration_min": 23.7,
-      "freshness_hours": 6.5,
+      "freshness_hours": 7.0,
       "mttr_min": 3207.4,
       "last_run": {
         "state": "success",
@@ -231707,7 +231707,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 5.0,
       "p95_duration_min": 8.1,
-      "freshness_hours": 8.0,
+      "freshness_hours": 8.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -232278,7 +232278,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.6,
       "p95_duration_min": 8.1,
-      "freshness_hours": 16.8,
+      "freshness_hours": 17.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -232937,7 +232937,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.8,
       "p95_duration_min": 2.0,
-      "freshness_hours": 9.1,
+      "freshness_hours": 9.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -233466,7 +233466,7 @@
       "min_duration_min": 2.9,
       "p50_duration_min": 3.4,
       "p95_duration_min": 4.5,
-      "freshness_hours": 17.7,
+      "freshness_hours": 18.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -233974,7 +233974,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.3,
       "p95_duration_min": 3.1,
-      "freshness_hours": 15.2,
+      "freshness_hours": 15.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -234482,7 +234482,7 @@
       "min_duration_min": 3.2,
       "p50_duration_min": 6.0,
       "p95_duration_min": 14.2,
-      "freshness_hours": 15.9,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -235053,7 +235053,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.2,
       "p95_duration_min": 7.9,
-      "freshness_hours": 15.5,
+      "freshness_hours": 16.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -235587,7 +235587,7 @@
       "min_duration_min": 1.3,
       "p50_duration_min": 1.5,
       "p95_duration_min": 7.7,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -236074,7 +236074,7 @@
       "min_duration_min": 8.9,
       "p50_duration_min": 9.6,
       "p95_duration_min": 42.5,
-      "freshness_hours": 15.0,
+      "freshness_hours": 15.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -236729,7 +236729,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.6,
       "p95_duration_min": 1.8,
-      "freshness_hours": 17.8,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -237363,7 +237363,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 2.0,
       "p95_duration_min": 6.1,
-      "freshness_hours": 16.0,
+      "freshness_hours": 16.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -237850,7 +237850,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 2.2,
       "p95_duration_min": 3.9,
-      "freshness_hours": 16.0,
+      "freshness_hours": 16.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -238337,7 +238337,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.7,
       "p95_duration_min": 10.2,
-      "freshness_hours": 157.9,
+      "freshness_hours": 158.4,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -238845,7 +238845,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 10.2,
       "p95_duration_min": 31.2,
-      "freshness_hours": 158.9,
+      "freshness_hours": 159.4,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -239379,7 +239379,7 @@
       "min_duration_min": 3.9,
       "p50_duration_min": 4.3,
       "p95_duration_min": 5.3,
-      "freshness_hours": 17.8,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -241628,7 +241628,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 17.7,
+      "freshness_hours": 18.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -242241,7 +242241,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.8,
-      "freshness_hours": 17.7,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -242854,7 +242854,7 @@
       "min_duration_min": 5.2,
       "p50_duration_min": 6.2,
       "p95_duration_min": 12.4,
-      "freshness_hours": 159.2,
+      "freshness_hours": 159.7,
       "mttr_min": 3511.9,
       "last_run": {
         "state": "success",
@@ -243719,7 +243719,7 @@
       "min_duration_min": 6.0,
       "p50_duration_min": 7.8,
       "p95_duration_min": 13.5,
-      "freshness_hours": 159.3,
+      "freshness_hours": 159.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -244737,7 +244737,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.5,
       "p95_duration_min": 1.9,
-      "freshness_hours": 159.5,
+      "freshness_hours": 160.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -245161,7 +245161,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 17.4,
+      "freshness_hours": 17.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -245648,7 +245648,7 @@
       "min_duration_min": 16.7,
       "p50_duration_min": 19.1,
       "p95_duration_min": 27.1,
-      "freshness_hours": 17.4,
+      "freshness_hours": 17.9,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -246749,7 +246749,7 @@
       "min_duration_min": 0.6,
       "p50_duration_min": 0.9,
       "p95_duration_min": 3.6,
-      "freshness_hours": 15.9,
+      "freshness_hours": 16.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -247236,7 +247236,7 @@
       "min_duration_min": 4.0,
       "p50_duration_min": 4.7,
       "p95_duration_min": 14.4,
-      "freshness_hours": 15.8,
+      "freshness_hours": 16.4,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -247828,7 +247828,7 @@
       "min_duration_min": 5.6,
       "p50_duration_min": 7.2,
       "p95_duration_min": 11.4,
-      "freshness_hours": 135.7,
+      "freshness_hours": 136.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -248379,7 +248379,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 2.4,
       "p95_duration_min": 10.6,
-      "freshness_hours": 160.1,
+      "freshness_hours": 160.6,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -248887,7 +248887,7 @@
       "min_duration_min": 3.0,
       "p50_duration_min": 3.2,
       "p95_duration_min": 14.1,
-      "freshness_hours": 160.0,
+      "freshness_hours": 160.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -249328,7 +249328,7 @@
       "min_duration_min": 7.8,
       "p50_duration_min": 9.5,
       "p95_duration_min": 46.0,
-      "freshness_hours": 15.3,
+      "freshness_hours": 15.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -249941,7 +249941,7 @@
       "min_duration_min": 2.3,
       "p50_duration_min": 2.4,
       "p95_duration_min": 12.3,
-      "freshness_hours": 14.6,
+      "freshness_hours": 15.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -250491,7 +250491,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.6,
-      "freshness_hours": 157.8,
+      "freshness_hours": 158.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -250943,7 +250943,7 @@
       "min_duration_min": 5.7,
       "p50_duration_min": 6.5,
       "p95_duration_min": 11.2,
-      "freshness_hours": 157.8,
+      "freshness_hours": 158.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -251710,7 +251710,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.8,
-      "freshness_hours": 15.0,
+      "freshness_hours": 15.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -252218,7 +252218,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 16.7,
+      "freshness_hours": 17.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -252705,7 +252705,7 @@
       "min_duration_min": 4.7,
       "p50_duration_min": 10.3,
       "p95_duration_min": 30.5,
-      "freshness_hours": 159.5,
+      "freshness_hours": 160.0,
       "mttr_min": 1430.2,
       "last_run": {
         "state": "failed",
@@ -253632,7 +253632,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 3.4,
       "p95_duration_min": 6.0,
-      "freshness_hours": 17.6,
+      "freshness_hours": 18.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -254119,7 +254119,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.4,
-      "freshness_hours": 157.8,
+      "freshness_hours": 158.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -254555,7 +254555,7 @@
       "min_duration_min": 1.2,
       "p50_duration_min": 1.3,
       "p95_duration_min": 1.4,
-      "freshness_hours": 16.6,
+      "freshness_hours": 17.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -255084,7 +255084,7 @@
       "min_duration_min": 2.6,
       "p50_duration_min": 2.8,
       "p95_duration_min": 2.9,
-      "freshness_hours": 18.1,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -255770,7 +255770,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.1,
       "p95_duration_min": 1.2,
-      "freshness_hours": 18.0,
+      "freshness_hours": 18.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -256304,7 +256304,7 @@
       "min_duration_min": 2.2,
       "p50_duration_min": 2.3,
       "p95_duration_min": 2.4,
-      "freshness_hours": 18.0,
+      "freshness_hours": 18.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -256917,7 +256917,7 @@
       "min_duration_min": 5.1,
       "p50_duration_min": 5.3,
       "p95_duration_min": 5.4,
-      "freshness_hours": 18.0,
+      "freshness_hours": 18.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -257943,7 +257943,7 @@
       "min_duration_min": 1.6,
       "p50_duration_min": 1.7,
       "p95_duration_min": 1.9,
-      "freshness_hours": 1.8,
+      "freshness_hours": 2.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -258814,7 +258814,7 @@
       "min_duration_min": 10.4,
       "p50_duration_min": 13.7,
       "p95_duration_min": 15.6,
-      "freshness_hours": 1.6,
+      "freshness_hours": 2.1,
       "mttr_min": 8984.8,
       "last_run": {
         "state": "success",
@@ -259412,7 +259412,7 @@
       "min_duration_min": 2.4,
       "p50_duration_min": 3.1,
       "p95_duration_min": 3.8,
-      "freshness_hours": 1.5,
+      "freshness_hours": 2.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -259877,7 +259877,7 @@
       "min_duration_min": 2.0,
       "p50_duration_min": 2.9,
       "p95_duration_min": 4.1,
-      "freshness_hours": 1.5,
+      "freshness_hours": 2.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -260281,7 +260281,7 @@
       "min_duration_min": 9.0,
       "p50_duration_min": 14.1,
       "p95_duration_min": 17.3,
-      "freshness_hours": 1.6,
+      "freshness_hours": 2.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -260690,7 +260690,7 @@
       "min_duration_min": 2.9,
       "p50_duration_min": 3.9,
       "p95_duration_min": 4.8,
-      "freshness_hours": 1.5,
+      "freshness_hours": 2.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -261162,7 +261162,7 @@
       "min_duration_min": 26.3,
       "p50_duration_min": 26.3,
       "p95_duration_min": 26.3,
-      "freshness_hours": 287.8,
+      "freshness_hours": 288.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -261486,7 +261486,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 1.7,
       "p95_duration_min": 2.5,
-      "freshness_hours": 17.8,
+      "freshness_hours": 18.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -262051,7 +262051,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 7.4,
       "p95_duration_min": 10.4,
-      "freshness_hours": 14.2,
+      "freshness_hours": 14.8,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -262580,7 +262580,7 @@
       "min_duration_min": 1.9,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -263067,7 +263067,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 2.1,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -263554,7 +263554,7 @@
       "min_duration_min": 1.4,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.2,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -264041,7 +264041,7 @@
       "min_duration_min": 1.8,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -264528,7 +264528,7 @@
       "min_duration_min": 0.8,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.2,
-      "freshness_hours": 15.8,
+      "freshness_hours": 16.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265015,7 +265015,7 @@
       "min_duration_min": 0.9,
       "p50_duration_min": 1.0,
       "p95_duration_min": 1.2,
-      "freshness_hours": 15.8,
+      "freshness_hours": 16.3,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265502,7 +265502,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 15.0,
+      "freshness_hours": 15.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -265989,7 +265989,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 15.1,
+      "freshness_hours": 15.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -266476,7 +266476,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 1.3,
       "p95_duration_min": 4.4,
-      "freshness_hours": 6.1,
+      "freshness_hours": 6.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -266963,7 +266963,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.9,
-      "freshness_hours": 7.7,
+      "freshness_hours": 8.2,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -267450,7 +267450,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 0.8,
-      "freshness_hours": 14.0,
+      "freshness_hours": 14.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -267937,7 +267937,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 2.2,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -268424,7 +268424,7 @@
       "min_duration_min": 1.1,
       "p50_duration_min": 2.0,
       "p95_duration_min": 2.3,
-      "freshness_hours": 16.1,
+      "freshness_hours": 16.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -268911,7 +268911,7 @@
       "min_duration_min": 0.7,
       "p50_duration_min": 0.8,
       "p95_duration_min": 1.0,
-      "freshness_hours": 16.2,
+      "freshness_hours": 16.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -269398,7 +269398,7 @@
       "min_duration_min": 0.5,
       "p50_duration_min": 0.6,
       "p95_duration_min": 0.6,
-      "freshness_hours": 18.6,
+      "freshness_hours": 19.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -269890,7 +269890,7 @@
       "min_duration_min": 1.0,
       "p50_duration_min": 1.2,
       "p95_duration_min": 1.8,
-      "freshness_hours": 4.1,
+      "freshness_hours": 4.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -270559,7 +270559,7 @@
       "min_duration_min": 9.1,
       "p50_duration_min": 9.1,
       "p95_duration_min": 9.1,
-      "freshness_hours": 149.2,
+      "freshness_hours": 149.7,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -270731,7 +270731,7 @@
       "min_duration_min": 4.2,
       "p50_duration_min": 37.0,
       "p95_duration_min": 40.8,
-      "freshness_hours": 5.5,
+      "freshness_hours": 6.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -271432,7 +271432,7 @@
       "min_duration_min": 6.8,
       "p50_duration_min": 30.9,
       "p95_duration_min": 34.8,
-      "freshness_hours": 147.9,
+      "freshness_hours": 148.4,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -272209,7 +272209,7 @@
       "min_duration_min": 4.8,
       "p50_duration_min": 10.7,
       "p95_duration_min": 22.5,
-      "freshness_hours": 100.0,
+      "freshness_hours": 100.6,
       "mttr_min": null,
       "last_run": {
         "state": "failed",
@@ -272670,7 +272670,7 @@
       "min_duration_min": 100.8,
       "p50_duration_min": 100.8,
       "p95_duration_min": 100.8,
-      "freshness_hours": 148.5,
+      "freshness_hours": 149.0,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -272989,7 +272989,7 @@
       "min_duration_min": 31.6,
       "p50_duration_min": 31.6,
       "p95_duration_min": 31.6,
-      "freshness_hours": 148.6,
+      "freshness_hours": 149.1,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -273199,7 +273199,7 @@
       "min_duration_min": 5.0,
       "p50_duration_min": 7.2,
       "p95_duration_min": 18.1,
-      "freshness_hours": 6.0,
+      "freshness_hours": 6.5,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -273922,7 +273922,7 @@
       "min_duration_min": 0.2,
       "p50_duration_min": 29.8,
       "p95_duration_min": 110.6,
-      "freshness_hours": 145.4,
+      "freshness_hours": 145.9,
       "mttr_min": 863.5,
       "last_run": {
         "state": "success",
@@ -274942,7 +274942,7 @@
       "min_duration_min": 4.1,
       "p50_duration_min": 4.7,
       "p95_duration_min": 29.8,
-      "freshness_hours": 172.1,
+      "freshness_hours": 172.6,
       "mttr_min": null,
       "last_run": {
         "state": "success",
@@ -275479,19 +275479,19 @@
   "import_errors": [
     {
       "filename": 375,
-      "timestamp": "2026-08-31T21:08:05.660821+00:00",
+      "timestamp": "2026-08-31T21:39:37.992496+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/openmetadata_airflow_extraction.py\", line 20, in <module>\n    from metadata.ingestion.api.workflow import Workflow\nModuleNotFoundError: No module named 'metadata'\n",
       "environment": "cdl-cogna-lakehouseMwaa"
     },
     {
       "filename": 376,
-      "timestamp": "2026-08-31T21:08:05.873042+00:00",
+      "timestamp": "2026-08-31T21:39:38.072380+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/glue_details.py\", line 17, in <module>\n    from metadata.config.common import load_config_file\nModuleNotFoundError: No module named 'metadata'\n",
       "environment": "cdl-cogna-lakehouseMwaa"
     },
     {
       "filename": 9706,
-      "timestamp": "2026-08-31T21:09:40.910113+00:00",
+      "timestamp": "2026-08-31T21:41:41.810304+00:00",
       "stack_trace": "Traceback (most recent call last):\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/usr/local/airflow/dags/cdl_datalab/dag_teste_lambda_dependson.py\", line 44, in <module>\n    \"mwaa_environment\": \"datax-gold-{}\".replace(\n                        ^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: replace expected at least 2 arguments, got 1\n",
       "environment": "cdl-airflow-mwaa"
     }
@@ -275508,7 +275508,7 @@
     {
       "name": "default_pool",
       "slots": 10000,
-      "used": 2,
+      "used": 0,
       "queued": 0,
       "saturation_pct": 0.0,
       "environment": "cdl-cogna-lakehouseMwaa"

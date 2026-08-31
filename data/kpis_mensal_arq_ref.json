@@ -1,79 +1,316 @@
 {
-  "generated_at": "2026-08-20T21:56:41.218335+00:00",
-  "environment": "datax-gold-prd",
+  "generated_at": "2026-08-31T21:49:48.133297+00:00",
+  "environment": "multi",
   "year": 2026,
+  "environments": [
+    {
+      "key": "datax-gold-prd",
+      "label": "DataX Gold (prd)",
+      "months": [
+        {
+          "month": "2026-01",
+          "label": "Jan",
+          "active_dags": 112,
+          "total_runs": 1242,
+          "success": 1179,
+          "failed": 63,
+          "availability": 94.9
+        },
+        {
+          "month": "2026-02",
+          "label": "Fev",
+          "active_dags": 112,
+          "total_runs": 1872,
+          "success": 1871,
+          "failed": 1,
+          "availability": 99.9
+        },
+        {
+          "month": "2026-03",
+          "label": "Mar",
+          "active_dags": 112,
+          "total_runs": 1652,
+          "success": 1581,
+          "failed": 71,
+          "availability": 95.7
+        },
+        {
+          "month": "2026-04",
+          "label": "Abr",
+          "active_dags": 112,
+          "total_runs": 1549,
+          "success": 1405,
+          "failed": 144,
+          "availability": 90.7
+        },
+        {
+          "month": "2026-05",
+          "label": "Mai",
+          "active_dags": 112,
+          "total_runs": 2127,
+          "success": 2103,
+          "failed": 24,
+          "availability": 98.9
+        },
+        {
+          "month": "2026-06",
+          "label": "Jun",
+          "active_dags": 112,
+          "total_runs": 1894,
+          "success": 1792,
+          "failed": 102,
+          "availability": 94.6
+        },
+        {
+          "month": "2026-07",
+          "label": "Jul",
+          "active_dags": 112,
+          "total_runs": 2568,
+          "success": 2415,
+          "failed": 153,
+          "availability": 94.0
+        },
+        {
+          "month": "2026-08",
+          "label": "Ago",
+          "active_dags": 117,
+          "total_runs": 2755,
+          "success": 2521,
+          "failed": 234,
+          "availability": 91.5
+        }
+      ]
+    },
+    {
+      "key": "cdl-cogna-lakehouseMwaa",
+      "label": "CDL Lakehouse (legado)",
+      "months": [
+        {
+          "month": "2026-01",
+          "label": "Jan",
+          "active_dags": 246,
+          "total_runs": 0,
+          "success": 0,
+          "failed": 0,
+          "availability": 0.0
+        },
+        {
+          "month": "2026-02",
+          "label": "Fev",
+          "active_dags": 246,
+          "total_runs": 0,
+          "success": 0,
+          "failed": 0,
+          "availability": 0.0
+        },
+        {
+          "month": "2026-03",
+          "label": "Mar",
+          "active_dags": 246,
+          "total_runs": 0,
+          "success": 0,
+          "failed": 0,
+          "availability": 0.0
+        },
+        {
+          "month": "2026-04",
+          "label": "Abr",
+          "active_dags": 246,
+          "total_runs": 0,
+          "success": 0,
+          "failed": 0,
+          "availability": 0.0
+        },
+        {
+          "month": "2026-05",
+          "label": "Mai",
+          "active_dags": 246,
+          "total_runs": 0,
+          "success": 0,
+          "failed": 0,
+          "availability": 0.0
+        },
+        {
+          "month": "2026-06",
+          "label": "Jun",
+          "active_dags": 246,
+          "total_runs": 4476,
+          "success": 3949,
+          "failed": 527,
+          "availability": 88.2
+        },
+        {
+          "month": "2026-07",
+          "label": "Jul",
+          "active_dags": 246,
+          "total_runs": 7442,
+          "success": 6624,
+          "failed": 818,
+          "availability": 89.0
+        },
+        {
+          "month": "2026-08",
+          "label": "Ago",
+          "active_dags": 246,
+          "total_runs": 7196,
+          "success": 6392,
+          "failed": 804,
+          "availability": 88.8
+        }
+      ]
+    },
+    {
+      "key": "cdl-airflow-mwaa",
+      "label": "CDL Airflow (v1)",
+      "months": [
+        {
+          "month": "2026-01",
+          "label": "Jan",
+          "active_dags": 100,
+          "total_runs": 1817,
+          "success": 1817,
+          "failed": 0,
+          "availability": 100.0
+        },
+        {
+          "month": "2026-02",
+          "label": "Fev",
+          "active_dags": 100,
+          "total_runs": 1775,
+          "success": 1775,
+          "failed": 0,
+          "availability": 100.0
+        },
+        {
+          "month": "2026-03",
+          "label": "Mar",
+          "active_dags": 100,
+          "total_runs": 2313,
+          "success": 2277,
+          "failed": 36,
+          "availability": 98.4
+        },
+        {
+          "month": "2026-04",
+          "label": "Abr",
+          "active_dags": 100,
+          "total_runs": 2492,
+          "success": 2422,
+          "failed": 70,
+          "availability": 97.2
+        },
+        {
+          "month": "2026-05",
+          "label": "Mai",
+          "active_dags": 100,
+          "total_runs": 2717,
+          "success": 2574,
+          "failed": 143,
+          "availability": 94.7
+        },
+        {
+          "month": "2026-06",
+          "label": "Jun",
+          "active_dags": 100,
+          "total_runs": 2678,
+          "success": 2537,
+          "failed": 141,
+          "availability": 94.7
+        },
+        {
+          "month": "2026-07",
+          "label": "Jul",
+          "active_dags": 100,
+          "total_runs": 3210,
+          "success": 2763,
+          "failed": 447,
+          "availability": 86.1
+        },
+        {
+          "month": "2026-08",
+          "label": "Ago",
+          "active_dags": 100,
+          "total_runs": 3264,
+          "success": 2925,
+          "failed": 339,
+          "availability": 89.6
+        }
+      ]
+    }
+  ],
   "months": [
     {
       "month": "2026-01",
       "label": "Jan",
-      "active_dags": 112,
-      "total_runs": 1242,
-      "success": 1179,
+      "active_dags": 458,
+      "total_runs": 3059,
+      "success": 2996,
       "failed": 63,
-      "availability": 94.9
+      "availability": 97.9
     },
     {
       "month": "2026-02",
       "label": "Fev",
-      "active_dags": 112,
-      "total_runs": 1872,
-      "success": 1871,
+      "active_dags": 458,
+      "total_runs": 3647,
+      "success": 3646,
       "failed": 1,
-      "availability": 99.9
+      "availability": 100.0
     },
     {
       "month": "2026-03",
       "label": "Mar",
-      "active_dags": 112,
-      "total_runs": 1652,
-      "success": 1581,
-      "failed": 71,
-      "availability": 95.7
+      "active_dags": 458,
+      "total_runs": 3965,
+      "success": 3858,
+      "failed": 107,
+      "availability": 97.3
     },
     {
       "month": "2026-04",
       "label": "Abr",
-      "active_dags": 112,
-      "total_runs": 1549,
-      "success": 1405,
-      "failed": 144,
-      "availability": 90.7
+      "active_dags": 458,
+      "total_runs": 4041,
+      "success": 3827,
+      "failed": 214,
+      "availability": 94.7
     },
     {
       "month": "2026-05",
       "label": "Mai",
-      "active_dags": 112,
-      "total_runs": 2127,
-      "success": 2103,
-      "failed": 24,
-      "availability": 98.9
+      "active_dags": 458,
+      "total_runs": 4844,
+      "success": 4677,
+      "failed": 167,
+      "availability": 96.6
     },
     {
       "month": "2026-06",
       "label": "Jun",
-      "active_dags": 112,
-      "total_runs": 1894,
-      "success": 1792,
-      "failed": 102,
-      "availability": 94.6
+      "active_dags": 458,
+      "total_runs": 9048,
+      "success": 8278,
+      "failed": 770,
+      "availability": 91.5
     },
     {
       "month": "2026-07",
       "label": "Jul",
-      "active_dags": 112,
-      "total_runs": 2568,
-      "success": 2415,
-      "failed": 153,
-      "availability": 94.0
+      "active_dags": 458,
+      "total_runs": 13220,
+      "success": 11802,
+      "failed": 1418,
+      "availability": 89.3
     },
     {
       "month": "2026-08",
       "label": "Ago",
-      "active_dags": 112,
-      "total_runs": 1807,
-      "success": 1673,
-      "failed": 133,
-      "availability": 92.6
+      "active_dags": 463,
+      "total_runs": 13215,
+      "success": 11838,
+      "failed": 1377,
+      "availability": 89.6
     }
-  ]
+  ],
+  "failures": []
 }

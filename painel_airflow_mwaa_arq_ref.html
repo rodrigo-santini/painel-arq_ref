@@ -2589,27 +2589,49 @@
                 filtrar();
             }
 
+            // Executa uma etapa isolando erros: uma falha numa parte do painel
+            // nao derruba as demais (ex.: a aba KPIs continua funcionando mesmo
+            // se um grafico da Visao Geral falhar).
+            function safeRun(label, fn) {
+                try {
+                    fn();
+                } catch (err) {
+                    console.error(`[painel] falha em ${label}:`, err);
+                }
+            }
+
             async function bootstrap() {
+                // Etapa critica: carregar os dados principais. So isto pode
+                // mostrar o erro no topo.
                 try {
                     const resp = await fetch("data/painel_data_arq_ref.json", {
                         cache: "no-store",
                     });
+                    if (!resp.ok) {
+                        throw new Error(
+                            `HTTP ${resp.status} ao buscar painel_data_arq_ref.json`,
+                        );
+                    }
                     DATA = await resp.json();
-                    setupTabs();
-                    setupEnvBar();
-                    setupHeader();
-                    setupDateBar();
-                    setupCategoryBar();
-                    setupClearFiltersButton();
-                    setupDagSelect();
-                    applyAll();
-                    renderRunsDetail();
-                    loadKpisMensal();
                 } catch (err) {
                     console.error(err);
                     document.getElementById("header-meta").textContent =
-                        "Erro ao carregar dados. Rode: python arq_ref/tools/fetch_data_arq_ref.py";
+                        "Erro ao carregar dados. Rode: python arq_ref/tools/refresh_and_publish_arq_ref.py";
+                    return;
                 }
+
+                // Etapas de render isoladas — nunca derrubam o painel inteiro.
+                safeRun("setupTabs", setupTabs);
+                safeRun("setupEnvBar", setupEnvBar);
+                safeRun("setupHeader", setupHeader);
+                safeRun("setupDateBar", setupDateBar);
+                safeRun("setupCategoryBar", setupCategoryBar);
+                safeRun("setupClearFiltersButton", setupClearFiltersButton);
+                safeRun("setupDagSelect", setupDagSelect);
+                safeRun("applyAll", applyAll);
+                safeRun("renderRunsDetail", renderRunsDetail);
+                // Aba KPIs (arquivo separado) — sempre roda, independente do resto.
+                loadKpisMensal();
             }
 
             function setupClearFiltersButton() {
