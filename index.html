@@ -395,6 +395,24 @@
                 position: relative;
                 height: 240px;
             }
+            .chart-sub {
+                font-size: 0.72rem;
+                color: var(--muted);
+                margin: -6px 0 14px;
+                line-height: 1.4;
+            }
+            /* Análise Operacional: grade 2x2 equilibrada e mais respirável */
+            .charts--ops {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .charts--ops .chart-container {
+                height: 280px;
+            }
+            @media (max-width: 860px) {
+                .charts--ops {
+                    grid-template-columns: 1fr;
+                }
+            }
 
             /* === Section title === */
             .section-title {
@@ -404,6 +422,13 @@
                 padding-bottom: 8px;
                 border-bottom: 1px solid var(--border);
                 letter-spacing: -0.01em;
+            }
+            .section-sub {
+                font-size: 0.8rem;
+                color: var(--muted);
+                margin: -8px 0 18px;
+                line-height: 1.5;
+                max-width: 720px;
             }
 
             /* === Tables === */
@@ -934,7 +959,11 @@
                 </div>
             </div>
 
-            <h2 class="section-title">🔬 Métricas Avançadas (Camada 1)</h2>
+            <h2 class="section-title">📊 Análise Operacional</h2>
+            <p class="section-sub">
+                Indicadores para priorizar ação: latência (P50/P95),
+                recuperação (MTTR), erros de importação e capacidade (pools).
+            </p>
             <div class="kpi-grid kpi-grid--secondary" id="kpi-grid-layer1">
                 <div class="kpi d">
                     <span
@@ -999,38 +1028,35 @@
                 </div>
             </div>
 
-            <div class="charts">
+            <div class="charts charts--ops">
                 <div class="chart">
                     <h3>Execuções por Dia</h3>
+                    <p class="chart-sub">
+                        Volume diário de runs, empilhando sucesso e falha.
+                        Picos vermelhos indicam dias problemáticos.
+                    </p>
                     <div class="chart-container"><canvas id="c1"></canvas></div>
                 </div>
                 <div class="chart">
-                    <h3>Status Geral</h3>
+                    <h3>Sucesso × Falha</h3>
+                    <p class="chart-sub">
+                        Proporção geral de runs na janela selecionada.
+                    </p>
                     <div class="chart-container"><canvas id="c2"></canvas></div>
                 </div>
                 <div class="chart">
-                    <h3>Top 10 DAGs — Disponibilidade (%)</h3>
+                    <h3>Pior Disponibilidade — Top 10 DAGs</h3>
+                    <p class="chart-sub">
+                        DAGs com menor taxa de sucesso. Onde focar a correção.
+                    </p>
                     <div class="chart-container"><canvas id="c3"></canvas></div>
                 </div>
                 <div class="chart">
-                    <h3>Top 10 DAGs — Duração Média (min)</h3>
+                    <h3>DAGs Mais Lentas — Top 10</h3>
+                    <p class="chart-sub">
+                        Maior duração média (min). Gargalos de desempenho.
+                    </p>
                     <div class="chart-container"><canvas id="c4"></canvas></div>
-                </div>
-                <div class="chart">
-                    <h3>DAGs por Categoria (ativas)</h3>
-                    <div class="chart-container"><canvas id="c5"></canvas></div>
-                </div>
-                <div class="chart">
-                    <h3>Runs por Categoria</h3>
-                    <div class="chart-container"><canvas id="c6"></canvas></div>
-                </div>
-                <div class="chart">
-                    <h3>Distribuição de Duração (P50 vs P95)</h3>
-                    <div class="chart-container"><canvas id="c7"></canvas></div>
-                </div>
-                <div class="chart">
-                    <h3>Freshness (horas desde último sucesso)</h3>
-                    <div class="chart-container"><canvas id="c8"></canvas></div>
                 </div>
             </div>
 
@@ -2059,14 +2085,45 @@
                     },
                 });
 
-                // Grafico 2: Status geral
+                // Grafico 2: Status geral (sucesso x falha) com % no centro
+                const c2Success = VIEW.kpis.success || 0;
+                const c2Failed = VIEW.kpis.failed || 0;
+                const c2Total = c2Success + c2Failed;
+                const c2Pct =
+                    c2Total > 0
+                        ? ((c2Success / c2Total) * 100).toFixed(1)
+                        : "-";
+                const centerTextPlugin = {
+                    id: "centerText",
+                    afterDraw(chart) {
+                        const { ctx, chartArea } = chart;
+                        if (!chartArea) return;
+                        const cx = (chartArea.left + chartArea.right) / 2;
+                        const cy = (chartArea.top + chartArea.bottom) / 2;
+                        ctx.save();
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillStyle = "#e2e8f0";
+                        ctx.font =
+                            "700 26px Inter, system-ui, sans-serif";
+                        ctx.fillText(
+                            c2Pct === "-" ? "-" : c2Pct + "%",
+                            cx,
+                            cy - 8,
+                        );
+                        ctx.fillStyle = "#94a3b8";
+                        ctx.font = "600 11px Inter, system-ui, sans-serif";
+                        ctx.fillText("sucesso", cx, cy + 14);
+                        ctx.restore();
+                    },
+                };
                 CHARTS.c2 = new Chart(document.getElementById("c2"), {
                     type: "doughnut",
                     data: {
                         labels: ["Sucesso", "Falha"],
                         datasets: [
                             {
-                                data: [VIEW.kpis.success, VIEW.kpis.failed],
+                                data: [c2Success, c2Failed],
                                 backgroundColor: ["#22c55e", "#ef4444"],
                                 borderWidth: 0,
                             },
@@ -2080,9 +2137,16 @@
                                 position: "bottom",
                                 labels: { color: "#94a3b8", padding: 14 },
                             },
+                            tooltip: {
+                                callbacks: {
+                                    label: (ctx) =>
+                                        `${ctx.label}: ${ctx.parsed.toLocaleString("pt-BR")}`,
+                                },
+                            },
                         },
-                        cutout: "60%",
+                        cutout: "68%",
                     },
+                    plugins: [centerTextPlugin],
                 });
 
                 // Top 10 disponibilidade (entre ativos com runs)
@@ -2174,203 +2238,6 @@
                     },
                 });
 
-                // Por categoria (DAGs ativas)
-                const catCounts = {};
-                activeDags.forEach((d) => {
-                    catCounts[d.category] = (catCounts[d.category] || 0) + 1;
-                });
-                const catColors = [
-                    "#22c55e",
-                    "#3b82f6",
-                    "#a855f7",
-                    "#eab308",
-                    "#06b6d4",
-                    "#ef4444",
-                    "#f97316",
-                    "#84cc16",
-                    "#ec4899",
-                    "#14b8a6",
-                ];
-                CHARTS.c5 = new Chart(document.getElementById("c5"), {
-                    type: "doughnut",
-                    data: {
-                        labels: Object.keys(catCounts),
-                        datasets: [
-                            {
-                                data: Object.values(catCounts),
-                                backgroundColor: catColors,
-                                borderWidth: 0,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: "right",
-                                labels: {
-                                    color: "#94a3b8",
-                                    padding: 8,
-                                    font: { size: 10 },
-                                },
-                            },
-                        },
-                        cutout: "55%",
-                    },
-                });
-
-                // Runs por categoria
-                const catRuns = {};
-                activeDags.forEach((d) => {
-                    catRuns[d.category] = (catRuns[d.category] || 0) + d.total;
-                });
-                CHARTS.c6 = new Chart(document.getElementById("c6"), {
-                    type: "bar",
-                    data: {
-                        labels: Object.keys(catRuns),
-                        datasets: [
-                            {
-                                label: "Runs",
-                                data: Object.values(catRuns),
-                                backgroundColor: "#06b6d4",
-                                borderRadius: 4,
-                            },
-                        ],
-                    },
-                    options: {
-                        indexAxis: "y",
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            x: {
-                                ticks: { color: "#94a3b8" },
-                                grid: { color: "#334155" },
-                            },
-                            y: {
-                                ticks: { color: "#94a3b8", font: { size: 10 } },
-                                grid: { display: false },
-                            },
-                        },
-                    },
-                });
-
-                // Camada 1: Distribuicao P50 vs P95 por categoria
-                const catP50 = {};
-                const catP95 = {};
-                activeDags.forEach((d) => {
-                    if (!catP50[d.category]) {
-                        catP50[d.category] = [];
-                        catP95[d.category] = [];
-                    }
-                    if (d.p50_duration_min != null)
-                        catP50[d.category].push(d.p50_duration_min);
-                    if (d.p95_duration_min != null)
-                        catP95[d.category].push(d.p95_duration_min);
-                });
-                const catLabels7 = Object.keys(catP50)
-                    .filter((c) => catP50[c].length > 0)
-                    .sort();
-                const avgP50 = catLabels7.map((c) => {
-                    const v = catP50[c];
-                    return v.length
-                        ? +(v.reduce((a, b) => a + b, 0) / v.length).toFixed(1)
-                        : 0;
-                });
-                const avgP95 = catLabels7.map((c) => {
-                    const v = catP95[c];
-                    return v.length
-                        ? +(v.reduce((a, b) => a + b, 0) / v.length).toFixed(1)
-                        : 0;
-                });
-                CHARTS.c7 = new Chart(document.getElementById("c7"), {
-                    type: "bar",
-                    data: {
-                        labels: catLabels7,
-                        datasets: [
-                            {
-                                label: "P50",
-                                data: avgP50,
-                                backgroundColor: "#a855f7",
-                                borderRadius: 4,
-                            },
-                            {
-                                label: "P95",
-                                data: avgP95,
-                                backgroundColor: "#f97316",
-                                borderRadius: 4,
-                            },
-                        ],
-                    },
-                    options: {
-                        indexAxis: "y",
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { labels: { color: "#94a3b8" } } },
-                        scales: {
-                            x: {
-                                ticks: { color: "#94a3b8" },
-                                grid: { color: "#334155" },
-                            },
-                            y: {
-                                ticks: { color: "#94a3b8", font: { size: 10 } },
-                                grid: { display: false },
-                            },
-                        },
-                    },
-                });
-
-                // Camada 1: Top 10 DAGs por Freshness (horas desde ultimo sucesso)
-                const freshDags = VIEW.dags
-                    .filter(
-                        (d) =>
-                            d.freshness_hours != null &&
-                            d.total > 0 &&
-                            !d.is_paused,
-                    )
-                    .sort((a, b) => b.freshness_hours - a.freshness_hours)
-                    .slice(0, 10);
-                CHARTS.c8 = new Chart(document.getElementById("c8"), {
-                    type: "bar",
-                    data: {
-                        labels: freshDags.map((d) =>
-                            d.dag_id.length > 30
-                                ? d.dag_id.slice(0, 28) + ".."
-                                : d.dag_id,
-                        ),
-                        datasets: [
-                            {
-                                label: "horas",
-                                data: freshDags.map((d) => d.freshness_hours),
-                                backgroundColor: freshDags.map((d) =>
-                                    d.freshness_hours > 48
-                                        ? "#ef4444"
-                                        : d.freshness_hours > 24
-                                          ? "#eab308"
-                                          : "#22c55e",
-                                ),
-                                borderRadius: 4,
-                            },
-                        ],
-                    },
-                    options: {
-                        indexAxis: "y",
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            x: {
-                                ticks: { color: "#94a3b8" },
-                                grid: { color: "#334155" },
-                            },
-                            y: {
-                                ticks: { color: "#94a3b8", font: { size: 10 } },
-                                grid: { display: false },
-                            },
-                        },
-                    },
-                });
             }
 
             function renderFalhas() {
