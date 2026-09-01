@@ -324,35 +324,31 @@
                 color: #fff;
                 border-color: var(--blue);
             }
-            .kpi-info[data-tip]:hover::after {
-                content: attr(data-tip);
-                position: absolute;
-                top: 24px;
-                right: -4px;
+            /* Tooltip global renderizado no <body> (fora de qualquer overflow),
+               posicionado via JS. Nunca e recortado pelo card. */
+            #kpi-tooltip {
+                position: fixed;
+                z-index: 9999;
+                max-width: 300px;
                 background: var(--bg);
                 color: var(--text);
                 border: 1px solid var(--border-strong);
                 border-radius: var(--radius-sm);
                 padding: 10px 12px;
-                font-size: 0.72rem;
+                font-size: 0.75rem;
                 font-weight: 400;
                 line-height: 1.55;
                 letter-spacing: normal;
                 text-transform: none;
-                width: 260px;
                 text-align: left;
-                z-index: 100;
                 box-shadow: var(--shadow-2);
-                white-space: pre-line;
+                white-space: normal;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.12s ease;
             }
-            .kpi-info[data-tip]:hover::before {
-                content: "";
-                position: absolute;
-                top: 18px;
-                right: 4px;
-                border: 5px solid transparent;
-                border-bottom-color: var(--border-strong);
-                z-index: 101;
+            #kpi-tooltip.visible {
+                opacity: 1;
             }
 
             /* === Charts === */
@@ -2499,6 +2495,7 @@
 
                 // Etapas de render isoladas — nunca derrubam o painel inteiro.
                 safeRun("setupTabs", setupTabs);
+                safeRun("setupTooltips", setupTooltips);
                 safeRun("setupEnvBar", setupEnvBar);
                 safeRun("setupHeader", setupHeader);
                 safeRun("setupDateBar", setupDateBar);
@@ -2509,6 +2506,71 @@
                 safeRun("renderRunsDetail", renderRunsDetail);
                 // Aba KPIs (arquivo separado) — sempre roda, independente do resto.
                 loadKpisMensal();
+            }
+
+            // Tooltip global: um unico elemento no <body>, posicionado via JS.
+            // Como fica fora dos cards, nunca e recortado por overflow:hidden,
+            // mesmo em quadros pequenos. Usa delegacao de eventos, entao vale
+            // para icones criados dinamicamente tambem.
+            function setupTooltips() {
+                let tip = document.getElementById("kpi-tooltip");
+                if (!tip) {
+                    tip = document.createElement("div");
+                    tip.id = "kpi-tooltip";
+                    document.body.appendChild(tip);
+                }
+
+                function show(el) {
+                    const text = el.getAttribute("data-tip");
+                    if (!text) return;
+                    tip.textContent = text;
+                    tip.classList.add("visible");
+                    positionFor(el);
+                }
+                function hide() {
+                    tip.classList.remove("visible");
+                }
+                function positionFor(el) {
+                    const r = el.getBoundingClientRect();
+                    // Mede o tooltip para decidir se abre acima/abaixo/lados
+                    const tw = tip.offsetWidth;
+                    const th = tip.offsetHeight;
+                    const margin = 8;
+                    // Preferencia: abaixo do icone, alinhado a direita do icone
+                    let top = r.bottom + 6;
+                    let left = r.right - tw;
+                    // Se estourar embaixo, abre acima
+                    if (top + th > window.innerHeight - margin) {
+                        top = r.top - th - 6;
+                    }
+                    // Clampa horizontal dentro da viewport
+                    if (left < margin) left = margin;
+                    if (left + tw > window.innerWidth - margin) {
+                        left = window.innerWidth - tw - margin;
+                    }
+                    // Clampa vertical (fallback extremo)
+                    if (top < margin) top = margin;
+                    tip.style.top = top + "px";
+                    tip.style.left = left + "px";
+                }
+
+                // Delegacao: mouseover/mouseout sobem ate encontrar .kpi-info
+                document.addEventListener("mouseover", (e) => {
+                    const el = e.target.closest(".kpi-info[data-tip]");
+                    if (el) show(el);
+                });
+                document.addEventListener("mouseout", (e) => {
+                    const el = e.target.closest(".kpi-info[data-tip]");
+                    if (el) hide();
+                });
+                // Acessibilidade: foco no teclado tambem mostra
+                document.addEventListener("focusin", (e) => {
+                    const el = e.target.closest(".kpi-info[data-tip]");
+                    if (el) show(el);
+                });
+                document.addEventListener("focusout", hide);
+                // Reposiciona/esconde ao rolar a pagina
+                window.addEventListener("scroll", hide, true);
             }
 
             function setupClearFiltersButton() {
