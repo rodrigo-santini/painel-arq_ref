@@ -2664,6 +2664,15 @@
                         document
                             .getElementById(tab.dataset.tab)
                             .classList.add("active");
+                        // Chart.js nao dimensiona corretamente em canvas oculto
+                        // (display:none => 0x0). Ao ABRIR a aba KPIs, re-renderiza
+                        // com o canvas ja visivel para refletir o filtro atual.
+                        if (
+                            tab.dataset.tab === "tab-kpis" &&
+                            KPI_MENSAL_DATA
+                        ) {
+                            renderKpisMensal();
+                        }
                     });
                 });
             }
