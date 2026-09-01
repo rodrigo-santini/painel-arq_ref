@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:19:41.670787+00:00",
+  "generated_at": "2026-09-01T16:45:07.608315+00:00",
   "environment": "multi",
   "year": 2026,
   "environments": [
@@ -83,10 +83,10 @@
           "month": "2026-09",
           "label": "Set",
           "active_dags": 117,
-          "total_runs": 60,
-          "success": 56,
-          "failed": 3,
-          "availability": 93.3
+          "total_runs": 88,
+          "success": 82,
+          "failed": 5,
+          "availability": 93.2
         }
       ]
     },
@@ -170,10 +170,10 @@
           "month": "2026-09",
           "label": "Set",
           "active_dags": 246,
-          "total_runs": 115,
-          "success": 105,
-          "failed": 6,
-          "availability": 91.3
+          "total_runs": 200,
+          "success": 187,
+          "failed": 9,
+          "availability": 93.5
         }
       ]
     },
@@ -257,10 +257,10 @@
           "month": "2026-09",
           "label": "Set",
           "active_dags": 100,
-          "total_runs": 89,
-          "success": 81,
-          "failed": 5,
-          "availability": 91.0
+          "total_runs": 99,
+          "success": 93,
+          "failed": 6,
+          "availability": 93.9
         }
       ]
     }
@@ -342,10 +342,10 @@
       "month": "2026-09",
       "label": "Set",
       "active_dags": 463,
-      "total_runs": 264,
-      "success": 242,
-      "failed": 14,
-      "availability": 91.7
+      "total_runs": 387,
+      "success": 362,
+      "failed": 20,
+      "availability": 93.5
     }
   ],
   "failures": []
