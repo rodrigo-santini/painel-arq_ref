@@ -2607,9 +2607,12 @@
                 // Etapa critica: carregar os dados principais. So isto pode
                 // mostrar o erro no topo.
                 try {
-                    const resp = await fetch("data/painel_data_arq_ref.json", {
-                        cache: "no-store",
-                    });
+                    const resp = await fetch(
+                        "data/painel_data_arq_ref.json?_=" + Date.now(),
+                        {
+                            cache: "no-store",
+                        },
+                    );
                     if (!resp.ok) {
                         throw new Error(
                             `HTTP ${resp.status} ao buscar painel_data_arq_ref.json`,
@@ -2928,9 +2931,12 @@
 
             async function loadKpisMensal() {
                 try {
-                    const resp = await fetch("data/kpis_mensal_arq_ref.json", {
-                        cache: "no-store",
-                    });
+                    const resp = await fetch(
+                        "data/kpis_mensal_arq_ref.json?_=" + Date.now(),
+                        {
+                            cache: "no-store",
+                        },
+                    );
                     KPI_MENSAL_DATA = await resp.json();
                     renderKpisMensal();
                 } catch (err) {
