@@ -34,7 +34,7 @@
     },
     {
       "key": "cdl-cogna-lakehouseMwaa",
-      "label": "CDL Lakehouse (legado)",
+      "label": "CDL Lakehouse MWAA (v1)",
       "account": "643861427533",
       "region": "us-east-1",
       "mwaa_env": "cdl-cogna-lakehouseMwaa",
@@ -60,7 +60,7 @@
     },
     {
       "key": "cdl-airflow-mwaa",
-      "label": "CDL Airflow (v1)",
+      "label": "CDL Airflow MWAA (v1)",
       "account": "643861427533",
       "region": "us-east-1",
       "mwaa_env": "cdl-airflow-mwaa",

@@ -92,7 +92,7 @@
     },
     {
       "key": "cdl-cogna-lakehouseMwaa",
-      "label": "CDL Lakehouse (legado)",
+      "label": "CDL Lakehouse MWAA (v1)",
       "months": [
         {
           "month": "2026-01",
@@ -179,7 +179,7 @@
     },
     {
       "key": "cdl-airflow-mwaa",
-      "label": "CDL Airflow (v1)",
+      "label": "CDL Airflow MWAA (v1)",
       "months": [
         {
           "month": "2026-01",
