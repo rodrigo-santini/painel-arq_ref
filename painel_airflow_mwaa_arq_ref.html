@@ -1761,7 +1761,7 @@
                     if (vers.length) airflowInfo = vers.join(", ");
                 }
                 document.getElementById("header-meta").textContent =
-                    `Período: ${start} a ${end} | Airflow ${airflowInfo} | Gerado: ${gen}`;
+                    `Período: ${start} a ${end} | Airflow ${airflowInfo} | Gerado: ${gen} | build v7-kpifix`;
             }
 
             function setupDateBar() {
@@ -1942,12 +1942,16 @@
             // Quando o ambiente muda, as categorias e o seletor de DAG dependem
             // do subconjunto de DAGs. Reconstroi essas barras e re-renderiza tudo.
             function onEnvChange() {
-                setupCategoryBar();
-                setupDagSelect();
-                setupHeader();
-                applyAll();
-                renderRunsDetail();
-                if (KPI_MENSAL_DATA) renderKpisMensal();
+                // Cada etapa isolada: uma falha numa parte (ex.: Visao Geral)
+                // nao pode impedir a atualizacao da aba KPIs pelo filtro.
+                safeRun("onEnvChange/setupCategoryBar", setupCategoryBar);
+                safeRun("onEnvChange/setupDagSelect", setupDagSelect);
+                safeRun("onEnvChange/setupHeader", setupHeader);
+                safeRun("onEnvChange/applyAll", applyAll);
+                safeRun("onEnvChange/renderRunsDetail", renderRunsDetail);
+                safeRun("onEnvChange/renderKpisMensal", () => {
+                    if (KPI_MENSAL_DATA) renderKpisMensal();
+                });
             }
 
             function setupCategoryBar() {
