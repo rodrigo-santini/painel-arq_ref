@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T20:19:23.019447+00:00",
+  "generated_at": "2026-11-04T18:26:27.267625+00:00",
   "environment": "multi",
   "year": 2026,
   "environments": [
@@ -96,6 +96,15 @@
           "success": 900,
           "failed": 45,
           "availability": 95.0
+        },
+        {
+          "month": "2026-11",
+          "label": "Nov",
+          "active_dags": 140,
+          "total_runs": 651,
+          "success": 619,
+          "failed": 27,
+          "availability": 95.1
         }
       ]
     },
@@ -192,6 +201,15 @@
           "success": 1151,
           "failed": 229,
           "availability": 83.4
+        },
+        {
+          "month": "2026-11",
+          "label": "Nov",
+          "active_dags": 246,
+          "total_runs": 831,
+          "success": 685,
+          "failed": 146,
+          "availability": 82.4
         }
       ]
     },
@@ -288,6 +306,15 @@
           "success": 667,
           "failed": 40,
           "availability": 94.2
+        },
+        {
+          "month": "2026-11",
+          "label": "Nov",
+          "active_dags": 104,
+          "total_runs": 456,
+          "success": 438,
+          "failed": 18,
+          "availability": 96.1
         }
       ]
     }
@@ -382,6 +409,15 @@
       "success": 2718,
       "failed": 314,
       "availability": 89.6
+    },
+    {
+      "month": "2026-11",
+      "label": "Nov",
+      "active_dags": 490,
+      "total_runs": 1938,
+      "success": 1742,
+      "failed": 191,
+      "availability": 89.9
     }
   ],
   "failures": []
